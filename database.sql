@@ -8,8 +8,8 @@ use connect;
 create table users (
     id int not null auto_increment primary key,
     facebook_id bigint,
-    username varchar(50),
-    email varchar(255),
+    name varchar(50),
+    filename varchar(255),
     university_id int,
     self_introduction varchar(400),
     japanese_university varchar(100),
