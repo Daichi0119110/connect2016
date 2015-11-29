@@ -1,0 +1,9 @@
+insert into categories (id, category, question) values (1, 'a', 'a');
+insert into categories (id, category, question) values (2, 'a', 'b');
+insert into categories (id, category, question) values (3, 'a', 'c');
+insert into categories (id, category, question) values (4, 'a', 'd');
+insert into categories (id, category, question) values (5, 'a', 'e');
+insert into categories (id, category, question) values (6, 'a', 'f');
+insert into categories (id, category, question) values (7, 'a', 'g');
+insert into categories (id, category, question) values (8, 'a', 'h');
+insert into categories (id, category, question) values (9, 'a', 'i');
