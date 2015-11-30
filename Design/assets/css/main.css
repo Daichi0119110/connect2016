@@ -16,13 +16,18 @@
 /* OVERALL ASPECT */
 
 body {
+<<<<<<< HEAD
   background-color: #f2f2f2;
         font-family:
         'M+ P Type-2 (basic latin) Thin',
         'M+ Type-1 (general-j) Thin', sans-serif;
+=======
+  background-color: rgba(255, 250, 236, 0.7);
+    font-family: "Lato";
+>>>>>>> 6858c009cadbec08cac9ef2859d80beb4d77e0d5
     font-weight: 300;
     font-size: 16px;
-    color: #555;
+    color: #404040;
 
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
@@ -36,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
         'M+ P Type-2 (basic latin) Thin',
         'M+ Type-1 (general-j) Thin', sans-serif;
     font-weight: 300;
-    color: #333;
+    color: #404040;
 }
 
 
@@ -160,14 +165,14 @@ a:after {
 
 #headerwrap h1 {
 	margin-top: 100px;
-	color: white;
+	color: rgba(255, 250, 236, 1);
 	font-size: 70px;
 	font-weight: 300;
 	letter-spacing: 3px;
 }
 
 #headerwrap h2 {
-	color: white;
+	color: rgba(255, 250, 236, 1);
 	font-size: 40px;
 	font-weight: 700;
 	letter-spacing: 2px;
@@ -176,7 +181,7 @@ a:after {
 
 /* Dark Grey Wrap */
 #dg {
-	background: #e0e0e0;
+/*	background: rgba(255, 250, 230, 0.5);*/
 	padding-top: 50px;
 	padding-bottom: 50px;
 	text-align: center;
@@ -186,17 +191,16 @@ a:after {
 	font-weight: 700;
 }
 
-/* Light Grey */
+/*Light Grey
 #lg {
 	background: #ebebeb;
 	padding-top: 70px;
 	padding-bottom: 70px;
 	text-align: center;
 }
-
 #lg h4 {
 	font-weight: 700;
-}
+}*/
 
 
 /* Red Wrap */
@@ -277,8 +281,28 @@ a:after {
 
 
 
+#content {
+/*    float: left;*/
+    overflow: hidden;
+}
+#sidebar {
+    margin-top: 20px;
+    padding-top:-20px;
+    text-align:center;
+    float: right;
+    overflow: hidden;
+}
 
-
+@media (max-width: 350px) {
+    #content{
+        display: block;
+        width: 100%;
+    }
+    #sidebar{
+        display: block;
+        width: 100%;
+    }
+}
 
 
 
@@ -329,18 +353,18 @@ a:after {
 }
 
 .btn-ghost.btn-default {
-  color: #fff;
+  color: rgba(255, 250, 236, 1);
   font-size: 24px;
 }
 
 /*文字色*/
 .btn-ghost.btn-default:hover{
-  color: #2d2d2d;
-  background-color: #fff;
+  color: #404040;
+  background-color: rgba(255, 250, 236, 1);
 }
 .btn-ghost.btn-default {
-  color: #fff;
-  border: 1px solid #fff;
+  color: rgba(255, 250, 236, 0.7);
+  border: 1px solid rgba(255, 250, 236, 1);
 }
 
 /*ゴーストボタン設定終*/
@@ -355,7 +379,7 @@ a:after {
 
 .modal-header {
 	background: #bdbdbd;
-	color: white;
+	color: rgba(255, 250, 236, 0.7);
 }
 
 .modal-header h4 {
@@ -377,6 +401,34 @@ a:after {
 
 
 
+/*sidebar*/
+.affix-nav{
+    width:263px;
+}
+.affix-nav.affix{
+    top:50;
+    position:fixed;
+}
+.affix-nav.affix-top{
+    position:static;
+}
+.affix-nav.affix-bottom{
+    position:absolute;
+}
+.affix-nav .nav li{
+    background-color:#8f8;
+    border-left:1px solid black;
+    border-right:1px solid black;
+    border-bottom:1px solid black;
+}
+.affix-nav .nav li:first-child{
+    border-top:1px solid black;
+}
+.affix-nav .nav li.active{
+    background-color:#4c4;
+}
+
+/*sidebar*/
 
 
 
@@ -396,7 +448,7 @@ a:after {
 .pricing-option .pricing-top {
     position: relative;
     background: #222;
-    color: white;
+    color: rgba(255, 250, 236, 0.7);
     text-align: center;
     font-weight: bold;
 
@@ -473,7 +525,7 @@ a:after {
     font-size: 18px;
     font-weight: bold;
     padding: 15px 10px;
-    color: white;
+    color: rgba(255, 250, 236, 0.7);
     background: #1abc9c;
 }
 
