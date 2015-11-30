@@ -8,14 +8,18 @@
  */
  
 /* FONTS */
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,700,900);
+/*@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,700,900);*/
+@import url(http://mplus-fonts.osdn.jp/webfonts/);
+
 
 /* OVERALL ASPECT */
 
 body {
   background-color: #f2f2f2;
-    font-family: "Lato";
+        font-family:
+        'M+ P Type-2 (basic latin) Thin',
+        'M+ Type-1 (general-j) Thin', sans-serif;
     font-weight: 300;
     font-size: 16px;
     color: #555;
@@ -28,7 +32,9 @@ body {
 
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Raleway";
+        font-family:
+        'M+ P Type-2 (basic latin) Thin',
+        'M+ Type-1 (general-j) Thin', sans-serif;
     font-weight: 300;
     color: #333;
 }
