@@ -523,6 +523,7 @@ a:after {
 }
 
 
+/*検索ボックス*/
 .search-m{
     border-radius: 10px 0 0 10px !important;
     font-size: 21px!important;
@@ -534,4 +535,15 @@ a:after {
     font-size: 24px;
     height:50px;
     width:50px;
+}
+
+
+.title{
+
+    color: white; 
+   font-weight:bold; 
+   letter-spacing: -1px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 5px 10px; 
 }
