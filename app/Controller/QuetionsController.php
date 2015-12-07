@@ -6,4 +6,8 @@ class QuestionsController extends AppController {
 	public function question(){
 		
 	}
+
+	public function practice_que($university_id){
+		//university_idから質問を検索
+	}
 }
