@@ -48,6 +48,7 @@ create table universities (
 create table categories (
     id int not null auto_increment primary key,
     category varchar(255),
+    supplement varchar
     question text,
     example text,
     image varchar(255)
