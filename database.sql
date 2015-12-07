@@ -131,7 +131,7 @@ create table answers (
     modified datetime default null
 );
 
-/*picturesのテーブル作成*/
+/*pictures_unisのテーブル作成*/
 create table picture_unis (
     id int not null auto_increment primary key,
     image varchar(255),
