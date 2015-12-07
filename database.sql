@@ -131,13 +131,23 @@ create table answers (
     modified datetime default null
 );
 
-/*pictures_unisのテーブル作成*/
+/*picture_unisのテーブル作成*/
 create table picture_unis (
     id int not null auto_increment primary key,
     image varchar(255),
     university_id int,
     user_id int,
     comment text,
+    created datetime default null,
+    modified datetime default null
+);
+
+/*reportsのテーブル作成*/
+create table reports (
+    id int not null auto_increment primary key,
+    user_id int,
+    university_id int,
+    filename varchar(255),
     created datetime default null,
     modified datetime default null
 );

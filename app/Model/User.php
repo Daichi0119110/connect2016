@@ -4,9 +4,7 @@ class User extends AppModel {
 	public $name='User';
 
 	public $belongsTo = array(
-		'University' => array(
-			'className' => 'University'
-		)
+		'University' => array('className' => 'University')
 	);
 
 	public $hasMany = array(
@@ -16,15 +14,14 @@ class User extends AppModel {
 		'Favorite_uni' => array('className' => 'Favorite_uni'),
 		'Favorite_use' => array('className' => 'Favorite_use'),
 		'Answer' => array('className' => 'Answer'),
+		'Report' => array('className' => 'Report'),
 		'Clip' => array('className' => 'Clip')
 	);
-	
-	// 大学に紐付いたユーザーのidを取得
-	function getalluser($university_id){
+
+	function getuser($user_id){
 		$status=array(
-			'conditions'=>array('university_id'=>$university_id),
-			'fields'=>'id'
+			'conditions'=>array('User.id'=>$user_id)
 		);
-		return $this->find('all',$status);
+		return $this->find('first',$status);
 	}
 }
