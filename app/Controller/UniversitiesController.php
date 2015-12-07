@@ -14,7 +14,7 @@ class UniversitiesController extends AppController {
 		$tags = $this->Tag->find('all');
 		$categories = $this->Category->find('all');
 
-		//debug($university);
+		// debug($university);
 		// debug($tags);
 		// debug($categories);
 	}
