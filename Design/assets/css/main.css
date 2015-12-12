@@ -16,15 +16,8 @@
 /* OVERALL ASPECT */
 
 body {
-<<<<<<< HEAD
-  background-color: #f2f2f2;
-        font-family:
-        'M+ P Type-2 (basic latin) Thin',
-        'M+ Type-1 (general-j) Thin', sans-serif;
-=======
   background-color: rgba(255, 250, 236, 0.7);
-    font-family: "Lato";
->>>>>>> 6858c009cadbec08cac9ef2859d80beb4d77e0d5
+    font-family:"Avenir Next", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo,Osaka, sans-serif!important;
     font-weight: 300;
     font-size: 16px;
     color: #404040;
@@ -241,8 +234,8 @@ a:after {
 /* Footer Wrap */
 #f {
 	background: #2d2d2d;
-	padding-top: 30px;
-	padding-bottom: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 #f i {
@@ -534,6 +527,12 @@ a:after {
 }
 
 
+/*タイトル*/
+.title{
+    font-size: 110px!important;
+    font-weight: bold!important;
+}
+
 /*検索ボックス*/
 .search-m{
     border-radius: 10px 0 0 10px !important;
@@ -548,13 +547,114 @@ a:after {
     width:50px;
 }
 
+/*フォーム*/
+.form-m{
+    border-radius: 8px 0 0 8px !important;
+    font-size: 18px!important;
+    height:40px!important;
+}
 
-.title{
+.form-btn-m{
+    border-radius:0 8px 8px 0!important;
+    font-size: 18px;
+    height:40px;
+}
 
+
+/*サムネイル関連*/
+.thumnail-box{
+    height:240px;
+    width:360px;
+    overflow:hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+.thumnail-text-box{
+    position: absolute;
+    bottom:0px;
+    left: 0px;
+    width:100%;
+    color: #fff;
+}
+
+.thumnail-text{
+    text-align: center;
+    width: 100%;
+    font-size:26px;
+}
+
+/*サムネイル小さい*/
+.thumnail-box-s{
+    height:120px;
+    width:180px;
+    overflow:hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+.thumnail-text-box-s{
+    position: absolute;
+    bottom:0px;
+    left: 0px;
+    width:100%;
+    color: #fff;
+}
+
+.thumnail-text-s{
+    text-align: center;
+    width: 100%;
+    font-size:20px;
+}
+
+/*写真の上に置くテキスト*/
+.text-on-image{
     color: white; 
    font-weight:bold; 
-   letter-spacing: -1px;  
-   background: rgb(0, 0, 0); /* fallback color */
-   background: rgba(0, 0, 0, 0.7);
-   padding: 5px 10px; 
+   background-color: rgba(0,0,0, 0.7);
+   padding:10px 0;
+}
+
+.text-on-image-blue{
+    color: white; 
+   font-weight:bold; 
+   background-color: rgba(0,0,0, 0.15);
+   padding:10px 0;
+   border-radius: 20px;
+}
+
+
+
+.copyright{
+    font-size: 12px;
+    text-align: right;
+    color: #aaa;
+    margin:0px;
+   }
+
+
+/*トップのナビゲーション*/
+.top-nav{
+    font-size: 50px!important;
+    border: 2px solid!important;
+    background-color: rgba(0,0,0, 0.1)!important;
+    border-radius: 8px;
+    padding:5px 20px;
+}
+
+/*マージン一覧*/
+.top-margin-l{
+    margin-top: 120px;
+}
+
+.top-margin-m{
+    margin-top: 80px;
+}
+
+.top-margin-s{
+    margin-top: 40px;
+}
+
+.top-margin-xs{
+    margin-top: 20px;
 }
