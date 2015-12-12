@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>ß
   <body>
 
 <!-- all-->
@@ -359,7 +363,7 @@
 </div> <!-- all container-->
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="bootstrap.min.js"></script>
  <!--    // <script src="assets/js/skrollspy.js"></script> -->
     <script>
             $(function(){
