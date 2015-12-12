@@ -425,106 +425,104 @@ a:after {
 
 
 
-
-
-
-
-
-/* ==========================================================================
-   Pricing Tables
-   ========================================================================== */
-
-.pricing-option {
-    padding-bottom: 40px;
+/* .slideShow始
+------------------------- */
+/* .slideShow
+------------------------- */
+.slideShow {
+    margin: 0 auto;
+    text-align: left;
+    display: none;
 }
 
-.pricing-option .pricing-top {
-    position: relative;
-    background: #222;
-    color: rgba(255, 250, 236, 0.7);
-    text-align: center;
-    font-weight: bold;
-
-    padding: 40px 20px 30px 20px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.pricing-option .pricing-top .special-label {
-    display: block;
+/* .mainView
+------------------------- */
+.slideShow .mainView {
     width: 100%;
-    position: absolute;
+    position: relative;
+    overflow: hidden;
+}
+.slideShow .mainView ul {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.slideShow .mainView ul li {
     top: 0;
     left: 0;
-    background: #1abc9c;
-    text-transform: uppercase;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 3px 0;
-}
-
-.special .pricing-top {
-    background: black;
-}
-
-.pricing-option .pricing-edition {
-    text-transform: uppercase;
-    display: block;
-    font-size: 25px;
-    letter-spacing: 8px;
-}
-
-.pricing-option .price {
-    display: inline-block;
-    position: relative;
-}
-
-.pricing-option .price sup {
+    width: 100%;
     position: absolute;
-    top: 50px;
-    left: -10px;
-    font-size: 24px;
+}
+.slideShow .mainView ul li img {
+    width: 100%;
 }
 
-.pricing-option .price .price-amount {
-    font-size: 108px;
-    letter-spacing: -4px;
+/* .thumbNail
+------------------------- */
+.slideShow .thumbNail {
+    width: 100%;
+    overflow: hidden;
 }
 
-.pricing-option .price small {
-    position: relative;
-    left: -10px;
-    font-size: 18px;
+.slideShow .thumbNail ul {
+    width: 110%;
+    padding-left: 0px!important;
 }
 
-.pricing-option ul {
-    list-style: none;
-    margin: 0;
-    background: #eee;
-    text-align: center;
-    padding-left: 0px;
+.slideShow .thumbNail ul li {
+    float: left;
+    display: inline;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-.pricing-option ul li {
-    border-bottom: solid 1px #e1e1e1;
-    padding-top: 20px;
-    padding-bottom: 20px;
+.slideShow .thumbNail ul li img {
+    width: 100%;
 }
 
-.pricing-option .pricing-signup {
+.slideShow .thumbNail ul li.active {
+    filter: alpha(opacity=100)!important;
+    -moz-opacity: 1!important;
+    opacity: 1!important;
+}
+
+/* sideNavi
+------------------------- */
+.slideShow .mainView .btnPrev,
+.slideShow .mainView .btnNext {
+    top: 0;
+    width: 5%;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+}
+.slideShow .mainView .btnPrev {
+    left: 0;
+    background: #ccc url(../assets/img/sample/btnPrev.png) no-repeat center center;
+}
+.slideShow .mainView .btnNext {
+    right: 0;
+    background: #ccc url(../assets/img/sample/btnNext.png) no-repeat center center;
+}
+
+
+/* =======================================
+    ClearFixElements
+======================================= */
+.slideShow ul:after {
+    content: ".";
+    height: 0;
+    clear: both;
     display: block;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 15px 10px;
-    color: rgba(255, 250, 236, 0.7);
-    background: #1abc9c;
+    visibility: hidden;
 }
 
-.pricing-option .pricing-signup:hover {
-    background: #ff7878;
+.slideShow ul {
+    display: inline-block;
+    overflow: hidden;
 }
+
+/*Slideshow終
 
 
 /*タイトル*/
