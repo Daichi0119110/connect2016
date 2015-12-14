@@ -313,7 +313,7 @@ a:after {
 
 .w i {
 	color: #1933C0;
-	font-size: 30px;
+	font-size: 70px;
 }
 
 
@@ -566,6 +566,10 @@ a:after {
     overflow:hidden;
     position: relative;
     border-radius: 10px;
+    opacity: 0.9;
+}
+.thumnail-box:hover{
+    opacity: 1.0;
 }
 
 .thumnail-text-box{
