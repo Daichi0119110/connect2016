@@ -17,7 +17,7 @@
 
 body {
   background-color: rgba(255, 250, 236, 0.7);
-    font-family:"Avenir Next", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo,Osaka, sans-serif!important;
+    font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
     font-weight: 300;
     font-size: 16px;
     color: #404040;
@@ -313,7 +313,7 @@ a:after {
 
 .w i {
 	color: #1933C0;
-	font-size: 30px;
+	font-size: 70px;
 }
 
 
@@ -566,6 +566,10 @@ a:after {
     overflow:hidden;
     position: relative;
     border-radius: 10px;
+    opacity: 0.9;
+}
+.thumnail-box:hover{
+    opacity: 1.0;
 }
 
 .thumnail-text-box{
