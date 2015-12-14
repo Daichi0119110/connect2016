@@ -17,7 +17,7 @@
 
 body {
   background-color: rgba(255, 250, 236, 0.7);
-    font-family:"Avenir Next", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo,Osaka, sans-serif!important;
+    font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
     font-weight: 300;
     font-size: 16px;
     color: #404040;
