@@ -89,6 +89,7 @@ a:after {
 .navbar {
 	font-weight: 800;
 	font-size: 13px;
+    margin-bottom:0px;
 }
 
 .navbar-inverse {
@@ -136,8 +137,8 @@ a:after {
 
 #headerwrap {
 	background: url(../img/header.jpg) no-repeat center top;
-	margin-top: -20px;
-	padding-top:20px;
+/*	margin-top: -20px;
+	padding-top:20px;*/
 	text-align:center;
 	background-attachment: relative;
 	background-position: center center;
@@ -172,63 +173,16 @@ a:after {
 	text-transform: uppercase;
 }
 
-/* Dark Grey Wrap */
-#dg {
-/*	background: rgba(255, 250, 230, 0.5);*/
+/* Basic */
+#basic {
 	padding-top: 50px;
 	padding-bottom: 50px;
 	text-align: center;
 }
 
-#dg h4 {
+#basic h4 {
 	font-weight: 700;
 }
-
-/*Light Grey
-#lg {
-	background: #ebebeb;
-	padding-top: 70px;
-	padding-bottom: 70px;
-	text-align: center;
-}
-#lg h4 {
-	font-weight: 700;
-}*/
-
-
-/* Red Wrap */
-#r {
-	background: ##1933C0;
-	padding-top: 35px;
-	padding-bottom: 35px;
-}
-
-#r h4 {
-	color: white;
-	font-weight: 700;
-}
-
-#r p {
-	color: white;
-}
-
-/* Blue Wrap */
-
-#blue {
-	background: #3498db;
-	padding-top: 35px;
-	padding-bottom: 35px;
-}
-
-#blue h4 {
-	color: white;
-	font-weight: 700;
-}
-
-#blue p {
-	color: white;
-}
-
 
 
 /* Footer Wrap */
@@ -410,12 +364,12 @@ a:after {
 }
 .affix-nav .nav li{
     background-color:#8f8;
-    border-left:1px solid black;
-    border-right:1px solid black;
-    border-bottom:1px solid black;
+    border-left:1px solid gray;
+    border-right:1px solid gray;
+    border-bottom:1px solid gray;
 }
 .affix-nav .nav li:first-child{
-    border-top:1px solid black;
+    border-top:1px solid gray;
 }
 .affix-nav .nav li.active{
     background-color:#4c4;
@@ -498,11 +452,11 @@ a:after {
 }
 .slideShow .mainView .btnPrev {
     left: 0;
-    background: #ccc url(../assets/img/sample/btnPrev.png) no-repeat center center;
+    background: #ccc url(../img/sample/btnPrev.png) no-repeat center center;
 }
 .slideShow .mainView .btnNext {
     right: 0;
-    background: #ccc url(../assets/img/sample/btnNext.png) no-repeat center center;
+    background: #ccc url(../img/sample/btnNext.png) no-repeat center center;
 }
 
 
@@ -584,6 +538,29 @@ a:after {
     text-align: center;
     width: 100%;
     font-size:26px;
+}
+
+/*サムネイル中*/
+.thumnail-box-m{
+    height:200px;
+    width:300px;
+    overflow:hidden;
+    position: relative;
+    /*border-radius: 10px;*/
+}
+
+.thumnail-text-box-m{
+    position: absolute;
+    bottom:0px;
+    left: 0px;
+    width:100%;
+    color: #fff;
+}
+
+.thumnail-text-m{
+    text-align: center;
+    width: 100%;
+    font-size:24px;
 }
 
 /*サムネイル小さい*/
