@@ -16,15 +16,8 @@
 /* OVERALL ASPECT */
 
 body {
-<<<<<<< HEAD
-  background-color: #f2f2f2;
-        font-family:
-        'M+ P Type-2 (basic latin) Thin',
-        'M+ Type-1 (general-j) Thin', sans-serif;
-=======
   background-color: rgba(255, 250, 236, 0.7);
-    font-family: "Lato";
->>>>>>> 6858c009cadbec08cac9ef2859d80beb4d77e0d5
+    font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
     font-weight: 300;
     font-size: 16px;
     color: #404040;
@@ -96,6 +89,7 @@ a:after {
 .navbar {
 	font-weight: 800;
 	font-size: 13px;
+    margin-bottom:0px;
 }
 
 .navbar-inverse {
@@ -143,8 +137,8 @@ a:after {
 
 #headerwrap {
 	background: url(../img/header.jpg) no-repeat center top;
-	margin-top: -20px;
-	padding-top:20px;
+/*	margin-top: -20px;
+	padding-top:20px;*/
 	text-align:center;
 	background-attachment: relative;
 	background-position: center center;
@@ -179,70 +173,23 @@ a:after {
 	text-transform: uppercase;
 }
 
-/* Dark Grey Wrap */
-#dg {
-/*	background: rgba(255, 250, 230, 0.5);*/
+/* Basic */
+#basic {
 	padding-top: 50px;
 	padding-bottom: 50px;
 	text-align: center;
 }
 
-#dg h4 {
+#basic h4 {
 	font-weight: 700;
 }
-
-/*Light Grey
-#lg {
-	background: #ebebeb;
-	padding-top: 70px;
-	padding-bottom: 70px;
-	text-align: center;
-}
-#lg h4 {
-	font-weight: 700;
-}*/
-
-
-/* Red Wrap */
-#r {
-	background: ##1933C0;
-	padding-top: 35px;
-	padding-bottom: 35px;
-}
-
-#r h4 {
-	color: white;
-	font-weight: 700;
-}
-
-#r p {
-	color: white;
-}
-
-/* Blue Wrap */
-
-#blue {
-	background: #3498db;
-	padding-top: 35px;
-	padding-bottom: 35px;
-}
-
-#blue h4 {
-	color: white;
-	font-weight: 700;
-}
-
-#blue p {
-	color: white;
-}
-
 
 
 /* Footer Wrap */
 #f {
 	background: #2d2d2d;
-	padding-top: 30px;
-	padding-bottom: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 #f i {
@@ -320,7 +267,7 @@ a:after {
 
 .w i {
 	color: #1933C0;
-	font-size: 30px;
+	font-size: 70px;
 }
 
 
@@ -417,12 +364,12 @@ a:after {
 }
 .affix-nav .nav li{
     background-color:#8f8;
-    border-left:1px solid black;
-    border-right:1px solid black;
-    border-bottom:1px solid black;
+    border-left:1px solid gray;
+    border-right:1px solid gray;
+    border-bottom:1px solid gray;
 }
 .affix-nav .nav li:first-child{
-    border-top:1px solid black;
+    border-top:1px solid gray;
 }
 .affix-nav .nav li.active{
     background-color:#4c4;
@@ -432,107 +379,111 @@ a:after {
 
 
 
-
-
-
-
-
-/* ==========================================================================
-   Pricing Tables
-   ========================================================================== */
-
-.pricing-option {
-    padding-bottom: 40px;
+/* .slideShow始
+------------------------- */
+/* .slideShow
+------------------------- */
+.slideShow {
+    margin: 0 auto;
+    text-align: left;
+    display: none;
 }
 
-.pricing-option .pricing-top {
-    position: relative;
-    background: #222;
-    color: rgba(255, 250, 236, 0.7);
-    text-align: center;
-    font-weight: bold;
-
-    padding: 40px 20px 30px 20px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.pricing-option .pricing-top .special-label {
-    display: block;
+/* .mainView
+------------------------- */
+.slideShow .mainView {
     width: 100%;
-    position: absolute;
+    position: relative;
+    overflow: hidden;
+}
+.slideShow .mainView ul {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.slideShow .mainView ul li {
     top: 0;
     left: 0;
-    background: #1abc9c;
-    text-transform: uppercase;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 3px 0;
-}
-
-.special .pricing-top {
-    background: black;
-}
-
-.pricing-option .pricing-edition {
-    text-transform: uppercase;
-    display: block;
-    font-size: 25px;
-    letter-spacing: 8px;
-}
-
-.pricing-option .price {
-    display: inline-block;
-    position: relative;
-}
-
-.pricing-option .price sup {
+    width: 100%;
     position: absolute;
-    top: 50px;
-    left: -10px;
-    font-size: 24px;
+}
+.slideShow .mainView ul li img {
+    width: 100%;
 }
 
-.pricing-option .price .price-amount {
-    font-size: 108px;
-    letter-spacing: -4px;
+/* .thumbNail
+------------------------- */
+.slideShow .thumbNail {
+    width: 100%;
+    overflow: hidden;
 }
 
-.pricing-option .price small {
-    position: relative;
-    left: -10px;
-    font-size: 18px;
+.slideShow .thumbNail ul {
+    width: 110%;
+    padding-left: 0px!important;
 }
 
-.pricing-option ul {
-    list-style: none;
-    margin: 0;
-    background: #eee;
-    text-align: center;
-    padding-left: 0px;
+.slideShow .thumbNail ul li {
+    float: left;
+    display: inline;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-.pricing-option ul li {
-    border-bottom: solid 1px #e1e1e1;
-    padding-top: 20px;
-    padding-bottom: 20px;
+.slideShow .thumbNail ul li img {
+    width: 100%;
 }
 
-.pricing-option .pricing-signup {
+.slideShow .thumbNail ul li.active {
+    filter: alpha(opacity=100)!important;
+    -moz-opacity: 1!important;
+    opacity: 1!important;
+}
+
+/* sideNavi
+------------------------- */
+.slideShow .mainView .btnPrev,
+.slideShow .mainView .btnNext {
+    top: 0;
+    width: 5%;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+}
+.slideShow .mainView .btnPrev {
+    left: 0;
+    background: #ccc url(../img/sample/btnPrev.png) no-repeat center center;
+}
+.slideShow .mainView .btnNext {
+    right: 0;
+    background: #ccc url(../img/sample/btnNext.png) no-repeat center center;
+}
+
+
+/* =======================================
+    ClearFixElements
+======================================= */
+.slideShow ul:after {
+    content: ".";
+    height: 0;
+    clear: both;
     display: block;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 15px 10px;
-    color: rgba(255, 250, 236, 0.7);
-    background: #1abc9c;
+    visibility: hidden;
 }
 
-.pricing-option .pricing-signup:hover {
-    background: #ff7878;
+.slideShow ul {
+    display: inline-block;
+    overflow: hidden;
 }
 
+/*Slideshow終
+
+
+/*タイトル*/
+.title{
+    font-size: 110px!important;
+    font-weight: bold!important;
+}
 
 /*検索ボックス*/
 .search-m{
@@ -548,13 +499,141 @@ a:after {
     width:50px;
 }
 
+/*フォーム*/
+.form-m{
+    border-radius: 8px 0 0 8px !important;
+    font-size: 18px!important;
+    height:40px!important;
+}
 
-.title{
+.form-btn-m{
+    border-radius:0 8px 8px 0!important;
+    font-size: 18px;
+    height:40px;
+}
 
+
+/*サムネイル関連*/
+.thumnail-box{
+    height:240px;
+    width:360px;
+    overflow:hidden;
+    position: relative;
+    border-radius: 10px;
+    opacity: 0.9;
+}
+.thumnail-box:hover{
+    opacity: 1.0;
+}
+
+.thumnail-text-box{
+    position: absolute;
+    bottom:0px;
+    left: 0px;
+    width:100%;
+    color: #fff;
+}
+
+.thumnail-text{
+    text-align: center;
+    width: 100%;
+    font-size:26px;
+}
+
+/*サムネイル中*/
+.thumnail-box-m{
+    height:200px;
+    width:300px;
+    overflow:hidden;
+    position: relative;
+    /*border-radius: 10px;*/
+}
+
+.thumnail-text-box-m{
+    position: absolute;
+    bottom:0px;
+    left: 0px;
+    width:100%;
+    color: #fff;
+}
+
+.thumnail-text-m{
+    text-align: center;
+    width: 100%;
+    font-size:24px;
+}
+
+/*サムネイル小さい*/
+.thumnail-box-s{
+    height:120px;
+    width:180px;
+    overflow:hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+.thumnail-text-box-s{
+    position: absolute;
+    bottom:0px;
+    left: 0px;
+    width:100%;
+    color: #fff;
+}
+
+.thumnail-text-s{
+    text-align: center;
+    width: 100%;
+    font-size:20px;
+}
+
+/*写真の上に置くテキスト*/
+.text-on-image{
     color: white; 
    font-weight:bold; 
-   letter-spacing: -1px;  
-   background: rgb(0, 0, 0); /* fallback color */
-   background: rgba(0, 0, 0, 0.7);
-   padding: 5px 10px; 
+   background-color: rgba(0,0,0, 0.7);
+   padding:10px 0;
+}
+
+.text-on-image-blue{
+    color: white; 
+   font-weight:bold; 
+   background-color: rgba(0,0,0, 0.15);
+   padding:10px 0;
+   border-radius: 20px;
+}
+
+
+
+.copyright{
+    font-size: 12px;
+    text-align: right;
+    color: #aaa;
+    margin:0px;
+   }
+
+
+/*トップのナビゲーション*/
+.top-nav{
+    font-size: 50px!important;
+    border: 2px solid!important;
+    background-color: rgba(0,0,0, 0.1)!important;
+    border-radius: 8px;
+    padding:5px 20px;
+}
+
+/*マージン一覧*/
+.top-margin-l{
+    margin-top: 120px;
+}
+
+.top-margin-m{
+    margin-top: 80px;
+}
+
+.top-margin-s{
+    margin-top: 40px;
+}
+
+.top-margin-xs{
+    margin-top: 20px;
 }
