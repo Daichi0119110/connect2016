@@ -1,156 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
-  <body>
+<html lang="ja">
+<body>
 
-    <!-- Fixed navbar -->
+  <div id="headerwrap">
+    <div class="container">
+     <div class="row centered">
+      <div class="col-md-8 col-md-offset-2">
+        <h1 class="title">Connect</h1>
+        <h2 class="">留学生をつなぐ架け橋</h2>
+      </div>
 
-	<div id="headerwrap">
-		<div class="container">
-			<div class="row centered">
-        <div class="col-lg-8 col-lg-offset-2">
-        <h1 class="title">CONNECT</h1>
-        <h2>留学生をつなぐ架け橋</h2>
-        <p><br><br></p>
-        </div>
-
-        <div class="col-lg-4 col-lg-offset-4">
-          <div class="input-group">
+      <div class="col-md-4 col-md-offset-4 top-margin-s">
+        <div class="input-group">
           <input type="text" class="form-control search-m" placeholder="知りたい大学を検索">
           <span class="input-group-btn">
-          <button class="btn btn-default search-btn-m" type="button">
-            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-          </button>
+            <button class="btn btn-default search-btn-m" type="button">
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </button>
           </span>
-          </div><!-- /input-group -->
+        </div><!-- /input-group -->
+      </div>
+      <div class="col-md-10 col-md-offset-1 top-margin-l">
+        <div class="row">
+          <div class="col-md-6">
+            <a href="#about" class="btn btn-default btn-ghost page-scroll top-nav">Connectとは？</a>
+          </div>
+          <div class="col-md-6">
+            <a href="#search" class="btn btn-default btn-ghost page-scroll top-nav">掲載大学一覧へ</a>
+
+          </div>
         </div>
-
-        <div class="col-lg-8 col-lg-offset-2">
-            <p><br><br></p>
-            <a href="#about" class="btn btn-default btn-ghost page-scroll">Connectとは？</a>
-            <a href="#search" class="btn btn-default btn-ghost page-scroll">掲載大学一覧</a>
-        </div>
       </div>
-	 </div>
-  </div><!-- headerwrap -->
-
-
-
-  <div class="container wb" id="about">
-    <div class="row centered">
-      <br><br>
-      <div class="col-lg-8 col-lg-offset-2">
-        <h3>What's Connect</h3>
-        <p>about Connect</p>
-      <p><br/><br/></p>
-      </div>
-    </div><!-- row -->
-  </div><!-- container -->
-
-  <div id="dg">
-	<div class="container w">
-		<div class="row centered">
-      <div class="col-lg-8 col-lg-offset-2">
-        <h3>Connectの特性</h3>
-      </div>
-			<div class="col-lg-4">
-				<i class="fa fa-heart"></i>
-				<h4>DESIGN</h4>
-				<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even believable.</p>
-			</div><!-- col-lg-4 -->
-
-			<div class="col-lg-4">
-				<i class="fa fa-laptop"></i>
-				<h4>BOOTSTRAP</h4>
-				<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even believable.</p>
-			</div><!-- col-lg-4 -->
-
-			<div class="col-lg-4">
-				<i class="fa fa-trophy"></i>
-				<h4>SUPPORT</h4>
-				<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even believable.</p>
-			</div><!-- col-lg-4 -->
-		</div><!-- row -->
-		<br>
-		<br>
-	</div><!-- container -->
+    </div>
   </div>
+</div><!-- headerwrap -->
+
+
+
+<div class="container wb" id="about">
+  <div class="row centered">
+    <br><br>
+    <div class="col-md-8 col-md-offset-2">
+      <h2>What's Connect</h2>
+      <hr>
+      <p><strong>Connect</strong>とは、海外留学経験を持つ日本人学生と,これから大学留学に行きたい日本人学生を繋げるプラットフォームです。大学への長期留学では、留学先の選択は非常に個人にとって重要な決断にもかかわらず、今までは、知人の留学経験者から直接話を聞くことでしか、留学の生の声を聞くことができませんでした。<strong>Conncet</strong>を通して、留学経験者と未来の留学生をつなげていきたいと思っています。</p>
+    </div>
+  </div><!-- row -->
+</div><!-- container -->
+
+<div id="dg">
+ <div class="container w">
+  <div class="row centered">
+    <div class="col-md-8 col-md-offset-2">
+      <h2>Connectの特性</h2>
+    </div>
+    <div class="row top-margin-m">
+      <div class="col-md-4">
+        <i class="fa fa-search"></i>
+        <h3>Search</h3>
+        <p>海外大学への留学に関する情報を簡単に検索することができます。すべての書き込みは、実際の留学生の体験談だから、まるで先輩に話を聞いているような生の声を検索できます。</p>
+      </div><!-- col-md-4 -->
+
+      <div class="col-md-4">
+        <i class="fa fa-clipboard"></i>
+        <h3>Store</h3>
+        <p>気に入ったページを"お気に入り登録”、そして気になった情報を"クリップ”として、後で簡単に見返すことができます。しっかり考えて、自分にとって最適な留学先大学の決定を目指してください！</p>
+      </div><!-- col-md-4 -->
+
+      <div class="col-md-4">
+        <i class="fa fa-facebook-square"></i>
+        <h3>Connect</h3>
+        <p>実際の留学生に直接相談したい！そんな時には、<strong>Facebook</strong>を通じて先輩にメッセージを送ることができます。<strong>Facebook Messenger</strong>や,<strong>Skype</strong>にて通話相談に乗ってもらうこともできます！</p>
+      </div><!-- col-md-4 -->
+    </div>
+
+  </div><!-- row -->
+  <br>
+  <br>
+</div><!-- container -->
+</div>
 
 
 <!-- 掲載大学一覧↓ -->
 <div class="container wb" id="bg1">
-    <div class="row centered">
+  <div class="row centered">
 
 
-  <div class="container wb" id="search">
-    <div class="row centered">
-      <br><br><br>
-      <div class="col-lg-8 col-lg-offset-2">
-        <h2>掲載大学一覧</h2>
+    <div class="container wb" id="search">
+      <div class="row centered">
+        <div class="col-md-8 col-md-offset-2">
+          <h2>掲載大学一覧</h2>
+        </div>
       </div>
     </div>
-  </div>
+
+    <!--テストゾーン-->
 
 
- <div class="container wb">
-    <div class="row centered">
-      <div class="col-lg-4 col-lg-offset-4">
+
+
+    <!--テストゾーン-->
+
+    <div class="container wb">
+      <div class="row centered">
+        <div class="col-md-4 col-md-offset-4">
           <div class="input-group">
-          <input type="text" class="form-control search-m" placeholder="知りたい大学を検索">
-          <span class="input-group-btn">
-          <button class="btn btn-default search-btn-m" type="button">
-            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-          </button>
-          </span>
+            <input type="text" class="form-control search-m" placeholder="知りたい大学を検索">
+            <span class="input-group-btn">
+              <button class="btn btn-default search-btn-m" type="button">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+              </button>
+            </span>
           </div><!-- /input-group -->
-      </div>
-    </div><!-- row -->
-  </div><!-- container -->
-
-  <div class="container w">
-    <div class="row centered">
-      <br><br>
-      <div class="col-lg-4">
-        <h4>ヨーロッパ</h4>
-            <a href="#" class="list-group-item">Univ1</a>
-            <a href="#" class="list-group-item">Univ2</a>
-            <a href="#" class="list-group-item">Univ3</a>
-      </div><!-- col-lg-4 -->
-
-      <div class="col-lg-4">
-        <h4>北アメリカ</h4>
-            <a href="#" class="list-group-item">Univ1</a>
-            <a href="#" class="list-group-item">Univ2</a>
-            <a href="#" class="list-group-item">Univ3</a>
-      </div><!-- col-lg-4 -->
-
-      <div class="col-lg-4">
-        <h4>アジア</h4>
-            <div class="list-group">
-            <a href="#" class="list-group-item">Univ1</a>
-            <a href="#" class="list-group-item">Univ2</a>
-            <a href="#" class="list-group-item">Univ3</a>
         </div>
-      </div><!-- col-lg-4 -->
-    </div><!-- row -->
+      </div><!-- row -->
+    </div><!-- container -->
     <br>
     <br>
-  </div><!-- container -->
+    <div class="container">
+      <div class="row centered clearfix">
+        <div class="col-md-4">
+          <a href="about.html">
+            <div class="thumnail-box">
+              <?php echo $this->Html->image('university/ghent.jpg', array('height' => '240px'));?> <!-- 写真 -->
+              <div class="thumnail-text-box">
+                <p class="text-on-image thumnail-text">ゲント大学(ベルギー)</p>
+              </div>
+            </div>
+          </a>
+        </div> 
+        <div class="col-md-4">
+          <a href="about.html">
+            <div class="thumnail-box">
+              <?php echo $this->Html->image('university/seatle.jpg', array('height' => '240px'));?> <!-- 写真 -->
+              <div class="thumnail-text-box">
+                <p class="text-on-image thumnail-text">シアトル大学(アメリカ)</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="about.html">
+            <div class="thumnail-box">
+              <?php echo $this->Html->image('university/eth.jpg', array('height' => '240px'));?> <!-- 写真 -->
+              <div class="thumnail-text-box">
+                <p class="text-on-image thumnail-text">スイス連邦工科大学チューリヒ校(スイス)</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div><!-- row -->
+      <br>
+      <br>
+    </div><!-- container -->
 
 
-	<!-- FEATURE SECTION -->
-	<div class="container wb">
-		<div class="row centered">
-			<div class="col-lg-4 col-lg-offset-4">
+    <!-- FEATURE SECTION -->
+    <div class="container wb">
+      <div class="row centered">
+        <h4>現在掲載されていない大学も,追加リクエストを送ることで今後掲載するよう努力していきます</h4>
+
+        <div class="col-md-6 col-md-offset-3">
+
           <div class="input-group">
-          <input type="text" class="form-control" placeholder="追加したい大学をリクエストしてください！">
-          <span class="input-group-btn">
-          <button class="btn btn-default" type="button">送信</button>
-          </span>
+            <input type="text" class="form-control form-m" placeholder="追加したい大学を入力">
+            <span class="input-group-btn">
+              <button class="btn btn-default form-btn-m" type="button">大学追加リクエスト</button>
+            </span>
           </div><!-- /input-group -->
           <p><br><br></p>
-      </div><!-- /.col-lg-6 -->
-    </div><!-- /.row -->
-  </div>
+        </div><!-- /.col-md-6 -->
+      </div><!-- /.row -->
+    </div>
 
   </div>
 </div><!-- 掲載大学一覧↑ -->
@@ -159,46 +180,75 @@
 
 
 
-  <!-- 運営メンバー -->
-  <div id="dg">
-    <div class="container">
-      <div class="row centered">
-        <h2>運営メンバー</h2>
-        <br>
-        <div class="col-lg-4">
-          <div class="tilt">
-          <a href="#"><?php echo $this->Html->image('kohei.jpg', array('class'=>'img-responsive img-circle')); ?></a>
-          </div>
-          <h3>Kohei Arai</h3>
-          <p>sentense</p>
+<!-- 運営メンバー -->
+<div id="dg">
+  <div class="container">
+    <div class="row centered">
+      <h2>運営メンバー</h2>
+      <br>
+      <div class="col-md-4">
+        <div class="tilt">
+          <a href="#"><?php echo $this->Html->image('developer/kohei.jpg', array('class' => 'img-responsive img-circle'));?></a>
         </div>
+        <h3>Kohei Arai</h3>
+        <table class="table">
+          <tbody>
+           <tr>
+            <th>Birthday</th>
+            <td>1993/05/24</td>
+          </tr>
+          <tr>
+            <th>Career</th>
+            <td><ul>
+              <li>2012年 神奈川県立湘南高校卒業</li>
+              <li>2015年 東京工業大学経営システム工学科在籍</li>
+            </ul></td>
+          </tr>
+          <tr>
+            <th>Experience</th>
+            <td>小学生では,メキシコに４年間在住.大学１年次に,アメリカカリフォルニアとフィリピンへ１ヶ月ずつ語学留学その後,2014年から2015年にかけてベルギーゲント大学に派遣交換留学.</td>
+          </tr>
+          <tr>
+            <th>Love</th>
+            <td>海外旅行/ランニング/読書/プログラミング</td>
+          </tr>
+          <tr>
+            <th>Vision</th>
+            <td>自分自身が留学先を</td>
+          </tr>
 
-        <div class="col-lg-4">
-          <div class="tilt">
-          <a href="#"><?php echo $this->Html->image('daichi.jpg', array('class'=>'img-responsive img-circle')); ?></a>
-          </div>
-          <h3>Daichi Ogihara</h3>
-          <p>sentense</p>
-        </div>
+        </tbody>
+      </table>
+      <p></p>
+    </div>
 
-        <div class="col-lg-4">
-          <div class="tilt">
-          <a href="#"><?php echo $this->Html->image('tomoko.jpg', array('class'=>'img-responsive img-circle')); ?></a>
-          </div>
-          <h3>Tomoko Kawano</h3>font-awesome.min
-          <p>sentense</p>
-        </div>
-      </div><!-- row -->
-    </div><!-- container -->
-  </div><!-- DG -->
+    <div class="col-md-4">
+      <div class="tilt">
+        <a href="#"><?php echo $this->Html->image('developer/daichi.jpg', array('class' => 'img-responsive img-circle'));?></a>
+      </div>
+      <h3>Daichi Ogihara</h3>
+      <p>sentense</p>
+    </div>
 
+    <div class="col-md-4">
+      <div class="tilt">
+        <a href="#"><?php echo $this->Html->image('developer/tomoko.jpg', array('class' => 'img-responsive img-circle'));?></a>
+      </div>
+      <h3>Tomoko Kawano</h3>
+      <p>sentense</p>
+    </div>
+  </div><!-- row -->
+</div><!-- container -->
+</div><!-- DG -->
+
+    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-        <!-- Plugin JavaScript -->
+    <!-- Plugin JavaScript -->
     <script src="js/jquery.easing.min.js"></script>
-        <!-- Custom Theme JavaScript -->
+    <!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>
 
   </body>
-</html>
+  </html>

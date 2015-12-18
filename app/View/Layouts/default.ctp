@@ -39,13 +39,25 @@
 		</div>
 		<div id="content">
 			<?php echo $this->fetch('content'); ?>
+
+
 		</div>
+		<div id="f">
+				<div class="container">
+					<div class="row centered">
+						<p class="copyright">
+							Copyright © 2015-2016 connect.com. All Rights Reserved.
+						</p>
+
+					</div><!-- row -->
+				</div><!-- container -->
+			</div><!-- Footer -->
 	</div>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <?php echo $this->Html->script('bootstrap.min.js'); ?>
-    <?php echo $this->Html->script('creative.js'); ?>
-    <?php echo $this->fetch('script'); ?>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<?php echo $this->Html->script('bootstrap.min.js'); ?>
+	<?php echo $this->Html->script('creative.js'); ?>
+	<?php echo $this->fetch('script'); ?>
 </body>
 </html>

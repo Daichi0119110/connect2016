@@ -5,7 +5,7 @@ class UniversitiesController extends AppController {
 	public $uses = array('University','User','Review','Answer','Category','Clip','Country','Picture_uni','Question','Score','Tag');
 
 	public function university($id){
-		
+		$this->set('title',"University | Connect");
 	}
 
 	//開発用（バックエンド）のページ
