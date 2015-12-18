@@ -17,6 +17,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<?php echo $this->Html->script('bootstrap.min.js'); ?>
 	<?php echo $this->Html->script('creative.js'); ?>
+	<?php echo $this->Html->script('slideshow.js'); ?>
 	<?php echo $this->Html->script('Chart.js'); ?>
 	<?php echo $this->fetch('script'); ?>
 
