@@ -543,15 +543,21 @@ a:after {
 /*サムネイル中*/
 .thumnail-box-m{
     height:200px;
-    width:300px;
+    width:292.5px;
     overflow:hidden;
     position: relative;
     /*border-radius: 10px;*/
+    opacity: 0.9;
+}
+
+
+.thumnail-box:hover{
+    opacity: 1.0;
 }
 
 .thumnail-text-box-m{
     position: absolute;
-    bottom:0px;
+    bottom:-30px;
     left: 0px;
     width:100%;
     color: #fff;
@@ -560,7 +566,7 @@ a:after {
 .thumnail-text-m{
     text-align: center;
     width: 100%;
-    font-size:24px;
+    font-size:22px;
 }
 
 /*サムネイル小さい*/
@@ -593,6 +599,7 @@ a:after {
    background-color: rgba(0,0,0, 0.7);
    padding:10px 0;
 }
+
 
 .text-on-image-blue{
     color: white; 
