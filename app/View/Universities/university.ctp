@@ -73,28 +73,26 @@
     <!-- 項目別スコア -->
       <div id="basic">
         <div class="container">
-          <div class="row centered">
-            <div class="col-md-9">
-              <h4>項目別スコア</h4>
-              <div style="width:30%">
-                <canvas id="canvas" height="450" width="450"></canvas>
+          <div class="row">
+          <h4>ゲント大学のスコア</h4>
+           
+
+            <div class="col-md-5">
+              
+              <div style="width:80%">
+                <canvas id="canvas"></canvas>
               </div>
 
             </div>
+             <div class="col-md-7">
+              <div class="row">
+                <h5>項目別スコア</h5>
+                <div class="col-md-6">４つの項目</div>
+                <div class="col-md-6">４つの項目</div>
+                
+              </div>
+            </div>
           </div>
-
-
-                <!-- score -->
-          <div class="row centered">
-                <div class="col-md-4 col-md-offset-1"> <!-- graph -->
-                </div><!-- /col-md-4 -->
-
-                <div class="col-md-2"> <!-- 5star -->
-                </div><!-- /col-md-2 -->
-
-                <div class="col-md-2"> <!-- 5star -->
-                </div><!-- /col-md-2 -->
-          </div><!-- row -->
         </div><!-- container -->
       </div><!-- BASIC -->
 
@@ -305,7 +303,7 @@
 <!-- sidebar -->
 
  <div class="col-md-2 col-md-offset-1">
-  <div class="sidebar">
+  <div class="sidebar-nav affix">
     <nav class="affix-nav">
         <ul class="nav">
             <li><a href="#one">1番目</a></li>
