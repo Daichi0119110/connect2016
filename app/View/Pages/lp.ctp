@@ -191,7 +191,7 @@
           <a href="#"><?php echo $this->Html->image('developer/kohei.jpg', array('class' => 'img-responsive img-circle'));?></a>
         </div>
         <h3>Kohei Arai</h3>
-        <table class="table">
+        <table class="table profile-table">
           <tbody>
            <tr>
             <th>Birthday</th>
@@ -214,7 +214,7 @@
           </tr>
           <tr>
             <th>Vision</th>
-            <td>自分自身が留学先を</td>
+            <td>自分自身が留学先を決めるときに非常に苦労したこと経験が,Connectを開発しようと思ったきっかけ.東工大からゲント大学に過去に留学した人はほとんどいない為,留学前に留学先の十分な情報を得ることができなかった.これからはConnectを通して留学生のネットワークを作り,留学を志す人全員が適切に情報にアクセスし相談できる環境を作っていきたい.</td>
           </tr>
 
         </tbody>

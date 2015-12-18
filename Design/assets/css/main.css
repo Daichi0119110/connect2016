@@ -644,3 +644,9 @@ a:after {
 .top-margin-xs{
     margin-top: 20px;
 }
+
+
+/*自己紹介テーブル*/
+.table-self{
+    text-align: left;
+}

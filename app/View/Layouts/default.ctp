@@ -14,9 +14,18 @@
 	<?php echo $this->Html->css('font-awesome.min.css'); ?>
 	<?php echo $this->Html->css('main.css'); ?>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<?php echo $this->Html->script('bootstrap.min.js'); ?>
+	<?php echo $this->Html->script('creative.js'); ?>
+	<?php echo $this->Html->script('Chart.js'); ?>
+	<?php echo $this->fetch('script'); ?>
+
+
 </head>
 
+
 <body>
+
 	<div id="container">
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
@@ -32,11 +41,11 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li class="active"><a href="index.html">ユーザー登録</a></li>
 						<li><a href="about.html">ログイン</a></li>
-						<li><a data-toggle="modal" data-target="#myModal" href="#myModal"><i class="fa fa-envelope-o"></i></a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>
 		</div>
+
 		<div id="content">
 			<?php echo $this->fetch('content'); ?>
 
@@ -55,9 +64,6 @@
 	</div>
 
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<?php echo $this->Html->script('bootstrap.min.js'); ?>
-	<?php echo $this->Html->script('creative.js'); ?>
-	<?php echo $this->fetch('script'); ?>
+	
 </body>
 </html>
