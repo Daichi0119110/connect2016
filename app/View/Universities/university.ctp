@@ -76,6 +76,10 @@
           <div class="row centered">
             <div class="col-md-9">
               <h4>項目別スコア</h4>
+              <div style="width:30%">
+                <canvas id="canvas" height="450" width="450"></canvas>
+              </div>
+
             </div>
           </div>
 
@@ -497,6 +501,9 @@ $(function(){
         });
     });
 });
+</script>
+<script>
+  chart();
 </script>
 
 

@@ -637,3 +637,12 @@ a:after {
 .top-margin-xs{
     margin-top: 20px;
 }
+
+/*ヘッダー下の謎のスペースを削除するため調整*/
+#content{
+    margin-top: -20px;
+}
+
+.profile-table td{
+    text-align: left;
+}
