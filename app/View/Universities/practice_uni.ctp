@@ -1,10 +1,11 @@
 <br>
 
-<h1><button id="clip1" data-review-id="1">Clip</button></h1>
+<h1>レビュー</h1>
+<h3><button id="clip1" data-review-id="1">Clip</button></h3>
 <br>
-<h1><button id="clip2" data-review-id="2">Clip</button></h1>
+<h3><button id="clip2" data-review-id="2">Clip</button></h3>
 <br>
-<h1><button id="clip3" data-review-id="3">Clip</button></h1>
+<h3><button id="clip3" data-review-id="3">Clip</button></h3>
 <br>
 
 <br>

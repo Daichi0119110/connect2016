@@ -48,7 +48,7 @@ create table universities (
 create table categories (
     id int not null auto_increment primary key,
     category varchar(255),
-    supplement varchar
+    supplement varchar(255),
     question text,
     example text,
     image varchar(255)
@@ -57,7 +57,10 @@ create table categories (
 /*tagsのテーブル作成*/
 create table tags (
     id int not null auto_increment primary key,
-    tag varchar(255)
+    tag varchar(255),
+    quetion text,
+    good text,
+    bad text
 );
 
 
