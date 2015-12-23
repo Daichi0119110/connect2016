@@ -553,6 +553,7 @@ a:after {
     position: absolute;
     bottom:0px;
     left: 0px;
+    height:48px;
     width:100%;
     color: #fff;
 }
@@ -560,7 +561,7 @@ a:after {
 .thumnail-text-m{
     text-align: center;
     width: 100%;
-    font-size:24px;
+    font-size:20px;
 }
 
 /*サムネイル小さい*/
@@ -577,13 +578,14 @@ a:after {
     bottom:0px;
     left: 0px;
     width:100%;
+    height:48px;
     color: #fff;
 }
 
 .thumnail-text-s{
     text-align: center;
     width: 100%;
-    font-size:20px;
+    font-size:18px;
 }
 
 /*サムネイルゆーざー用*/
@@ -609,6 +611,39 @@ a:after {
     font-size:20px;
 }
 
+/*サムネイルゆーざー用小さいバージョン*/
+.thumnail-box-user-s{
+    height:160px;
+    width:160px;
+    overflow:hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+.thumnail-text-box-user-s{
+    position: absolute;
+    bottom:0px;
+    left: 0px;
+    width:100%;
+    height:48px;
+    color: #fff;
+}
+
+.thumnail-text-user-s{
+    text-align: center;
+    width: 100%;
+    font-size:16px;
+}
+
+a:hover .thumnail-box-user-s{
+    opacity: 0.8;
+}
+
+/*review一覧の設定*/
+a:hover .thumnail-box-m{
+    opacity: 0.8;
+}
+
 /*先輩紹介のbox*/
 .senpai-box{
     width:240px;
@@ -619,15 +654,25 @@ a:after {
     padding:0;
 }
 
-a:link .senpai-box{ color: #404040; }
-a:hover .senpai-box{ 
-    color: #404040; 
+a .senpai-box{
+    color: #404040;
+}
+a:hover .senpai-box{
+    color: #404040;
     opacity: 0.8;
 }
 
 .senpai-nav{
-    background-color: 
-    
+    background-color: rgba(25,51,192,0.9);
+    color:#ffffff;
+    text-align: right;
+    padding-right: 5px;
+}
+
+.senpai-nav-f{
+    background-color: rgba(25,51,192,0.9);
+    color:#ffffff;
+    text-align: center;
 }
 
 /*写真の上に置くテキスト*/
@@ -714,3 +759,319 @@ a:hover .senpai-box{
 .score-table th,td{
     font-weight: bold;
 }
+
+/*留学報告書の表*/
+.pdf-table th{
+    text-align: center;
+}
+
+/*レビュー*/
+.review-box{
+    border-radius: 10px;
+    border:solid;
+    overflow: hidden;
+}
+.review-picture{
+    border-radius: 0!important;
+}
+.review-discription{
+    text-align: left;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.review-question{
+    text-align: left;
+}
+
+.review-question-area{
+    margin-left:-30px;
+}
+
+/*吹き出し作成*/
+.arrow_box {
+    position: relative;
+    border: 4px solid #404040;
+    background-color:#FFFBF1;
+    color:#404040;
+    text-align: left;
+    padding:10px;
+    border-radius: 10px;
+    margin:20px;
+}
+.arrow_box:after, .arrow_box:before {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.arrow_box:after {
+    border-color: rgba(64, 64, 64, 0);
+    border-left-color:#FFFBF1;
+    border-width: 20px;
+    margin-top: -20px;
+}
+.arrow_box:before {
+    border-color: rgba(64, 64, 64, 0);
+    border-left-color: #404040;
+    border-width: 26px;
+    margin-top: -26px;
+}
+
+
+/*Clipボタン*/
+.clip-button{
+    float:right;
+    margin-right:20px;
+}
+
+
+
+@font-face {
+  font-family: "LigatureSymbols";
+  src: url("../font/LigatureSymbols-2.11.eot");
+  src: url("../font/LigatureSymbols-2.11.eot?#iefix") format("embedded-opentype"),
+           url("../font/LigatureSymbols-2.11.woff") format("woff"),
+           url("../font/LigatureSymbols-2.11.ttf") format("truetype"),
+           url("../font/LigatureSymbols-2.11.svg#LigatureSymbols") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon-font {
+  font-family: "LigatureSymbols";
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  -ms-text-rendering: optimizeLegibility;
+  -o-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-font-feature-settings: "liga"1, "dlig"1;
+  -moz-font-feature-settings: "liga=1, dlig=1";
+  -ms-font-feature-settings: "liga"1, "dlig"1;
+  -o-font-feature-settings: "liga"1, "dlig"1;
+  font-feature-settings: "liga"1, "dlig"1;
+}
+
+/*------------------------------------------
+// User style start
+// change
+----------------------------------------- */
+
+.general-button  {
+  border-radius: 14px;
+  background-color: #1933c0;
+}
+
+.general-button:before  {
+  border-radius: 14px;
+  border-bottom: 0px solid rgba(16,33,124, 0);
+  background-color: rgba(16,33,124, 0);
+}
+
+.button-content  {
+  border-radius: 0px 0px 14px 14px;
+  padding: 6px 5px;
+  box-shadow: 0px 0px 0px 0px rgba(16,33,124, 0);
+  color: #f8f8f8;
+}
+
+.button-text  {
+  padding: 0px 5px;
+  line-height: 1.1em;
+  font-size: 18px;
+}
+
+.icon-font  {
+  padding: 0px 5px;
+  font-size: 19px;
+}
+
+/*----------------- at hover -----------------*/
+
+.general-button:hover  {
+  top: -3px;
+  transition: all 41ms;
+  -moz-transition: all 41ms;
+  -webkit-transition: all 41ms;
+  -o-transition: all 41ms;
+  background-color: #1a36cd;
+}
+
+.general-button:hover:before  {
+  border-bottom: 3px solid rgba(16,33,124, 0);
+  transition: all 41ms;
+  -moz-transition: all 41ms;
+  -webkit-transition: all 41ms;
+  -o-transition: all 41ms;
+}
+
+.general-button:hover .button-content  {
+  box-shadow: 0px 3px 0px 0px rgba(16,33,124, 1);
+  transition: all 41ms;
+  -moz-transition: all 41ms;
+  -webkit-transition: all 41ms;
+  -o-transition: all 41ms;
+}
+
+/*----------------- at active -----------------*/
+
+.general-button:active  {
+  background-color: #162da9;
+  box-shadow: 0px 1.6px 0px 0px rgba(13,27,101, 1) inset;
+}
+
+.general-button:active:before  {
+  top: -3px;
+  padding-bottom: 3px;
+  border-bottom: 0px solid rgba(16,33,124, 0);
+}
+
+.general-button:active .button-content  {
+  box-shadow: 0px 0px 0px 0px rgba(16,33,124, 0);
+}
+
+/*------------------------------------------
+// User style end
+----------------------------------------- */
+
+/*------------------------------------------
+// Core style start
+// not change
+----------------------------------------- */
+
+.general-button  {
+  display: -moz-inline-box;
+  display: inline-block;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;transition: all 0ms;
+  -moz-transition: all 0ms;
+  -webkit-transition: all 0ms;
+  -o-transition: all 0ms;position: relative;
+  top: 0px;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+  margin-top: 5px;
+}
+
+.general-button:before  {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.button-content  {
+  display: table;
+  transition: all 0ms;
+  -moz-transition: all 0ms;
+  -webkit-transition: all 0ms;
+  -o-transition: all 0ms;
+}
+
+.button-text  {
+  display: table-cell;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+.icon-font  {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/*----------------- at hover -----------------*/
+
+.general-button:hover  {
+  transition-timing-function: ease-in-out;
+}
+
+.general-button:hover:before  {
+  transition-timing-function: ease-in-out;
+}
+
+.general-button:hover .button-content  {
+  transition-timing-function: ease-in-out;
+}
+
+/*----------------- at active -----------------*/
+
+.general-button:active  {
+  top: 0px;
+  transition: all 0ms;
+  -moz-transition: all 0ms;
+  -webkit-transition: all 0ms;
+  -o-transition: all 0ms;
+}
+
+.general-button:active:before  {
+  transition: all 0ms;
+  -moz-transition: all 0ms;
+  -webkit-transition: all 0ms;
+  -o-transition: all 0ms;
+}
+
+.general-button:active .button-content  {
+  transition: all 0ms;
+  -moz-transition: all 0ms;
+  -webkit-transition: all 0ms;
+  -o-transition: all 0ms;
+}
+
+/*------------------------------------------
+// Core style end
+----------------------------------------- */
+
+/*------------------------------------------
+// Touch style start
+----------------------------------------- */
+
+/*----------------- at hover -----------------*/
+
+.touch .general-button:hover  {
+  top: 0px;
+  background-color: #1933c0;
+}
+
+.touch .general-button:hover:before  {
+  border-bottom: 0px solid rgba(16,33,124, 0);
+}
+
+.touch .general-button:hover .button-content  {
+  box-shadow: 0px 0px 0px 0px rgba(16,33,124, 1);
+
+}
+
+/*----------------- at active -----------------*/
+
+.touch .general-button:active  {
+  background-color: #162da9;
+  box-shadow: 0px 1.6px 0px 0px rgba(13,27,101, 1) inset;
+}
+
+.touch .general-button:active:before  {
+  top: -3px;
+  padding-bottom: 3px;
+  border-bottom: 0px solid rgba(16,33,124, 0);
+}
+
+.touch .general-button:active .button-content  {
+  box-shadow: 0px 0px 0px 0px rgba(16,33,124, 0);
+}
+
+/*------------------------------------------
+// Touch style end
+----------------------------------------- */
