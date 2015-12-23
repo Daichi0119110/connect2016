@@ -609,6 +609,15 @@ a:after {
     font-size:20px;
 }
 
+/*サムネイルゆーざー個人ページ用*/
+.thumnail-box-user-s{
+    height:240px;
+    width:240px;
+    overflow:hidden;
+    border: 5px white solid;
+}
+
+
 /*先輩紹介のbox*/
 .senpai-box{
     width:240px;
@@ -713,4 +722,13 @@ a:hover .senpai-box{
 
 .score-table th,td{
     font-weight: bold;
+}
+
+
+/*ユーザー個人ページ写真*/
+#userpic{
+    position: absolute;
+    z-index: 100;
+    top: 300px;
+    left: 20px;
 }
