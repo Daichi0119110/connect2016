@@ -41,14 +41,15 @@
         <!-- Search -->
         <div class="wb">
           <div class="row centered">
-            <div class="col-md-9">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="▲▲大学について検索">
-                <span class="input-group-btn">
-                  <button class="btn btn-default" type="button">送信</button>
-                </span>
-              </div><!-- /input-group -->
-            </div><!-- /.col-md-9 -->
+          <h4>▼▼ ゲント大学についてキーワード検索 ▼▼</h4>
+            <div class="input-group">
+          <input type="text" class="form-control search-m" placeholder="キーワードで検索　（例:放課後の過ごし方, VISA, 留学生比率)">
+          <span class="input-group-btn">
+            <button class="btn btn-default search-btn-m" type="button">
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </button>
+          </span>
+        </div><!-- /input-group -->
           </div><!-- /.row -->
         </div>
 
@@ -56,16 +57,7 @@
 
         <!-- バナー -->
         <div class="wb">
-          <div class="row centered">
-            <div class="col-md-9">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="▲▲大学について検索">
-                <span class="input-group-btn">
-                  <button class="btn btn-default" type="button">送信</button>
-                </span>
-              </div><!-- /input-group -->
-            </div><!-- /.col-md-9 -->
-          </div><!-- /.row -->
+         
         </div>
 
 
@@ -299,7 +291,9 @@
 
 
       <!-- pickup review -->
-      <div class="row centered">
+      <div class="row centered top-margin-m">
+      <h2>ピックアップレビュー</h2>
+        
 
       </div>
       <!-- pickup review -->
