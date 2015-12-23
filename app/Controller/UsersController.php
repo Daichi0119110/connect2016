@@ -17,10 +17,6 @@ class UsersController extends AppController {
 		
 	}
 
-	public function practice(){
-
-	}
-
 	public function login(){
 		$this->autoRender = false;
 		$this->autoLayout = false;
@@ -35,7 +31,7 @@ class UsersController extends AppController {
 		}
 
 		$this->User->login($_SESSION['me']['facebook_id']);
-		header('Location: http://localhost/connect2016/');
+		header('Location: '.SITE_URL); // lpに戻る
 		exit;
 	}
 }

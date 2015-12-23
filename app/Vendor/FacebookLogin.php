@@ -31,9 +31,9 @@ class FacebookLogin {
       $this->_save($accessToken);       // ここで終了
       return;
     } elseif ($helper->getError()) {
-      header('Location: http://localhost/connect2016/users/practice');
+      header('Location: '.SITE_URL.'users/practice');
     } else {
-      $loginUrl = $helper->getLoginUrl("http://localhost/connect2016/users/login");
+      $loginUrl = $helper->getLoginUrl(SITE_URL."/users/login");
       header('Location: ' . $loginUrl);
     }
   }

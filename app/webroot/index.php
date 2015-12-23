@@ -6,6 +6,9 @@ if (!defined('DS')) {
 
 session_start();
 
+// ドメイン
+define('SITE_URL','http://localhost/connect2016/');
+
 // facebookログイン関係
 define('APP_ID','540947999389389');
 define('APP_SECRET','d03780bccce3372486177f508172d4b0');
