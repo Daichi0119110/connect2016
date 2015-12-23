@@ -242,8 +242,7 @@
 
 
 <!-- sidebar -->
-
- <div class="col-md-2 col-md-offset-1">
+<div class="col-md-2 col-md-offset-1">
   <div class="sidebar-nav affix">
     <nav class="affix-nav">
         <ul class="nav">
