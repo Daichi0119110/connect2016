@@ -1,7 +1,11 @@
 <?php 
+
+// Facebook関連の読み込み
 App::import('vendor','FacebookLogin'); //FacebookLoginクラスを読み込み
 App::import('vendor','Facebook'); //Facebookクラスを読み込み
 App::import('Vendor','facebook',array('file' => 'facebook'.DS.'php-sdk-v4'.DS.'src'.DS.'Facebook.php'));
+
+
 class UsersController extends AppController {
 	public $helper = array('HTML', 'form');
 
