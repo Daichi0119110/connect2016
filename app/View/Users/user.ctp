@@ -9,7 +9,7 @@
 
     <!-- user picture始 -->
     <div id="userpic">
-    <div class="thumnail-box-user-s">
+    <div class="thumnail-box-user-profile">
     <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '240px'));?>
     </div>
     </div>
