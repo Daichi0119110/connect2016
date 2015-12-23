@@ -39,7 +39,7 @@
 
 
       <!-- Search -->
-      <div class="container wb">
+      <div class="wb">
         <div class="row centered">
           <div class="col-md-9">
               <div class="input-group">
@@ -55,7 +55,7 @@
 
 
     <!-- バナー -->
-      <div class="container wb">
+      <div class="wb">
         <div class="row centered">
           <div class="col-md-9">
               <div class="input-group">
@@ -70,31 +70,63 @@
 
 
 
-    <!-- 項目別スコア -->
-      <div id="basic">
-        <div class="container">
-          <div class="row">
-          <h4>ゲント大学のスコア</h4>
-           
+      <!-- 項目別スコア -->
+      <div id="score" class="top-margin-m">
+        
+          <h2 class="">ゲント大学のスコア</h2>
 
-            <div class="col-md-5">
-              
-              <div style="width:80%">
-                <canvas id="canvas"></canvas>
-              </div>
+          <div class="canvas center-block top-margin-xs">
+              <canvas id="canvas"></canvas>
+            </div>
+<div class="row top-margin-s">
+<div class="score-total">レビュー総合評価　3.4<span class="default-star"></span><span style="margin-left:40px;font-size:18px;">回答者:6人</span></div>
 
-            </div>
-             <div class="col-md-7">
-              <div class="row">
-                <h5>項目別スコア</h5>
-                <div class="col-md-6">４つの項目</div>
-                <div class="col-md-6">４つの項目</div>
-                
-              </div>
-            </div>
+<div class="col-md-6">
+<table class="table score-table">
+          <tbody>
+           <tr>
+            <th>旅行のしやすさ</th>
+            <td>3.4<span class="default-star"></span></td>
+          </tr>
+          <tr>
+            <th>町の過ごしやすさ</th>
+            <td>3.4<span class="default-star"></span></td>
+          </tr>
+          <tr>
+            <th>大学キャンパスの快適さ</th>
+            <td>3.4<span class="default-star"></span></td>
+          </tr>
+          <tr>
+            <th>授業レベルの高さ</th>
+            <td>3.4<span class="default-star"></span></td>
+          </tr>
+        </tbody>
+      </table>
           </div>
-        </div><!-- container -->
-      </div><!-- BASIC -->
+          <div class="col-md-6">
+          <table class="table score-table">
+          <tbody>
+           <tr>
+            <th>治安の良さ</th>
+            <td>3.4<span class="default-star"></span></td>
+          </tr>
+          <tr>
+            <th>食事面での満足度</th>
+            <td>3.4<span class="default-star"></span></td>
+          </tr>
+          <tr>
+            <th>住居環境の良さ</th>
+            <td>3.4<span class="default-star"></span></td>
+          </tr>
+          <tr>
+            <th>物価の手軽さ</th>
+            <td>3.4<span class="default-star"></span></td>
+          </tr>
+        </tbody>
+      </table>
+          </div>
+        </div>
+    </div><!-- BASIC -->
 
 
 <!-- 項目別レビュー -->
@@ -221,32 +253,43 @@
 
 
 <!-- senpai intros -->
-        <div id="basic">
-          <div class="container">
-              <div class="row centered">
-                <div class="col-md-9">
-                  <h4>▲▲大学の先輩紹介</h4>
-                </div>
+          <div class="row centered clearfix">
+          <h2>ゲント大学の先輩紹介</h2>
+        <div class="col-md-4">
+          <a href="about.html">
+            <div class="senpai-box">
+            <div class="thumnail-box-user">
+              <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '240px'));?> <!-- 写真 -->
+              <div class="thumnail-text-box-user">
+                <p class="text-on-image thumnail-text-user">新居航平</p>
               </div>
-
-            <div class="row centered">
-              <div class="col-md-3"> <!-- 1-->
-              <h1>PIC</h1>
-              <h1>A1</h1>
-              </div><!-- /col-md-3 -->
-
-              <div class="col-md-3"> <!-- 2 -->
-              <h1>PIC</h1>
-              <h1>A2</h1>
-              </div><!-- /col-md-3 -->
-
-              <div class="col-md-3"> <!-- 3 -->
-              <h1>PIC</h1>
-              <h1>A3</h1>
-              </div><!-- /col-md-3 -->
             </div>
-          </div><!-- container -->
-        </div><!-- basic -->
+            <p class="senpai-nav">2014-2015年に留学</p>
+            <p>自分自身が留学先を決めるときに非常に苦労したこと経験が, Connectを開発しようと思ったきっかけ.東工大からゲント大学に過去に留学した人はほとんどいない為,留学前に留学先の十分な情報を得ることができなかった.これからはConnectを通して留学生のネットワークを作り,留学を志す人全員が適切に情報にアクセスし相談できる環境を作っていきたい.</p>
+          </div>
+          </a>
+        </div> 
+        <div class="col-md-4">
+          <a href="about.html">
+            <div class="thumnail-box">
+              <?php echo $this->Html->image('university/seatle.jpg', array('height' => '240px'));?> <!-- 写真 -->
+              <div class="thumnail-text-box-s">
+                <p class="text-on-image thumnail-text">シアトル大学(アメリカ)</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="about.html">
+            <div class="thumnail-box">
+              <?php echo $this->Html->image('university/eth.jpg', array('height' => '240px'));?> <!-- 写真 -->
+              <div class="thumnail-text-box">
+                <p class="text-on-image thumnail-text">スイス連邦工科大学チューリヒ校(スイス)</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div><!-- row -->
 <!-- senpai intros -->
 
 
@@ -321,6 +364,12 @@
 
 <script>
   chart();
+
+  $.fn.raty.defaults.path = "../../img/star-score";
+
+
+  $('.default-star').raty({ readOnly: true, score: 3.3 });
+
 </script>
 
 
