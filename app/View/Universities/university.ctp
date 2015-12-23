@@ -61,7 +61,7 @@
         </div>
 
 
-
+<hr>
         <!-- 項目別スコア -->
         <div id="score" class="top-margin-m">
 
@@ -120,7 +120,7 @@
       </div>
     </div><!-- BASIC -->
 
-
+<hr>
     <!-- 項目別レビュー -->
     <div class="row centered">
 
@@ -231,7 +231,7 @@
       </div><!-- row3 -->
       <!-- 項目別レビュー終 -->
 
-
+<hr>
       <!-- senpai intros -->
       <div class="row centered clearfix top-margin-m">
         <h2>ゲント大学の先輩紹介</h2>
@@ -289,15 +289,57 @@
       <!-- senpai intros -->
 
 
-
+<hr>
       <!-- pickup review -->
       <div class="row centered top-margin-m">
       <h2>ピックアップレビュー</h2>
-        
-
+        <!--ピックアップレビュー１つの塊-->
+          <div class="review-box">
+          <div class="row">
+            <div class="col-md-3">
+                  <div class="thumnail-box-s review-picture">
+                      <?php echo $this->Html->image('category/category_travel.jpg', array('height' => '120px'));?>
+                      <div class="thumnail-text-box-s">
+                        <p class="text-on-image thumnail-text-s">旅行</p>
+                      </div>
+                </div>
+            </div>
+            <div class="col-md-9 review-question-area">
+              <h3 class="review-discription">その地域からの旅行の行きやすさ</h3>
+              <p class="review-question">Question: <br>
+              その地域からの国内旅行や近辺の地域への旅行のしやすさについて教えてください。(地理的な影響や交通機関へのアクセスなど）</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-9">
+              <div class="arrow_box">国内旅行に関しては、学生限定で国内のどこでも片道５ユーロ程度でいける特別電車乗車券があり、週末を利用してよく国内旅行へ出かけている。海外旅行に関しても、ベルギーはヨーロッパの中心にあることから、ヨーロッパであればどこでも比較的にアクセスしやすいと言える。ゲントから空港までもシャトルバスが出ており、簡単に空港にたどり着くことができる。<br>
+                <div class="row">
+                <div class="general-button clip-button">
+                  <div class="button-content">
+                    <i class="fa fa-pencil-square-o fa-1x"></i>
+                    <span class="button-text">クリップ</span>
+                  </div>
+                
+                </div>
+              </div>
+</div>
+            </div>
+            <div class="col-md-3">
+              <a href="">
+              <div class="thumnail-box-user-s">
+                <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '160px'));?> <!-- 写真 -->
+                <div class="thumnail-text-box-user-s">
+                  <p class="text-on-image thumnail-text-user-s">新居航平</p>
+                </div>
+              </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!--ピックアップレビュー１つの塊終了-->
       </div>
       <!-- pickup review -->
-
+<hr>
       <!-- pdfダウンロード始 -->
       <!-- pickup review -->
       <div class="row centered top-margin-m">
