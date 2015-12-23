@@ -19,6 +19,8 @@
 	<?php echo $this->Html->script('creative.js'); ?>
 	<?php echo $this->Html->script('slideshow.js'); ?>
 	<?php echo $this->Html->script('Chart.js'); ?>
+	<?php echo $this->Html->script('jquery.raty.js'); ?>
+
 	<?php echo $this->fetch('script'); ?>
 
 
