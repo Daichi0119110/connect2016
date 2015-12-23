@@ -586,6 +586,50 @@ a:after {
     font-size:20px;
 }
 
+/*サムネイルゆーざー用*/
+.thumnail-box-user{
+    height:240px;
+    width:240px;
+    overflow:hidden;
+    position: relative;
+    /*border-radius: 10px 10px 0 0;*/
+}
+
+.thumnail-text-box-user{
+    position: absolute;
+    bottom:0px;
+    left: 0px;
+    width:100%;
+    color: #fff;
+}
+
+.thumnail-text-user{
+    text-align: center;
+    width: 100%;
+    font-size:20px;
+}
+
+/*先輩紹介のbox*/
+.senpai-box{
+    width:240px;
+    text-align: left;
+    border-radius: 10px;
+    border:solid;
+    overflow: hidden;
+    padding:0;
+}
+
+a:link .senpai-box{ color: #404040; }
+a:hover .senpai-box{ 
+    color: #404040; 
+    opacity: 0.8;
+}
+
+.senpai-nav{
+    background-color: 
+    
+}
+
 /*写真の上に置くテキスト*/
 .text-on-image{
     color: white; 
@@ -645,4 +689,28 @@ a:after {
 
 .profile-table td{
     text-align: left;
+}
+
+
+/*スコアグラフ*/
+.canvas{
+    width:800px;
+    height:400px;
+}
+
+/*スターレビュースコア*/
+.default-star{
+    margin-left: 30px;
+    margin-top:-5px;
+}
+.default-star img{
+    width:20px;
+}
+
+.score-total{
+    font-size: 24px;
+}
+
+.score-table th,td{
+    font-weight: bold;
 }

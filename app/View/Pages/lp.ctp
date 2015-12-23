@@ -216,6 +216,12 @@
             <th>Vision</th>
             <td>自分自身が留学先を決めるときに非常に苦労したこと経験が,Connectを開発しようと思ったきっかけ.東工大からゲント大学に過去に留学した人はほとんどいない為,留学前に留学先の十分な情報を得ることができなかった.これからはConnectを通して留学生のネットワークを作り,留学を志す人全員が適切に情報にアクセスし相談できる環境を作っていきたい.</td>
           </tr>
+          <tr>
+                <th>Facebook</th>
+                <td><a href="https://www.facebook.com/kohei.arai.5"> Kohei's facebook page</a>
+                </td>
+              </tr>
+
 
         </tbody>
       </table>
@@ -227,7 +233,38 @@
         <a href="#"><?php echo $this->Html->image('developer/daichi.jpg', array('class' => 'img-responsive img-circle'));?></a>
       </div>
       <h3>Daichi Ogihara</h3>
-      <p>sentense</p>
+       <table class="table profile-table">
+         <tbody>
+          <tr>
+           <th>Birthday</th>
+           <td>1994/01/19</td>
+         </tr>
+         <tr>
+           <th>Career</th>
+           <td><ul>
+             <li>2012年 東京都立井草高校卒業</li>
+             <li>2015年 東京工業大学機械科学科在籍</li>
+           </ul></td>
+         </tr>
+         <tr>
+           <th>Experience</th>
+           <td>中学生の時にオーストラリアで10日間のホームステイを経験.大学時代にはアメリカに1か月間滞在し,アメリカ横断.ずっと楽しみにしていた交換留学は,語学力の低さから受け入れ拒否をされた経験あり.</td>
+         </tr>
+         <tr>
+           <th>Love</th>
+           <td>フットサル/ビリヤード/プログラミング</td>
+         </tr>
+         <tr>
+           <th>Vision</th>
+           <td>エンジニアとして価値のあるサービスを作り出したいと思っていたところに,connectの話を聞きjoin.現在困っている人たちの手助けになるような価値あるサービスを開発するために日々コードと奮闘中.</td>
+         </tr>
+ <tr>
+                <th>Facebook</th>
+                <td><a href="https://www.facebook.com/daichi.ogihara.9"> Daichi's facebook page</a>
+                </td>
+              </tr>
+       </tbody>
+     </table>
     </div>
 
     <div class="col-md-4">
