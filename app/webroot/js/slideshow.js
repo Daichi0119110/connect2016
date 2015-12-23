@@ -5,7 +5,7 @@ $(function(){
         setThumbNail = $('.thumbNail'),
         setMaxWidth = 800,
         setMinWidth = 320,
-        thumbNum = 6,
+        thumbNum = 10,
         thumbOpc = 0.5,
         fadeTime = 500,
         delayTime = 3000,
