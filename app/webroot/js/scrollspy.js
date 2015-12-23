@@ -1,22 +1,24 @@
-$(function(){
- 
-    $('nav.affix-nav').affix({
-        offset:{
-            top: 300,
-            bottom:300
-        }
-    }).on('affix.bs.affix', function () {
-        $(this).css({
-                'top': '0'
-        });
-        console.log('affix.bs.affix');
-    }).on('affixed.bs.affix', function(){
-        console.log('affixed.bs.affix');
-    }).on('affix-bottom.bs.affix', function(){
-        console.log('affix-bottom.bs.affix');
-    }).on('affixed-bottom.bs.affix', function(){
-        console.log('affixed-bottom.bs.affix');
+  (function(window, $) {
+    'use strict';
+    $(function() {
+      // スクロール位置と連動させない場合は不要(scrollspy用)
+      $(document.body).scrollspy({ target: '.sidebar' });
+
+      // スクロール位置と連動させない場合は不要(scrollspy用)
+      $(window).on('load', function() { $(document.body).scrollspy('refresh') });
+
+      // 固定サイドバーのスクロール追従開始&終了位置の設定(affix用)
+      setTimeout(function() {
+        $('.sidebar').affix({
+          offset: {
+            top: function() {
+              return (this.top = $('header').outerHeight(true));
+            },
+            bottom: function() {
+              return (this.bottom = $('footer').outerHeight(true));
+            }
+          }
+        })
+      }, 100);
     });
- 
-    $('body').scrollspy({ target: 'nav.affix-nav' })
-});
+  })(window, jQuery);

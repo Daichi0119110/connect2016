@@ -23,7 +23,7 @@
       <div class="col-md-10 col-md-offset-1 top-margin-l">
         <div class="row">
           <div class="col-md-6">
-            <a href="#about" class="btn btn-default btn-ghost page-scroll top-nav">Connectとは？</a>
+            <a href="#whatconnect" class="btn btn-default btn-ghost page-scroll top-nav">Connectとは？</a>
           </div>
           <div class="col-md-6">
             <a href="#search" class="btn btn-default btn-ghost page-scroll top-nav">掲載大学一覧へ</a>
@@ -37,7 +37,7 @@
 
 
 
-<div class="container wb" id="about">
+<div class="container wb" id="whatconnect">
   <div class="row centered">
     <br><br>
     <div class="col-md-8 col-md-offset-2">
