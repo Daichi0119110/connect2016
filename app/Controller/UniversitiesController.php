@@ -17,6 +17,20 @@ class UniversitiesController extends AppController {
 		// debug($university);
 		// debug($tags);
 		// debug($categories);
+
+		$score = array();
+
+		for ($i=0; $i < 9; $i++) { 
+			$total = 0;
+			$j = 0;
+			foreach ($tags[$i]['Score'] as $tag) {
+				$total = $total + $tag['score'];
+				$j++;
+			}
+			$score[$tags[$i]['Tag']['tag']] = round($total/$j,1);
+		}
+
+		debug($score);
 	}
 	
 }
