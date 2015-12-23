@@ -15,6 +15,7 @@
 	<?php echo $this->Html->css('main.css'); ?>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<?php echo $this->Html->script('bootstrap.min.js'); ?>
 	<?php echo $this->Html->script('creative.js'); ?>
 	<?php echo $this->Html->script('slideshow.js'); ?>
@@ -38,12 +39,12 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">CONNECT</a>
+					<a class="navbar-brand" href="<?php echo SITE_URL; ?>">CONNECT</a>
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="index.html">ユーザー登録</a></li>
-						<li><a href="about.html">ログイン</a></li>
+						<li class="active"><a href="<?php echo SITE_URL; ?>users/login">ユーザー登録</a></li>
+						<li><a href="<?php echo SITE_URL; ?>users/login">ログイン</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>
