@@ -24,4 +24,22 @@ class User extends AppModel {
 		);
 		return $this->find('first',$status);
 	}
+
+	function login($facebook_id){
+		$status=array(
+			'conditions'=>array('facebook_id'=>$facebook_id)
+		);
+		$user = $this->find('first',$status);
+		
+		if($user){
+			// すでに登録したことがあれば
+			$this->id = $user['User']['id'];
+			$this->save('modified',date('Y-m-d H:i:s'));
+
+		}else{
+			// 初めてのログイン（＝usersにデータがない）ならば
+			$this->save($_SESSION['me']);
+		}
+		return;
+	}
 }
