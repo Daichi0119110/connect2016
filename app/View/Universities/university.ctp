@@ -53,11 +53,13 @@
           </div><!-- /.row -->
         </div>
 
-
-
         <!-- バナー -->
         <div class="wb">
-         
+                 <div class="row centered">
+          <div class="col-md-9">
+            <a href="#1"><?php echo $this->Html->image('banner_question.jpg');?></a>
+          </div><!-- /.col-md-9 -->
+        </div><!-- /.row -->
         </div>
 
 
