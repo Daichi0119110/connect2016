@@ -553,6 +553,7 @@ a:after {
     position: absolute;
     bottom:0px;
     left: 0px;
+    height:48px;
     width:100%;
     color: #fff;
 }
@@ -560,7 +561,7 @@ a:after {
 .thumnail-text-m{
     text-align: center;
     width: 100%;
-    font-size:24px;
+    font-size:20px;
 }
 
 /*サムネイル小さい*/
@@ -609,6 +610,11 @@ a:after {
     font-size:20px;
 }
 
+/*review一覧の設定*/
+a:hover .thumnail-box-m{
+    opacity: 0.8;
+}
+
 /*先輩紹介のbox*/
 .senpai-box{
     width:240px;
@@ -619,15 +625,25 @@ a:after {
     padding:0;
 }
 
-a:link .senpai-box{ color: #404040; }
-a:hover .senpai-box{ 
-    color: #404040; 
+a .senpai-box{
+    color: #404040;
+}
+a:hover .senpai-box{
+    color: #404040;
     opacity: 0.8;
 }
 
 .senpai-nav{
-    background-color: 
-    
+    background-color: rgba(25,51,192,0.9);
+    color:#ffffff;
+    text-align: right;
+    padding-right: 5px;
+}
+
+.senpai-nav-f{
+    background-color: rgba(25,51,192,0.9);
+    color:#ffffff;
+    text-align: center;
 }
 
 /*写真の上に置くテキスト*/
@@ -713,4 +729,9 @@ a:hover .senpai-box{
 
 .score-table th,td{
     font-weight: bold;
+}
+
+/*留学報告書の表*/
+.pdf-table th{
+    text-align: center;
 }
