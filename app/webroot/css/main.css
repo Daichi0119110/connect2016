@@ -350,10 +350,10 @@ a:after {
 
 /*sidebar*/
 .affix-nav{
-    width:263px;
+    width:300px;
 }
 .affix-nav.affix{
-    top:50;
+    top:50px;
     position:fixed;
 }
 .affix-nav.affix-top{
@@ -363,16 +363,17 @@ a:after {
     position:absolute;
 }
 .affix-nav .nav li{
-    background-color:#8f8;
-    border-left:1px solid gray;
-    border-right:1px solid gray;
-    border-bottom:1px solid gray;
+    background-color:#FFFBF1;
+    border-left:1px solid #1933C0;
+    border-right:1px solid #1933C0;
+    border-bottom:1px solid #1933C0;
+    border-radius: 2px;
 }
 .affix-nav .nav li:first-child{
     border-top:1px solid gray;
 }
 .affix-nav .nav li.active{
-    background-color:#4c4;
+    background-color:rgba(25, 51, 192, 90);
 }
 
 /*sidebar*/
@@ -612,11 +613,11 @@ a:after {
 }
 
 
-/*サムネイルゆーざー個人ページ用*/
+/*サムネイルゆーざープロフィール用*/
 .thumnail-box-user-profile{
-    height:240px;
-    width:240px;
-    overflow:hidden;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
     border: 5px white solid;
 }
 
@@ -770,12 +771,36 @@ a:hover .senpai-box{
 }
 
 
+/*スコアグラフ小*/
+.canvas-s{
+    width:300px;
+    height:auto;
+}
+
+/*スターレビュースコア小*/
+.default-star-s{
+    margin-left: 20px;
+    margin-top:-5px;
+}
+.default-star-s img{
+    width:15px;
+}
+
+.score-total-s{
+    font-size: 18px;
+}
+
+.score-table-s th,td{
+    font-weight: bold;
+}
+
+
 /*ユーザー個人ページ写真*/
 #userpic{
     position: absolute;
     z-index: 100;
-    top: 300px;
-    left: 20px;
+    top: 250px;
+    left: 7%;
 }
 
 
