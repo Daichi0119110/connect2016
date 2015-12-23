@@ -7,8 +7,8 @@ $(function(){
         setMinWidth = 320,
         thumbNum = 6,
         thumbOpc = 0.5,
-        fadeTime = 1000,
-        delayTime = 5000,
+        fadeTime = 500,
+        delayTime = 3000,
         sideNavi = 'off', // 'on' or 'off'
         autoPlay = 'on'; // 'on' or 'off'
  
