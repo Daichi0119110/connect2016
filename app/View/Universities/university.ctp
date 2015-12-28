@@ -183,6 +183,9 @@
         <?php } ?>
 
       </div><!-- row -->
+      <div class="row">
+          <p class="view-more-btn">▼▼ 他の先輩も見る ▼▼</p>
+        </div>
       <!-- senpai intros -->
 
 
@@ -346,8 +349,26 @@ function chart(){
     ]
   };
 
+
+var options = {
+        scaleOverride : true,
+        scaleSteps : 5,
+        scaleStepWidth : 1,
+         //Number - 目盛りの線の幅  
+        scaleStartValue : 0,
+    };
+
+
+
+
+
+
+
+
+
+
   window.onload = function(){
-    window.myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData, {
+    window.myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData,options, {
       responsive: true
     });
   }

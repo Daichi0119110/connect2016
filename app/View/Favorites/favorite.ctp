@@ -1,6 +1,6 @@
 <div class="container">
   <h2>お気に入りリスト</h2>
-  <div class="row">
+  <div class="row top-margin-s">
 
     <div class="col-md-4">
 
