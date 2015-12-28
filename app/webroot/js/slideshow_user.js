@@ -9,7 +9,7 @@ $(function(){
         thumbOpc = 0.5,
         fadeTime = 500,
         delayTime = 3000,
-        sideNavi = 'off', // 'on' or 'off'
+        sideNavi = 'on', // 'on' or 'off'
         autoPlay = 'on'; // 'on' or 'off'
  
         setWrap.each(function(){

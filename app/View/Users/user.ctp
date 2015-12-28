@@ -49,6 +49,7 @@
 
 
                   <div class="thumbNail">
+                  <div class="user">
                   <ul>
                   <li><?php echo $this->Html->image('university/ghent.jpg', array('height' => '50px'));?></li>
                   <li><?php echo $this->Html->image('sample/photo1.jpg');?></li>
@@ -63,7 +64,7 @@
                   <li><?php echo $this->Html->image('university/ghent.jpg', array('height' => '50px'));?></li>
                   <li><?php echo $this->Html->image('sample/photo6.jpg');?></li>
                   </ul>
-
+                  </div>
                   </div><!--/.thumbNail-->
           </div><!--/.slideShow-->
       </div><!-- row -->
@@ -169,7 +170,7 @@
       <h2>レビュー</h2>
                 <!--レビュー１つの塊-->
                 <div  id="review-sub-1" class="padding-m">
-                <divclass="review-box">
+                <div class="review-box">
                   <div class="row">
                     <div class="col-md-3">
                           <div class="thumnail-box-s review-picture">
@@ -210,6 +211,7 @@
                       </a>
                     </div>
                   </div>
+                </div>
                 </div>
                 <!--レビュー１つの塊終了-->
 
@@ -436,4 +438,6 @@
 
 </script>
 
+<!-- slideshow_user -->
+<?php echo $this->Html->script( 'slideshow_user.js', array('inline' => 'false')); ?>
 
