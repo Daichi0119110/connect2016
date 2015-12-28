@@ -8,7 +8,7 @@
       <div class="content">
 
 <div class="padding-s clearfix">
-  <div class="page-title">ゲント大学 </div><p class="favorite-btn fa fa-heart"> お気に入り登録</p><div class="page-sub-title"></div>
+  <div class="page-title"><?php echo $university['University']['university']; ?></div><p class="favorite-btn fa fa-heart"> お気に入り登録</p><div class="page-sub-title"></div>
 </div>
         <!-- スライドショー始 -->
         <div class="row">
@@ -215,9 +215,9 @@
                 <div class="general-button clip-button">
                   <div class="button-content">
                     <i class="fa fa-pencil-square-o fa-1x"></i>
-                    <span class="button-text">クリップ</span>
+                    <span class="button-text" id="review<?php echo $category['Pickup']['Review']['id']; ?>" data-review-id="<?php echo $category['Pickup']['Review']['id']; ?>">クリップ</span>
+                    <!-- span要素にclickイベントが聞いていない -->
                   </div>
-
                 </div>
               </div>
             </div>
@@ -253,30 +253,15 @@
               </tr>
            </thead>
          <tbody>
+          <?php foreach($university['Report'] as $report) { ?>
           <tr>
-            <td>2014/7-2015/6</td>
-            <td>新居航平</td>
-            <td>ゲント大学留学報告書.pdf</td>
+            <td><?php echo $report['User']['study_start']."〜".$report['User']['study_end']; ?></td>
+            <td><?php echo $report['User']['name']; ?></td>
+            <td><?php echo $report['filename']; ?></td>
             <td><a href="">ダウンロード</a></td>
           </tr>
-          <tr>
-            <td>2014/7-2015/6</td>
-            <td>新居航平</td>
-            <td>ゲント大学留学報告書.pdf</td>
-            <td><a href="">ダウンロード</a></td>
-          </tr>
-          <tr>
-            <td>2014/7-2015/6</td>
-            <td>新居航平</td>
-            <td>ゲント大学留学報告書.pdf</td>
-            <td><a href="">ダウンロード</a></td>
-          </tr>
-          <tr>
-            <td>2014/7-2015/6</td>
-            <td>新居航平</td>
-            <td>ゲント大学留学報告書.pdf</td>
-            <td><a href="">ダウンロード</a></td>
-          </tr>
+          <?php } ?>
+          
         </tbody>
       </table>
     </div>
@@ -299,7 +284,7 @@
           <ul class="nav">
 
         <div class="input-group top-margin-s">
-          <input type="text" class="form-control search-s" placeholder="ゲント大学に関して検索">
+          <input type="text" class="form-control search-s" placeholder="<?php echo $university['University']['university']; ?>に関して検索">
           <span class="input-group-btn">
             <button class="btn btn-default search-btn-s" type="button">
               <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -310,40 +295,22 @@
             <li>
               <a href="#review">▶項目別レビュー</a>
               <ul class="nav">
-                <li><a href="#review-sub-1">旅行</a></li>
-                <li><a href="#review-sub-2">環境</a></li>
-                <li><a href="#review-sub-3">物価</a></li>
-                <li><a href="#review-sub-4">住居</a></li>
-                <li><a href="#review-sub-5">食事</a></li>
-                <li><a href="#review-sub-6">安全</a></li>
-                <li><a href="#review-sub-7">授業</a></li>
-                <li><a href="#review-sub-8">留学生</a></li>
-                <li><a href="#review-sub-9">言語</a></li>
+                <?php for ($i=0; $i < 9; $i++) { ?>
+                <li><a href="#review-sub-<?php echo $i+1; ?>"><?php echo $categories[$i]['Category']['category']; ?></a></li>
+                <?php } ?>
               </ul>
             </li>
             <li>
-              <a href="#score">▶ゲント大学のスコア</a>
+              <a href="#score">▶<?php echo $university['University']['university']; ?>のスコア</a>
             </li>
              <li>
-              <a href="#review">▶ゲント大学のQ&Aコーナー</a>
-              <ul class="nav">
-                <li><a href="#review-sub-1">項目1</a></li>
-                <li><a href="#review-sub-2">項目2</a></li>
-              </ul>
+              <a href="#review">▶<?php echo $university['University']['university']; ?>のQ&Aコーナー</a>
             </li>
              <li>
-              <a href="#question">▶ゲント大学の先輩たち</a>
-              <ul class="nav">
-                <li><a href="#question-sub-1">question1</a></li>
-                <li><a href="#question-sub-2">question2</a></li>
-              </ul>
+              <a href="#question">▶<?php echo $university['University']['university']; ?>の先輩たち</a>
             </li>
             <li>
               <a href="#question">▶留学報告書</a>
-              <ul class="nav">
-                <li><a href="#question-sub-1">question1</a></li>
-                <li><a href="#question-sub-2">question2</a></li>
-              </ul>
             </li>
           </ul>
         </nav>
@@ -356,18 +323,26 @@
 <script>
 function chart(){
   var radarChartData = {
-    labels: ["旅行のしやすさ", "町の過ごしやすさ", "大学キャンパスの快適さ", "授業のレベルの高さ", "物価の手軽さ", "住居環境の良さ", "食事面での満足度","治安の良さ"],
+    labels: [<?php for ($i=0; $i < 8; $i++){ 
+        echo '"'.$scores[$i]['Tag']['tag'].'"';
+        if($i != 7){
+         echo ","; 
+        }}?>],
     datasets: [
       { //このかっこの塊をコピーすれば,二つ以上のデータを一つの中にいれられる。
-        label: "ゲント大学の平均スコア",
+        label: "<?php echo $university['University']['university']; ?>の平均スコア",
         fillColor: "rgba(25,51,192,0.2)",//レーダーの中身の色
         strokeColor: "rgba(25,51,192,0.8)",//レーダーのborderの色
         pointColor: "rgba(25,51,192,1)",//レーダーの頂点の色
         pointStrokeColor: "rgba(25,51,192,1)",
         pointHighlightFill: "rgba(25,51,192,1)",
         pointHighlightStroke: "rgba(25,51,192,1)",
-        data: [4,3,3,4.12,2.3,5,4,3]
-      },
+        data: [<?php for ($i=0; $i < 8; $i++){ 
+        echo '"'.$scores[$i]['Tag']['score'].'"';
+        if($i != 7){
+         echo ","; 
+        }}?>]
+      }
     ]
   };
 
@@ -388,6 +363,30 @@ chart();
   $('.star-<?php echo $i; ?>').raty({ readOnly: true, score: <?php echo $scores[$i-1]['Tag']['score']; ?> });
   <?php } ?>
 
+
+$(function() {
+  // ページ読み込み時
+  $.post('/connect2016/clips/ready/',
+    {'user_id':1} // 要変更
+    ,function(res){
+      $.each(res, function(){
+          $('#review'+this).html('すでにClipされています');
+      });
+    }, "json");
+
+  // clipボタン押したら
+  $('.button-text').click(function(e){
+    $.post('/connect2016/clips/change/',
+      {'user_id':1, 'review_id':$(this).data('review-id'),} // 要変更
+      ,function(res){
+        if(res.flg == 1){
+          $("#review"+res.id).html('すでにClipされています');
+        } if(res.flg == 0){
+          $("#review"+res.id).html('Clip');
+        }
+    }, "json");
+  });
+});
 
 </script>
 
