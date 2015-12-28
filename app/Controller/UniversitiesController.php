@@ -27,17 +27,26 @@ class UniversitiesController extends AppController {
 
 		// スコアの計算
 		$average = 0;
-		for ($i=0; $i < 9; $i++) { 
+		$k = 0;
+		for ($i=0; $i < 8; $i++) { 
 			$total = 0;
 			$j = 0;
+			$tags[$i]['Tag']['score'] = 3.0; //デフォルト値
 			foreach ($tags[$i]['Score'] as $tag) {
 				$total = $total + $tag['score'];
 				$j++;
 			}
+			if($j == 0){
+				continue;
+			}
+			$k = $k + 1;
 			$average = $average + $total/$j;
 			$tags[$i]['Tag']['score'] = round($total/$j,1);
 		}
-		$this->set('average',round($average/8,1));
+		if($k == 0){
+			$this->set('average',3.0);
+		}
+		$this->set('average',round($average/$k,1));
 
 		// レビュー者数の取得
 		$this->set('review_num', $this->Score->find('count',array('fields' => 'DISTINCT Score.user_id')));
