@@ -291,7 +291,12 @@
 
           </a>
         </div>
+        
+
       </div><!-- row -->
+      <div class="row">
+          <p class="view-more-btn">▼▼ 他の先輩も見る ▼▼</p>
+        </div>
       <!-- senpai intros -->
 
 
@@ -431,13 +436,31 @@ function chart(){
         pointStrokeColor: "rgba(25,51,192,1)",
         pointHighlightFill: "rgba(25,51,192,1)",
         pointHighlightStroke: "rgba(25,51,192,1)",
-        data: [4,3,3,4.12,2.3,5,4,3]
+        data: [3,3,3,1.12,2.3,2,2,3]
       },
     ]
   };
 
+
+var options = {
+        scaleOverride : true,
+        scaleSteps : 5,
+        scaleStepWidth : 1,
+         //Number - 目盛りの線の幅  
+        scaleStartValue : 0,
+    };
+
+
+
+
+
+
+
+
+
+
   window.onload = function(){
-    window.myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData, {
+    window.myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData,options, {
       responsive: true
     });
   }
