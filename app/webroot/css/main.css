@@ -1109,9 +1109,7 @@ hr {
     top:-20px;
     right:-20px;
     z-index: 2;
-    opacity: 0.8;
-}
-.delete-btn:hover{
+    opacity:g.delete-btn:hover{
     opacity:1.0;
 }
 .favorite-box{

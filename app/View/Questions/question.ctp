@@ -194,7 +194,9 @@
                   </div> <!-- answer -->
                 </div> <!-- questionbox -->
                 <!--質問１つの塊終了-->
-                <h1>もっと見るボタン</h1>
+                      <div class="row">
+                        <p class="view-more-btn">▼▼ もっと見る ▼▼</p>
+                      </div>
       </div>
 <!-- 閲覧数が多い質問 -->
 
