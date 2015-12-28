@@ -50,23 +50,24 @@ p {
 
 /* Links */
 a {
-    color: #f85c37;
-    word-wrap: break-word;
+    color: #404040;
 
+/*    word-wrap: break-word;
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
     -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
     -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
     -o-transition: color 0.1s ease-in, background 0.1s ease-in;
-    transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;*/
 }
 
-a:hover,
+/*a:hover,
 a:focus {
-    color: #7b7b7b;
+    color: #red;
     text-decoration: none;
     outline: 0;
-}
+}*/
 
+/*
 a:before,
 a:after {
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -74,7 +75,7 @@ a:after {
     -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
     -o-transition: color 0.1s ease-in, background 0.1s ease-in;
     transition: color 0.1s ease-in, background 0.1s ease-in;
-}
+}*/
 
  hr {
     display: block;
@@ -319,7 +320,7 @@ a:after {
 
 
 /***** MODAL CONTACT *****/
-.modal-content {
+/*.modal-content {
 	border-radius: 0px;
 
 }
@@ -343,39 +344,59 @@ a:after {
 
 .modal-footer {
 	background: #f2f2f2;
-	margin-top: 0px; 
-}
+	margin-top: 0px;
+}*/
 
 
+/*sidebar始*/
+    .sidebar{
+        width:300px;
 
-/*sidebar*/
-.affix-nav{
-    width:263px;
-}
-.affix-nav.affix{
-    top:50;
-    position:fixed;
-}
-.affix-nav.affix-top{
-    position:static;
-}
-.affix-nav.affix-bottom{
-    position:absolute;
-}
-.affix-nav .nav li{
-    background-color:#8f8;
-    border-left:1px solid gray;
-    border-right:1px solid gray;
-    border-bottom:1px solid gray;
-}
-.affix-nav .nav li:first-child{
-    border-top:1px solid gray;
-}
-.affix-nav .nav li.active{
-    background-color:#4c4;
-}
+    }
+    /* 必須のスタイル指定(affix用) */
+    .sidebar.affix {
+        top: 55px;
+        position: fixed;
 
-/*sidebar*/
+    }
+    .sidebar.affix-top {
+        position: static;
+    }
+    /* 必須のスタイル指定(affix用) */
+    .sidebar.affix-bottom {
+        position: absolute;
+    }
+    /* アクティブセクションを赤太字にする(scrollspy用) */
+    .sidebar .nav>.active:focus>a,
+    .sidebar .nav>.active:hover>a,
+    .sidebar .nav>.active>a {
+        font-weight: 700;
+        color: white;
+        background-color:rgba(25, 51, 192, 90);
+    }
+
+    .sidebar .nav li {
+    border-left:3px solid #1933C0;
+    }
+
+    /* サブセクションのスタイル(scrollspy用) */
+    .sidebar .nav .nav>li>a {
+        padding-top: 1px;
+        padding-bottom: 1px;
+        padding-left: 30px;
+    }
+    /* 非アクティブのサブセクションを隠す(scrollspy用) */
+    .sidebar .nav .nav {
+        display: none;
+        padding-bottom: 10px
+    }
+    /* アクティブのサブセクションを表示(scrollspy用) */
+    .sidebar .nav>.active>ul {
+        display: block
+    }
+
+
+/*sidebar終*/
 
 
 
@@ -413,31 +434,42 @@ a:after {
 
 /* .thumbNail
 ------------------------- */
-.slideShow .thumbNail {
-    width: 100%;
-    overflow: hidden;
-}
-
-.slideShow .thumbNail ul {
-    width: 110%;
-    padding-left: 0px!important;
-}
-
-.slideShow .thumbNail ul li {
+.slideShow .thumbNail .user ul li, .slideShow .thumbNail .university ul li {
     float: left;
     display: inline;
     overflow: hidden;
     cursor: pointer;
 }
 
-.slideShow .thumbNail ul li img {
+.slideShow .thumbNail .user ul li img, .slideShow .thumbNail .university ul li img {
     width: 100%;
 }
 
-.slideShow .thumbNail ul li.active {
+.slideShow .thumbNail .user ul li.active, .slideShow .thumbNail .university ul li.active  {
     filter: alpha(opacity=100)!important;
     -moz-opacity: 1!important;
     opacity: 1!important;
+}
+
+.slideShow .thumbNail .user {
+    width: 100%;
+    overflow: hidden;
+    padding-left: 40%;
+}
+
+.slideShow .thumbNail .university {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slideShow .thumbNail .user ul {
+    width: 100%;
+    padding-left: 0px!important;
+}
+
+.slideShow .thumbNail .university ul {
+    width: 110%;
+    padding-left:0px!important;
 }
 
 /* sideNavi
@@ -445,10 +477,12 @@ a:after {
 .slideShow .mainView .btnPrev,
 .slideShow .mainView .btnNext {
     top: 0;
-    width: 5%;
-    height: 100%;
+    width: 42px;
+    height: 42px;
     position: absolute;
+    margin:10px;
     z-index: 100;
+    border-radius:21px;
 }
 .slideShow .mainView .btnPrev {
     left: 0;
@@ -611,6 +645,15 @@ a:after {
     font-size:20px;
 }
 
+
+/*サムネイルゆーざープロフィール用*/
+.thumnail-box-user-profile{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border: 5px white solid;
+}
+
 /*サムネイルゆーざー用小さいバージョン*/
 .thumnail-box-user-s{
     height:160px;
@@ -678,17 +721,17 @@ a:hover .senpai-box{
 /*写真の上に置くテキスト*/
 .text-on-image{
     color: white; 
-   font-weight:bold; 
-   background-color: rgba(0,0,0, 0.7);
-   padding:10px 0;
+    font-weight:bold; 
+    background-color: rgba(0,0,0, 0.7);
+    padding:10px 0;
 }
 
 .text-on-image-blue{
     color: white; 
-   font-weight:bold; 
-   background-color: rgba(0,0,0, 0.15);
-   padding:10px 0;
-   border-radius: 20px;
+    font-weight:bold; 
+    background-color: rgba(0,0,0, 0.15);
+    padding:10px 0;
+    border-radius: 20px;
 }
 
 
@@ -727,6 +770,28 @@ a:hover .senpai-box{
     margin-top: 20px;
 }
 
+
+/*スクロールのためのpadding*/
+.padding-m {
+    padding-top: 60px;
+    margin-bottom: 0px;
+}
+
+.padding-m h2 {
+    font-weight: 700;
+}
+
+.padding-s {
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.padding-m h2 {
+    font-weight: 700;
+}
+
+
+
 /*ヘッダー下の謎のスペースを削除するため調整*/
 #content{
     margin-top: -20px;
@@ -760,6 +825,40 @@ a:hover .senpai-box{
     font-weight: bold;
 }
 
+
+/*スコアグラフ小*/
+.canvas-s{
+    width:300px;
+    height:auto;
+}
+
+/*スターレビュースコア小*/
+.default-star-s{
+    margin-left: 20px;
+    margin-top:-5px;
+}
+.default-star-s img{
+    width:15px;
+}
+
+.score-total-s{
+    font-size: 18px;
+}
+
+.score-table-s th,td{
+    font-weight: bold;
+}
+
+
+/*ユーザー個人ページ写真*/
+#userpic{
+    position: absolute;
+    z-index: 100;
+    top: 300px;
+    left: 8%;
+}
+
+
 /*留学報告書の表*/
 .pdf-table th{
     text-align: center;
@@ -787,10 +886,32 @@ a:hover .senpai-box{
     margin-left:-30px;
 }
 
+/*質問*/
+.question-box{
+    border-radius: 10px;
+    border:solid transparent;
+    overflow: hidden;
+}
+.question-picture{
+    border-radius: 0!important;
+}
+.question-discription{
+    text-align: left;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.question-q {
+    text-align: left;
+}
+
+.question-q-area{
+    margin-left:-30px;
+}
+
 /*吹き出し作成*/
 .arrow_box {
     position: relative;
-    border: 4px solid #404040;
+    border: 2px solid #404040;
     background-color:#FFFBF1;
     color:#404040;
     text-align: left;
@@ -801,7 +922,7 @@ a:hover .senpai-box{
 .arrow_box:after, .arrow_box:before {
     left: 100%;
     top: 50%;
-    border: solid transparent;
+    border: 2px solid transparent;
     content: "";
     height: 0;
     width: 0;
@@ -818,9 +939,45 @@ a:hover .senpai-box{
 .arrow_box:before {
     border-color: rgba(64, 64, 64, 0);
     border-left-color: #404040;
-    border-width: 26px;
-    margin-top: -26px;
+    border-width: 23px;
+    margin-top: -23px;
 }
+
+/*吹き出し左から発言*/
+
+.arrow_box_left {
+    position: relative;
+    border: 2px solid #404040;
+    background-color:#FFFBF1;
+    color:#404040;
+    text-align: left;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top:20px;
+}
+.arrow_box_left:after, .arrow_box_left:before {
+  right: 100%;
+  top: 50%;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  border: solid transparent;
+}
+
+.arrow_box_left:after {
+    border-color: rgba(64, 64, 64, 0);
+    border-right-color:#FFFBF1;
+    border-width: 20px;
+    margin-top: -20px;
+}
+.arrow_box_left:before {
+    border-color: rgba(64, 64, 64, 0);
+    border-right-color: #404040;
+    border-width: 23px;
+    margin-top: -23px;
+}
+
 
 
 /*Clipボタン*/
@@ -831,247 +988,12 @@ a:hover .senpai-box{
 
 
 
-@font-face {
-  font-family: "LigatureSymbols";
-  src: url("../font/LigatureSymbols-2.11.eot");
-  src: url("../font/LigatureSymbols-2.11.eot?#iefix") format("embedded-opentype"),
-           url("../font/LigatureSymbols-2.11.woff") format("woff"),
-           url("../font/LigatureSymbols-2.11.ttf") format("truetype"),
-           url("../font/LigatureSymbols-2.11.svg#LigatureSymbols") format("svg");
-  font-weight: normal;
-  font-style: normal;
+hr {
+    height:3px;
+    border:0;
+    background:linear-gradient(left, #f5f5f5, #999, #f5f5f5);
+    background:-webkit-linear-gradient(left, #f5f5f5, #999, #f5f5f5);
+    background:-moz-linear-gradient(left, #f5f5f5, #999, #f5f5f5);
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
-
-.icon-font {
-  font-family: "LigatureSymbols";
-  -webkit-text-rendering: optimizeLegibility;
-  -moz-text-rendering: optimizeLegibility;
-  -ms-text-rendering: optimizeLegibility;
-  -o-text-rendering: optimizeLegibility;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  -ms-font-smoothing: antialiased;
-  -o-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  -webkit-font-feature-settings: "liga"1, "dlig"1;
-  -moz-font-feature-settings: "liga=1, dlig=1";
-  -ms-font-feature-settings: "liga"1, "dlig"1;
-  -o-font-feature-settings: "liga"1, "dlig"1;
-  font-feature-settings: "liga"1, "dlig"1;
-}
-
-/*------------------------------------------
-// User style start
-// change
------------------------------------------ */
-
-.general-button  {
-  border-radius: 14px;
-  background-color: #1933c0;
-}
-
-.general-button:before  {
-  border-radius: 14px;
-  border-bottom: 0px solid rgba(16,33,124, 0);
-  background-color: rgba(16,33,124, 0);
-}
-
-.button-content  {
-  border-radius: 0px 0px 14px 14px;
-  padding: 6px 5px;
-  box-shadow: 0px 0px 0px 0px rgba(16,33,124, 0);
-  color: #f8f8f8;
-}
-
-.button-text  {
-  padding: 0px 5px;
-  line-height: 1.1em;
-  font-size: 18px;
-}
-
-.icon-font  {
-  padding: 0px 5px;
-  font-size: 19px;
-}
-
-/*----------------- at hover -----------------*/
-
-.general-button:hover  {
-  top: -3px;
-  transition: all 41ms;
-  -moz-transition: all 41ms;
-  -webkit-transition: all 41ms;
-  -o-transition: all 41ms;
-  background-color: #1a36cd;
-}
-
-.general-button:hover:before  {
-  border-bottom: 3px solid rgba(16,33,124, 0);
-  transition: all 41ms;
-  -moz-transition: all 41ms;
-  -webkit-transition: all 41ms;
-  -o-transition: all 41ms;
-}
-
-.general-button:hover .button-content  {
-  box-shadow: 0px 3px 0px 0px rgba(16,33,124, 1);
-  transition: all 41ms;
-  -moz-transition: all 41ms;
-  -webkit-transition: all 41ms;
-  -o-transition: all 41ms;
-}
-
-/*----------------- at active -----------------*/
-
-.general-button:active  {
-  background-color: #162da9;
-  box-shadow: 0px 1.6px 0px 0px rgba(13,27,101, 1) inset;
-}
-
-.general-button:active:before  {
-  top: -3px;
-  padding-bottom: 3px;
-  border-bottom: 0px solid rgba(16,33,124, 0);
-}
-
-.general-button:active .button-content  {
-  box-shadow: 0px 0px 0px 0px rgba(16,33,124, 0);
-}
-
-/*------------------------------------------
-// User style end
------------------------------------------ */
-
-/*------------------------------------------
-// Core style start
-// not change
------------------------------------------ */
-
-.general-button  {
-  display: -moz-inline-box;
-  display: inline-block;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;transition: all 0ms;
-  -moz-transition: all 0ms;
-  -webkit-transition: all 0ms;
-  -o-transition: all 0ms;position: relative;
-  top: 0px;
-  cursor: pointer;
-  text-decoration: none;
-  line-height: 1;
-  margin-top: 5px;
-}
-
-.general-button:before  {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.button-content  {
-  display: table;
-  transition: all 0ms;
-  -moz-transition: all 0ms;
-  -webkit-transition: all 0ms;
-  -o-transition: all 0ms;
-}
-
-.button-text  {
-  display: table-cell;
-  vertical-align: middle;
-  text-decoration: none;
-}
-
-.icon-font  {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-/*----------------- at hover -----------------*/
-
-.general-button:hover  {
-  transition-timing-function: ease-in-out;
-}
-
-.general-button:hover:before  {
-  transition-timing-function: ease-in-out;
-}
-
-.general-button:hover .button-content  {
-  transition-timing-function: ease-in-out;
-}
-
-/*----------------- at active -----------------*/
-
-.general-button:active  {
-  top: 0px;
-  transition: all 0ms;
-  -moz-transition: all 0ms;
-  -webkit-transition: all 0ms;
-  -o-transition: all 0ms;
-}
-
-.general-button:active:before  {
-  transition: all 0ms;
-  -moz-transition: all 0ms;
-  -webkit-transition: all 0ms;
-  -o-transition: all 0ms;
-}
-
-.general-button:active .button-content  {
-  transition: all 0ms;
-  -moz-transition: all 0ms;
-  -webkit-transition: all 0ms;
-  -o-transition: all 0ms;
-}
-
-/*------------------------------------------
-// Core style end
------------------------------------------ */
-
-/*------------------------------------------
-// Touch style start
------------------------------------------ */
-
-/*----------------- at hover -----------------*/
-
-.touch .general-button:hover  {
-  top: 0px;
-  background-color: #1933c0;
-}
-
-.touch .general-button:hover:before  {
-  border-bottom: 0px solid rgba(16,33,124, 0);
-}
-
-.touch .general-button:hover .button-content  {
-  box-shadow: 0px 0px 0px 0px rgba(16,33,124, 1);
-
-}
-
-/*----------------- at active -----------------*/
-
-.touch .general-button:active  {
-  background-color: #162da9;
-  box-shadow: 0px 1.6px 0px 0px rgba(13,27,101, 1) inset;
-}
-
-.touch .general-button:active:before  {
-  top: -3px;
-  padding-bottom: 3px;
-  border-bottom: 0px solid rgba(16,33,124, 0);
-}
-
-.touch .general-button:active .button-content  {
-  box-shadow: 0px 0px 0px 0px rgba(16,33,124, 0);
-}
-
-/*------------------------------------------
-// Touch style end
------------------------------------------ */

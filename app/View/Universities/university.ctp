@@ -23,6 +23,7 @@
                 </ul>
               </div><!--/.mainView-->
               <div class="thumbNail">
+              <div class="university">
                 <ul>
                   <li><?php echo $this->Html->image('sample/photo1.jpg');?></li>
                   <li><?php echo $this->Html->image('sample/photo2.jpg');?></li>
@@ -31,9 +32,10 @@
                   <li><?php echo $this->Html->image('sample/photo5.jpg');?></li>
                   <li><?php echo $this->Html->image('sample/photo6.jpg');?></li>
                 </ul>
+              </div>
               </div><!--/.thumbNail-->
 
-            </div><!--/.slideShow-->
+            </div><!--/.slideShow-university-->
           </div>
         </div><!-- row -->
 
@@ -53,11 +55,13 @@
           </div><!-- /.row -->
         </div>
 
-
-
         <!-- バナー -->
         <div class="wb">
-         
+                 <div class="row centered">
+          <div class="col-md-9">
+            <a href="#1"><?php echo $this->Html->image('banner_question.jpg');?></a>
+          </div><!-- /.col-md-9 -->
+        </div><!-- /.row -->
         </div>
 
 
@@ -422,4 +426,6 @@
 
 </script>
 
+<!-- slideshow_university -->
+<?php echo $this->Html->script( 'slideshow_university.js', array('inline' => 'false')); ?>
 
