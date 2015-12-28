@@ -398,20 +398,62 @@
 
 
 <!-- sidebar -->
+      <div class="col-md-3" role="complementary">
 
-<div class="col-md-2 col-md-offset-1">
-  <div class="sidebar-nav affix">
-    <nav class="affix-nav">
-      <ul class="nav">
-        <li><a href="#one">1番目</a></li>
-        <li><a href="#2">2番目</a></li>
-        <li><a href="#3">3番目</a></li>
-        <li><a href="#t">4番目</a></li>
-        <li><a href="#r">5番目</a></li>
-      </ul>
-    </nav>
-  </div>
-</div>
+        <nav class="sidebar hidden-print" data-offset-top="999">
+          <ul class="nav">
+
+        <a href="https://www.facebook.com/kohei.arai.5">
+          <div class="thumnail-box-m">
+            <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '300px'));?>
+            <div class="thumnail-text-box-m">
+                <p class="text-on-image thumnail-text-m">新居航平さんのFacebook</p>
+            </div>
+          </div>
+        </a>
+
+            <li>
+              <a href="#review">▶項目別レビュー</a>
+              <ul class="nav">
+                <li><a href="#review-sub-1">旅行</a></li>
+                <li><a href="#review-sub-2">環境</a></li>
+                <li><a href="#review-sub-3">物価</a></li>
+                <li><a href="#review-sub-4">住居</a></li>
+                <li><a href="#review-sub-5">食事</a></li>
+                <li><a href="#review-sub-6">安全</a></li>
+                <li><a href="#review-sub-7">授業</a></li>
+                <li><a href="#review-sub-8">留学生</a></li>
+                <li><a href="#review-sub-9">言語</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#score">▶ゲント大学のスコア</a>
+            </li>
+             <li>
+              <a href="#review">▶ゲント大学のQ&Aコーナー</a>
+              <ul class="nav">
+                <li><a href="#review-sub-1">項目1</a></li>
+                <li><a href="#review-sub-2">項目2</a></li>
+              </ul>
+            </li>
+             <li>
+              <a href="#question">▶ゲント大学の先輩たち</a>
+              <ul class="nav">
+                <li><a href="#question-sub-1">question1</a></li>
+                <li><a href="#question-sub-2">question2</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#question">▶留学報告書</a>
+              <ul class="nav">
+                <li><a href="#question-sub-1">question1</a></li>
+                <li><a href="#question-sub-2">question2</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+<!-- sidebar end -->
 
 </div> <!-- all row-->
 </div> <!-- all container-->

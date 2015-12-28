@@ -105,7 +105,7 @@
 
 
 <!-- 項目別スコア -->
-        <div id="score" class="top-margin-m">
+        <div id="score" class="top-margin-m padding-m">
 
           <h2 class="">ゲント大学のスコア</h2>
 
@@ -383,10 +383,10 @@
 <!-- sidebar -->
       <div class="col-md-3" role="complementary">
 
-        <nav class="sidebar hidden-print">
+        <nav class="sidebar hidden-print" data-offset-top="999">
           <ul class="nav">
 
-        <a href="">
+        <a href="https://www.facebook.com/kohei.arai.5">
           <div class="thumnail-box-m">
             <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '300px'));?>
             <div class="thumnail-text-box-m">
@@ -440,4 +440,3 @@
 
 <!-- slideshow_user -->
 <?php echo $this->Html->script( 'slideshow_user.js', array('inline' => 'false')); ?>
-
