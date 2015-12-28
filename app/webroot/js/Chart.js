@@ -7,29 +7,7 @@
  * Released under the MIT license
  * https://github.com/nnnick/Chart.js/blob/master/LICENSE.md
  */
-function chart(){
-	var radarChartData = {
-		labels: ["旅行のしやすさ", "町の過ごしやすさ", "大学キャンパスの快適さ", "授業のレベルの高さ", "物価の手軽さ", "住居環境の良さ", "食事面での満足度","治安の良さ"],
-		datasets: [
-			{ //このかっこの塊をコピーすれば,二つ以上のデータを一つの中にいれられる。
-				label: "ゲント大学の平均スコア",
-				fillColor: "rgba(25,51,192,0.2)",//レーダーの中身の色
-				strokeColor: "rgba(25,51,192,0.8)",//レーダーのborderの色
-				pointColor: "rgba(25,51,192,1)",//レーダーの頂点の色
-				pointStrokeColor: "rgba(25,51,192,1)",
-				pointHighlightFill: "rgba(25,51,192,1)",
-				pointHighlightStroke: "rgba(25,51,192,1)",
-				data: [5,3,3,4.12,2.3,5,4,3]
-			},
-		]
-	};
 
-	window.onload = function(){
-		window.myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData, {
-			responsive: true
-		});
-	}
-}
 
 
 (function(){
