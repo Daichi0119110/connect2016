@@ -987,7 +987,7 @@ a:hover .senpai-box{
 }
 
 
-
+/*水平線のデザイン変更*/
 hr {
     height:3px;
     border:0;
@@ -996,4 +996,20 @@ hr {
     background:-moz-linear-gradient(left, #f5f5f5, #999, #f5f5f5);
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+
+/*お気に入りページの削除ボタン*/
+.delete-btn{
+    position: absolute;
+    top:-20px;
+    right:-20px;
+    z-index: 2;
+    opacity: 0.8;
+}
+.delete-btn:hover{
+    opacity:1.0;
+}
+.favorite-box{
+    position:relative;
 }
