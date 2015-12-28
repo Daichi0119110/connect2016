@@ -174,7 +174,7 @@
                   <p class="text-on-image thumnail-text-user"><?php echo $university['User'][$i]['name']; ?></p>
                 </div>
               </div>
-              <p class="senpai-nav"><?php echo $university['User'][$i]['study_start']."〜".$university['User'][$i]['study_end']; ?>に留学</p>
+              <p class="senpai-nav"><?php echo date("Y/n",strtotime($university['User'][$i]['study_start']))."〜".date("Y/n",strtotime($university['User'][$i]['study_end'])); ?>に留学</p>
               <p><?php echo $university['User'][$i]['self_intro']; ?></p>
               <p class="senpai-nav-f">▼詳細を見る▼</p>
             </div>
@@ -255,7 +255,7 @@
          <tbody>
           <?php foreach($university['Report'] as $report) { ?>
           <tr>
-            <td><?php echo $report['User']['study_start']."〜".$report['User']['study_end']; ?></td>
+            <td><?php echo date("Y/n",strtotime($university['User'][$i]['study_start']))."〜".date("Y/n",strtotime($university['User'][$i]['study_end'])); ?></td>
             <td><?php echo $report['User']['name']; ?></td>
             <td><?php echo $report['filename']; ?></td>
             <td><a href="">ダウンロード</a></td>
