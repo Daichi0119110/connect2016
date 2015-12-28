@@ -26,6 +26,7 @@ body {
     -webkit-overflow-scrolling: touch;
 
     margin-top: 70px;
+    position: relative;
 }
 
 /* Titles */
@@ -233,13 +234,13 @@ a:after {
 /*    float: left;*/
     overflow: hidden;
 }
-#sidebar {
+/*#sidebar {
     margin-top: 20px;
     padding-top:-20px;
     text-align:center;
     float: right;
     overflow: hidden;
-}
+}*/
 
 @media (max-width: 350px) {
     #content{
@@ -355,7 +356,7 @@ a:after {
     }
     /* 必須のスタイル指定(affix用) */
     .sidebar.affix {
-        top: 55px;
+        top: 50px;
         position: fixed;
 
     }
@@ -366,7 +367,7 @@ a:after {
     .sidebar.affix-bottom {
         position: absolute;
     }
-    /* アクティブセクションを赤太字にする(scrollspy用) */
+    /* アクティブセクションを白太字にする(scrollspy用) */
     .sidebar .nav>.active:focus>a,
     .sidebar .nav>.active:hover>a,
     .sidebar .nav>.active>a {
@@ -376,7 +377,11 @@ a:after {
     }
 
     .sidebar .nav li {
-    border-left:3px solid #1933C0;
+    border-top: 1px solid rgba(45, 45, 45, 90);
+    }
+
+   .sidebar .nav ul {
+    font-size: 15px;
     }
 
     /* サブセクションのスタイル(scrollspy用) */
@@ -386,17 +391,16 @@ a:after {
         padding-left: 30px;
     }
     /* 非アクティブのサブセクションを隠す(scrollspy用) */
-    .sidebar .nav .nav {
+/*    .sidebar .nav .nav {
         display: none;
         padding-bottom: 10px
     }
-    /* アクティブのサブセクションを表示(scrollspy用) */
-    .sidebar .nav>.active>ul {
+*/    /* アクティブのサブセクションを表示(scrollspy用) */
+/*    .sidebar .nav>.active>ul {
         display: block
-    }
-
-
+    }*/
 /*sidebar終*/
+
 
 
 
@@ -533,6 +537,20 @@ a:after {
     width:50px;
 }
 
+.search-s{
+    border-radius: 5px 0 0 5px !important;
+    font-size: 15px!important;
+    height:30px!important;
+    width: 270px!important;
+}
+
+.search-btn-s{
+    border-radius:0 5px 5px 0!important;
+    font-size: 15px;
+    height:30px;
+    width:30px;
+}
+
 /*フォーム*/
 .form-m{
     border-radius: 8px 0 0 8px !important;
@@ -546,6 +564,37 @@ a:after {
     height:40px;
 }
 
+.form-nav{
+    border-radius: 8px 8px 8px 8px !important;
+    font-size: 15px;
+    width:300px;
+    height:40px
+}
+
+.form-btn-nav{
+    border-radius:6px 6px 6px 6px!important;
+    font-size: 10px;
+    text-align:center;
+    height:25px;
+    float:right;
+}
+
+.form-l{
+    border-radius: 8px 8px 8px 8px !important;
+    font-size: 20px;
+    width: 720px;
+    height:100px;
+    margin-left: 40px;
+}
+
+.form-btn-l{
+    border-radius:8px 8px 8px 8px!important;
+    font-size: 15px;
+    text-align:center;
+    height:30px;
+    float:right;
+    margin-right:50px;
+}
 
 /*サムネイル関連*/
 .thumnail-box{
@@ -818,6 +867,10 @@ a:hover .senpai-box{
     font-weight: 700;
 }
 
+.forscrollspy {
+    margin-top:-100px;
+    padding-top:100px;
+}
 
 
 /*ヘッダー下の謎のスペースを削除するため調整*/
@@ -886,8 +939,8 @@ a:hover .senpai-box{
 /*ユーザー個人ページ写真*/
 #userpic{
     position: absolute;
-    z-index: 100;
-    top: 300px;
+    z-index: 101;
+    top: 380px;
     left: 8%;
 }
 
@@ -1122,4 +1175,18 @@ hr {
 /*クリップの一つのかたまり*/
 .one-clip{
     position: relative;
+
+.profile-selfintro-box{
+    border-radius: 10px;
+    border:solid;
+    border-width:1px;
+    overflow: hidden;
+    padding:10px;
+    width: 450px
+}
+
+
+.profile-basicinfo {
+    text-align: left;
+    font-size: 14px;
 }

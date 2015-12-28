@@ -10,20 +10,25 @@ class UsersController extends AppController {
 	public $helper = array('HTML', 'form');
 
 	public function user(){
-
+		$this->set('title',"User | Connect");
 	}
 
 	public function mypage(){
-
+		$this->set('title',"Mypage | Connect");
 	}
 
 	public function signup(){
-		
+		$this->set('title',"Signup | Connect");
 	}
 
-	public function login(){
+	public function practice(){
+		debug($_SESSION['me']);
+	}
+
+	public function login(){	
 		$this->autoRender = false;
 		$this->autoLayout = false;
+
 
 		$fbLogin = new MyApp\FacebookLogin();
  

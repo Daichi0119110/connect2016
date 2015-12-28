@@ -1,6 +1,6 @@
 <?php 
-class Favorite_use extends AppModel {
-	public $name='Favorite_use';
+class FavoriteUse extends AppModel {
+	public $name='FavoriteUse';
 	
 	public $belongsTo = array(
 		'User' => array(
