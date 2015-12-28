@@ -8,18 +8,19 @@ class UniversitiesController extends AppController {
 		$this->set('title',"University | Connect");
 	}
 
-	//開発用（バックエンド）のページ
+	// 開発用（バックエンド）のページ
 	public function practice_uni($id){
 		$university = $this->University->getuniversity($id);
 		$tags = $this->Tag->find('all');
 		$categories = $this->Category->find('all');
+		// 被クリップ数順に並び替えできると良い
 
 		// debug($university);
 		// debug($tags);
 		// debug($categories);
 
+		// スコアの計算
 		$score = array();
-
 		for ($i=0; $i < 9; $i++) { 
 			$total = 0;
 			$j = 0;
@@ -29,8 +30,11 @@ class UniversitiesController extends AppController {
 			}
 			$score[$tags[$i]['Tag']['tag']] = round($total/$j,1);
 		}
+		// debug($score);
 
-		debug($score);
+		// pickupレビューの作成
+		$pickup = $this->Clip->pickup();
+		debug($pickup);
 	}
 	
 }

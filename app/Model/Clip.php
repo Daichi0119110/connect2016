@@ -33,4 +33,12 @@ class Clip extends AppModel {
 			return 0;
 		}
 	}
+	
+	public function pickup(){
+		$status=array(
+			'conditions'=>array('Clip.review_id'=>NOT NULL),
+			'order'=>array()
+		);
+		return $this->find('all',$status);
+	}
 }

@@ -35,11 +35,16 @@ class User extends AppModel {
 			// すでに登録したことがあれば
 			$this->id = $user['User']['id'];
 			$this->save('modified',date('Y-m-d H:i:s'));
+			$_SESSION['me']['user_id'] = $user['User']['id'];
+			$_SESSION['me']['university_id'] = $user['User']['university_id'];
 
 		}else{
 			// 初めてのログイン（＝usersにデータがない）ならば
 			$this->save($_SESSION['me']);
+			$_SESSION['me']['user_id'] = $this->getLastInsertID();
+			$_SESSION['me']['university_id'] = NULL;
 		}
+
 		return;
 	}
 }
