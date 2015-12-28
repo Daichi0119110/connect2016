@@ -73,9 +73,9 @@
 
 			// ** Required if scaleOverride is true **
 			// Number - The number of steps in a hard coded scale
-			scaleSteps: null,
+			scaleSteps: 5,
 			// Number - The value jump in the hard coded scale
-			scaleStepWidth: null,
+			scaleStepWidth: 1,
 			// Number - The scale starting value
 			scaleStartValue: null,
 
