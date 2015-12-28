@@ -363,7 +363,7 @@ chart();
   $('.star-<?php echo $i; ?>').raty({ readOnly: true, score: <?php echo $scores[$i-1]['Tag']['score']; ?> });
   <?php } ?>
 
-
+// ボタン関連
 $(function() {
   // ページ読み込み時
   $.post('/connect2016/clips/ready/',
@@ -374,10 +374,18 @@ $(function() {
       });
     }, "json");
 
+  $.post('/connect2016/favoriteunis/ready/',
+    {'user_id':1, 'university_id':1} // 要変更
+    ,function(res){
+      if(res == 1){
+        $('p.favorite-btn').html('お気に入り済み');
+      } 
+    }, "json");
+
   // clipボタン押したら
   $('.button-text').click(function(e){
     $.post('/connect2016/clips/change/',
-      {'user_id':1, 'review_id':$(this).data('review-id'),} // 要変更
+      {'user_id':1, 'review_id':$(this).data('review-id')} // 要変更
       ,function(res){
         if(res.flg == 1){
           $("#review"+res.id).html('すでにClipされています');
@@ -386,6 +394,20 @@ $(function() {
         }
     }, "json");
   });
+
+  //お気に入りボタン押したら
+  $('p.favorite-btn').click(function(e){
+    $.post('/connect2016/favoriteunis/change/',
+      {'user_id':1, 'university_id':1} // 要変更
+      ,function(res){
+        if(res == 1){
+          $('p.favorite-btn').html('お気に入り済み');
+        } if(res == 0){
+          $('p.favorite-btn').html('お気に入り登録');
+        }
+    }, "json");
+  });
+
 });
 
 </script>
