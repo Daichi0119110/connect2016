@@ -233,13 +233,13 @@ a:after {
 /*    float: left;*/
     overflow: hidden;
 }
-#sidebar {
+/*#sidebar {
     margin-top: 20px;
     padding-top:-20px;
     text-align:center;
     float: right;
     overflow: hidden;
-}
+}*/
 
 @media (max-width: 350px) {
     #content{
@@ -366,7 +366,7 @@ a:after {
     .sidebar.affix-bottom {
         position: absolute;
     }
-    /* アクティブセクションを赤太字にする(scrollspy用) */
+    /* アクティブセクションを白太字にする(scrollspy用) */
     .sidebar .nav>.active:focus>a,
     .sidebar .nav>.active:hover>a,
     .sidebar .nav>.active>a {
@@ -376,7 +376,11 @@ a:after {
     }
 
     .sidebar .nav li {
-    border-left:3px solid #1933C0;
+    border-top: 1px solid rgba(45, 45, 45, 90);
+    }
+
+   .sidebar .nav ul {
+    font-size: 15px;
     }
 
     /* サブセクションのスタイル(scrollspy用) */
@@ -386,17 +390,16 @@ a:after {
         padding-left: 30px;
     }
     /* 非アクティブのサブセクションを隠す(scrollspy用) */
-    .sidebar .nav .nav {
+/*    .sidebar .nav .nav {
         display: none;
         padding-bottom: 10px
     }
-    /* アクティブのサブセクションを表示(scrollspy用) */
-    .sidebar .nav>.active>ul {
+*/    /* アクティブのサブセクションを表示(scrollspy用) */
+/*    .sidebar .nav>.active>ul {
         display: block
-    }
-
-
+    }*/
 /*sidebar終*/
+
 
 
 

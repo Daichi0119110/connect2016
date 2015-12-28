@@ -391,24 +391,24 @@
         </a>
 
             <li>
-              <a href="#about">about</a>
+              <a href="#about">▶about</a>
               <ul class="nav">
                 <li><a href="#about-sub-1">自己紹介</a></li>
                 <li><a href="#about-sub-2">留学報告書</a></li>
               </ul>
             </li>
             <li>
-              <a href="#score">score</a>
+              <a href="#score">▶評価</a>
             </li>
              <li>
-              <a href="#review">review</a>
+              <a href="#review">▶レビュー</a>
               <ul class="nav">
                 <li><a href="#review-sub-1">項目1</a></li>
                 <li><a href="#review-sub-2">項目2</a></li>
               </ul>
             </li>
              <li>
-              <a href="#question">question</a>
+              <a href="#question">▶Q&A</a>
               <ul class="nav">
                 <li><a href="#question-sub-1">question1</a></li>
                 <li><a href="#question-sub-2">question2</a></li>
