@@ -272,7 +272,38 @@
         <a href="#"><?php echo $this->Html->image('developer/tomoko.jpg', array('class' => 'img-responsive img-circle'));?></a>
       </div>
       <h3>Tomoko Kawano</h3>
-      <p>sentense</p>
+       <table class="table profile-table">
+         <tbody>
+          <tr>
+           <th>Birthday</th>
+           <td>1993/09/30</td>
+         </tr>
+         <tr>
+           <th>Career</th>
+           <td><ul>
+             <li>2012年 大分県立別府鶴見丘高校卒業</li>
+             <li>2015年 東京工業大学経営システム工学科在籍</li>
+           </ul></td>
+         </tr>
+         <tr>
+           <th>Experience</th>
+           <td></td>
+         </tr>
+         <tr>
+           <th>Love</th>
+           <td></td>
+         </tr>
+         <tr>
+           <th>Vision</th>
+           <td></td>
+         </tr>
+ <tr>
+                <th>Facebook</th>
+                <td><a href="https://www.facebook.com/catie093"> Tomoko's facebook page</a>
+                </td>
+              </tr>
+       </tbody>
+     </table>
     </div>
   </div><!-- row -->
 </div><!-- container -->
