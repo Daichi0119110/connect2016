@@ -270,24 +270,29 @@
                 <!--質問１つの塊-->
                 <div id="question-sub-1" class="question-box padding-m">
                   <div class="row">
-                    <div class="col-md-3">
-                          <div class="thumnail-box-user-s">
-                              <?php echo $this->Html->image('developer/daichi.jpg', array('height' => '160px'));?>
-                              <div class="thumnail-text-box-user-s">
-                                <p class="text-on-image thumnail-text-user-s">荻原大地</p>
+                    <h3 class="question-title">Question</h3>
+                    <div class="col-md-2">
+                     <a href="">
+                          <div class="thumnail-box-user-xs">
+                              <?php echo $this->Html->image('developer/daichi.jpg', array('height' => '100px'));?>
+                              <div class="thumnail-text-box-user-xs">
+                                <p class="text-on-image thumnail-text-user-xs">荻原大地</p>
                               </div>
                         </div>
+                      </a>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-10">
                         <div class="arrow_box_left">
-                          ベルギーってぶっちゃけどうyo？
+                          ゲントでのおすすめの観光プランを教えて下さい。
                         </div>
                     </div>
                   </div>
-
+<h3 class="answer-title">Answer</h3>
+                    
                   <div class="row"> <!-- answer -->
+                    
                     <div class="col-md-9">
-                      <div class="arrow_box">ちょーたのしい<br>
+                      <div class="arrow_box">夜は川辺が綺麗でロマンチック。ビールなどを片手に友達と行くのがおすすめ！また、電車で２０分のBrugeはベルギーのベネチアと呼ばれ、日本人女性観光客にかなりおすすめの町である。<br>
                         <div class="row">
                         <div class="general-button clip-button">
                           <div class="button-content">
@@ -311,29 +316,62 @@
                     </div>
 
                   </div> <!-- answer -->
-                </div> <!-- reviewbox -->
+                  <div class="row"> <!-- answer -->
+                    
+                    <div class="col-md-9">
+                      <div class="arrow_box">夜は川辺が綺麗でロマンチック。ビールなどを片手に友達と行くのがおすすめ！また、電車で２０分のBrugeはベルギーのベネチアと呼ばれ、日本人女性観光客にかなりおすすめの町である。<br>
+                        <div class="row">
+                        <div class="general-button clip-button">
+                          <div class="button-content">
+                            <i class="fa fa-pencil-square-o fa-1x"></i>
+                            <span class="button-text">クリップ</span>
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-3">
+                      <a href="">
+                      <div class="thumnail-box-user-s">
+                        <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '160px'));?> <!-- 写真 -->
+                        <div class="thumnail-text-box-user-s">
+                          <p class="text-on-image thumnail-text-user-s">新居航平</p>
+                        </div>
+                      </div>
+                      </a>
+                    </div>
+
+                  </div> <!-- answer -->
+                </div> <!-- questionbox -->
                 <!--質問１つの塊終了-->
-                <!--質問１つの塊-->
-                <div id="question-sub-2" class="question-box padding-m">
+ 
+                               <!--質問１つの塊-->
+                <div id="question-sub-1" class="question-box padding-m">
                   <div class="row">
-                    <div class="col-md-3">
-                          <div class="thumnail-box-user-s">
-                              <?php echo $this->Html->image('developer/daichi.jpg', array('height' => '160px'));?>
-                              <div class="thumnail-text-box-user-s">
-                                <p class="text-on-image thumnail-text-user-s">荻原大地</p>
+                    <h3 class="question-title">Question</h3>
+                    <div class="col-md-2">
+                     <a href="">
+                          <div class="thumnail-box-user-xs">
+                              <?php echo $this->Html->image('developer/daichi.jpg', array('height' => '100px'));?>
+                              <div class="thumnail-text-box-user-xs">
+                                <p class="text-on-image thumnail-text-user-xs">荻原大地</p>
                               </div>
                         </div>
+                      </a>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-10">
                         <div class="arrow_box_left">
-                          ほんとかyo？
+                          ゲントでのおすすめの観光プランを教えて下さい。
                         </div>
                     </div>
                   </div>
-
+<h3 class="answer-title">Answer</h3>
+                    
                   <div class="row"> <!-- answer -->
+                    
                     <div class="col-md-9">
-                      <div class="arrow_box">ほんとだyo<br>
+                      <div class="arrow_box">夜は川辺が綺麗でロマンチック。ビールなどを片手に友達と行くのがおすすめ！また、電車で２０分のBrugeはベルギーのベネチアと呼ばれ、日本人女性観光客にかなりおすすめの町である。<br>
                         <div class="row">
                         <div class="general-button clip-button">
                           <div class="button-content">
@@ -357,23 +395,40 @@
                     </div>
 
                   </div> <!-- answer -->
-                </div> <!-- reviewbox -->
+                  <div class="row"> <!-- answer -->
+                    
+                    <div class="col-md-9">
+                      <div class="arrow_box">夜は川辺が綺麗でロマンチック。ビールなどを片手に友達と行くのがおすすめ！また、電車で２０分のBrugeはベルギーのベネチアと呼ばれ、日本人女性観光客にかなりおすすめの町である。<br>
+                        <div class="row">
+                        <div class="general-button clip-button">
+                          <div class="button-content">
+                            <i class="fa fa-pencil-square-o fa-1x"></i>
+                            <span class="button-text">クリップ</span>
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-3">
+                      <a href="">
+                      <div class="thumnail-box-user-s">
+                        <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '160px'));?> <!-- 写真 -->
+                        <div class="thumnail-text-box-user-s">
+                          <p class="text-on-image thumnail-text-user-s">新居航平</p>
+                        </div>
+                      </div>
+                      </a>
+                    </div>
+
+                  </div> <!-- answer -->
+                </div> <!-- questionbox -->
                 <!--質問１つの塊終了-->
+ 
         </div>
 <!-- 質問と答え -->
 
-  <h2>Hello</h2>
-  <h2>Hello</h2>
-  <h2>Hello</h2>
-  <h2>Hello</h2>
-  <h2>Hello</h2>
-  <h2>Hello</h2>
-  <h2>Hello</h2>
-  <h2>Hello</h2>
-  <h2>Hello</h2>
-  <h2>Hello</h2>
-  <h2>Hello</h2>
-
+ 
 </div>
 <!-- leftside contents終 -->
 
