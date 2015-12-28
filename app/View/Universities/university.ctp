@@ -7,7 +7,9 @@
     <div class="col-md-9">
       <div class="content">
 
-
+<div class="padding-s clearfix">
+  <div class="page-title">ゲント大学 </div><p class="favorite-btn fa fa-heart"> お気に入り登録</p><div class="page-sub-title"></div>
+</div>
         <!-- スライドショー始 -->
         <div class="row">
           <div class="col-md-9">
