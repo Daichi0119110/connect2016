@@ -323,7 +323,7 @@
                     <i class="fa fa-pencil-square-o fa-1x"></i>
                     <span class="button-text">クリップ</span>
                   </div>
-                
+
                 </div>
               </div>
 </div>
@@ -400,17 +400,17 @@
 <!-- sidebar -->
       <div class="col-md-3" role="complementary">
 
-        <nav class="sidebar hidden-print" data-offset-top="999">
+        <nav class="sidebar hidden-print">
           <ul class="nav">
 
-        <a href="https://www.facebook.com/kohei.arai.5">
-          <div class="thumnail-box-m">
-            <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '300px'));?>
-            <div class="thumnail-text-box-m">
-                <p class="text-on-image thumnail-text-m">新居航平さんのFacebook</p>
-            </div>
-          </div>
-        </a>
+        <div class="input-group top-margin-s">
+          <input type="text" class="form-control search-s" placeholder="ゲント大学に関して検索">
+          <span class="input-group-btn">
+            <button class="btn btn-default search-btn-s" type="button">
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </button>
+          </span>
+        </div>
 
             <li>
               <a href="#review">▶項目別レビュー</a>

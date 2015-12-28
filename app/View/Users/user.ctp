@@ -45,7 +45,7 @@
                   <li><a href="#11"><?php echo $this->Html->image('university/ghent.jpg', array('height' => '450px'));?></a></li>
                   <li><a href="#12"><?php echo $this->Html->image('sample/photo6.jpg', array('height' => '450px'));?></a></li>
                   </ul>
-                  </div><!--/.mainView-->
+                  </div>
 
 
                   <div class="thumbNail">
@@ -65,8 +65,8 @@
                   <li><?php echo $this->Html->image('sample/photo6.jpg');?></li>
                   </ul>
                   </div>
-                  </div><!--/.thumbNail-->
-          </div><!--/.slideShow-->
+                  </div>
+          </div>
       </div><!-- row -->
 
 
@@ -76,7 +76,7 @@
 <!-- user basic 始 -->
 <div class="row">
   <div class="col-md-7">
-    <div id="about" class="padding-m">
+    <div id="about" class="">
       <h2>USER BASIC INFO</h2>
     </div>
   </div>
@@ -86,14 +86,14 @@
 
 <!-- self intro始 -->
   <div class="col-md-5">
-    <div id="about-sub-1" class="padding-m">
+    <div id="about-sub-1" class="">
       <h2>自己紹介</h2>
     </div>
 <!-- self intro終 -->
 
 
 <!-- user 留学報告書DL始 -->
-    <div id="about-sub-2"class="padding-m">
+    <div id="about-sub-2"class="">
       <a href=""><h3><i class="fa fa-download fa-1x"></i>留学報告書をダウンロード</h3></a>
     </div>
 <!-- user 留学報告書DL終 -->
@@ -105,7 +105,7 @@
 
 
 <!-- 項目別スコア -->
-        <div id="score" class="top-margin-m padding-m">
+        <div id="score" class="top-margin-m ">
 
           <h2 class="">ゲント大学のスコア</h2>
 
@@ -166,10 +166,10 @@
 
 
 <!-- レビュー始 -->
-      <div id="review" class="padding-m row">
+      <div id="review" class=" row">
       <h2>レビュー</h2>
                 <!--レビュー１つの塊-->
-                <div  id="review-sub-1" class="padding-m">
+                <div  id="review-sub-1" class="">
                 <div class="review-box">
                   <div class="row">
                     <div class="col-md-3">
@@ -216,7 +216,7 @@
                 <!--レビュー１つの塊終了-->
 
                 <!--レビュー１つの塊-->
-                <div id="review-sub-2" class="padding-m">
+                <div id="review-sub-2" class="">
                 <div class="review-box">
                   <div class="row">
                     <div class="col-md-3">
@@ -265,10 +265,10 @@
 <!-- レビュー終 -->
 
 <!-- 質問と答え -->
-      <div id="question" class="padding-m row">
+      <div id="question" class=" row">
               <h2>Q&A</h2>
                 <!--質問１つの塊-->
-                <div id="question-sub-1" class="question-box padding-m">
+                <div id="question-sub-1" class="question-box ">
                   <div class="row">
                     <h3 class="question-title">Question</h3>
                     <div class="col-md-2">
@@ -346,8 +346,8 @@
                 </div> <!-- questionbox -->
                 <!--質問１つの塊終了-->
  
-                               <!--質問１つの塊-->
-                <div id="question-sub-1" class="question-box padding-m">
+                <!--質問１つの塊-->
+                <div id="question-sub-2" class="question-box ">
                   <div class="row">
                     <h3 class="question-title">Question</h3>
                     <div class="col-md-2">
@@ -367,9 +367,9 @@
                     </div>
                   </div>
 <h3 class="answer-title">Answer</h3>
-                    
+
                   <div class="row"> <!-- answer -->
-                    
+
                     <div class="col-md-9">
                       <div class="arrow_box">夜は川辺が綺麗でロマンチック。ビールなどを片手に友達と行くのがおすすめ！また、電車で２０分のBrugeはベルギーのベネチアと呼ばれ、日本人女性観光客にかなりおすすめの町である。<br>
                         <div class="row">
@@ -396,7 +396,7 @@
 
                   </div> <!-- answer -->
                   <div class="row"> <!-- answer -->
-                    
+
                     <div class="col-md-9">
                       <div class="arrow_box">夜は川辺が綺麗でロマンチック。ビールなどを片手に友達と行くのがおすすめ！また、電車で２０分のBrugeはベルギーのベネチアと呼ばれ、日本人女性観光客にかなりおすすめの町である。<br>
                         <div class="row">
