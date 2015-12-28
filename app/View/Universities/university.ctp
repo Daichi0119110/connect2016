@@ -8,7 +8,7 @@
       <div class="content">
 
 <div class="padding-s clearfix">
-  <div class="page-title"><?php echo $university['University']['university']; ?></div><p class="favorite-btn fa fa-heart"> お気に入り登録</p><div class="page-sub-title"></div>
+  <div class="page-title"><?php echo $university['University']['university']; ?></div><p class="favorite-btn fa fa-heart" data-university-id="<?php echo $university['University']['id']; ?>"> お気に入り登録</p><div class="page-sub-title"></div>
 </div>
         <!-- スライドショー始 -->
         <div class="row">
@@ -16,23 +16,19 @@
             <div class="slideShow">
               <div class="mainView">
                 <ul>
-                  <li><a href="#1"><?php echo $this->Html->image('sample/photo1.jpg');?></a></li>
-                  <li><a href="#2"><?php echo $this->Html->image('sample/photo2.jpg');?></a></li>
-                  <li><a href="#3"><?php echo $this->Html->image('sample/photo3.jpg');?></a></li>
-                  <li><a href="#4"><?php echo $this->Html->image('sample/photo4.jpg');?></a></li>
-                  <li><a href="#5"><?php echo $this->Html->image('sample/photo5.jpg');?></a></li>
-                  <li><a href="#6"><?php echo $this->Html->image('sample/photo6.jpg');?></a></li>
+                  <?php for ($i=0; $i <1000 ; $i++) { ?>
+                  <?php if (!isset($university['Picture_uni'][$i])){ break; } ?>
+                  <li><a href="#<?php echo $i+1; ?>"><?php echo $this->Html->image('sample/'.$university['Picture_uni'][$i]['image']);?></a></li>
+                  <?php } ?>
                 </ul>
               </div><!--/.mainView-->
               <div class="thumbNail">
               <div class="university">
                 <ul>
-                  <li><?php echo $this->Html->image('sample/photo1.jpg');?></li>
-                  <li><?php echo $this->Html->image('sample/photo2.jpg');?></li>
-                  <li><?php echo $this->Html->image('sample/photo3.jpg');?></li>
-                  <li><?php echo $this->Html->image('sample/photo4.jpg');?></li>
-                  <li><?php echo $this->Html->image('sample/photo5.jpg');?></li>
-                  <li><?php echo $this->Html->image('sample/photo6.jpg');?></li>
+                  <?php for ($i=0; $i <1000 ; $i++) { ?>
+                  <?php if (!isset($university['Picture_uni'][$i])){ break; } ?>
+                  <li><?php echo $this->Html->image('sample/'.$university['Picture_uni'][$i]['image']);?></li>
+                  <?php } ?>
                 </ul>
               </div>
               </div><!--/.thumbNail-->
@@ -61,7 +57,7 @@
         <div class="wb">
                  <div class="row centered">
           <div class="col-md-9">
-            <a href="#1"><?php echo $this->Html->image('banner_question.jpg');?></a>
+            <a href="<?php echo SITE_URL.'pages/search'?>"><?php echo $this->Html->image('banner_question.jpg');?></a>
           </div><!-- /.col-md-9 -->
         </div><!-- /.row -->
         </div>
@@ -108,11 +104,11 @@
 
 <hr>
     <!-- 項目別レビュー -->
-    <div class="row centered">
+    <div class="row centered" id="review">
       <h2>項目別レビュー</h2>
       <?php for ($i=0; $i < 3; $i++) { ?>
       <div class="col-md-4">
-        <a href=""> <!-- ページ内移動 -->
+        <a href="#category<?php echo $categories[$i]['Category']['id']; ?>"> <!-- ページ内移動 -->
           <div class="thumnail-box-m">
             <?php echo $this->Html->image("category/".$categories[$i]['Category']['image']);?>
             <div class="thumnail-text-box-m">
@@ -128,7 +124,7 @@
     <div class="row centered">
       <?php for ($i=3; $i < 6; $i++) { ?>
       <div class="col-md-4">
-        <a href=""> <!-- ページ内移動 -->
+        <a href="#category<?php echo $categories[$i]['Category']['id']; ?>"> <!-- ページ内移動 -->
           <div class="thumnail-box-m">
             <?php echo $this->Html->image("category/".$categories[$i]['Category']['image']);?>
             <div class="thumnail-text-box-m">
@@ -144,7 +140,7 @@
     <div class="row centered">
       <?php for ($i=6; $i < 9; $i++) { ?>
       <div class="col-md-4">
-        <a href=""> <!-- ページ内移動 -->
+        <a href="#category<?php echo $categories[$i]['Category']['id']; ?>"> <!-- ページ内移動 -->
           <div class="thumnail-box-m">
             <?php echo $this->Html->image("category/".$categories[$i]['Category']['image']);?>
             <div class="thumnail-text-box-m">
@@ -158,44 +154,12 @@
       <!-- 項目別レビュー終 -->
 
 <hr>
-      <!-- senpai intros -->
-      <div class="row centered clearfix top-margin-m">
-        <h2><?php echo $university['University']['university']; ?>の先輩紹介</h2>
-        <div class="top-margin-xs">
-        </div>
-
-        <?php for ($i=0; $i < 3; $i++) { ?>
-        <div class="col-md-4">
-          <a href="<?php echo SITE_URL; ?>users/user/<?php echo $university['User'][$i]['id']; ?>">
-            <div class="senpai-box">
-              <div class="thumnail-box-user">
-                <?php echo $this->Html->image('developer/'.$university['User'][$i]['image'], array('height' => '240px'));?> <!-- 写真 -->
-                <div class="thumnail-text-box-user">
-                  <p class="text-on-image thumnail-text-user"><?php echo $university['User'][$i]['name']; ?></p>
-                </div>
-              </div>
-              <p class="senpai-nav"><?php echo date("Y/n",strtotime($university['User'][$i]['study_start']))."〜".date("Y/n",strtotime($university['User'][$i]['study_end'])); ?>に留学</p>
-              <p><?php echo $university['User'][$i]['self_intro']; ?></p>
-              <p class="senpai-nav-f">▼詳細を見る▼</p>
-            </div>
-          </a>
-        </div> 
-        <?php } ?>
-
-      </div><!-- row -->
-      <div class="row">
-          <p class="view-more-btn">▼▼ 他の先輩も見る ▼▼</p>
-        </div>
-      <!-- senpai intros -->
-
-
-<hr>
       <!-- pickup review -->
       <div class="row centered top-margin-m">
       <h2>ピックアップレビュー</h2>
 
         <?php foreach($categories as $category) { ?>
-        <div class="review-box">
+        <div class="review-box" id="category<?php echo $category['Category']['id']; ?>">
           <div class="row">
             <div class="col-md-3">
                   <div class="thumnail-box-s review-picture">
@@ -226,7 +190,7 @@
             </div>
             </div>
             <div class="col-md-3">
-              <a href="">
+              <a href="<?php echo SITE_URL."users/user/".$category['Pickup']['Review']['User']['id']; ?>">
               <div class="thumnail-box-user-s">
                 <?php echo $this->Html->image('user/'.$category['Pickup']['Review']['User']['image'], array('height' => '160px'));?> <!-- 写真 -->
                 <div class="thumnail-text-box-user-s">
@@ -241,10 +205,39 @@
 
       </div>
       <!-- pickup review -->
+
+<hr>
+      <!-- senpai intros -->
+      <div class="row centered clearfix top-margin-m" id="senpai">
+        <h2><?php echo $university['University']['university']; ?>の先輩紹介</h2>
+        <div class="top-margin-xs">
+        </div>
+
+        <?php for ($i=0; $i < 3; $i++) { ?>
+        <div class="col-md-4">
+          <a href="<?php echo SITE_URL; ?>users/user/<?php echo $university['User'][$i]['id']; ?>">
+            <div class="senpai-box">
+              <div class="thumnail-box-user">
+                <?php echo $this->Html->image('developer/'.$university['User'][$i]['image'], array('height' => '240px'));?> <!-- 写真 -->
+                <div class="thumnail-text-box-user">
+                  <p class="text-on-image thumnail-text-user"><?php echo $university['User'][$i]['name']; ?></p>
+                </div>
+              </div>
+              <p class="senpai-nav"><?php echo date("Y/n",strtotime($university['User'][$i]['study_start']))."〜".date("Y/n",strtotime($university['User'][$i]['study_end'])); ?>に留学</p>
+              <p><?php echo $university['User'][$i]['self_intro']; ?></p>
+              <p class="senpai-nav-f">▼詳細を見る▼</p>
+            </div>
+          </a>
+        </div> 
+        <?php } ?>
+
+      </div><!-- row -->
+      <!-- senpai intros -->
+      
 <hr>
       <!-- pdfダウンロード始 -->
       <!-- pickup review -->
-      <div class="row centered top-margin-m">
+      <div class="row centered top-margin-m" id="pdf">
         <h2>先輩たちの留学報告書</h2>
         <table class="table score-table pdf-table">
           <thead>
@@ -261,16 +254,13 @@
             <td><?php echo date("Y/n",strtotime($university['User'][$i]['study_start']))."〜".date("Y/n",strtotime($university['User'][$i]['study_end'])); ?></td>
             <td><?php echo $report['User']['name']; ?></td>
             <td><?php echo $report['filename']; ?></td>
-            <td><a href="">ダウンロード</a></td>
+            <td><a href="">ダウンロード</a></td> <!-- ダウンロードを実行 -->
           </tr>
           <?php } ?>
           
         </tbody>
       </table>
     </div>
-
-
-
     <!-- pdfダウンロード終 -->
 
 
@@ -294,26 +284,25 @@
             </button>
           </span>
         </div>
-
+            <li>
+              <a href="#score">▶<?php echo $university['University']['university']; ?>のスコア</a>
+            </li>
             <li>
               <a href="#review">▶項目別レビュー</a>
               <ul class="nav">
                 <?php for ($i=0; $i < 9; $i++) { ?>
-                <li><a href="#review-sub-<?php echo $i+1; ?>"><?php echo $categories[$i]['Category']['category']; ?></a></li>
+                <li><a href="#category<?php echo $categories[$i]['Category']['id']; ?>"><?php echo $categories[$i]['Category']['category']; ?></a></li>
                 <?php } ?>
               </ul>
             </li>
             <li>
-              <a href="#score">▶<?php echo $university['University']['university']; ?>のスコア</a>
-            </li>
-             <li>
-              <a href="#review">▶<?php echo $university['University']['university']; ?>のQ&Aコーナー</a>
-            </li>
-             <li>
-              <a href="#question">▶<?php echo $university['University']['university']; ?>の先輩たち</a>
+              <a href="#senpai">▶<?php echo $university['University']['university']; ?>の先輩</a>
             </li>
             <li>
-              <a href="#question">▶留学報告書</a>
+              <a href="#pdf">▶留学報告書</a>
+            </li>
+            <li>
+              <a href="<?php echo SITE_URL.'pages/search'?>">▶<?php echo $university['University']['university']; ?>のQ&Aコーナー</a>
             </li>
           </ul>
         </nav>
@@ -396,7 +385,7 @@ $(function() {
     }, "json");
 
   $.post('/connect2016/favoriteunis/ready/',
-    {'user_id':1, 'university_id':1} // 要変更
+    {'user_id':1, 'university_id':$('p.favorite-btn').data('university-id')} // 要変更
     ,function(res){
       if(res == 1){
         $('p.favorite-btn').html('お気に入り済み');
@@ -419,7 +408,7 @@ $(function() {
   //お気に入りボタン押したら
   $('p.favorite-btn').click(function(e){
     $.post('/connect2016/favoriteunis/change/',
-      {'user_id':1, 'university_id':1} // 要変更
+      {'user_id':1, 'university_id':$(this).data('university-id')} // 要変更
       ,function(res){
         if(res == 1){
           $('p.favorite-btn').html('お気に入り済み');
