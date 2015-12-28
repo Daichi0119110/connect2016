@@ -33,4 +33,11 @@ class Clip extends AppModel {
 			return 0;
 		}
 	}
+
+	public function getclipnumber($id){
+		$status=array(
+			'conditions'=>array('Clip.review_id' => $id)
+		);
+		return $this->find('count',$status);
+	}
 }
