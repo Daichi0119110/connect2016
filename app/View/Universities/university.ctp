@@ -7,7 +7,9 @@
     <div class="col-md-9">
       <div class="content">
 
-
+<div class="padding-s clearfix">
+  <div class="page-title">ゲント大学 </div><p class="favorite-btn fa fa-heart"> お気に入り登録</p><div class="page-sub-title"></div>
+</div>
         <!-- スライドショー始 -->
         <div class="row">
           <div class="col-md-9">
@@ -215,7 +217,7 @@
                     <i class="fa fa-pencil-square-o fa-1x"></i>
                     <span class="button-text">クリップ</span>
                   </div>
-                
+
                 </div>
               </div>
             </div>
@@ -291,26 +293,91 @@
 
 
 <!-- sidebar -->
+      <div class="col-md-3" role="complementary">
 
-<div class="col-md-2 col-md-offset-1">
-  <div class="sidebar-nav affix">
-    <nav class="affix-nav">
-      <ul class="nav">
-        <li><a href="#one">1番目</a></li>
-        <li><a href="#2">2番目</a></li>
-        <li><a href="#3">3番目</a></li>
-        <li><a href="#t">4番目</a></li>
-        <li><a href="#r">5番目</a></li>
-      </ul>
-    </nav>
-  </div>
-</div>
+        <nav class="sidebar hidden-print">
+          <ul class="nav">
+
+        <div class="input-group top-margin-s">
+          <input type="text" class="form-control search-s" placeholder="ゲント大学に関して検索">
+          <span class="input-group-btn">
+            <button class="btn btn-default search-btn-s" type="button">
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </button>
+          </span>
+        </div>
+
+            <li>
+              <a href="#review">▶項目別レビュー</a>
+              <ul class="nav">
+                <li><a href="#review-sub-1">旅行</a></li>
+                <li><a href="#review-sub-2">環境</a></li>
+                <li><a href="#review-sub-3">物価</a></li>
+                <li><a href="#review-sub-4">住居</a></li>
+                <li><a href="#review-sub-5">食事</a></li>
+                <li><a href="#review-sub-6">安全</a></li>
+                <li><a href="#review-sub-7">授業</a></li>
+                <li><a href="#review-sub-8">留学生</a></li>
+                <li><a href="#review-sub-9">言語</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#score">▶ゲント大学のスコア</a>
+            </li>
+             <li>
+              <a href="#review">▶ゲント大学のQ&Aコーナー</a>
+              <ul class="nav">
+                <li><a href="#review-sub-1">項目1</a></li>
+                <li><a href="#review-sub-2">項目2</a></li>
+              </ul>
+            </li>
+             <li>
+              <a href="#question">▶ゲント大学の先輩たち</a>
+              <ul class="nav">
+                <li><a href="#question-sub-1">question1</a></li>
+                <li><a href="#question-sub-2">question2</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#question">▶留学報告書</a>
+              <ul class="nav">
+                <li><a href="#question-sub-1">question1</a></li>
+                <li><a href="#question-sub-2">question2</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+<!-- sidebar end -->
 
 </div> <!-- all row-->
 </div> <!-- all container-->
 
 <script>
-  chart();
+function chart(){
+  var radarChartData = {
+    labels: ["旅行のしやすさ", "町の過ごしやすさ", "大学キャンパスの快適さ", "授業のレベルの高さ", "物価の手軽さ", "住居環境の良さ", "食事面での満足度","治安の良さ"],
+    datasets: [
+      { //このかっこの塊をコピーすれば,二つ以上のデータを一つの中にいれられる。
+        label: "ゲント大学の平均スコア",
+        fillColor: "rgba(25,51,192,0.2)",//レーダーの中身の色
+        strokeColor: "rgba(25,51,192,0.8)",//レーダーのborderの色
+        pointColor: "rgba(25,51,192,1)",//レーダーの頂点の色
+        pointStrokeColor: "rgba(25,51,192,1)",
+        pointHighlightFill: "rgba(25,51,192,1)",
+        pointHighlightStroke: "rgba(25,51,192,1)",
+        data: [4,3,3,4.12,2.3,5,4,3]
+      },
+    ]
+  };
+
+  window.onload = function(){
+    window.myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData, {
+      responsive: true
+    });
+  }
+}
+chart();
 
   $.fn.raty.defaults.path = "../../img/star-score";
 
