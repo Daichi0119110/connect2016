@@ -9,10 +9,8 @@
 <div class="col-md-9">
 
 
-<div class="padding-s">
-  <h2 style="display:inline">Arai Kohei</h2>
-            <i class="fa fa-heart fa-2x"></i>
-  <h2 style="display:inline">ゲント大学へ留学</h2>
+<div class="padding-s clearfix">
+  <div class="page-title">Arai Kohei </div><p class="favorite-btn fa fa-heart"> お気に入り登録</p><div class="page-sub-title">--- ゲント大学へ留学 ---</div>
 </div>
 
 
@@ -113,26 +111,26 @@
             <canvas id="canvas"></canvas>
           </div>
           <div class="row top-margin-s">
-            <div class="score-total">レビュー総合評価　3.4<span class="default-star"></span><span style="margin-left:40px;font-size:18px;">回答者:6人</span></div>
+            <div class="score-total">レビュー総合評価　3.4<span class="default-star star-0"></span></div>
 
             <div class="col-md-6">
               <table class="table score-table">
                 <tbody>
                  <tr>
                   <th>旅行のしやすさ</th>
-                  <td>3.4<span class="default-star"></span></td>
+                  <td>2.0<span class="default-star star-1"></span></td>
                 </tr>
                 <tr>
                   <th>町の過ごしやすさ</th>
-                  <td>3.4<span class="default-star"></span></td>
+                  <td>3.4<span class="default-star star-2"></span></td>
                 </tr>
                 <tr>
                   <th>大学キャンパスの快適さ</th>
-                  <td>3.4<span class="default-star"></span></td>
+                  <td>4.2<span class="default-star star-3"></span></td>
                 </tr>
                 <tr>
                   <th>授業レベルの高さ</th>
-                  <td>3.4<span class="default-star"></span></td>
+                  <td>4.7<span class="default-star star-4"></span></td>
                 </tr>
               </tbody>
             </table>
@@ -141,20 +139,20 @@
             <table class="table score-table">
               <tbody>
                <tr>
-                <th>治安の良さ</th>
-                <td>3.4<span class="default-star"></span></td>
-              </tr>
-              <tr>
-                <th>食事面での満足度</th>
-                <td>3.4<span class="default-star"></span></td>
+                <th>物価の手軽さ</th>
+                <td>3.4<span class="default-star star-5"></span></td>
               </tr>
               <tr>
                 <th>住居環境の良さ</th>
-                <td>3.4<span class="default-star"></span></td>
+                <td>3.4<span class="default-star star-6"></span></td>
               </tr>
               <tr>
-                <th>物価の手軽さ</th>
-                <td>3.4<span class="default-star"></span></td>
+                <th>食事面での満足度</th>
+                <td>3.4<span class="default-star star-7"></span></td>
+              </tr>
+              <tr>
+                <th>治安の良さ</th>
+                <td>3.4<span class="default-star star-8"></span></td>
               </tr>
             </tbody>
           </table>
@@ -484,12 +482,47 @@
 </div> <!-- all container-->
 
 <script>
+function chart(){
+  var radarChartData = {
+    labels: ["旅行のしやすさ", "町の過ごしやすさ", "大学キャンパスの快適さ", "授業のレベルの高さ", "物価の手軽さ", "住居環境の良さ", "食事面での満足度","治安の良さ"],
+    datasets: [
+      { //このかっこの塊をコピーすれば,二つ以上のデータを一つの中にいれられる。
+        label: "ゲント大学の平均スコア",
+        fillColor: "rgba(25,51,192,0.2)",//レーダーの中身の色
+        strokeColor: "rgba(25,51,192,0.8)",//レーダーのborderの色
+        pointColor: "rgba(25,51,192,1)",//レーダーの頂点の色
+        pointStrokeColor: "rgba(25,51,192,1)",
+        pointHighlightFill: "rgba(25,51,192,1)",
+        pointHighlightStroke: "rgba(25,51,192,1)",
+        data: [4,3,3,4.12,2.3,5,4,3]
+      },
+    ]
+  };
+
+  window.onload = function(){
+    window.myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData, {
+      responsive: true
+    });
+  }
+}
+chart();
+
+
   chart();
 
   $.fn.raty.defaults.path = "../../img/star-score";
 
-
-  $('.default-star').raty({ readOnly: true, score: 3.3 });
+  //totalつまり、平均値
+  $('.star-0').raty({ readOnly: true, score: 2 });
+//各項目のスコア
+  $('.star-1').raty({ readOnly: true, score: 2 });
+  $('.star-2').raty({ readOnly: true, score: 3.4 });
+  $('.star-3').raty({ readOnly: true, score: 4.2 });
+  $('.star-4').raty({ readOnly: true, score: 4.7 });
+  $('.star-5').raty({ readOnly: true, score: 2 });
+  $('.star-6').raty({ readOnly: true, score: 2 });
+  $('.star-7').raty({ readOnly: true, score: 2 });
+  $('.star-8').raty({ readOnly: true, score: 2 });
 
 </script>
 

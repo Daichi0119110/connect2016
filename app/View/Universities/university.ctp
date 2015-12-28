@@ -7,7 +7,9 @@
     <div class="col-md-9">
       <div class="content">
 
-
+<div class="padding-s clearfix">
+  <div class="page-title">ゲント大学 </div><p class="favorite-btn fa fa-heart"> お気に入り登録</p><div class="page-sub-title"></div>
+</div>
         <!-- スライドショー始 -->
         <div class="row">
           <div class="col-md-9">
@@ -459,7 +461,30 @@
 </div> <!-- all container-->
 
 <script>
-  chart();
+function chart(){
+  var radarChartData = {
+    labels: ["旅行のしやすさ", "町の過ごしやすさ", "大学キャンパスの快適さ", "授業のレベルの高さ", "物価の手軽さ", "住居環境の良さ", "食事面での満足度","治安の良さ"],
+    datasets: [
+      { //このかっこの塊をコピーすれば,二つ以上のデータを一つの中にいれられる。
+        label: "ゲント大学の平均スコア",
+        fillColor: "rgba(25,51,192,0.2)",//レーダーの中身の色
+        strokeColor: "rgba(25,51,192,0.8)",//レーダーのborderの色
+        pointColor: "rgba(25,51,192,1)",//レーダーの頂点の色
+        pointStrokeColor: "rgba(25,51,192,1)",
+        pointHighlightFill: "rgba(25,51,192,1)",
+        pointHighlightStroke: "rgba(25,51,192,1)",
+        data: [4,3,3,4.12,2.3,5,4,3]
+      },
+    ]
+  };
+
+  window.onload = function(){
+    window.myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData, {
+      responsive: true
+    });
+  }
+}
+chart();
 
   $.fn.raty.defaults.path = "../../img/star-score";
 
