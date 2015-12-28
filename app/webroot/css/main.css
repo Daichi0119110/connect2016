@@ -976,4 +976,12 @@ a:hover .senpai-box{
 
 
 
-
+hr {
+    height:3px;
+    border:0;
+    background:linear-gradient(left, #f5f5f5, #999, #f5f5f5);
+    background:-webkit-linear-gradient(left, #f5f5f5, #999, #f5f5f5);
+    background:-moz-linear-gradient(left, #f5f5f5, #999, #f5f5f5);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

@@ -103,60 +103,65 @@
 
 
 
-
-
-
 <!-- 項目別スコア -->
-<div id="score" class="padding-m row">
-  <h2>ゲント大学のスコア</h2>
+        <div id="score" class="top-margin-m">
 
-  <div class="col-md-5">
-          <div class="canvas-s top-margin-xs">
-              <canvas id="canvas"></canvas>
+          <h2 class="">ゲント大学のスコア</h2>
+
+          <div class="canvas center-block top-margin-xs">
+            <canvas id="canvas"></canvas>
           </div>
-  </div>
+          <div class="row top-margin-s">
+            <div class="score-total">レビュー総合評価　3.4<span class="default-star"></span><span style="margin-left:40px;font-size:18px;">回答者:6人</span></div>
 
-      <div class="score-total-s">レビュー総合評価　3.4<span class="default-star-s"></span><span style="margin-left:30px;font-size:15px;">回答者:6人</span></div>
+            <div class="col-md-6">
+              <table class="table score-table">
+                <tbody>
+                 <tr>
+                  <th>旅行のしやすさ</th>
+                  <td>3.4<span class="default-star"></span></td>
+                </tr>
+                <tr>
+                  <th>町の過ごしやすさ</th>
+                  <td>3.4<span class="default-star"></span></td>
+                </tr>
+                <tr>
+                  <th>大学キャンパスの快適さ</th>
+                  <td>3.4<span class="default-star"></span></td>
+                </tr>
+                <tr>
+                  <th>授業レベルの高さ</th>
+                  <td>3.4<span class="default-star"></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-md-6">
+            <table class="table score-table">
+              <tbody>
+               <tr>
+                <th>治安の良さ</th>
+                <td>3.4<span class="default-star"></span></td>
+              </tr>
+              <tr>
+                <th>食事面での満足度</th>
+                <td>3.4<span class="default-star"></span></td>
+              </tr>
+              <tr>
+                <th>住居環境の良さ</th>
+                <td>3.4<span class="default-star"></span></td>
+              </tr>
+              <tr>
+                <th>物価の手軽さ</th>
+                <td>3.4<span class="default-star"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div><!-- BASIC -->
 
-  <div class="col-md-7">
-        <table class="table score-table-s">
-          <tbody>
-           <tr>
-            <th>旅行のしやすさ</th>
-            <td>3.4<span class="default-star-s"></span></td>
-          </tr>
-          <tr>
-            <th>町の過ごしやすさ</th>
-            <td>3.4<span class="default-star-s"></span></td>
-          </tr>
-          <tr>
-            <th>大学キャンパスの快適さ</th>
-            <td>3.4<span class="default-star-s"></span></td>
-          </tr>
-          <tr>
-            <th>授業レベルの高さ</th>
-            <td>3.4<span class="default-star-s"></span></td>
-          </tr>
-          <tr>
-            <th>治安の良さ</th>
-            <td>3.4<span class="default-star-s"></span></td>
-          </tr>
-          <tr>
-            <th>食事面での満足度</th>
-            <td>3.4<span class="default-star-s"></span></td>
-          </tr>
-          <tr>
-            <th>住居環境の良さ</th>
-            <td>3.4<span class="default-star-s"></span></td>
-          </tr>
-          <tr>
-            <th>物価の手軽さ</th>
-            <td>3.4<span class="default-star-s"></span></td>
-          </tr>
-        </tbody>
-      </table>
-  </div>
-</div>
+
 
 
 <!-- レビュー始 -->
@@ -427,7 +432,7 @@
   $.fn.raty.defaults.path = "../../img/star-score";
 
 
-  $('.default-star-s').raty({ readOnly: true, score: 3.3 });
+  $('.default-star').raty({ readOnly: true, score: 3.3 });
 
 </script>
 
