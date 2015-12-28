@@ -68,14 +68,38 @@
       </div><!-- row -->
 
 
-
 <!-- userinfo -->
 
 <!-- user basic 始 -->
 <div class="row">
-  <div class="col-md-7">
-    <div id="about" class="">
-      <h2>USER BASIC INFO</h2>
+  <div class="col-md-5">
+    <div id="about">
+             <table class="table profile-basicinfo">
+                 <tbody>
+                  <tr>
+                   <th>名前</th>
+                   <td>Kohei Arai</td>
+                  </tr>
+                  <tr>
+                   <th>性別</th>
+                   <td>男性</td>
+                  </tr>
+                  <tr>
+                   <th>留学期間</th>
+                   <td>2014年9月〜2015年7月</td>
+                  </tr>
+                  <tr>
+                    <th>大学・学年</th>
+                    <td>
+                    東京工業大学・４年
+                    </td>
+                   </tr>
+                  <tr>
+                   <th>専攻</th>
+                   <td>経営システム工学</td>
+                  </tr>
+                </tbody>
+            </table>
     </div>
   </div>
 <!-- user basic 終 -->
@@ -83,16 +107,19 @@
 
 
 <!-- self intro始 -->
-  <div class="col-md-5">
-    <div id="about-sub-1" class="">
-      <h2>自己紹介</h2>
+  <div class="col-md-7">
+    <div id="about-sub-1">
+      <h4><i class="fa fa-smile-o fa-1x"></i>自己紹介</h4>
+      <div class="profile-selfintro-box">
+      こんにちは。ゲント大学に留学してました、新居です。自分自身、留学する時の情報集めで戸惑いました。ぜひ気軽に質問してください！
+      </div>
     </div>
 <!-- self intro終 -->
 
 
 <!-- user 留学報告書DL始 -->
-    <div id="about-sub-2"class="">
-      <a href=""><h3><i class="fa fa-download fa-1x"></i>留学報告書をダウンロード</h3></a>
+    <div id="about-sub-2" class="top-margin-s">
+      <a href=""><h4><i class="fa fa-download fa-1x"></i>留学報告書をダウンロード</h4></a>
     </div>
 <!-- user 留学報告書DL終 -->
   </div>

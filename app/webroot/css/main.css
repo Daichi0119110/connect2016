@@ -546,7 +546,7 @@ a:after {
 
 .search-btn-s{
     border-radius:0 5px 5px 0!important;
-    font-size: 20px;
+    font-size: 15px;
     height:30px;
     width:30px;
 }
@@ -573,8 +573,27 @@ a:after {
 
 .form-btn-nav{
     border-radius:6px 6px 6px 6px!important;
+    font-size: 10px;
+    text-align:center;
+    height:25px;
+    float:right;
+}
+
+.form-l{
+    border-radius: 8px 8px 8px 8px !important;
+    font-size: 20px;
+    width: 720px;
+    height:100px;
+    margin-left: 40px;
+}
+
+.form-btn-l{
+    border-radius:8px 8px 8px 8px!important;
     font-size: 15px;
-    height:30px
+    text-align:center;
+    height:30px;
+    float:right;
+    margin-right:50px;
 }
 
 /*サムネイル関連*/
@@ -848,6 +867,10 @@ a:hover .senpai-box{
     font-weight: 700;
 }
 
+.forscrollspy {
+    margin-top:-100px;
+    padding-top:100px;
+}
 
 
 /*ヘッダー下の謎のスペースを削除するため調整*/
@@ -911,8 +934,8 @@ a:hover .senpai-box{
 /*ユーザー個人ページ写真*/
 #userpic{
     position: absolute;
-    z-index: 100;
-    top: 300px;
+    z-index: 101;
+    top: 380px;
     left: 8%;
 }
 
@@ -1123,4 +1146,20 @@ hr {
     display:block;
     font-weight: bold;
     margin-top:10px;
+}
+
+
+.profile-selfintro-box{
+    border-radius: 10px;
+    border:solid;
+    border-width:1px;
+    overflow: hidden;
+    padding:10px;
+    width: 450px
+}
+
+
+.profile-basicinfo {
+    text-align: left;
+    font-size: 14px;
 }
