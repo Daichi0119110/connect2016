@@ -682,6 +682,34 @@ a:hover .thumnail-box-user-s{
     opacity: 0.8;
 }
 
+/*サムネイルゆーざー用超小さいバージョン*/
+.thumnail-box-user-xs{
+    height:100px;
+    width:100px;
+    overflow:hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+.thumnail-text-box-user-xs{
+    position: absolute;
+    bottom:0px;
+    left: 0px;
+    width:100%;
+    height:48px;
+    color: #fff;
+}
+
+.thumnail-text-user-xs{
+    text-align: center;
+    width: 100%;
+    font-size:12px;
+}
+
+a:hover .thumnail-box-user-xs{
+    opacity: 0.8;
+}
+
 /*review一覧の設定*/
 a:hover .thumnail-box-m{
     opacity: 0.8;
@@ -891,6 +919,9 @@ a:hover .senpai-box{
     border-radius: 10px;
     border:solid transparent;
     overflow: hidden;
+    border:solid;
+    padding: 0  30px 10px 30px;
+    margin: 30px 10px;
 }
 .question-picture{
     border-radius: 0!important;
@@ -907,6 +938,21 @@ a:hover .senpai-box{
 .question-q-area{
     margin-left:-30px;
 }
+
+.question-title{
+    font-style: italic;
+    font-weight:bold;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.answer-title{
+    font-style: italic;
+    font-weight:bold;
+    text-decoration: underline;
+    text-align: center;
+/*    margin-right:30px;
+*/}
 
 /*吹き出し作成*/
 .arrow_box {
@@ -987,7 +1033,7 @@ a:hover .senpai-box{
 }
 
 
-
+/*水平線のデザイン変更*/
 hr {
     height:3px;
     border:0;
@@ -997,3 +1043,20 @@ hr {
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
+
+/*お気に入りページの削除ボタン*/
+.delete-btn{
+    position: absolute;
+    top:-20px;
+    right:-20px;
+    z-index: 2;
+    opacity: 0.8;
+}
+.delete-btn:hover{
+    opacity:1.0;
+}
+.favorite-box{
+    position:relative;
+}
+
