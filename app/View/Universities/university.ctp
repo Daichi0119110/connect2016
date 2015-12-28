@@ -80,22 +80,12 @@
             <div class="col-md-6">
               <table class="table score-table">
                 <tbody>
+                <?php for ($i=0; $i < 4; $i++) {  ?>
                  <tr>
-                  <th>旅行のしやすさ</th>
+                  <th><?php echo $tag[$i]['Tag']['tag']; ?></th>
                   <td>3.4<span class="default-star"></span></td>
                 </tr>
-                <tr>
-                  <th>町の過ごしやすさ</th>
-                  <td>3.4<span class="default-star"></span></td>
-                </tr>
-                <tr>
-                  <th>大学キャンパスの快適さ</th>
-                  <td>3.4<span class="default-star"></span></td>
-                </tr>
-                <tr>
-                  <th>授業レベルの高さ</th>
-                  <td>3.4<span class="default-star"></span></td>
-                </tr>
+                <?php } ?>
               </tbody>
             </table>
           </div>

@@ -28,7 +28,7 @@ class UniversitiesController extends AppController {
 		}
 
 		// debug($university);
-		// debug($tags);
+		debug($tags);
 		// debug($categories);
 
 		// スコアの計算
