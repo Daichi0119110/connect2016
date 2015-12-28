@@ -108,7 +108,7 @@
       <h2>項目別レビュー</h2>
       <?php for ($i=0; $i < 3; $i++) { ?>
       <div class="col-md-4">
-        <a href="#category<?php $categories[$i]['Category']['id']; ?>"> <!-- ページ内移動 -->
+        <a href="#category<?php echo $categories[$i]['Category']['id']; ?>"> <!-- ページ内移動 -->
           <div class="thumnail-box-m">
             <?php echo $this->Html->image("category/".$categories[$i]['Category']['image']);?>
             <div class="thumnail-text-box-m">
@@ -124,7 +124,7 @@
     <div class="row centered">
       <?php for ($i=3; $i < 6; $i++) { ?>
       <div class="col-md-4">
-        <a href="#category<?php $categories[$i]['Category']['id']; ?>"> <!-- ページ内移動 -->
+        <a href="#category<?php echo $categories[$i]['Category']['id']; ?>"> <!-- ページ内移動 -->
           <div class="thumnail-box-m">
             <?php echo $this->Html->image("category/".$categories[$i]['Category']['image']);?>
             <div class="thumnail-text-box-m">
@@ -140,7 +140,7 @@
     <div class="row centered">
       <?php for ($i=6; $i < 9; $i++) { ?>
       <div class="col-md-4">
-        <a href="#category<?php $categories[$i]['Category']['id']; ?>"> <!-- ページ内移動 -->
+        <a href="#category<?php echo $categories[$i]['Category']['id']; ?>"> <!-- ページ内移動 -->
           <div class="thumnail-box-m">
             <?php echo $this->Html->image("category/".$categories[$i]['Category']['image']);?>
             <div class="thumnail-text-box-m">
@@ -159,7 +159,7 @@
       <h2>ピックアップレビュー</h2>
 
         <?php foreach($categories as $category) { ?>
-        <div class="review-box" id="<?php echo $category['Pickup']['Review']['id']; ?>">
+        <div class="review-box" id="category<?php echo $category['Category']['id']; ?>">
           <div class="row">
             <div class="col-md-3">
                   <div class="thumnail-box-s review-picture">
@@ -190,7 +190,7 @@
             </div>
             </div>
             <div class="col-md-3">
-              <a href="">
+              <a href="<?php echo SITE_URL."users/user/".$category['Pickup']['Review']['User']['id']; ?>">
               <div class="thumnail-box-user-s">
                 <?php echo $this->Html->image('user/'.$category['Pickup']['Review']['User']['image'], array('height' => '160px'));?> <!-- 写真 -->
                 <div class="thumnail-text-box-user-s">
@@ -254,16 +254,13 @@
             <td><?php echo date("Y/n",strtotime($university['User'][$i]['study_start']))."〜".date("Y/n",strtotime($university['User'][$i]['study_end'])); ?></td>
             <td><?php echo $report['User']['name']; ?></td>
             <td><?php echo $report['filename']; ?></td>
-            <td><a href="">ダウンロード</a></td>
+            <td><a href="">ダウンロード</a></td> <!-- ダウンロードを実行 -->
           </tr>
           <?php } ?>
           
         </tbody>
       </table>
     </div>
-
-
-
     <!-- pdfダウンロード終 -->
 
 
@@ -294,7 +291,7 @@
               <a href="#review">▶項目別レビュー</a>
               <ul class="nav">
                 <?php for ($i=0; $i < 9; $i++) { ?>
-                <li><a href="#review<?php echo $categories[$i]['Pickup']['Review']['id']; ?>"><?php echo $categories[$i]['Category']['category']; ?></a></li>
+                <li><a href="#category<?php echo $categories[$i]['Category']['id']; ?>"><?php echo $categories[$i]['Category']['category']; ?></a></li>
                 <?php } ?>
               </ul>
             </li>
