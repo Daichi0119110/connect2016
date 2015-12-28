@@ -23,6 +23,7 @@
                 </ul>
               </div><!--/.mainView-->
               <div class="thumbNail">
+              <div class="university">
                 <ul>
                   <li><?php echo $this->Html->image('sample/photo1.jpg');?></li>
                   <li><?php echo $this->Html->image('sample/photo2.jpg');?></li>
@@ -31,9 +32,10 @@
                   <li><?php echo $this->Html->image('sample/photo5.jpg');?></li>
                   <li><?php echo $this->Html->image('sample/photo6.jpg');?></li>
                 </ul>
+              </div>
               </div><!--/.thumbNail-->
 
-            </div><!--/.slideShow-->
+            </div><!--/.slideShow-university-->
           </div>
         </div><!-- row -->
 
@@ -424,4 +426,6 @@
 
 </script>
 
+<!-- slideshow_university -->
+<?php echo $this->Html->script( 'slideshow_university.js', array('inline' => 'false')); ?>
 
