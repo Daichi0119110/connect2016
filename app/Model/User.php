@@ -20,7 +20,8 @@ class User extends AppModel {
 
 	function getuser($user_id){
 		$status=array(
-			'conditions'=>array('User.id'=>$user_id)
+			'conditions'=>array('User.id'=>$user_id),
+			'recursive'=>0
 		);
 		return $this->find('first',$status);
 	}
