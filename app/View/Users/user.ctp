@@ -509,7 +509,7 @@
 </div> <!-- all container-->
 
 <script>
-function chart(){
+unction chart(){
   var radarChartData = {
     labels: ["旅行のしやすさ", "町の過ごしやすさ", "大学キャンパスの快適さ", "授業のレベルの高さ", "物価の手軽さ", "住居環境の良さ", "食事面での満足度","治安の良さ"],
     datasets: [
@@ -521,19 +521,28 @@ function chart(){
         pointStrokeColor: "rgba(25,51,192,1)",
         pointHighlightFill: "rgba(25,51,192,1)",
         pointHighlightStroke: "rgba(25,51,192,1)",
-        data: [4,3,3,4.12,2.3,5,4,3]
+        data: [3,3,3,1.12,2.3,2,2,3]
       },
     ]
   };
 
+
+var options = {
+        scaleOverride : true,
+        scaleSteps : 5,
+        scaleStepWidth : 1,
+         //Number - 目盛りの線の幅  
+        scaleStartValue : 0,
+    };
+
+
+
   window.onload = function(){
-    window.myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData, {
+    window.myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData,options, {
       responsive: true
     });
   }
 }
-chart();
-
 
   chart();
 

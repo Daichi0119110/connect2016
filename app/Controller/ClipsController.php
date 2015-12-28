@@ -4,6 +4,10 @@ class ClipsController extends AppController {
 	public $helper = array('HTML', 'form');
 	public $uses = array("Clip");
 
+public function clip() {
+
+	}
+
 
 	public function ready(){	// ページ読み込み時のclip情報の読み込み
 		if ($this->request->is('get')) {

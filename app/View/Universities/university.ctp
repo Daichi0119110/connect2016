@@ -174,7 +174,7 @@
                   <p class="text-on-image thumnail-text-user"><?php echo $university['User'][$i]['name']; ?></p>
                 </div>
               </div>
-              <p class="senpai-nav"><?php echo $university['User'][$i]['study_start']."〜".$university['User'][$i]['study_end']; ?>に留学</p>
+              <p class="senpai-nav"><?php echo date("Y/n",strtotime($university['User'][$i]['study_start']))."〜".date("Y/n",strtotime($university['User'][$i]['study_end'])); ?>に留学</p>
               <p><?php echo $university['User'][$i]['self_intro']; ?></p>
               <p class="senpai-nav-f">▼詳細を見る▼</p>
             </div>
@@ -183,6 +183,9 @@
         <?php } ?>
 
       </div><!-- row -->
+      <div class="row">
+          <p class="view-more-btn">▼▼ 他の先輩も見る ▼▼</p>
+        </div>
       <!-- senpai intros -->
 
 
@@ -255,7 +258,7 @@
          <tbody>
           <?php foreach($university['Report'] as $report) { ?>
           <tr>
-            <td><?php echo $report['User']['study_start']."〜".$report['User']['study_end']; ?></td>
+            <td><?php echo date("Y/n",strtotime($university['User'][$i]['study_start']))."〜".date("Y/n",strtotime($university['User'][$i]['study_end'])); ?></td>
             <td><?php echo $report['User']['name']; ?></td>
             <td><?php echo $report['filename']; ?></td>
             <td><a href="">ダウンロード</a></td>
@@ -346,8 +349,26 @@ function chart(){
     ]
   };
 
+
+var options = {
+        scaleOverride : true,
+        scaleSteps : 5,
+        scaleStepWidth : 1,
+         //Number - 目盛りの線の幅  
+        scaleStartValue : 0,
+    };
+
+
+
+
+
+
+
+
+
+
   window.onload = function(){
-    window.myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData, {
+    window.myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData,options, {
       responsive: true
     });
   }

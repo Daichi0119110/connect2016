@@ -889,6 +889,11 @@ a:hover .senpai-box{
     height:400px;
 }
 
+#canvas{
+    width:800px;
+    height:400px;
+}
+
 /*スターレビュースコア*/
 .default-star{
     margin-left: 30px;
@@ -1148,6 +1153,28 @@ hr {
     margin-top:10px;
 }
 
+/*もっと読むボタン*/
+.view-more-btn{
+    width:250px;
+    font-size:14px;
+    font-weight:bold;
+    text-decoration:none;
+    display:block;
+    text-align:center;
+    padding:8px 0 4px;
+    color:#fff;
+    background-color:rgba(25,51,192,0.85);
+    border-radius:5px;
+    box-shadow:2px 2px #404040;
+    margin:20px auto 0;
+}
+.view-more-btn:hover {
+    background-color:rgba(25,51,192,1);
+}
+
+/*クリップの一つのかたまり*/
+.one-clip{
+    position: relative;
 
 .profile-selfintro-box{
     border-radius: 10px;

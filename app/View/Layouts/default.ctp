@@ -11,13 +11,18 @@
 	<title><?php echo $title; ?></title>
 
 	<?php echo $this->Html->css('bootstrap.css'); ?>
+	<?php echo $this->Html->css('bootstrap.min.css'); ?>
 	<?php echo $this->Html->css('font-awesome.min.css'); ?>
 	<?php echo $this->Html->css('main.css'); ?>
 	<?php echo $this->Html->css('clip.css'); ?>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://code.jquery.com/jquery.js"></script>
+    
 	<?php echo $this->Html->script('bootstrap.min.js'); ?>
+	<?php echo $this->Html->script('bootstrap.js'); ?>
+	<?php echo $this->Html->script('npm.js'); ?>
 	<?php echo $this->Html->script('slideupdown.js'); ?>
 	<?php echo $this->Html->script('scrollspy.js'); ?>
 	<?php echo $this->Html->script('Chart.js'); ?>
