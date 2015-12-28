@@ -15,6 +15,18 @@ class UniversitiesController extends AppController {
 		$categories = $this->Category->find('all');
 		// 被クリップ数順に並び替えできると良い
 
+		// pickupレビューの抽出
+		for ($i=0; $i < 9; $i++) { 
+			$pickup_review_id = array();
+			foreach ($categories[$i]['Review'] as $review) {
+				$pickup_review_id += array($review['id'] => $this->Clip->getclipnumber($review['id']));
+			}
+			arsort($pickup_review_id);
+			$review_id = array_keys($pickup_review_id);
+			$categories[$i] += array('Pickup' => $this->Review->getreview($review_id[0]));
+			$categories[$i]['Pickup']['Review']['clip'] = $this->Clip->getclipnumber($categories[$i]['Pickup']['Review']['id']);
+		}
+
 		// debug($university);
 		// debug($tags);
 		// debug($categories);
@@ -31,10 +43,6 @@ class UniversitiesController extends AppController {
 			$score[$tags[$i]['Tag']['tag']] = round($total/$j,1);
 		}
 		// debug($score);
-
-		// pickupレビューの作成
-		$pickup = $this->Clip->pickup();
-		debug($pickup);
 	}
 	
 }
