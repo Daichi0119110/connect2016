@@ -192,7 +192,7 @@
               <div class="col-md-3">
                 <a href="<?php echo SITE_URL."users/user/".$category['Pickup']['Review']['User']['id']; ?>">
                   <div class="thumnail-box-user-s">
-                    <?php echo $this->Html->image('user/'.$category['Pickup']['Review']['User']['image'], array('height' => '160px'));?> <!-- 写真 -->
+                    <img src="http://graph.facebook.com/<?php echo $category['Pickup']['Review']['User']['facebook_id']; ?>/picture" height="160px"><!-- 写真 -->
                     <div class="thumnail-text-box-user-s">
                       <p class="text-on-image thumnail-text-user-s"><?php echo $category['Pickup']['Review']['User']['name']; ?></p>
                     </div>
@@ -221,7 +221,7 @@
             <a href="<?php echo SITE_URL; ?>users/user/<?php echo $university['User'][$i]['id']; ?>">
               <div class="senpai-box">
                 <div class="thumnail-box-user">
-                  <?php echo $this->Html->image('developer/'.$university['User'][$i]['image'], array('height' => '240px'));?> <!-- 写真 -->
+                  <img src="http://graph.facebook.com/<?php echo $university['User'][$i]['facebook_id']; ?>/picture" height="240px"><!-- 写真 -->
                   <div class="thumnail-text-box-user">
                     <p class="text-on-image thumnail-text-user"><?php echo $university['User'][$i]['name']; ?></p>
                   </div>
