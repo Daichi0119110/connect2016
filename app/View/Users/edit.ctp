@@ -10,7 +10,7 @@
 
 
 <div class="clearfix">
-  <div class="page-title">Arai Kohei </div><p class="favorite-btn fa fa-heart"> お気に入り登録</p><div class="page-sub-title">--- ゲント大学へ留学 ---</div>
+  <div class="page-title">Arai Kohei </div><div class="page-sub-title">--- ゲント大学へ留学 ---</div><p class="favorite-btn fa fa-floppy-o"> 変更を保存</p>
 </div>
 
 
