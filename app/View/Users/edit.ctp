@@ -48,7 +48,7 @@
                   </ul>
           <div id="image">
           <div class="upload btn-group" role="group">
-              <a href="#" class="btn btn-default" role="button">留学中の写真をアップロード</a>
+              <a href="#" class="btn btn-default bule-button" role="button">留学中の写真をアップロード</a>
           </div>
           </div>
                   </div><!--/.mainView-->
@@ -166,9 +166,9 @@
 
 
     <div class="btn-group" role="group">
-        <a href="#" class="btn btn-default" role="button">削除する</a>
-        <a href="#" class="btn btn-default" role="button">ダウンロード</a>
-        <a href="#" class="btn btn-default" role="button">追加アップロード</a>
+        <a href="#" class="btn btn-default bule-button" role="button">削除する</a>
+        <a href="#" class="btn btn-default bule-button" role="button">ダウンロード</a>
+        <a href="#" class="btn btn-default bule-button" role="button">追加アップロード</a>
     </div>
 
     </div>
