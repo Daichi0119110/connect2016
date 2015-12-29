@@ -17,8 +17,8 @@
               <div class="mainView">
                 <ul>
                   <?php for ($i=0; $i <1000 ; $i++) { ?>
-                  <?php if (!isset($university['Picture_uni'][$i])){ break; } ?>
-                  <li><a href="#<?php echo $i+1; ?>"><?php echo $this->Html->image('sample/'.$university['Picture_uni'][$i]['image']);?></a></li>
+                  <?php if (!isset($university['Picture'][$i])){ break; } ?>
+                  <li><a href="#<?php echo $i+1; ?>"><?php echo $this->Html->image('sample/'.$university['Picture'][$i]['image']);?></a></li>
                   <?php } ?>
                 </ul>
               </div><!--/.mainView-->
@@ -26,8 +26,8 @@
                 <div class="university">
                   <ul>
                     <?php for ($i=0; $i <1000 ; $i++) { ?>
-                    <?php if (!isset($university['Picture_uni'][$i])){ break; } ?>
-                    <li><?php echo $this->Html->image('sample/'.$university['Picture_uni'][$i]['image']);?></li>
+                    <?php if (!isset($university['Picture'][$i])){ break; } ?>
+                    <li><?php echo $this->Html->image('sample/'.$university['Picture'][$i]['image']);?></li>
                     <?php } ?>
                   </ul>
                 </div>
@@ -233,10 +233,10 @@
             </a>
           </div> 
           <?php } ?>
-           </div><!-- row -->
-           <div class="row">
-              <p class="view-more-btn">▼▼ 他の先輩を見る ▼▼</p>
-            </div>
+        </div><!-- row -->
+        <div class="row">
+          <p class="view-more-btn">▼▼ 他の先輩を見る ▼▼</p>
+        </div>
         <!-- senpai intros -->
 
         <hr>
@@ -318,14 +318,14 @@
 </div> <!-- all container-->
 
 <script>
-  function chart(){
-    var radarChartData = {
-      labels: [<?php for ($i=0; $i < 8; $i++){ 
-        echo '"'.$scores[$i]['Tag']['tag'].'"';
-        if($i != 7){
-         echo ","; 
-       }}?>],
-       datasets: [
+function chart(){
+  var radarChartData = {
+    labels: [<?php for ($i=0; $i < 8; $i++){ 
+      echo '"'.$scores[$i]['Tag']['tag'].'"';
+      if($i != 7){
+       echo ","; 
+     }}?>],
+     datasets: [
       { //このかっこの塊をコピーすれば,二つ以上のデータを一つの中にいれられる。
         label: "<?php echo $university['University']['university']; ?>の平均スコア",
         fillColor: "rgba(25,51,192,0.2)",//レーダーの中身の色

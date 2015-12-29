@@ -118,38 +118,27 @@
     <br>
     <br>
     <div class="container">
-      <div class="row centered clearfix">
+      
+        <?php $i = 0; ?>
+        <?php foreach($areas as $area) { ?>
+        <?php foreach($area['Country'] as $country) { ?>
+        <?php foreach($country['University'] as $university) { ?>
+        <?php if($i%3 == 0){ echo '<div class="row centered clearfix">'; } ?>
+        <?php $i = $i + 1; ?>
         <div class="col-md-4">
-          <a href="about.html">
+          <a href="<?php echo SITE_URL."universities/university/".$university['id'];?>">
             <div class="thumnail-box">
-              <?php echo $this->Html->image('university/ghent.jpg', array('height' => '240px'));?> <!-- 写真 -->
+              <?php echo $this->Html->image('university/'.$university['image'], array('height' => '240px'));?> <!-- 写真 -->
               <div class="thumnail-text-box">
-                <p class="text-on-image thumnail-text">ゲント大学(ベルギー)</p>
-              </div>
-            </div>
-          </a>
-        </div> 
-        <div class="col-md-4">
-          <a href="about.html">
-            <div class="thumnail-box">
-              <?php echo $this->Html->image('university/seatle.jpg', array('height' => '240px'));?> <!-- 写真 -->
-              <div class="thumnail-text-box">
-                <p class="text-on-image thumnail-text">シアトル大学(アメリカ)</p>
+                <p class="text-on-image thumnail-text"><?php echo $university['university'];?>(<?php echo $country['country'];?>)</p>
               </div>
             </div>
           </a>
         </div>
-        <div class="col-md-4">
-          <a href="about.html">
-            <div class="thumnail-box">
-              <?php echo $this->Html->image('university/eth.jpg', array('height' => '240px'));?> <!-- 写真 -->
-              <div class="thumnail-text-box">
-                <p class="text-on-image thumnail-text">スイス連邦工科大学チューリヒ校(スイス)</p>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div><!-- row -->
+        <?php if($i%3 == 0){ echo '</div>'; } ?>        
+        <?php } ?>
+        <?php } ?>
+        <?php } ?>
       <br>
       <br>
     </div><!-- container -->
