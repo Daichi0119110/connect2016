@@ -195,7 +195,7 @@
       <h2>ピックアップレビュー</h2>
 
         <?php foreach($categories as $category) { ?>
-        <div class="review-box">
+        <div class="review-box top-margin-s">
           <div class="row">
             <div class="col-md-3">
                   <div class="thumnail-box-s review-picture">
@@ -236,6 +236,9 @@
               </a>
             </div>
           </div>
+          <div class="row">
+          <p class="view-more-btn">▼▼ 同項目のレビューを見る ▼▼</p>
+        </div>
         </div>
         <?php } ?>
 
