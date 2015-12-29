@@ -577,6 +577,7 @@ a:after {
     height:40px;
 }
 
+/*サイドバーのフォーム*/
 .form-nav{
     border-radius: 8px 8px 8px 8px !important;
     font-size: 15px;
@@ -592,6 +593,7 @@ a:after {
     float:right;
 }
 
+/*質問投稿用のフォーム*/
 .form-l{
     border-radius: 8px 8px 8px 8px !important;
     font-size: 20px;
@@ -607,6 +609,19 @@ a:after {
     height:30px;
     float:right;
     margin-right:50px;
+}
+
+/*編集用のフォーム*/
+.form-edit-s {
+    border-radius: 8px 8px 8px 8px !important;
+    font-size: 16px!important;
+    height:35px!important;
+}
+
+.form-edit-l {
+    border-radius: 8px 8px 8px 8px !important;
+    font-size: 15px!important;
+    height:150px!important;
 }
 
 /*サムネイル関連*/
@@ -1122,9 +1137,7 @@ hr {
     top:-20px;
     right:-20px;
     z-index: 2;
-    opacity: 0.8;
-}
-.delete-btn:hover{
+    opacity:g.delete-btn:hover{
     opacity:1.0;
 }
 .favorite-box{

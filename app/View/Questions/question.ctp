@@ -194,7 +194,9 @@
                   </div> <!-- answer -->
                 </div> <!-- questionbox -->
                 <!--質問１つの塊終了-->
-                <h1>もっと見るボタン</h1>
+                      <div class="row">
+                        <p class="view-more-btn">▼▼ もっと見る ▼▼</p>
+                      </div>
       </div>
 <!-- 閲覧数が多い質問 -->
 
@@ -313,14 +315,12 @@
             </span>
           </div>
 
-          <div class="input-group">
-          <input type="text" class="form-control search-s" placeholder="過去の質問から検索">
-          <span class="input-group-btn">
-            <button class="btn btn-default search-btn-s" type="button">
-              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-            </button>
-          </span>
-          </div>
+          <form class="navbar-form">
+            <div class="form-group">
+            <input type="text" class="form-control" placeholder="過去の質問から検索">
+            </div>
+            <button type="submit" class="btn btn-default">検索</button>
+      </form>
             <li>
               <a href="#mostviewed">▶閲覧数が多い質問</a>
               <ul class="nav">
