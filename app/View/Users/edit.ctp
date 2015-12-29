@@ -21,7 +21,7 @@
     <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '240px'));?>
     </div>
         <div class="change btn-group" role="group">
-            <a href="#" class="btn btn-default" role="button">プロフィール画像を変更</a>
+            <a href="#" class="btn btn-default bule-button" style="margin:5px 0 0 5px;" role="button">プロフィール画像を変更</a>
         </div>
     </div>
     <!-- user picture終 -->
