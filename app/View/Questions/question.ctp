@@ -19,7 +19,7 @@
           <div class="form-group">
             <textarea type="text" class="form-control form-l" row="5" placeholder="質問内容を入力"></textarea>
             <span class="input-group-btn">
-              <button class="btn btn-default form-btn-l" type="button">質問する</button>
+              <button class="question-btn" type="button">質問する</button>
             </span>
           </div>
           </div>
@@ -309,18 +309,21 @@
           <ul class="nav">
 
           <div class="form-group">
-            <textarea type="text" class="form-control form-nav" row="4" placeholder="質問内容を入力"></textarea>
+            <textarea type="text" class="form-control form-nav question-form-s" row="6" placeholder="質問内容を入力"></textarea>
             <span class="input-group-btn">
-              <button class="btn btn-default form-btn-nav" type="button">質問する</button>
+              <button class="question-btn-s" type="button">質問する</button>
             </span>
           </div>
 
-          <form class="navbar-form">
-            <div class="form-group">
-            <input type="text" class="form-control" placeholder="過去の質問から検索">
-            </div>
-            <button type="submit" class="btn btn-default">検索</button>
-      </form>
+          <div class="input-group">
+            <input type="text" class="form-control search-s" placeholder="この大学の質問を検索">
+            <span class="input-group-btn">
+              <button class="btn btn-default search-btn-s" type="button">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+              </button>
+            </span>
+          </div><!-- /input-group -->
+          <hr>
             <li>
               <a href="#mostviewed">▶閲覧数が多い質問</a>
               <ul class="nav">
