@@ -15,6 +15,7 @@
 	<?php echo $this->Html->css('font-awesome.min.css'); ?>
 	<?php echo $this->Html->css('main.css'); ?>
 	<?php echo $this->Html->css('clip.css'); ?>
+	<?php echo $this->Html->css('datepicker.css'); ?>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -27,6 +28,7 @@
 	<?php echo $this->Html->script('scrollspy.js'); ?>
 	<?php echo $this->Html->script('Chart.js'); ?>
 	<?php echo $this->Html->script('jquery.raty.js'); ?>
+	<?php echo $this->Html->script('datepicker.js'); ?>
 
 	<?php echo $this->fetch('script'); ?>
 
