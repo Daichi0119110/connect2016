@@ -1163,7 +1163,9 @@ hr {
     top:-20px;
     right:-20px;
     z-index: 2;
-    opacity:g.delete-btn:hover{
+    opacity:0.8;
+}
+.delete-btn:hover{
     opacity:1.0;
 }
 .favorite-box{
@@ -1209,6 +1211,7 @@ hr {
 /*もっと読むボタン*/
 .view-more-btn{
     width:250px;
+    height: 37px;
     font-size:12px;
     font-weight:bold;
     text-decoration:none;
@@ -1226,6 +1229,52 @@ hr {
     cursor: pointer;
 }
 
+/*質問をするボタン*/
+.question-btn{
+    width:180px;
+    height: 37px;
+    font-size:12px;
+    font-weight:bold;
+    text-decoration:none;
+    display:block;
+    text-align:center;
+    padding:6px 0 3px;
+    color:#fff;
+    background-color:rgba(25,51,192,0.85);
+    border-radius:5px;
+    box-shadow:2px 2px #404040;
+    margin:5px 100px 20px 0;
+    float: right;
+}
+.question-btn:hover {
+    background-color:rgba(25,51,192,1);
+    cursor: pointer;
+}
+/*質問をする小さい*/
+.question-btn-s{
+    width:100px;
+    font-size:10px;
+    font-weight:bold;
+    text-decoration:none;
+    display:block;
+    text-align:center;
+    padding:6px 0 3px;
+    color:#fff;
+    background-color:rgba(25,51,192,0.85);
+    border-radius:5px;
+    box-shadow:2px 2px #404040;
+    margin:5px 0 20px;
+    float: right;
+}
+.question-btn-s:hover {
+    background-color:rgba(25,51,192,1);
+    cursor: pointer;
+}
+
+.question-form-s{
+    width:300px;
+    height:240px;
+}
 /*クリップの一つのかたまり*/
 .one-clip{
     position: relative;
@@ -1243,6 +1292,12 @@ hr {
 }
 
 .profile-basicinfo {
-    text-align: center;
-    font-size: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+/*タブ用*/
+#tabs ul li{
+    font-size: 32px;
+    font-weight: bold;
 }

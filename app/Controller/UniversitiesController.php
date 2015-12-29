@@ -2,7 +2,7 @@
 
 class UniversitiesController extends AppController {
 	public $helper = array('HTML', 'form');
-	public $uses = array('University','User','Review','Answer','Category','Clip','Country','PictureUni','Question','Score','Tag');
+	public $uses = array('University','User','Review','Answer','Category','Clip','Country','Picture','Question','Score','Tag');
 
 	public function university($id){
 		// タイトルの設定

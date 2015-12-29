@@ -12,7 +12,7 @@ class University extends AppModel {
 		'User' => array('className' => 'User'),
 		'Review' => array('className' => 'Review'),
 		'Score' => array('className' => 'Score'),
-		'Picture_uni' => array('className' => 'Picture_uni'),
+		'Picture' => array('className' => 'Picture'),
 		'Report' => array('className' => 'Report'),
 		'Question' => array('className' => 'Question')
 	);
