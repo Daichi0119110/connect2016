@@ -57,7 +57,7 @@
         <div class="wb">
                  <div class="row centered">
           <div class="col-md-9">
-            <a href="<?php echo SITE_URL.'pages/search'?>"><?php echo $this->Html->image('banner_question.jpg');?></a>
+            <a href="<?php echo SITE_URL; ?>pages/search"><?php echo $this->Html->image('banner_question.jpg');?></a>
           </div><!-- /.col-md-9 -->
         </div><!-- /.row -->
         </div>
@@ -302,7 +302,7 @@
               <a href="#pdf">▶留学報告書</a>
             </li>
             <li>
-              <a href="<?php echo SITE_URL.'pages/search'?>">▶<?php echo $university['University']['university']; ?>のQ&Aコーナー</a>
+              <a href="<?php echo SITE_URL; ?>pages/search">▶<?php echo $university['University']['university']; ?>のQ&Aコーナー</a>
             </li>
           </ul>
         </nav>
