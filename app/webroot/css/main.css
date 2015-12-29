@@ -523,6 +523,7 @@ a:after {
     font-weight: bold!important;
 }
 
+
 /*検索ボックス*/
 .search-l{
     border-radius: 10px 0 0 10px !important;
@@ -612,10 +613,22 @@ a:after {
 }
 
 /*編集用のフォーム*/
+.form-edit-xs-left {
+    border-radius: 8px 0 0 8px !important;
+    font-size: 12px!important;
+    height:35px!important;
+}
+
+.form-edit-xs-right {
+    border-radius: 0px 8px 8px 0px !important;
+    font-size: 12px!important;
+    height:35px!important;
+}
+
 .form-edit-s {
     border-radius: 8px 8px 8px 8px !important;
-    font-size: 16px!important;
-    height:35px!important;
+    font-size: 16px;
+    height:35px;
 }
 
 .form-edit-l {
@@ -972,6 +985,19 @@ a:hover .senpai-box{
     left: 8%;
 }
 
+#userpic .change {
+    position: absolute;
+    z-index: 102;
+    top:0px;
+}
+
+#image .upload {
+    position: absolute;
+    z-index: 102;
+    top:400px;
+    right:3%;
+}
+
 
 /*留学報告書の表*/
 .pdf-table th{
@@ -1253,6 +1279,9 @@ hr {
 .one-clip{
     position: relative;
 }
+
+
+
 .profile-selfintro-box{
     border-radius: 10px;
     border:solid;
@@ -1261,7 +1290,6 @@ hr {
     padding:10px;
     width: 450px
 }
-
 
 .profile-basicinfo {
     text-align: left;

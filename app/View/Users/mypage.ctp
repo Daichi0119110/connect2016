@@ -9,7 +9,7 @@
 <div class="col-md-9">
 
 
-<div class="padding-s clearfix">
+<div class="clearfix">
   <div class="page-title">Arai Kohei </div><p class="favorite-btn fa fa-heart"> お気に入り登録</p><div class="page-sub-title">--- ゲント大学へ留学 ---</div>
 </div>
 
@@ -192,10 +192,10 @@
 
 
 <!-- レビュー始 -->
-      <div id="review" class="padding-m row">
+      <div id="review" class=" row">
       <h2>レビュー</h2>
                 <!--レビュー１つの塊-->
-                <div  id="review-sub-1" class="padding-m">
+                <div  id="review-sub-1" class="">
                 <div class="review-box">
                   <div class="row">
                     <div class="col-md-3">
@@ -242,7 +242,7 @@
                 <!--レビュー１つの塊終了-->
 
                 <!--レビュー１つの塊-->
-                <div id="review-sub-2" class="padding-m">
+                <div id="review-sub-2" class="">
                 <div class="review-box">
                   <div class="row">
                     <div class="col-md-3">
@@ -291,10 +291,10 @@
 <!-- レビュー終 -->
 
 <!-- 質問と答え -->
-      <div id="question" class="padding-m row">
+      <div id="question" class=" row">
               <h2>Q&A</h2>
                 <!--質問１つの塊-->
-                <div id="question-sub-1" class="question-box padding-m">
+                <div id="question-sub-1" class="question-box ">
                   <div class="row">
                     <h3 class="question-title">Question</h3>
                     <div class="col-md-2">
@@ -373,7 +373,7 @@
                 <!--質問１つの塊終了-->
 
                 <!--質問１つの塊-->
-                <div id="question-sub-2" class="question-box padding-m">
+                <div id="question-sub-2" class="question-box ">
                   <div class="row">
                     <h3 class="question-title">Question</h3>
                     <div class="col-md-2">
