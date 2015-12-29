@@ -10,7 +10,7 @@
 
 
 <div class="clearfix">
-  <div class="page-title">Arai Kohei </div><p class="favorite-btn fa fa-heart"> お気に入り登録</p><div class="page-sub-title">--- ゲント大学へ留学 ---</div>
+  <div class="page-title">Arai Kohei </div><div class="page-sub-title">--- ゲント大学へ留学 ---</div><p class="favorite-btn fa fa-floppy-o"> 変更を保存</p>
 </div>
 
 
@@ -21,7 +21,7 @@
     <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '240px'));?>
     </div>
         <div class="change btn-group" role="group">
-            <a href="#" class="btn btn-default" role="button">プロフィール画像を変更</a>
+            <a href="#" class="btn btn-default bule-button" style="margin:5px 0 0 5px;" role="button">プロフィール画像を変更</a>
         </div>
     </div>
     <!-- user picture終 -->

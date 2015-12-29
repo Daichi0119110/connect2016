@@ -65,10 +65,10 @@
 				<!--ログイン後ヘッダー-->
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="<?php echo SITE_URL; ?>users/login">Favorite</a></li>
-						<li><a href="<?php echo SITE_URL; ?>users/login">Clip</a></li>
-						<li><a href="<?php echo SITE_URL; ?>users/login">My page</a></li>
-						<li><a href="<?php echo SITE_URL; ?>users/login">My university</a></li>
+						<li class="active"><a href="<?php echo SITE_URL; ?>favorites/favorite">Favorite</a></li>
+						<li><a href="<?php echo SITE_URL; ?>clips/clip">Clip</a></li>
+						<li><a href="<?php echo SITE_URL; ?>users/mypage">My page</a></li>
+						<li><a href="<?php echo SITE_URL; ?>universities/university">My university</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 				<!--ログイン後ヘッダ終了ー-->
