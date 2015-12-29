@@ -30,6 +30,8 @@
 	<?php echo $this->Html->script('Chart.js'); ?>
 	<?php echo $this->Html->script('jquery.raty.js'); ?>
 	<?php echo $this->Html->script('datepicker.js'); ?>
+	<?php echo $this->Html->script('datepicker.min.js'); ?>
+	<?php echo $this->Html->script('datepicker.ja.min.js'); ?>
 
 	<?php echo $this->fetch('script'); ?>
 
