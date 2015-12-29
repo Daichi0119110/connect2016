@@ -1301,3 +1301,9 @@ hr {
     font-size: 32px;
     font-weight: bold;
 }
+
+/*スクロールをずれないようにする*/
+.scroll-fix{
+    padding-top: 70px;
+    margin-top:-70px;
+}
