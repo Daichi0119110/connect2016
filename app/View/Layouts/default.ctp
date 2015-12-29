@@ -22,6 +22,7 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
     
 	<?php echo $this->Html->script('bootstrap.min.js'); ?>
+	<?php echo $this->Html->script('jquery.tabs.js'); ?>
 	<?php echo $this->Html->script('bootstrap.js'); ?>
 	<?php echo $this->Html->script('npm.js'); ?>
 	<?php echo $this->Html->script('slideupdown.js'); ?>
