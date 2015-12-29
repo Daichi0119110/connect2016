@@ -10,7 +10,7 @@ class User extends AppModel {
 	public $hasMany = array(
 		'Review' => array('className' => 'Review'),
 		'Score' => array('className' => 'Score'),
-		'Picture_uni' => array('className' => 'Picture_uni'),
+		'Picture' => array('className' => 'Picture'),
 		'Favorite_uni' => array('className' => 'Favorite_uni'),
 		'Favorite_use' => array('className' => 'Favorite_use'),
 		'Answer' => array('className' => 'Answer'),
