@@ -17,6 +17,10 @@ class UsersController extends AppController {
 		$this->set('title',"Mypage | Connect");
 	}
 
+	public function edit(){
+		$this->set('title',"Edit | Connect");
+	}
+
 	public function signup(){
 		$this->set('title',"Signup | Connect");
 	}
