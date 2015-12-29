@@ -31,14 +31,12 @@ class FacebookLogin {
     if (isset($accessToken)) {
       debug($accessToken);
       $this->_save($accessToken);       // ここで終了
-      $_SESSION['me'][1] = 1;
       return;
     } elseif ($helper->getError()) {    // facebook承認をキャンセルされたら
       header('Location: '.SITE_URL.'universities/university/1');
     } else {    // facebook承認画面
       $loginUrl = $helper->getLoginUrl(SITE_URL."/users/login");
       header('Location: ' . $loginUrl);
-      $_SESSION['me'][2] = 1;
     }
   }
 
