@@ -38,13 +38,17 @@ class UsersController extends AppController {
  
 		try {
 		  $fbLogin->login();
+		  $_SESSION['me']['login'] = 1;
 		} catch (Exception $e) {
 		  echo $e->getMessage();
 		  exit;
 		}
+		$_SESSION['me'][3] += 1;
 
-		$this->User->login($_SESSION['me']['facebook_id']);
-		header('Location: '.SITE_URL); // lpに戻る
-		exit;
+		if(isset($_SESSION['me']['facebook_id'])){
+			$this->User->login($_SESSION['me']['facebook_id']);
+			header('Location: '.SITE_URL); // lpに戻る
+			exit;
+		}
 	}
 }
