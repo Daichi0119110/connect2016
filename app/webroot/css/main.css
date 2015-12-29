@@ -1137,7 +1137,9 @@ hr {
     top:-20px;
     right:-20px;
     z-index: 2;
-    opacity:g.delete-btn:hover{
+    opacity:g;
+}
+.delete-btn:hover{
     opacity:1.0;
 }
 .favorite-box{
@@ -1183,6 +1185,7 @@ hr {
 /*もっと読むボタン*/
 .view-more-btn{
     width:250px;
+    height: 37px;
     font-size:12px;
     font-weight:bold;
     text-decoration:none;
