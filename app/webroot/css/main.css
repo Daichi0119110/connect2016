@@ -1137,7 +1137,7 @@ hr {
     top:-20px;
     right:-20px;
     z-index: 2;
-    opacity:g;
+    opacity:0.8;
 }
 .delete-btn:hover{
     opacity:1.0;
@@ -1220,4 +1220,10 @@ hr {
 .profile-basicinfo {
     text-align: left;
     font-size: 14px;
+}
+
+/*タブ用*/
+#tabs ul li{
+    font-size: 32px;
+    font-weight: bold;
 }
