@@ -1,3 +1,5 @@
+drop database connect;
+
 create database connect;
 
 grant all on connect.* to dbuser@localhost identified by 'connect2016';
