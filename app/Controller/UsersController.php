@@ -43,8 +43,10 @@ class UsersController extends AppController {
 		  exit;
 		}
 
-		$this->User->login($_SESSION['me']['facebook_id']);
-		header('Location: '.SITE_URL); // lpに戻る
-		exit;
+		if(isset($_SESSION['me']['facebook_id'])){
+			$this->User->login($_SESSION['me']['facebook_id']);
+			header('Location: '.SITE_URL); // lpに戻る
+			exit;
+		}
 	}
 }
