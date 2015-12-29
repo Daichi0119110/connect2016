@@ -17,8 +17,8 @@
               <div class="mainView">
                 <ul>
                   <?php for ($i=0; $i <1000 ; $i++) { ?>
-                  <?php if (!isset($university['Picture_uni'][$i])){ break; } ?>
-                  <li><a href="#<?php echo $i+1; ?>"><?php echo $this->Html->image('sample/'.$university['Picture_uni'][$i]['image']);?></a></li>
+                  <?php if (!isset($university['Picture'][$i])){ break; } ?>
+                  <li><a href="#<?php echo $i+1; ?>"><?php echo $this->Html->image('sample/'.$university['Picture'][$i]['image']);?></a></li>
                   <?php } ?>
                 </ul>
               </div><!--/.mainView-->
@@ -26,8 +26,8 @@
               <div class="university">
                 <ul>
                   <?php for ($i=0; $i <1000 ; $i++) { ?>
-                  <?php if (!isset($university['Picture_uni'][$i])){ break; } ?>
-                  <li><?php echo $this->Html->image('sample/'.$university['Picture_uni'][$i]['image']);?></li>
+                  <?php if (!isset($university['Picture'][$i])){ break; } ?>
+                  <li><?php echo $this->Html->image('sample/'.$university['Picture'][$i]['image']);?></li>
                   <?php } ?>
                 </ul>
               </div>
