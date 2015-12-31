@@ -52,7 +52,7 @@
 					</button>
 					<a class="navbar-brand" href="<?php echo SITE_URL; ?>">CONNECT</a>
 				</div>
-				<?php if(isset($_SESSION['me']['facebook_id'])) { ?>
+				<?php if(!isset($_SESSION['me']['facebook_id'])) { ?>
 				<!--ログイン前ヘッダー-->
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
