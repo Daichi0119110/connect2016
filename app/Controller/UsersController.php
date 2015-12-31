@@ -26,7 +26,7 @@ class UsersController extends AppController {
 	}
 
 	public function practice(){
-		debug($_SESSION['me']);
+
 	}
 
 	public function login(){	

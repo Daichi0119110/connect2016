@@ -16,25 +16,30 @@ class PicturesController extends AppController {
 	        debug($this->data);
 
 	        // 画像の容量チェック
-	        if ($this->data['Image']['image']['size'] > $limit){
+	        if ($this->data['Picture']['image']['size'] > $limit){
 	            $this->Session->setFlash('1MB以内の画像が登録可能です。');
-	            $this->redirect('index');
+	            $this->redirect(array('controller'=>'users', 'action' => 'practice'));
 	        }
 	        // アップロードされた画像か
-	        if (!is_uploaded_file($this->data['Image']['image']['tmp_name'])){
+	        if (!is_uploaded_file($this->data['Picture']['image']['tmp_name'])){
 	            $this->Session->setFlash('アップロードされた画像ではありません。');
-	            $this->redirect('index');
+	            $this->redirect(array('controller'=>'users', 'action' => 'practice'));
 	        }
 	        // 保存
 	        $image = array(
-	            'Image' => array(
-	                'filename' => md5(microtime()) . '.jpg',
-	                'contents' => file_get_contents($this->data['Image']['image']['tmp_name']),
+	            'Picture' => array(
+	                'image' => md5(microtime()) . '.jpg',
+	                'user_id' => $this->request->data['Picture']['user_id'],
+	                'university_id' => $this->request->data['Picture']['university_id'],
+	                'comment' => $this->request->data['Picture']['comment']
 	            )
 	        );
-	        $this->Image->save($image);
+
+	        // debug(file_get_contents($this->data['Picture']['image']['tmp_name']));
+
+	        $this->Picture->save($image);
 	        $this->Session->setFlash('画像をアップロードしました。');
-	        $this->redirect('index');
+	        $this->redirect(array('controller'=>'users', 'action' => 'practice'));
 		}
 
 		
