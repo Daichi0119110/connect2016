@@ -167,7 +167,6 @@
 
     <div class="btn-group" role="group">
         <a href="#" class="btn btn-default bule-button" role="button">削除する</a>
-        <a href="#" class="btn btn-default bule-button" role="button">ダウンロード</a>
         <a href="#" class="btn btn-default bule-button" role="button">追加アップロード</a>
     </div>
 
@@ -188,26 +187,26 @@
             <canvas id="canvas"></canvas>
           </div>
           <div class="row top-margin-s">
-            <div class="score-total">レビュー総合評価　3.4<span class="default-star star-0"></span></div>
+            <div class="score-total">レビュー評価</div>
 
             <div class="col-md-6">
               <table class="table score-table">
                 <tbody>
                  <tr>
                   <th>旅行のしやすさ</th>
-                  <td>2.0<span class="default-star star-1"></span></td>
+                  <td><span class="default-star star-1"></span></td>
                 </tr>
                 <tr>
                   <th>町の過ごしやすさ</th>
-                  <td>3.4<span class="default-star star-2"></span></td>
+                  <td><span class="default-star star-2"></span></td>
                 </tr>
                 <tr>
                   <th>大学キャンパスの快適さ</th>
-                  <td>4.2<span class="default-star star-3"></span></td>
+                  <td><span class="default-star star-3"></span></td>
                 </tr>
                 <tr>
                   <th>授業レベルの高さ</th>
-                  <td>4.7<span class="default-star star-4"></span></td>
+                  <td><span class="default-star star-4"></span></td>
                 </tr>
               </tbody>
             </table>
@@ -217,19 +216,19 @@
               <tbody>
                <tr>
                 <th>物価の手軽さ</th>
-                <td>3.4<span class="default-star star-5"></span></td>
+                <td><span class="default-star star-5"></span></td>
               </tr>
               <tr>
                 <th>住居環境の良さ</th>
-                <td>3.4<span class="default-star star-6"></span></td>
+                <td><span class="default-star star-6"></span></td>
               </tr>
               <tr>
                 <th>食事面での満足度</th>
-                <td>3.4<span class="default-star star-7"></span></td>
+                <td><span class="default-star star-7"></span></td>
               </tr>
               <tr>
                 <th>治安の良さ</th>
-                <td>3.4<span class="default-star star-8"></span></td>
+                <td><span class="default-star star-8"></span></td>
               </tr>
             </tbody>
           </table>
@@ -306,7 +305,7 @@
                     <div class="col-md-9">
                       <div class="arrow_box">
                         <div class="form-group">
-                            <textarea type="text" class="form-control form-edit-l">入力をお願いします</textarea>
+                            <textarea type="text" class="form-control form-edit-l" placeholder="入力をお願いします"></textarea>
                         </div>
                       </div>
                     </div>
@@ -810,16 +809,16 @@ chart();
   $.fn.raty.defaults.path = "../img/star-score";
 
   //totalつまり、平均値
-  $('.star-0').raty({ readOnly: true, score: 2 });
+  $('.star-0').raty();
 //各項目のスコア
-  $('.star-1').raty({ readOnly: true, score: 2 });
-  $('.star-2').raty({ readOnly: true, score: 3.4 });
-  $('.star-3').raty({ readOnly: true, score: 4.2 });
-  $('.star-4').raty({ readOnly: true, score: 4.7 });
-  $('.star-5').raty({ readOnly: true, score: 2 });
-  $('.star-6').raty({ readOnly: true, score: 2 });
-  $('.star-7').raty({ readOnly: true, score: 2 });
-  $('.star-8').raty({ readOnly: true, score: 2 });
+  $('.star-1').raty({  score: 2 });
+  $('.star-2').raty({  score: 3.4 });
+  $('.star-3').raty({ score: 4.2 });
+  $('.star-4').raty({ score: 4.7 });
+  $('.star-5').raty({  score: 2 });
+  $('.star-6').raty({  score: 2 });
+  $('.star-7').raty({  score: 2 });
+  $('.star-8').raty({ score: 2 });
 
 </script>
 
