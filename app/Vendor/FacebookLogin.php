@@ -54,7 +54,7 @@ class FacebookLogin {
       'gender'=>$userNode->getGender()
     );
 
-    $_SESSION['me'] = $user;
+    $this->Session->write('me',$user);
     return;
   }
 

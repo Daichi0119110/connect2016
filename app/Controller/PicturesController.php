@@ -12,29 +12,42 @@ class PicturesController extends AppController {
 		$this->autoLayout = false;
 
 		if ($this->request->is('post')) {
-			$limit = 1024 * 1024;
-	        debug($this->data);
+	        $tmp = $this->request->data['Picture']['image']['tmp_name'];
 
-	        // 画像の容量チェック
-	        if ($this->data['Image']['image']['size'] > $limit){
-	            $this->Session->setFlash('1MB以内の画像が登録可能です。');
-	            $this->redirect('index');
+	        // アップロードされた画像か？
+	        if (!is_uploaded_file($tmp)){
+	            $this->Session->setFlash('アップロードされた画像ではありません');
+	            $this->redirect(array('controller'=>'users', 'action' => 'practice'));
 	        }
-	        // アップロードされた画像か
-	        if (!is_uploaded_file($this->data['Image']['image']['tmp_name'])){
-	            $this->Session->setFlash('アップロードされた画像ではありません。');
-	            $this->redirect('index');
-	        }
+	        // 拡張子が正しいか？
+	        switch(getimagesize($this->request->data['Picture']['image']['tmp_name'])['mime']) {
+				case 'image/gif':
+					$ext = '.gif';
+					break;
+				case 'image/jpeg':
+					$ext = '.jpg';
+					break;
+				case 'image/png':
+					$ext = '.png';
+					break;
+				default:
+					$this->Session->setFlash('GIF、JPEG、PNGの拡張子のファイルがご利用できます');
+					$this->redirect(array('controller'=>'users', 'action' => 'practice'));
+			}
 	        // 保存
-	        $image = array(
-	            'Image' => array(
-	                'filename' => md5(microtime()) . '.jpg',
-	                'contents' => file_get_contents($this->data['Image']['image']['tmp_name']),
-	            )
-	        );
-	        $this->Image->save($image);
-	        $this->Session->setFlash('画像をアップロードしました。');
-	        $this->redirect('index');
+	        $filename = md5(microtime()) . $ext;
+			$file = WWW_ROOT.'img'.DS.$this->request->data['Picture']['folder'].DS.$filename; // userの写真かuniversityの写真か判別
+	        if (move_uploaded_file($tmp, $file)) {
+		        $status = array(
+	                'image' => $filename,
+	                'user_id' => $this->request->data['Picture']['user_id'],
+	                'university_id' => $this->request->data['Picture']['university_id'],
+	                'comment' => $this->request->data['Picture']['comment']
+		        );
+
+		        $this->Picture->save($status);
+		        $this->redirect(array('controller'=>'users', 'action' => 'practice'));
+		    }
 		}
 
 		
