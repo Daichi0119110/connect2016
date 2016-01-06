@@ -1,3 +1,4 @@
+
 <!-- all-->
 <div class="container">
   <div class="row">
@@ -57,7 +58,7 @@
         <div class="wb">
          <div class="row centered">
           <div class="col-md-9">
-            <a href="<?php echo SITE_URL; ?>pages/search"><?php echo $this->Html->image('banner_question.jpg');?></a>
+            <a href="<?php echo SITE_URL; ?>questions/question"><?php echo $this->Html->image('banner_question.jpg');?></a>
           </div><!-- /.col-md-9 -->
         </div><!-- /.row -->
       </div>
@@ -175,6 +176,7 @@
                 <?php echo $category['Category']['question']; ?></p>
               </div>
             </div>
+            <!-- ピックアップレビュー -->
             <div class="row">
               <div class="col-md-9">
                 <div class="arrow_box"><?php echo $category['Pickup']['Review']['content']; ?><br>
@@ -182,7 +184,7 @@
                     <div class="general-button clip-button">
                       <div class="button-content">
                         <i class="fa fa-pencil-square-o fa-1x"></i>
-                        <span class="button-text" id="review<?php echo $category['Pickup']['Review']['id']; ?>" data-review-id="<?php echo $category['Pickup']['Review']['id']; ?>">クリップ</span>
+                        <p class="button-text" id="review<?php echo $category['Pickup']['Review']['id']; ?>" data-review-id="<?php echo $category['Pickup']['Review']['id']; ?>">クリップ</p>
                         <!-- span要素にclickイベントが聞いていない -->
                       </div>
                     </div>
@@ -190,16 +192,47 @@
                 </div>
               </div>
               <div class="col-md-3">
-                <a href="<?php echo SITE_URL."users/user/".$category['Pickup']['Review']['User']['id']; ?>">
+                <a href="<?php echo SITE_URL."users/user/".$category['Pickup']['User']['id']; ?>">
                   <div class="thumnail-box-user-s">
-                    <img src="http://graph.facebook.com/<?php echo $category['Pickup']['Review']['User']['facebook_id']; ?>/picture" height="160px"><!-- 写真 -->
+                    <img src="http://graph.facebook.com/<?php echo $category['Pickup']['User']['facebook_id']; ?>/picture" height="160px"><!-- 写真 -->
                     <div class="thumnail-text-box-user-s">
-                      <p class="text-on-image thumnail-text-user-s"><?php echo $category['Pickup']['Review']['User']['name']; ?></p>
+                      <p class="text-on-image thumnail-text-user-s"><?php echo $category['Pickup']['User']['name']; ?></p>
                     </div>
                   </div>
                 </a>
               </div>
             </div>
+            <!-- ピックアップレビュー終了 -->
+            <!-- 一般レビュー -->
+            <?php foreach ($category['Review'] as $review) { ?>
+            <div class="row">
+              <div class="col-md-9">
+                <div class="arrow_box"><?php echo $review['content']; ?><br>
+                  <div class="row">
+                    <div class="general-button clip-button">
+                      <div class="button-content">
+                        <i class="fa fa-pencil-square-o fa-1x"></i>
+                        <p class="button-text" id="review<?php echo $review['id']; ?>" data-review-id="<?php echo $review['id']; ?>">クリップ</p>
+                        <!-- span要素にclickイベントが聞いていない -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <a href="<?php echo SITE_URL."users/user/".$review['User']['id']; ?>">
+                  <div class="thumnail-box-user-s">
+                    <img src="http://graph.facebook.com/<?php echo $review['User']['facebook_id']; ?>/picture" height="160px"><!-- 写真 -->
+                    <div class="thumnail-text-box-user-s">
+                      <p class="text-on-image thumnail-text-user-s"><?php echo $review['User']['name']; ?></p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <?php } ?>
+            <!-- 一般レビュー終了 -->
+
             <div class="row">
               <p class="view-more-btn">▼▼ 同項目のレビューを見る ▼▼</p>
             </div>
@@ -216,23 +249,29 @@
           <div class="top-margin-xs">
           </div>
 
-          <?php for ($i=0; $i < 3; $i++) { ?>
-          <div class="col-md-4">
-            <a href="<?php echo SITE_URL; ?>users/user/<?php echo $university['User'][$i]['id']; ?>">
-              <div class="senpai-box">
-                <div class="thumnail-box-user">
-                  <img src="http://graph.facebook.com/<?php echo $university['User'][$i]['facebook_id']; ?>/picture" height="240px"><!-- 写真 -->
-                  <div class="thumnail-text-box-user">
-                    <p class="text-on-image thumnail-text-user"><?php echo $university['User'][$i]['name']; ?></p>
+          <?php for ($j=0; $j < count($university['User'])/3; $j++) { ?>
+          <div class="row centered">
+          <?php for ($i=$j*3; $i < ($j+1)*3; $i++) { ?>
+            <div class="col-md-4">
+              <a href="<?php echo SITE_URL; ?>users/user/<?php echo $university['User'][$i]['id']; ?>">
+                <div class="senpai-box">
+                  <div class="thumnail-box-user">
+                    <img src="http://graph.facebook.com/<?php echo $university['User'][$i]['facebook_id']; ?>/picture" height="240px"><!-- 写真 -->
+                    <div class="thumnail-text-box-user">
+                      <p class="text-on-image thumnail-text-user"><?php echo $university['User'][$i]['name']; ?></p>
+                    </div>
                   </div>
+                  <p class="senpai-nav"><?php echo date("Y/n",strtotime($university['User'][$i]['study_start']))."〜".date("Y/n",strtotime($university['User'][$i]['study_end'])); ?>に留学</p>
+                  <p><?php echo $university['User'][$i]['self_intro']; ?></p>
+                  <p class="senpai-nav-f">▼詳細を見る▼</p>
                 </div>
-                <p class="senpai-nav"><?php echo date("Y/n",strtotime($university['User'][$i]['study_start']))."〜".date("Y/n",strtotime($university['User'][$i]['study_end'])); ?>に留学</p>
-                <p><?php echo $university['User'][$i]['self_intro']; ?></p>
-                <p class="senpai-nav-f">▼詳細を見る▼</p>
-              </div>
-            </a>
-          </div> 
+              </a>
+            </div>
+            <?php if($i+1 >= count($university['User'])){ break; }?>
           <?php } ?>
+          </div>
+          <?php } ?>
+
         </div><!-- row -->
         <div class="row">
           <p class="view-more-btn">▼▼ 他の先輩を見る ▼▼</p>
@@ -307,7 +346,7 @@
             <a href="#pdf">▶留学報告書</a>
           </li>
           <li>
-            <a href="<?php echo SITE_URL; ?>pages/search">▶<?php echo $university['University']['university']; ?>のQ&Aコーナー</a>
+            <a href="<?php echo SITE_URL; ?>questions/question">▶<?php echo $university['University']['university']; ?>のQ&Aコーナー</a>
           </li>
         </ul>
       </nav>
@@ -382,7 +421,7 @@ $('.star-0').raty({ readOnly: true, score:  <?php echo $average; ?>});
 $(function() {
   // ページ読み込み時
   $.post('/connect2016/clips/ready/',
-    {'user_id':1} // 要変更
+    {'user_id':<?php echo $_SESSION['me']['user_id']; ?>}
     ,function(res){
       $.each(res, function(){
         $('#review'+this).html('すでにClipされています');
@@ -390,17 +429,17 @@ $(function() {
     }, "json");
 
   $.post('/connect2016/favoriteunis/ready/',
-    {'user_id':1, 'university_id':$('p.favorite-btn').data('university-id')} // 要変更
+    {'user_id':<?php echo $_SESSION['me']['user_id']; ?>, 'university_id':$('p.favorite-btn').data('university-id')}
     ,function(res){
       if(res == 1){
-        $('p.favorite-btn').html('お気に入り済み');
+        $('p.favorite-btn').html(' お気に入り済み');
       } 
     }, "json");
 
   // clipボタン押したら
-  $('.button-text').click(function(e){
+  $('p.button-text').click(function(e){
     $.post('/connect2016/clips/change/',
-      {'user_id':1, 'review_id':$(this).data('review-id')} // 要変更
+      {'user_id':<?php echo $_SESSION['me']['user_id']; ?>, 'review_id':$(this).data('review-id')}
       ,function(res){
         if(res.flg == 1){
           $("#review"+res.id).html('すでにClipされています');
@@ -413,12 +452,12 @@ $(function() {
   //お気に入りボタン押したら
   $('p.favorite-btn').click(function(e){
     $.post('/connect2016/favoriteunis/change/',
-      {'user_id':1, 'university_id':$(this).data('university-id')} // 要変更
+      {'user_id':<?php echo $_SESSION['me']['user_id']; ?>, 'university_id':$(this).data('university-id')}
       ,function(res){
         if(res == 1){
-          $('p.favorite-btn').html('お気に入り済み');
+          $('p.favorite-btn').html(' お気に入り済み');
         } if(res == 0){
-          $('p.favorite-btn').html('お気に入り登録');
+          $('p.favorite-btn').html(' お気に入り登録');
         }
       }, "json");
   });

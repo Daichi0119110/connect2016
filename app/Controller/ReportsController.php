@@ -23,7 +23,7 @@ class ReportsController extends AppController {
 
 			$tmp = $this->request->data['Report']['file']['tmp_name'];
 			if(is_uploaded_file($tmp)) {
-				$filename = $this->University->getuniversity($this->request->data['Report']['university_id'])['University']['university'].'_'.$this->request->data['Report']['user_id'].'.pdf';
+				$filename = $this->University->getuniversity($this->request->data['Report']['university_id'])['University']['university'].'_'.$this->request->data['Report']['user_id'].'_'.date('YmdHis').'.pdf';
 				$file = WWW_ROOT.'files'.DS.$filename; // app>webroot>filesというフォルダに保存
 				if (move_uploaded_file($tmp, $file)) {
 					$status = array(
@@ -33,7 +33,7 @@ class ReportsController extends AppController {
 					);
 					$this->Report->create();
 					if ($this->Report->save($status)) {
-						$this->redirect(array('controller' => 'users','action' => 'practice'));
+						$this->redirect(array('controller' => 'users','action' => 'edit', $_SESSION['me']['user_id']));
 					}
 				}
 			}

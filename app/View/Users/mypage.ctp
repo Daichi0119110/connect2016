@@ -1,3 +1,5 @@
+<?php echo $this->Session->flash(); ?>
+
 <body data-spy="scroll" data-target=".sidebar" data-offset="70" id="top">
 
 <!-- all-->
@@ -118,11 +120,15 @@
 <!-- self intro終 -->
 
 
-<!-- user 留学報告書DL始 -->
+<!-- user 留学報告書upload始 -->
     <div id="about-sub-2" class="top-margin-s scroll-fix">
-      <a href=""><h3><i class="fa fa-download fa-1x"></i>留学報告書をダウンロード</h3></a>
+      <?php echo $this->Form->create('Report', array('action' => 'upload', 'type' => 'file')); ?>
+      <?php echo $this->Form->file('file'); ?>
+      <?php echo $this->Form->hidden('user_id', array('value' => $_SESSION['me']['user_id'])); ?>
+      <?php echo $this->Form->hidden('university_id', array('value' => $_SESSION['me']['university_id'])); ?>
+      <?php echo $this->Form->end('レポート');?>
     </div>
-<!-- user 留学報告書DL終 -->
+<!-- user 留学報告書upload終 -->
   </div>
 
 </div>

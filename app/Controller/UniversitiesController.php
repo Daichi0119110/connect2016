@@ -22,7 +22,6 @@ class UniversitiesController extends AppController {
 			$review_id = array_keys($pickup_review_id);
 			$categories[$i] += array('Pickup' => $this->Review->getreview($review_id[0]));
 			$categories[$i]['Pickup']['Review']['clip'] = $this->Clip->getclipnumber($categories[$i]['Pickup']['Review']['id']);
-			$categories[$i]['Pickup']['Review'] += $this->User->getuser($categories[$i]['Pickup']['Review']['user_id']);
 		}
 
 		// スコアの計算

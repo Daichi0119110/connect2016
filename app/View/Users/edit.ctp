@@ -22,6 +22,16 @@
     </div>
         <div class="change btn-group" role="group">
             <a href="#" class="btn btn-default bule-button" style="margin:5px 0 0 5px;" role="button">プロフィール画像を変更</a>
+            <?php
+            // 画像アップロード（大地作成）
+            echo $this->Form->create('Picture', array('action'=>'upload', 'type'=>'file', 'enctype' => 'multipart/form-data'));
+            echo $this->Form->input('image', array('label' => false, 'type' => 'file', 'multiple'));
+            echo $this->Form->hidden('user_id', array('value' => $_SESSION['me']['user_id']));
+            echo $this->Form->hidden('university_id', array('value' => NULL));
+            echo $this->Form->hidden('folder', array('value' => 'user'));
+            echo $this->Form->hidden('comment', array('value' => NULL));
+            echo $this->Form->end('画像');
+            ?>
         </div>
     </div>
     <!-- user picture終 -->
@@ -48,7 +58,17 @@
                   </ul>
           <div id="image">
           <div class="upload btn-group" role="group">
-              <a href="#" class="btn btn-default bule-button" role="button">留学中の写真をアップロード</a>
+            <a href="#" class="btn btn-default bule-button" role="button">留学中の写真をアップロード</a>
+            <?php
+            // 画像アップロード（大地作成）
+            echo $this->Form->create('Picture', array('action'=>'upload', 'type'=>'file', 'enctype' => 'multipart/form-data'));
+            echo $this->Form->input('image', array('label' => false, 'type' => 'file', 'multiple'));
+            echo $this->Form->hidden('user_id', array('value' => $_SESSION['me']['user_id']));
+            echo $this->Form->hidden('university_id', array('value' => $_SESSION['me']['university_id']));
+            echo $this->Form->hidden('folder', array('value' => 'university'));
+            echo $this->Form->text('comment',array('label'=>false,));
+            echo $this->Form->end('画像');
+            ?>
           </div>
           </div>
                   </div><!--/.mainView-->
@@ -167,8 +187,12 @@
 
     <div class="btn-group" role="group">
         <a href="#" class="btn btn-default bule-button" role="button">削除する</a>
-        <a href="#" class="btn btn-default bule-button" role="button">ダウンロード</a>
         <a href="#" class="btn btn-default bule-button" role="button">追加アップロード</a>
+        <?php echo $this->Form->create('Report', array('action' => 'upload', 'type' => 'file')); ?>
+        <?php echo $this->Form->file('file'); ?>
+        <?php echo $this->Form->hidden('user_id', array('value' => $_SESSION['me']['user_id'])); ?>
+        <?php echo $this->Form->hidden('university_id', array('value' => $_SESSION['me']['university_id'])); ?>
+        <?php echo $this->Form->end('レポート');?>
     </div>
 
     </div>
