@@ -1,3 +1,5 @@
+<?php echo $this->Session->flash(); ?>
+
 <body data-spy="scroll" data-target=".sidebar" data-offset="70" id="top">
 
 <!-- all-->
@@ -10,9 +12,7 @@
 
 
 <div class="clearfix scroll-fix" id="about">
-  <div class="page-title">Arai Kohei </div><p class="favorite-btn fa fa-heart"> お気に入り登録</p><div class="page-sub-title">--- ゲント大学へ留学 ---</div>
-</div>
-
+  <div class="page-title">Arai Kohei </div><p class="favorite-btn fa fa-heart"> お気に入り登録</p><div class="page-sub-title">--- ゲント大学へ留学 ---</div><p class="favorite-btn fa fa-floppy-o"> 編集</p></div>
 
 
     <!-- user picture始 -->
@@ -118,11 +118,29 @@
 <!-- self intro終 -->
 
 
-<!-- user 留学報告書DL始 -->
+<!-- user 留学報告書upload始 -->
     <div id="about-sub-2" class="top-margin-s scroll-fix">
-      <a href=""><h3><i class="fa fa-download fa-1x"></i>留学報告書をダウンロード</h3></a>
+      <?php echo $this->Form->create('Report', array('action' => 'upload', 'type' => 'file')); ?>
+      <?php echo $this->Form->file('file'); ?>
+      <?php echo $this->Form->hidden('user_id', array('value' => $_SESSION['me']['user_id'])); ?>
+      <?php echo $this->Form->hidden('university_id', array('value' => $_SESSION['me']['university_id'])); ?>
+      <?php echo $this->Form->end('レポート');?>
     </div>
-<!-- user 留学報告書DL終 -->
+<!-- user 留学報告書upload終 -->
+          <table class="table score-table pdf-table">
+            <thead>
+              <tr>
+                <th>タイトル</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>laspfaslva.pdf</td>
+                <td><a href="#">ダウンロード</a></td> <!-- ダウンロードを実行 -->
+              </tr>
+            </tbody>
+          </table>
   </div>
 
 </div>

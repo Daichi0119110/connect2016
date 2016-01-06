@@ -11,41 +11,41 @@ $(function(){
         delayTime = 3000,
         sideNavi = 'on', // 'on' or 'off'
         autoPlay = 'on'; // 'on' or 'off'
- 
+
         setWrap.each(function(){
             var thisObj = $(this),
             childMain = thisObj.find(setMainView),mainUl = childMain.find('ul'),mainLi = mainUl.find('li'),mainLiFst = mainUl.find('li:first'),
             childThumb = thisObj.find(setThumbNail),thumbUl = childThumb.find('ul'),thumbLi = childThumb.find('li'),thumbLiFst = childThumb.find('li:first'),thumbLiLst = childThumb.find('li:last');
- 
+
             thisObj.css({width:setMaxWidth,display:'block'});
- 
+
             mainLi.each(function(i){
                 $(this).attr('class','view' + (i + 1).toString()).css({zIndex:'98',opacity:'0'});
                 mainLiFst.css({zIndex:'99'}).stop().animate({opacity:'1'},fadeTime);
             });
- 
+
             thumbLi.click(function(){
                 if(autoPlay == 'on'){clearInterval(setTimer);}
- 
+
                 var connectCont = thumbLi.index(this);
                 var showCont = connectCont+1;
                 mainUl.find('.view' + (showCont)).siblings().stop().animate({opacity:'0'},fadeTime,function(){$(this).css({zIndex:'98'});});
                 mainUl.find('.view' + (showCont)).stop().animate({opacity:'1'},fadeTime,function(){$(this).css({zIndex:'99'});});
- 
+
                 $(this).addClass('active');
                 $(this).siblings().removeClass('active');
- 
+
                 if(autoPlay == 'on'){timer();}
- 
+
             });
             thumbLi.css({opacity:thumbOpc});
             thumbLiFst.addClass('active');
- 
+
             // メイン画像をベースにエリアの幅と高さを設定
             var mainLiImg = mainLi.find('img'),
             baseWidth = mainLiImg.width(),
             baseHeight = mainLiImg.height();
- 
+
             // レスポンシブ動作メイン
             imgSize();
             function imgSize(){

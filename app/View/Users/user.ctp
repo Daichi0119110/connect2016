@@ -30,7 +30,8 @@
             <div class="slideShow">
                   <div class="mainView">
                   <ul>
-                  <li><a href="#1"><?php echo $this->Html->image('university/ghent.jpg', array('height' => '450px'));?></a></li>
+                  <li><h4>コメントコメントコメントコメント</h4><a href="#1"><?php echo $this->Html->image('university/ghent.jpg', array('height' => '450px'));?></a>
+                    </li>
                   <li><a href="#2"><?php echo $this->Html->image('sample/photo1.jpg', array('height' => '450px'));?></a></li>
                   <li><a href="#3"><?php echo $this->Html->image('university/ghent.jpg', array('height' => '450px'));?></a></li>
                   <li><a href="#4"><?php echo $this->Html->image('sample/photo2.jpg', array('height' => '450px'));?></a></li>
@@ -117,8 +118,28 @@
 
 <!-- user 留学報告書DL始 -->
     <div id="about-sub-2" class="top-margin-s scroll-fix">
-      <a href=""><h4><i class="fa fa-download fa-1x"></i>留学報告書をダウンロード</h4></a>
+      <h4><i class="fa fa-download fa-1x"></i>この先輩の留学報告書をダウンロード</h4>
     </div>
+
+          <table class="table score-table pdf-table">
+            <thead>
+              <tr>
+                <th>タイトル</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach($university['Report'] as $report) { ?>
+              <tr>
+                <td><?php echo $report['filename']; ?></td>
+                <td><a href="<?php echo SITE_URL.'pdf/'.$report['filename']; ?>">ダウンロード</a></td> <!-- ダウンロードを実行 -->
+              </tr>
+              <?php } ?>
+
+            </tbody>
+          </table>
+
+
 <!-- user 留学報告書DL終 -->
   </div>
 
