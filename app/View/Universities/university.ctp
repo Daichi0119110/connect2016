@@ -175,7 +175,7 @@
                 <?php echo $category['Category']['question']; ?></p>
               </div>
             </div>
-            <div class="row">
+            <div class="row review-content">
               <div class="col-md-9">
                 <div class="arrow_box"><?php echo $category['Pickup']['Review']['content']; ?><br>
                   <div class="row">
@@ -318,6 +318,16 @@
 </div> <!-- all container-->
 
 <script>
+
+
+$('.review-content:eq(1)').css('background-color','red');
+
+
+
+
+
+
+
 function chart(){
   var radarChartData = {
     labels: [<?php for ($i=0; $i < 8; $i++){ 
