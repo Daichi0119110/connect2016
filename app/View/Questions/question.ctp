@@ -292,7 +292,7 @@
 <!-- 閲覧数が多い質問 -->
 <hr>
 <!-- 新着の質問 -->
-      <div id="new" class="row">
+      <div id="new" class="row scroll-fix">
               <h2>新着の質問</h2>
                 <!--質問１つの塊-->
                 <div id="new-sub-1" class="scroll-fix">
@@ -434,7 +434,6 @@
               <a href="#new">▶新着の質問</a>
                 <ul class="nav">
                 <li><a href="#new-sub-1">サッカーどこでできんの？１</a></li>
-                <li><a href="#new-sub-2">サッカーどこでできんの？２</a></li>
               </ul>
             </li>
           </ul>
