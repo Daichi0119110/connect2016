@@ -359,8 +359,9 @@
 <script>
 
 
-//$('.review-content').css('background-color','red');
-
+$('.review-content').ready(function(){
+    css('display','none');
+    });
 
 
 
