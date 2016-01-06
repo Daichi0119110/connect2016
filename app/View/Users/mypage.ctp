@@ -10,9 +10,7 @@
 
 
 <div class="clearfix scroll-fix" id="about">
-  <div class="page-title">Arai Kohei </div><p class="favorite-btn fa fa-heart"> お気に入り登録</p><div class="page-sub-title">--- ゲント大学へ留学 ---</div>
-</div>
-
+  <div class="page-title">Arai Kohei </div><p class="favorite-btn fa fa-heart"> お気に入り登録</p><div class="page-sub-title">--- ゲント大学へ留学 ---</div><p class="favorite-btn fa fa-floppy-o"> 編集</p></div>
 
 
     <!-- user picture始 -->
@@ -120,8 +118,26 @@
 
 <!-- user 留学報告書DL始 -->
     <div id="about-sub-2" class="top-margin-s scroll-fix">
-      <a href=""><h3><i class="fa fa-download fa-1x"></i>留学報告書をダウンロード</h3></a>
+      <h4><i class="fa fa-download fa-1x"></i>この先輩の留学報告書をダウンロード</h4>
     </div>
+
+          <table class="table score-table pdf-table">
+            <thead>
+              <tr>
+                <th>タイトル</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach($university['Report'] as $report) { ?>
+              <tr>
+                <td><?php echo $report['filename']; ?></td>
+                <td><a href="<?php echo SITE_URL.'pdf/'.$report['filename']; ?>">ダウンロード</a></td> <!-- ダウンロードを実行 -->
+              </tr>
+              <?php } ?>
+
+            </tbody>
+          </table>
 <!-- user 留学報告書DL終 -->
   </div>
 

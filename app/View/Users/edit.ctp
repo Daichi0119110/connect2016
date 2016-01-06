@@ -162,11 +162,26 @@
 
 <!-- user 留学報告書DL始 -->
     <div id="about-sub-2" class="top-margin-s centered">
-      <a href=""><h3><i class="fa fa-download fa-1x"></i>留学報告書をダウンロード</h3></a>
+      <a href=""><h3><i class="fa fa-download fa-1x"></i>留学報告書</h3></a>
 
-
+          <table class="table score-table pdf-table">
+            <thead>
+              <tr>
+                <th>タイトル</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ファイル名</td>
     <div class="btn-group" role="group">
-        <a href="#" class="btn btn-default bule-button" role="button">削除する</a>
+                    <td><a href="#" class="btn btn-default bule-button" role="button">削除する</a></td>
+              </tr>
+    </div>
+            </tbody>
+          </table>
+    <div class="btn-group" role="group">
+
         <a href="#" class="btn btn-default bule-button" role="button">追加アップロード</a>
     </div>
 
