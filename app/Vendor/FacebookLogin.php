@@ -19,6 +19,7 @@ class FacebookLogin {
     // get access token
     try {
       $accessToken = $helper->getAccessToken();
+      $_SESSION['me']['token'] = 1;
     } catch (\Facebook\Exception\FacebookResponseException $e) {
       echo 'Response Error: ' . $e->getMessage();
       exit;
@@ -28,11 +29,12 @@ class FacebookLogin {
     }
  
     if (isset($accessToken)) {
+      debug($accessToken);
       $this->_save($accessToken);       // ここで終了
       return;
-    } elseif ($helper->getError()) {
-      header('Location: '.SITE_URL.'users/practice');
-    } else {
+    } elseif ($helper->getError()) {    // facebook承認をキャンセルされたら
+      header('Location: '.SITE_URL.'universities/university/1');
+    } else {    // facebook承認画面
       $loginUrl = $helper->getLoginUrl(SITE_URL."/users/login");
       header('Location: ' . $loginUrl);
     }
@@ -52,7 +54,7 @@ class FacebookLogin {
       'gender'=>$userNode->getGender()
     );
 
-    $_SESSION['me'] = $user;
+    $this->Session->write('me',$user);
     return;
   }
 

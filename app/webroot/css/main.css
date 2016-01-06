@@ -1208,6 +1208,25 @@ hr {
     margin-top:10px;
 }
 
+.bule-button{
+    font-size:12px;
+    font-weight:bold;
+    text-decoration:none;
+    display:block;
+    text-align:center;
+    padding:10px 30px 6px;
+    color:#fff;
+    background-color:rgba(25,51,192,0.85);
+    border-radius:5px;
+    box-shadow:2px 2px #404040;
+}
+.bule-button:hover {
+    background-color:rgba(25,51,192,1);
+    color:#fff;
+    cursor: pointer;
+}
+
+
 /*もっと読むボタン*/
 .view-more-btn{
     width:250px;

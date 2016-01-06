@@ -52,12 +52,27 @@
 					</button>
 					<a class="navbar-brand" href="<?php echo SITE_URL; ?>">CONNECT</a>
 				</div>
+				<?php if(!isset($_SESSION['me']['facebook_id'])) { ?>
+				<!--ログイン前ヘッダー-->
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="<?php echo SITE_URL; ?>users/login">ユーザー登録</a></li>
-						<li><a href="<?php echo SITE_URL; ?>users/login">ログイン</a></li>
+						<li class="active"><a href="<?php echo SITE_URL; ?>users/login">Sign up</a></li>
+						<li><a href="<?php echo SITE_URL; ?>users/login"> Login</a></li>
+					</ul>
+				</div>
+				<!--ログイン前ヘッダ終了ー-->
+				<?php } else { ?>
+				<!--ログイン後ヘッダー-->
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active"><a href="<?php echo SITE_URL; ?>favorites/favorite">Favorite</a></li>
+						<li><a href="<?php echo SITE_URL; ?>clips/clip">Clip</a></li>
+						<li><a href="<?php echo SITE_URL; ?>users/mypage">My page</a></li>
+						<li><a href="<?php echo SITE_URL; ?>universities/university">My university</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
+				<!--ログイン後ヘッダ終了ー-->
+				<?php } ?>
 			</div>
 		</div>
 
