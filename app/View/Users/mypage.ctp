@@ -557,7 +557,7 @@ chart();
 
   chart();
 
-  $.fn.raty.defaults.path = "../../img/star-score";
+  $.fn.raty.defaults.path = "../img/star-score";
 
   //totalつまり、平均値
   $('.star-0').raty({ readOnly: true, score: 2 });

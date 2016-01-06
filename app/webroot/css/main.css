@@ -1202,6 +1202,9 @@ hr {
     cursor: pointer;
 }
 
+.float-right{
+    float:right;
+}
 .page-title{
     font-size: 34px;
     float:left;
