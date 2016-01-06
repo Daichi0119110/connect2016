@@ -9,7 +9,7 @@
 <div class="col-md-9">
 
 
-<div class="clearfix">
+<div class="clearfix scroll-fix" id="about">
   <div class="page-title">Arai Kohei </div><p class="favorite-btn fa fa-heart"> お気に入り登録</p><div class="page-sub-title">--- ゲント大学へ留学 ---</div>
 </div>
 
@@ -74,7 +74,7 @@
 <!-- user basic 始 -->
 <div class="row">
   <div class="col-md-5">
-    <div id="about">
+    <div id="about-sub-1" class="scroll-fix">
              <table class="table profile-basicinfo">
                  <tbody>
                   <tr>
@@ -119,7 +119,7 @@
 
 
 <!-- user 留学報告書DL始 -->
-    <div id="about-sub-2" class="top-margin-s centered">
+    <div id="about-sub-2" class="top-margin-s scroll-fix">
       <a href=""><h3><i class="fa fa-download fa-1x"></i>留学報告書をダウンロード</h3></a>
     </div>
 <!-- user 留学報告書DL終 -->
@@ -128,10 +128,10 @@
 </div>
 <!-- userinfo -->
 
-
+<hr>
 
 <!-- 項目別スコア -->
-        <div id="score" class="top-margin-m ">
+        <div id="score" class="top-margin-l scroll-fix">
 
           <h2 class="">ゲント大学のスコア</h2>
 
@@ -189,14 +189,14 @@
     </div><!-- BASIC -->
 
 
-
+<hr>
 
 <!-- レビュー始 -->
-      <div id="review" class=" row">
+      <div id="review" class="row scroll-fix">
       <h2>レビュー</h2>
                 <!--レビュー１つの塊-->
-                <div  id="review-sub-1" class="">
-                <div class="review-box">
+                <div  id="review-sub-1" class="scroll-fix">
+                <div class="review-box top-margin-s">
                   <div class="row">
                     <div class="col-md-3">
                           <div class="thumnail-box-s review-picture">
@@ -242,8 +242,8 @@
                 <!--レビュー１つの塊終了-->
 
                 <!--レビュー１つの塊-->
-                <div id="review-sub-2" class="">
-                <div class="review-box">
+                <div id="review-sub-2" class="scroll-fix">
+                <div class="review-box top-margin-s">
                   <div class="row">
                     <div class="col-md-3">
                           <div class="thumnail-box-s review-picture">
@@ -290,11 +290,13 @@
     </div>
 <!-- レビュー終 -->
 
+<hr>
+
 <!-- 質問と答え -->
-      <div id="question" class=" row">
+      <div id="question" class="row scroll-fix">
               <h2>Q&A</h2>
                 <!--質問１つの塊-->
-                <div id="question-sub-1" class="question-box ">
+                <div id="question-sub-1" class="question-box">
                   <div class="row">
                     <h3 class="question-title">Question</h3>
                     <div class="col-md-2">
@@ -373,7 +375,8 @@
                 <!--質問１つの塊終了-->
 
                 <!--質問１つの塊-->
-                <div id="question-sub-2" class="question-box ">
+                <div id="question-sub-2" class="scroll-fix">
+                <div class="question-box">
                   <div class="row">
                     <h3 class="question-title">Question</h3>
                     <div class="col-md-2">
@@ -393,9 +396,9 @@
                     </div>
                   </div>
 <h3 class="answer-title">Answer</h3>
-                    
+
                   <div class="row"> <!-- answer -->
-                    
+
                     <div class="col-md-9">
                       <div class="arrow_box">夜は川辺が綺麗でロマンチック。ビールなどを片手に友達と行くのがおすすめ！また、電車で２０分のBrugeはベルギーのベネチアと呼ばれ、日本人女性観光客にかなりおすすめの町である。<br>
                         <div class="row">
@@ -449,6 +452,7 @@
 
                   </div> <!-- answer -->
                 </div> <!-- questionbox -->
+                </div>
                 <!--質問１つの塊終了-->
  
         </div>

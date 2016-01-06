@@ -259,7 +259,7 @@
                 <td><?php echo date("Y/n",strtotime($university['User'][$i]['study_start']))."〜".date("Y/n",strtotime($university['User'][$i]['study_end'])); ?></td>
                 <td><?php echo $report['User']['name']; ?></td>
                 <td><?php echo $report['filename']; ?></td>
-                <td><a href="">ダウンロード</a></td> <!-- ダウンロードを実行 -->
+                <td><a href="<?php echo SITE_URL.'pdf/'.$report['filename']; ?>">ダウンロード</a></td> <!-- ダウンロードを実行 -->
               </tr>
               <?php } ?>
 
