@@ -4,8 +4,12 @@ class Review extends AppModel {
 
 	public function getreview($id){
 		$status=array(
-			'conditions'=>array('id'=>$id)
+			'conditions'=>array('Review.id'=>$id)
 			);
 		return $this->find('first',$status);
 	}
+
+	public $belongsTo = array(
+		'User' => array('className' => 'User')
+	);
 }
