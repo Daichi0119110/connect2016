@@ -12,9 +12,7 @@
 
 
 <div class="clearfix scroll-fix" id="about">
-  <div class="page-title">Arai Kohei </div><p class="favorite-btn fa fa-heart"> お気に入り登録</p><div class="page-sub-title">--- ゲント大学へ留学 ---</div>
-</div>
-
+  <div class="page-title">Arai Kohei </div><p class="favorite-btn fa fa-heart"> お気に入り登録</p><div class="page-sub-title">--- ゲント大学へ留学 ---</div><p class="favorite-btn fa fa-floppy-o"> 編集</p></div>
 
 
     <!-- user picture始 -->
@@ -129,6 +127,20 @@
       <?php echo $this->Form->end('レポート');?>
     </div>
 <!-- user 留学報告書upload終 -->
+          <table class="table score-table pdf-table">
+            <thead>
+              <tr>
+                <th>タイトル</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>laspfaslva.pdf</td>
+                <td><a href="#">ダウンロード</a></td> <!-- ダウンロードを実行 -->
+              </tr>
+            </tbody>
+          </table>
   </div>
 
 </div>
@@ -547,7 +559,7 @@ chart();
 
   chart();
 
-  $.fn.raty.defaults.path = "../../img/star-score";
+  $.fn.raty.defaults.path = "../img/star-score";
 
   //totalつまり、平均値
   $('.star-0').raty({ readOnly: true, score: 2 });

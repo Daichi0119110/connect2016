@@ -436,6 +436,14 @@ a:after {
     width: 100%;
 }
 
+.slideSow .mainView ul li h4 {
+    z-index: 9999;
+    position: absolute;
+    background: rgba(0,0,0,0.75);
+    color: red;
+    padding: 10px 20px;
+}
+
 /* .thumbNail
 ------------------------- */
 .slideShow .thumbNail .user ul li, .slideShow .thumbNail .university ul li {
@@ -981,7 +989,7 @@ a:hover .senpai-box{
 #userpic{
     position: absolute;
     z-index: 101;
-    top: 380px;
+    top: 350px;
     left: 8%;
 }
 
@@ -1194,6 +1202,9 @@ hr {
     cursor: pointer;
 }
 
+.float-right{
+    float:right;
+}
 .page-title{
     font-size: 34px;
     float:left;
