@@ -31,7 +31,7 @@ class User extends AppModel {
 			'conditions'=>array('User.facebook_id'=>$facebook_id)
 		);
 		$user = $this->find('first',$status);
-		
+
 		if($user){
 			// すでに登録したことがあれば
 			$this->id = $user['User']['id'];
@@ -46,10 +46,9 @@ class User extends AppModel {
 			$_SESSION['me']['id'] = $this->getLastInsertID();
 
 			// facebook写真を保存
-			// $data = file_get_contents('http://graph.facebook.com/'.$facebook_id.'/picture?type=large');
-			// file_put_contents(WWW_ROOT.'img'.DS."user".DS.$_SESSION['me']['image'], $data);
+			$data = file_get_contents('http://graph.facebook.com/'.$facebook_id.'/picture?type=large');
+			file_put_contents(WWW_ROOT.'img'.DS."user".DS.$_SESSION['me']['image'], $data);
 		}
-
 		return;
 	}
 }

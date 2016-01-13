@@ -1,5 +1,3 @@
-<?php debug($_SESSION['me']); ?>
-<? //$_SESSION['me'] = array(); ?>
 <!DOCTYPE html>
 <html lang="ja">
 <body>
