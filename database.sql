@@ -247,12 +247,13 @@ insert into areas (id, area) values (6, 'Africa');
 /*countriesのダミーデータ*/
 insert into countries (id, country, area_id) values (1, 'アメリカ', 3);
 insert into countries (id, country, area_id) values (2, 'ベルギー', 2);
+insert into countries (id, country, area_id) values (3, 'スイス', 2);
 
 
 /*universitiesのダミーデータ*/
 insert into universities (id, university, country_id, created, modified) values (1, 'ゲント大学', 2, '2014/08/07', '2015/07/28');
-insert into universities (id, university, country_id, created, modified) values (2, 'シアトル大学', 3, '2014/07/25', '2015/06/07');
-insert into universities (id, university, country_id, created, modified) values (3, 'スイス王立工科大学チューリッヒ校', 2, '2013/12/04', '2015/05/29');
+insert into universities (id, university, country_id, created, modified) values (2, 'シアトル大学', 1, '2014/07/25', '2015/06/07');
+insert into universities (id, university, country_id, created, modified) values (3, 'スイス王立工科大学チューリッヒ校', 3, '2013/12/04', '2015/05/29');
 
 
 /*categoriesのダミーデータ*/
@@ -859,7 +860,7 @@ insert into answers (id, user_id, answer, question_id, created, modified) values
 
 /*picturesのダミーデータ　（写真のデータは実際はない）*/
 insert into pictures (id, image, university_id, user_id, comment, created, modified) values (1, 'ghent.jpg', 1, 63, 'ゲントの街の写真', '2014/04/27', '2015/06/24');
-insert into pictures (id, image, university_id, user_id, comment, created, modified) values (2, 'seattle.jpg', 2, 19, 'シアトルの街の写真', '2014/07/20', '2015/11/09');
+insert into pictures (id, image, university_id, user_id, comment, created, modified) values (2, 'Seattle.jpg', 2, 19, 'シアトルの街の写真', '2014/07/20', '2015/11/09');
 insert into pictures (id, image, university_id, user_id, comment, created, modified) values (3, 'ETH.jpg', 3, 73, 'ETHキャンパスの写真', '2014/10/23', '2015/04/01');
 insert into pictures (id, image, university_id, user_id, comment, created, modified) values (4, 'ullamcorper purus.gif', 2, 58, 'Phasellus in felis. Donec semper sapien a libero. Nam dui.', '2014/02/03', '2015/11/19');
 insert into pictures (id, image, university_id, user_id, comment, created, modified) values (5, 'vel dapibus.png', 1, 15, 'In congue. Etiam justo. Etiam pretium iaculis justo.', '2014/11/21', '2015/06/12');
