@@ -132,6 +132,18 @@
                    </td>
                   </tr>
                   <tr>
+                   <th>留学先名</th>
+                   <td>
+                     <div class="form-group">
+                      <select class="form-control">
+                        <option>University of Ghent</option>
+                        <option>ETH</option>
+                        <option>University of Washington</option>
+                      </select>
+                   </div>
+                  </td>
+                  </tr>
+                  <tr>
                    <th>留学期間</th>
                    <td>
                       <div class="input-daterange input-group" id="datepicker">
