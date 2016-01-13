@@ -8,6 +8,8 @@ App::import('Vendor','facebook',array('file' => 'facebook'.DS.'php-sdk-v4'.DS.'s
 
 class UsersController extends AppController {
 	public $helper = array('HTML', 'form');
+	public $components = array('Session');
+	public $uses = array("User");
 
 	public function user(){
 		$this->set('title',"User | Connect");
@@ -33,17 +35,16 @@ class UsersController extends AppController {
 		$this->autoRender = false;
 		$this->autoLayout = false;
 
-
 		$fbLogin = new MyApp\FacebookLogin();
- 
+
 		try {
-		  $fbLogin->login();
+			$fbLogin->login();
 		} catch (Exception $e) {
-		  echo $e->getMessage();
-		  exit;
+			echo $e->getMessage();
+			exit;
 		}
 
-		if(isset($_SESSION['me']['facebook_id'])){
+		if($_SESSION['me']['facebook_id']){
 			$this->User->login($_SESSION['me']['facebook_id']);
 			header('Location: '.SITE_URL); // lpに戻る
 			exit;
