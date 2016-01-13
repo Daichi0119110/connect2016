@@ -25,6 +25,7 @@
 
 
 
+
 <!-- スライドショー始 -->
       <div class="row">
             <div class="slideShow">
@@ -277,10 +278,9 @@
                     <div class="col-md-9">
                       <div class="arrow_box">国内旅行に関しては、学生限定で国内のどこでも片道５ユーロ程度でいける特別電車乗車券があり、週末を利用してよく国内旅行へ出かけている。海外旅行に関しても、ベルギーはヨーロッパの中心にあることから、ヨーロッパであればどこでも比較的にアクセスしやすいと言える。ゲントから空港までもシャトルバスが出ており、簡単に空港にたどり着くことができる。<br>
                         <div class="row">
-                        <div class="general-button clip-button">
-                           <p class="favorite-btn float-right fa fa-pencil-square-o"> クリップ</p>
-                        </div>
-                        </div>
+                        
+                          <p class="favorite-btn float-right fa fa-pencil-square-o"> クリップ</p>
+                      </div>
                       </div>
                     </div>
 
@@ -336,7 +336,7 @@
                         <div class="row">
                         
                           <p class="favorite-btn float-right fa fa-pencil-square-o"> クリップ</p>
-                        </div>
+                      </div>
                       </div>
                     </div>
 
@@ -357,13 +357,9 @@
                     <div class="col-md-9">
                       <div class="arrow_box">夜は川辺が綺麗でロマンチック。ビールなどを片手に友達と行くのがおすすめ！また、電車で２０分のBrugeはベルギーのベネチアと呼ばれ、日本人女性観光客にかなりおすすめの町である。<br>
                         <div class="row">
-                        <div class="general-button clip-button">
-                          <div class="button-content">
-                            <i class="fa fa-pencil-square-o fa-1x"></i>
-                            <span class="button-text">クリップ</span>
-                          </div>
-                        </div>
-                        </div>
+                        
+                          <p class="favorite-btn float-right fa fa-pencil-square-o"> クリップ</p>
+                      </div>
                       </div>
                     </div>
 
@@ -414,13 +410,9 @@
                     <div class="col-md-9">
                       <div class="arrow_box">夜は川辺が綺麗でロマンチック。ビールなどを片手に友達と行くのがおすすめ！また、電車で２０分のBrugeはベルギーのベネチアと呼ばれ、日本人女性観光客にかなりおすすめの町である。<br>
                         <div class="row">
-                        <div class="general-button clip-button">
-                          <div class="button-content">
-                            <i class="fa fa-pencil-square-o fa-1x"></i>
-                            <span class="button-text">クリップ</span>
-                          </div>
-                        </div>
-                        </div>
+                        
+                          <p class="favorite-btn float-right fa fa-pencil-square-o"> クリップ</p>
+                      </div>
                       </div>
                     </div>
 
@@ -441,13 +433,9 @@
                     <div class="col-md-9">
                       <div class="arrow_box">夜は川辺が綺麗でロマンチック。ビールなどを片手に友達と行くのがおすすめ！また、電車で２０分のBrugeはベルギーのベネチアと呼ばれ、日本人女性観光客にかなりおすすめの町である。<br>
                         <div class="row">
-                        <div class="general-button clip-button">
-                          <div class="button-content">
-                            <i class="fa fa-pencil-square-o fa-1x"></i>
-                            <span class="button-text">クリップ</span>
-                          </div>
-                        </div>
-                        </div>
+                        
+                          <p class="favorite-btn float-right fa fa-pencil-square-o"> クリップ</p>
+                      </div>
                       </div>
                     </div>
 

@@ -1,4 +1,3 @@
-<?php debug($_SESSION['me']); ?>
 <!DOCTYPE html>
 <html lang="ja">
 <body>

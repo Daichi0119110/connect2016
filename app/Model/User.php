@@ -28,24 +28,27 @@ class User extends AppModel {
 
 	function login($facebook_id){
 		$status=array(
-			'conditions'=>array('facebook_id'=>$facebook_id)
+			'conditions'=>array('User.facebook_id'=>$facebook_id)
 		);
 		$user = $this->find('first',$status);
-		
+
 		if($user){
 			// すでに登録したことがあれば
 			$this->id = $user['User']['id'];
 			$this->save('modified',date('Y-m-d H:i:s'));
-			$_SESSION['me']['user_id'] = $user['User']['id'];
-			$_SESSION['me']['university_id'] = $user['User']['university_id'];
+			$_SESSION['me'] = $user['User'];
 
 		}else{
 			// 初めてのログイン（＝usersにデータがない）ならば
+			$_SESSION['me']['image'] = md5(microtime()) . ".jpg";
+			$this->create();
 			$this->save($_SESSION['me']);
-			$_SESSION['me']['user_id'] = $this->getLastInsertID();
-			$_SESSION['me']['university_id'] = NULL;
-		}
+			$_SESSION['me']['id'] = $this->getLastInsertID();
 
+			// facebook写真を保存
+			$data = file_get_contents('http://graph.facebook.com/'.$facebook_id.'/picture?type=large');
+			file_put_contents(WWW_ROOT.'img'.DS."user".DS.$_SESSION['me']['image'], $data);
+		}
 		return;
 	}
 }
