@@ -181,13 +181,8 @@
               <div class="col-md-9">
                 <div class="arrow_box"><?php echo $category['Pickup']['Review']['content']; ?><br>
                   <div class="row">
-                    <div class="general-button clip-button">
-                      <div class="button-content">
-                        <i class="fa fa-pencil-square-o fa-1x"></i>
-                        <p class="button-text" id="review<?php echo $category['Pickup']['Review']['id']; ?>" data-review-id="<?php echo $category['Pickup']['Review']['id']; ?>">クリップ</p>
+                        <p class="favorite-btn float-right fa fa-pencil-square-o" id="review<?php echo $category['Pickup']['Review']['id']; ?>" data-review-id="<?php echo $category['Pickup']['Review']['id']; ?>">クリップ</p>
                         <!-- span要素にclickイベントが聞いていない -->
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -209,13 +204,8 @@
               <div class="col-md-9">
                 <div class="arrow_box"><?php echo $review['content']; ?><br>
                   <div class="row">
-                    <div class="general-button clip-button">
-                      <div class="button-content">
-                        <i class="fa fa-pencil-square-o fa-1x"></i>
-                        <p class="button-text" id="review<?php echo $review['id']; ?>" data-review-id="<?php echo $review['id']; ?>">クリップ</p>
+                        <p class="favorite-btn float-right fa fa-pencil-square-o" id="review<?php echo $review['id']; ?>" data-review-id="<?php echo $review['id']; ?>">クリップ</p>
                         <!-- span要素にclickイベントが聞いていない -->
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>

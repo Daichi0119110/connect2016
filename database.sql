@@ -245,19 +245,14 @@ insert into areas (id, area) values (6, 'Africa');
 
 
 /*countriesのダミーデータ*/
-insert into countries (id, country, area_id) values (1, 'China', 1);
-insert into countries (id, country, area_id) values (2, 'UK', 2);
-insert into countries (id, country, area_id) values (3, 'America', 3);
-insert into countries (id, country, area_id) values (4, 'Canada', 3);
-insert into countries (id, country, area_id) values (5, 'France', 2);
-insert into countries (id, country, area_id) values (6, 'Belgium', 2);
+insert into countries (id, country, area_id) values (1, 'アメリカ', 3);
+insert into countries (id, country, area_id) values (2, 'ベルギー', 2);
 
 
 /*universitiesのダミーデータ*/
-insert into universities (id, university, country_id, created, modified) values (1, 'Ghent', 6, '2014/08/07', '2015/07/28');
-insert into universities (id, university, country_id, created, modified) values (2, 'UCLA', 3, '2014/07/25', '2015/06/07');
-insert into universities (id, university, country_id, created, modified) values (3, 'Stanford', 3, '2013/12/04', '2015/05/29');
-insert into universities (id, university, country_id, created, modified) values (4, 'Oxford', 2, '2014/05/08', '2014/12/01');
+insert into universities (id, university, country_id, created, modified) values (1, 'ゲント大学', 2, '2014/08/07', '2015/07/28');
+insert into universities (id, university, country_id, created, modified) values (2, 'シアトル大学', 3, '2014/07/25', '2015/06/07');
+insert into universities (id, university, country_id, created, modified) values (3, 'スイス王立工科大学チューリッヒ校', 2, '2013/12/04', '2015/05/29');
 
 
 /*categoriesのダミーデータ*/
@@ -863,9 +858,9 @@ insert into answers (id, user_id, answer, question_id, created, modified) values
 
 
 /*picturesのダミーデータ　（写真のデータは実際はない）*/
-insert into pictures (id, image, university_id, user_id, comment, created, modified) values (1, 'aliquam.tiff', 1, 63, 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', '2014/04/27', '2015/06/24');
-insert into pictures (id, image, university_id, user_id, comment, created, modified) values (2, 'erat nulla tempus.png', 5, 19, 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', '2014/07/20', '2015/11/09');
-insert into pictures (id, image, university_id, user_id, comment, created, modified) values (3, 'leo odio condimentum.gif', 4, 73, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.', '2014/10/23', '2015/04/01');
+insert into pictures (id, image, university_id, user_id, comment, created, modified) values (1, 'ghent.jpg', 1, 63, 'ゲントの街の写真', '2014/04/27', '2015/06/24');
+insert into pictures (id, image, university_id, user_id, comment, created, modified) values (2, 'seattle.jpg', 2, 19, 'シアトルの街の写真', '2014/07/20', '2015/11/09');
+insert into pictures (id, image, university_id, user_id, comment, created, modified) values (3, 'ETH.jpg', 3, 73, 'ETHキャンパスの写真', '2014/10/23', '2015/04/01');
 insert into pictures (id, image, university_id, user_id, comment, created, modified) values (4, 'ullamcorper purus.gif', 2, 58, 'Phasellus in felis. Donec semper sapien a libero. Nam dui.', '2014/02/03', '2015/11/19');
 insert into pictures (id, image, university_id, user_id, comment, created, modified) values (5, 'vel dapibus.png', 1, 15, 'In congue. Etiam justo. Etiam pretium iaculis justo.', '2014/11/21', '2015/06/12');
 insert into pictures (id, image, university_id, user_id, comment, created, modified) values (6, 'sem praesent.png', 1, 52, 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.', '2014/05/08', '2015/11/13');

@@ -39,13 +39,8 @@
             <div class="col-md-9">
               <div class="arrow_box"><?php echo $category['Pickup']['Review']['content']; ?><br>
                 <div class="row">
-                <div class="general-button clip-button">
-                  <div class="button-content">
-                    <i class="fa fa-pencil-square-o fa-1x"></i>
-                    <span class="button-text" id="review<?php echo $category['Pickup']['Review']['id']; ?>" data-review-id="<?php echo $category['Pickup']['Review']['id']; ?>">クリップ</span>
+                    <p class="favorite-btn float-right fa fa-pencil-square-o" id="review<?php echo $category['Pickup']['Review']['id']; ?>" data-review-id="<?php echo $category['Pickup']['Review']['id']; ?>"> クリップ</p>
                     <!-- span要素にclickイベントが聞いていない -->
-                  </div>
-                </div>
               </div>
             </div>
             </div>
@@ -98,12 +93,8 @@
                     <div class="col-md-9">
                       <div class="arrow_box">夜は川辺が綺麗でロマンチック。ビールなどを片手に友達と行くのがおすすめ！また、電車で２０分のBrugeはベルギーのベネチアと呼ばれ、日本人女性観光客にかなりおすすめの町である。<br>
                         <div class="row">
-                        <div class="general-button clip-button">
-                          <div class="button-content">
-                            <i class="fa fa-pencil-square-o fa-1x"></i>
-                            <span class="button-text">クリップ</span>
-                          </div>
-                        </div>
+                          <p class="favorite-btn float-right fa fa-pencil-square-o"> クリップ</p>
+
                         </div>
                       </div>
                     </div>
