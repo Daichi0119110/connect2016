@@ -69,6 +69,7 @@
 						<li><a href="<?php echo SITE_URL; ?>clips/clip">Clip</a></li>
 						<li><a href="<?php echo SITE_URL; ?>users/mypage">My page</a></li>
 						<li><a href="<?php echo SITE_URL; ?>universities/university">My university</a></li>
+						<li><a href="<?php echo SITE_URL; ?>users/logout">Logout</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 				<!--ログイン後ヘッダ終了ー-->
