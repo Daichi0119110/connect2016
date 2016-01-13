@@ -205,7 +205,7 @@
             <!-- ピックアップレビュー終了 -->
             <!-- 一般レビュー -->
             <?php foreach ($category['Review'] as $review) { ?>
-            <div class="row">
+            <div class="row review-content-others-1"> <!--左のクラス名の数字にカテゴリーのidをいれる-->
               <div class="col-md-9">
                 <div class="arrow_box"><?php echo $review['content']; ?><br>
                   <div class="row">
@@ -234,7 +234,7 @@
             <!-- 一般レビュー終了 -->
 
             <div class="row">
-              <p class="view-more-btn">▼▼ 同項目のレビューを見る ▼▼</p>
+              <p class="view-more-btn view-more-btn-1">▼▼ 同項目のレビューを見る ▼▼</p><!--ボタンにカテゴリーのidをいれる-->
             </div>
           </div>
           <?php } ?>
@@ -357,6 +357,25 @@
 </div> <!-- all container-->
 
 <script>
+
+
+/*もっと見る系*/
+$(function(){
+    setTimeout(function(){
+      $('.review-content-others-1').css('cssText','display:none!important;');
+$('.view-more-btn-1').click(function(){
+  $('.review-content-others-1').show('slow');
+  $('.view-more-btn-1').hide();
+});
+
+    },1000);
+});
+
+
+
+
+
+
 function chart(){
   var radarChartData = {
     labels: [<?php for ($i=0; $i < 8; $i++){ 
@@ -421,7 +440,7 @@ $('.star-0').raty({ readOnly: true, score:  <?php echo $average; ?>});
 $(function() {
   // ページ読み込み時
   $.post('/connect2016/clips/ready/',
-    {'user_id':<?php echo $_SESSION['me']['user_id']; ?>}
+    {'user_id':1<?php /*echo $_SESSION['me']['user_id'];*/ ?>}
     ,function(res){
       $.each(res, function(){
         $('#review'+this).html('すでにClipされています');
@@ -429,7 +448,7 @@ $(function() {
     }, "json");
 
   $.post('/connect2016/favoriteunis/ready/',
-    {'user_id':<?php echo $_SESSION['me']['user_id']; ?>, 'university_id':$('p.favorite-btn').data('university-id')}
+    {'user_id':1<?php /*echo $_SESSION['me']['user_id'];*/ ?>, 'university_id':$('p.favorite-btn').data('university-id')}
     ,function(res){
       if(res == 1){
         $('p.favorite-btn').html(' お気に入り済み');
@@ -439,7 +458,7 @@ $(function() {
   // clipボタン押したら
   $('p.button-text').click(function(e){
     $.post('/connect2016/clips/change/',
-      {'user_id':<?php echo $_SESSION['me']['user_id']; ?>, 'review_id':$(this).data('review-id')}
+      {'user_id':1<?php /*echo $_SESSION['me']['user_id'];*/ ?>, 'review_id':$(this).data('review-id')}
       ,function(res){
         if(res.flg == 1){
           $("#review"+res.id).html('すでにClipされています');
@@ -452,7 +471,7 @@ $(function() {
   //お気に入りボタン押したら
   $('p.favorite-btn').click(function(e){
     $.post('/connect2016/favoriteunis/change/',
-      {'user_id':<?php echo $_SESSION['me']['user_id']; ?>, 'university_id':$(this).data('university-id')}
+      {'user_id':1<?php /*echo $_SESSION['me']['user_id'];*/ ?>, 'university_id':$(this).data('university-id')}
       ,function(res){
         if(res == 1){
           $('p.favorite-btn').html(' お気に入り済み');
@@ -463,6 +482,10 @@ $(function() {
   });
 
 });
+
+
+
+
 
 </script>
 
