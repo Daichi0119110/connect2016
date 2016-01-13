@@ -29,6 +29,10 @@
             <a href="#search" class="btn btn-default btn-ghost-sp page-scroll top-nav">掲載大学一覧へ</a>
 
           </div>
+          <div class="explanation-box">
+            <h4>Coming soon</h4>
+            スマートホン用のサイトは現在準備中です。本サービスを利用する場合はお手数ですが、PCからアクセスしてください。
+          </div>
         </div>
       </div>
     </div>
@@ -39,10 +43,9 @@
 
 <div class="container wb" id="whatconnect">
   <div class="row centered">
-    <br><br>
     <div class="col-md-8 col-md-offset-2">
       <h2>What's Connect</h2>
-      <hr>
+      <hr id="hr-sp">
       <p><strong>Connect</strong>とは、海外留学経験を持つ日本人学生と,これから大学留学に行きたい日本人学生を繋げるプラットフォームです。大学への長期留学では、留学先の選択は非常に個人にとって重要な決断にもかかわらず、今までは、知人の留学経験者から直接話を聞くことでしか、留学の生の声を聞くことができませんでした。<strong>Conncet</strong>を通して、留学経験者と未来の留学生をつなげていきたいと思っています。</p>
     </div>
   </div><!-- row -->
@@ -54,23 +57,23 @@
     <div class="col-md-8 col-md-offset-2">
       <h2>Connectの特性</h2>
     </div>
-    <div class="row top-margin-m">
+    <div class="row top-margin-xs">
       <div class="col-md-4">
         <i class="fa fa-search"></i>
         <h3>Search</h3>
-        <p>海外大学への留学に関する情報を簡単に検索することができます。すべての書き込みは、実際の留学生の体験談だから、まるで先輩に話を聞いているような生の声を検索できます。</p>
+        <p class="sp-padding">海外大学への留学に関する情報を簡単に検索することができます。すべての書き込みは、実際の留学生の体験談だから、まるで先輩に話を聞いているような生の声を検索できます。</p>
       </div><!-- col-md-4 -->
 
       <div class="col-md-4">
         <i class="fa fa-clipboard"></i>
         <h3>Store</h3>
-        <p>気に入ったページを"お気に入り登録”、そして気になった情報を"クリップ”として、後で簡単に見返すことができます。しっかり考えて、自分にとって最適な留学先大学の決定を目指してください！</p>
+        <p class="sp-padding">気に入ったページを"お気に入り登録”、そして気になった情報を"クリップ”として、後で簡単に見返すことができます。しっかり考えて、自分にとって最適な留学先大学の決定を目指してください！</p>
       </div><!-- col-md-4 -->
 
       <div class="col-md-4">
         <i class="fa fa-facebook-square"></i>
         <h3>Connect</h3>
-        <p>実際の留学生に直接相談したい！そんな時には、<strong>Facebook</strong>を通じて先輩にメッセージを送ることができます。<strong>Facebook Messenger</strong>や,<strong>Skype</strong>にて通話相談に乗ってもらうこともできます！</p>
+        <p class="sp-padding">実際の留学生に直接相談したい！そんな時には、<strong>Facebook</strong>を通じて先輩にメッセージを送ることができます。<strong>Facebook Messenger</strong>や,<strong>Skype</strong>にて通話相談に乗ってもらうこともできます！</p>
       </div><!-- col-md-4 -->
     </div>
 
@@ -125,12 +128,12 @@
         <?php foreach($country['University'] as $university) { ?>
         <?php if($i%3 == 0){ echo '<div class="row centered clearfix">'; } ?>
         <?php $i = $i + 1; ?>
-        <div class="col-md-4">
+        <div class="col-xs-6">
           <a href="<?php echo SITE_URL."universities/university/".$university['id'];?>">
-            <div class="thumnail-box">
-              <?php echo $this->Html->image('university/'.$university['image'], array('height' => '240px'));?> <!-- 写真 -->
+            <div class="thumnail-box-sp">
+              <?php echo $this->Html->image('university/'.$university['image'], array('height' => '100px'));?> <!-- 写真 -->
               <div class="thumnail-text-box">
-                <p class="text-on-image thumnail-text"><?php echo $university['university'];?>(<?php echo $country['country'];?>)</p>
+                <p class="text-on-image thumnail-text-sp"><?php echo $university['university'];?>(<?php echo $country['country'];?>)</p>
               </div>
             </div>
           </a>
@@ -147,24 +150,23 @@
     <!-- FEATURE SECTION -->
     <div class="container wb">
       <div class="row centered">
-        <h4>現在掲載されていない大学も,追加リクエストを送ることで今後掲載するよう努力していきます</h4>
+        <h5>現在掲載されていない大学も,追加リクエストを送ることで今後掲載するよう努力していきます</h5>
 
         <div class="col-md-6 col-md-offset-3">
 
           <div class="input-group">
-            <input type="text" class="form-control form-m" placeholder="追加したい大学を入力">
+            <input type="text" class="form-control form-s" placeholder="追加したい大学を入力">
             <span class="input-group-btn">
-              <button class="btn btn-default form-btn-m" type="button">大学追加リクエスト</button>
+              <button class="btn btn-default form-btn-s" type="button">リクエスト</button>
             </span>
           </div><!-- /input-group -->
-          <p><br><br></p>
         </div><!-- /.col-md-6 -->
       </div><!-- /.row -->
     </div>
 
   </div>
 </div><!-- 掲載大学一覧↑ -->
-
+  </div>
 
 
 
