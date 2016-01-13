@@ -50,4 +50,14 @@ class UsersController extends AppController {
 			exit;
 		}
 	}
+
+	public function logout(){
+		$this->autoRender = false;
+		$this->autoLayout = false;
+
+		$_SESSION['me'] = array();
+
+		header('Location: '.SITE_URL); // lpに戻る
+		exit;
+	}
 }
