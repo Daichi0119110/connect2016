@@ -15,11 +15,10 @@ class FacebookLogin {
  
   public function login() {
     $helper = $this->_fb->getRedirectLoginHelper();
- 
+
     // get access token
     try {
       $accessToken = $helper->getAccessToken();
-      $_SESSION['me']['token'] = 1;
     } catch (\Facebook\Exception\FacebookResponseException $e) {
       echo 'Response Error: ' . $e->getMessage();
       exit;
@@ -27,9 +26,8 @@ class FacebookLogin {
       echo 'SDK Error: ' . $e->getMessage();
       exit;
     }
- 
+
     if (isset($accessToken)) {
-      debug($accessToken);
       $this->_save($accessToken);       // ここで終了
       return;
     } elseif ($helper->getError()) {    // facebook承認をキャンセルされたら
@@ -44,7 +42,7 @@ class FacebookLogin {
     // get user info
     $fb = new Facebook($accessToken);
     $userNode = $fb->getUserNode();
- 
+    
     // save user
     $user = array(
       'facebook_id'=>$userNode->getId(),
@@ -54,7 +52,7 @@ class FacebookLogin {
       'gender'=>$userNode->getGender()
     );
 
-    $this->Session->write('me',$user);
+    $_SESSION['me'] = $user;
     return;
   }
 
