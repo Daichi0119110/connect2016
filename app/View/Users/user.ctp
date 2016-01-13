@@ -309,7 +309,7 @@
                 <!--質問１つの塊-->
                 <div id="question-sub-1" class="scroll-fix">
                   <div class="question-box">
-                  <div class="row">
+                  <div class="row wu">
                     <h3 class="question-title">Question</h3>
                     <div class="col-md-2">
                      <a href="">
@@ -329,7 +329,7 @@
                   </div>
 <h3 class="answer-title">Answer</h3>
 
-                  <div class="row"> <!-- answer -->
+                  <div class="row answer-content"> <!-- answer -->
 
                     <div class="col-md-9">
                       <div class="arrow_box">夜は川辺が綺麗でロマンチック。ビールなどを片手に友達と行くのがおすすめ！また、電車で２０分のBrugeはベルギーのベネチアと呼ばれ、日本人女性観光客にかなりおすすめの町である。<br>
@@ -352,7 +352,7 @@
                     </div>
 
                   </div> <!-- answer -->
-                  <div class="row"> <!-- answer -->
+                  <div class="row answer-content"> <!-- answer -->
                     
                     <div class="col-md-9">
                       <div class="arrow_box">夜は川辺が綺麗でロマンチック。ビールなどを片手に友達と行くのがおすすめ！また、電車で２０分のBrugeはベルギーのベネチアと呼ばれ、日本人女性観光客にかなりおすすめの町である。<br>
@@ -375,6 +375,9 @@
                     </div>
 
                   </div> <!-- answer -->
+                  <div class="row">
+              <p class="view-more-btn">▼▼ 同項目のレビューを見る ▼▼</p>
+            </div>
                 </div> <!-- questionbox -->
                 </div>
                 <!--質問１つの塊終了-->
@@ -402,7 +405,7 @@
                   </div>
 <h3 class="answer-title">Answer</h3>
 
-                  <div class="row"> <!-- answer -->
+                  <div class="row question-content"> <!-- answer -->
 
                     <div class="col-md-9">
                       <div class="arrow_box">夜は川辺が綺麗でロマンチック。ビールなどを片手に友達と行くのがおすすめ！また、電車で２０分のBrugeはベルギーのベネチアと呼ばれ、日本人女性観光客にかなりおすすめの町である。<br>
@@ -425,7 +428,7 @@
                     </div>
 
                   </div> <!-- answer -->
-                  <div class="row"> <!-- answer -->
+                  <div class="row question-content"> <!-- answer -->
 
                     <div class="col-md-9">
                       <div class="arrow_box">夜は川辺が綺麗でロマンチック。ビールなどを片手に友達と行くのがおすすめ！また、電車で２０分のBrugeはベルギーのベネチアと呼ばれ、日本人女性観光客にかなりおすすめの町である。<br>
@@ -511,6 +514,20 @@
 </div> <!-- all container-->
 
 <script>
+
+$(function(){
+    setTimeout(function(){
+      $('.answer-content').css('display','none');
+$('.answer-content:first').css('display','block');
+$('.view-more-btn').click(function(){
+  $('.answer-content').show('slow');
+  $('.view-more-btn').hide();
+});
+
+    },100);
+});
+
+
 function chart(){
   var radarChartData = {
     labels: ["旅行のしやすさ", "町の過ごしやすさ", "大学キャンパスの快適さ", "授業のレベルの高さ", "物価の手軽さ", "住居環境の良さ", "食事面での満足度","治安の良さ"],
