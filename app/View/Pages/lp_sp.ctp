@@ -1,4 +1,3 @@
-<?php debug($_SESSION['me']); ?>
 <!DOCTYPE html>
 <html lang="ja">
 <body>
@@ -7,8 +6,8 @@
     <div class="container">
      <div class="row centered">
       <div class="col-md-8 col-md-offset-2">
-        <h1 class="title">Connect</h1>
-        <h2 class="">留学生をつなぐ架け橋</h2>
+        <h1 class="title-sp">Connect</h1>
+        <h4 class="">留学生をつなぐ架け橋</h4>
       </div>
 
       <div class="col-md-4 col-md-offset-4 top-margin-s">
@@ -21,13 +20,13 @@
           </span>
         </div><!-- /input-group -->
       </div>
-      <div class="col-md-10 col-md-offset-1 top-margin-l">
+      <div class="col-md-10 col-md-offset-1 top-margin-s">
         <div class="row">
           <div class="col-md-6">
-            <a href="#whatconnect" class="btn btn-default btn-ghost page-scroll top-nav">Connectとは？</a>
+            <a href="#whatconnect" class="btn btn-default btn-ghost-sp page-scroll top-nav">Connectとは？</a>
           </div>
           <div class="col-md-6">
-            <a href="#search" class="btn btn-default btn-ghost page-scroll top-nav">掲載大学一覧へ</a>
+            <a href="#search" class="btn btn-default btn-ghost-sp page-scroll top-nav">掲載大学一覧へ</a>
 
           </div>
         </div>

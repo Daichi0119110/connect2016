@@ -28,4 +28,8 @@ class PagesController extends AppController {
 
 	}
 
+	public function lp_sp() {
+
+	}
+
 }

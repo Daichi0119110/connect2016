@@ -1337,3 +1337,20 @@ hr {
     padding-top: 70px;
     margin-top:-70px;
 }
+
+
+/*以下はスマホ用lpページのcss*/
+.title-sp{
+    font-size: 40px!important;
+    font-weight: bold!important;
+}
+
+.btn-ghost-sp {
+  background: transparent!important;
+  font-size: 22px!important;
+  font-weight: bold!important;
+  margin: 10px auto 20px;
+  color: rgba(255, 250, 236, 1)!important;
+  border: 1px solid rgba(255, 250, 236, 1)!important;
+}
+
