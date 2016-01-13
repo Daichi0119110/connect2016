@@ -1402,3 +1402,21 @@ hr#hr-sp {
     background-color: rgba(255,250,236,0.4);
     padding:10px;
 }
+
+
+.tab-list{
+    border-bottom: 3px solid rgba(64,64,64,1)!important;
+}
+#tabs ul li {
+    font-weight: normal; 
+}
+
+.tab-list li.selected {
+    background-color: rgba(64,64,64,1)!important;
+    border-radius: 20px 20px 0 0 !important;
+    color :white!important;
+}
+
+.tab-explanation{
+    margin:10px;
+}
