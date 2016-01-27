@@ -1,4 +1,5 @@
 <?php echo $this->Session->flash(); ?>
+<?php debug($post); ?>
 
 <body data-spy="scroll" data-target=".sidebar" data-offset="70" id="top">
 
@@ -145,7 +146,7 @@
               <tr>
                 <td><a href="<?php echo SITE_URL.'pdf/'.$report['filename']; ?>"><?php echo $report['filename']; ?></a></td>
                 <div class="btn-group" role="group">
-                <td><a href="#" class="btn btn-default bule-button" role="button">削除する</a></td>
+                <td><a href="<?php echo SITE_URL.'reports/delete/'.$report['id']?>" class="btn btn-default bule-button" role="button">削除する</a></td>
               </div>
               </tr>
               <?php } ?>

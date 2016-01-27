@@ -68,7 +68,7 @@
                    <th>名前</th>
                    <td>
                      <div class="form-group">
-                       <input type="text" class="form-control form-edit-s" value="<?php echo $user['name']; ?>">
+                       <input type="text" class="form-control form-edit-s" name="name" value="<?php echo $user['name']; ?>">
                    </div>
                   </td>
                   </tr>
@@ -78,37 +78,25 @@
                       <div class="form-group">
                       <div class="radio">
                           <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="man" checked>
+                            <input type="radio" name="gender" id="optionsRadios1" value="man" checked>
                             男性
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="woman">
+                            <input type="radio" name="gender" id="optionsRadios2" value="woman">
                             女性
                           </label>
                       </div>
                    </td>
                   </tr>
                   <tr>
-                   <th>留学先名</th>
-                   <td>
-                     <div class="form-group">
-                      <select class="form-control">
-                        <option>University of Ghent</option>
-                        <option>ETH</option>
-                        <option>University of Washington</option>
-                      </select>
-                   </div>
-                  </td>
-                  </tr>
-                  <tr>
                    <th>留学期間</th>
                    <td>
                       <div class="input-daterange input-group" id="datepicker">
-                          <input type="text" class="input-sm form-control form-edit-xs-left" name="start" value="<?php echo $user['study_start']; ?>">
+                          <input type="text" class="input-sm form-control form-edit-xs-left" name="study_start" value="<?php echo $user['study_start']; ?>">
                           <span class="input-group-addon">to</span>
-                          <input type="text" class="input-sm form-control form-edit-xs-right" name="end" value="<?php echo $user['study_end']; ?>">
+                          <input type="text" class="input-sm form-control form-edit-xs-right" name="study_end" value="<?php echo $user['study_end']; ?>">
                       </div>
 
                    </td>
@@ -117,7 +105,7 @@
                     <th>学年</th>
                     <td>
                     <div class="form-group">
-                       <input type="text" class="form-control form-edit-s" value="<?php echo $user['study_grade']; ?>">
+                       <input type="text" class="form-control form-edit-s" name="study_grade" value="<?php echo $user['study_grade']; ?>">
                     </div>
                     </td>
                    </tr>
@@ -125,7 +113,7 @@
                    <th>専攻</th>
                    <td>
                      <div class="form-group">
-                       <input type="text" class="form-control form-edit-s" value="<?php echo $user['study_major']; ?>">
+                       <input type="text" class="form-control form-edit-s" name="study_major" value="<?php echo $user['study_major']; ?>">
                      </div>
                    </td>
                   </tr>
@@ -143,7 +131,7 @@
     <h4><i class="fa fa-smile-o fa-1x"></i>自己紹介</h4>
       <div class="profile-selfintro-box">
         <div class="form-group">
-            <textarea type="text" class="form-control form-edit-l"><?php echo $user['self_intro']; ?></textarea>
+            <textarea type="text" name="self_intro" class="form-control form-edit-l"><?php echo $user['self_intro']; ?></textarea>
         </div>
 
       </div>
@@ -163,7 +151,6 @@
               <tr>
                 <td><a href="<?php echo SITE_URL.'pdf/'.$report['filename']; ?>"><?php echo $report['filename']; ?></a></td>
                 <div class="btn-group" role="group">
-                <td><a href="#" class="btn btn-default bule-button" role="button">削除する</a></td>
               </div>
               </tr>
               <?php } ?>
@@ -191,44 +178,24 @@
             <div class="col-md-6">
               <table class="table score-table">
                 <tbody>
-                 <tr>
-                  <th>旅行のしやすさ</th>
-                  <td><span class="default-star star-1"></span></td>
-                </tr>
+                 <?php for ($i=0; $i < 4; $i++) {  ?>
                 <tr>
-                  <th>町の過ごしやすさ</th>
-                  <td><span class="default-star star-2"></span></td>
+                  <th><?php echo $scores[$i]['tag']; ?></th>
+                  <td><span class="default-star star-<?php echo $i+1;?>"></span></td>
                 </tr>
-                <tr>
-                  <th>大学キャンパスの快適さ</th>
-                  <td><span class="default-star star-3"></span></td>
-                </tr>
-                <tr>
-                  <th>授業レベルの高さ</th>
-                  <td><span class="default-star star-4"></span></td>
-                </tr>
+                <?php } ?>
               </tbody>
             </table>
           </div>
           <div class="col-md-6">
             <table class="table score-table">
               <tbody>
-               <tr>
-                <th>物価の手軽さ</th>
-                <td><span class="default-star star-5"></span></td>
-              </tr>
-              <tr>
-                <th>住居環境の良さ</th>
-                <td><span class="default-star star-6"></span></td>
-              </tr>
-              <tr>
-                <th>食事面での満足度</th>
-                <td><span class="default-star star-7"></span></td>
-              </tr>
-              <tr>
-                <th>治安の良さ</th>
-                <td><span class="default-star star-8"></span></td>
-              </tr>
+               <?php for ($i=4; $i < 8; $i++) {  ?>
+                <tr>
+                  <th><?php echo $scores[$i]['tag']; ?></th>
+                  <td><span class="default-star star-<?php echo $i+1;?>"></span></td>
+                </tr>
+                <?php } ?>
             </tbody>
           </table>
         </div>
@@ -242,29 +209,35 @@
       <div id="review" class=" row">
       <h2>レビュー</h2>
                 <!--旅行-->
-                <?php foreach ($reviews as $review) { ?>
-                <div id="review-sub-1" class="top-margin-xs">
+                <?php for ($i=0; $i < 9; $i++) { ?>
+                <div id="review-sub-<?php echo $i; ?>" class="top-margin-xs">
                 <div class="review-box">
                   <div class="row">
                     <div class="col-md-3">
                           <div class="thumnail-box-s review-picture">
-                              <?php echo $this->Html->image('category/'.$review['Category']['image'], array('height' => '120px'));?>
+                              <?php echo $this->Html->image('category/'.$categories[$i]['Category']['image'], array('height' => '120px'));?>
                               <div class="thumnail-text-box-s">
-                                <p class="text-on-image thumnail-text-s"><?php echo $review['Category']['category']; ?></p>
+                                <p class="text-on-image thumnail-text-s"><?php echo $categories[$i]['Category']['category']; ?></p>
                               </div>
                         </div>
                     </div>
                     <div class="col-md-9 review-question-area">
-                      <h3 class="review-discription"><?php echo $review['Category']['supplement']; ?></h3>
+                      <h3 class="review-discription"><?php echo $categories[$i]['Category']['supplement']; ?></h3>
                       <p class="review-question">Question: <br>
-                      <?php echo $review['Category']['question']; ?></p>
+                      <?php echo $categories[$i]['Category']['question']; ?></p>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-9">
                       <div class="arrow_box">
                         <div class="form-group">
-                            <textarea type="text" class="form-control form-edit-l"><?php echo $review['content']; ?></textarea>
+                            <textarea type="text" name="review-<?php echo $i+1 ?>" class="form-control form-edit-l"><?php for ($j=0; $j < count($reviews); $j++) {
+                                  if($reviews[$j]['category_id'] == $categories[$i]['Category']['id']) {
+                                    echo $reviews[$j]['content'];
+                                    continue;
+                                  }
+                                }
+                              ?></textarea>
                         </div>
                       </div>
                     </div>
@@ -317,7 +290,7 @@
                     <div class="col-md-9">
                       <div class="arrow_box">
                         <div class="form-group">
-                            <textarea type="text" class="form-control form-edit-l"><?php echo $answer['answer']; ?></textarea>
+                            <textarea type="text" name="answer-<?php echo $answer['id']; ?>" class="form-control form-edit-l"><?php echo $answer['answer']; ?></textarea>
                         </div>
                       </div>
                     </div>
@@ -351,21 +324,17 @@
         <nav class="sidebar hidden-print" data-offset-top="999">
           <ul class="nav">
 
-        <a href="https://www.facebook.com/kohei.arai.5">
+        <a href="https://www.facebook.com/<?php $user['facebook_id']; ?>">
           <div class="thumnail-box-m">
-            <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '300px'));?>
+            <?php echo $this->Html->image('user/'.$user['image'], array('height' => '300px'));?>
             <div class="thumnail-text-box-m">
-                <p class="text-on-image thumnail-text-m">新居航平さんのFacebook</p>
+                <p class="text-on-image thumnail-text-m"><?php echo $user['name']; ?>さんのFacebook</p>
             </div>
           </div>
         </a>
 
             <li>
               <a href="#about">▶about</a>
-              <ul class="nav">
-                <li><a href="#about-sub-1">自己紹介</a></li>
-                <li><a href="#about-sub-2">留学報告書</a></li>
-              </ul>
             </li>
             <li>
               <a href="#score">▶評価</a>
@@ -373,22 +342,14 @@
              <li>
               <a href="#review">▶レビュー</a>
               <ul class="nav">
-                <li><a href="#review-sub-1">旅行</a></li>
-                <li><a href="#review-sub-2">環境</a></li>
-                <li><a href="#review-sub-3">物価</a></li>
-                <li><a href="#review-sub-4">住居</a></li>
-                <li><a href="#review-sub-5">食事</a></li>
-                <li><a href="#review-sub-6">安全</a></li>
-                <li><a href="#review-sub-7">授業</a></li>
-                <li><a href="#review-sub-8">留学生</a></li>
-                <li><a href="#review-sub-9">言語</a></li>
+                <?php for ($i=0; $i < 9; $i++) { ?>
+              <li><a href="#review-sub-<?php echo $i; ?>"><?php echo $categories[$i]['Category']['category']; ?></a></li>
+              <?php } ?>
               </ul>
             </li>
              <li>
               <a href="#question">▶Q&A</a>
               <ul class="nav">
-                <li><a href="#question-sub-1">question1</a></li>
-                <li><a href="#question-sub-2">question2</a></li>
               </ul>
             </li>
           </ul>
@@ -403,20 +364,36 @@
 <script>
 function chart(){
   var radarChartData = {
-    labels: ["旅行のしやすさ", "町の過ごしやすさ", "大学キャンパスの快適さ", "授業のレベルの高さ", "物価の手軽さ", "住居環境の良さ", "食事面での満足度","治安の良さ"],
+    labels: [<?php for ($i=0; $i < 8; $i++){ 
+      echo '"'.$scores[$i]['tag'].'"';
+      if($i != 7){
+       echo ","; 
+     }}?>],
     datasets: [
       { //このかっこの塊をコピーすれば,二つ以上のデータを一つの中にいれられる。
-        label: "ゲント大学の平均スコア",
+        label: "<?php echo $university['university']?>の平均スコア",
         fillColor: "rgba(25,51,192,0.2)",//レーダーの中身の色
         strokeColor: "rgba(25,51,192,0.8)",//レーダーのborderの色
         pointColor: "rgba(25,51,192,1)",//レーダーの頂点の色
         pointStrokeColor: "rgba(25,51,192,1)",
         pointHighlightFill: "rgba(25,51,192,1)",
         pointHighlightStroke: "rgba(25,51,192,1)",
-        data: [4,3,3,4.12,2.3,5,4,3]
+        data: [<?php for ($i=0; $i < 8; $i++){ 
+          echo '"'.$scores[$i]['score'].'"';
+          if($i != 7){
+           echo ","; 
+         }}?>]
       },
     ]
   };
+
+  var options = {
+      scaleOverride : true,
+      scaleSteps : 5,
+      scaleStepWidth : 1,
+         //Number - 目盛りの線の幅  
+         scaleStartValue : 0,
+       };
 
   window.onload = function(){
     window.myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData, {
@@ -434,14 +411,9 @@ chart();
   //totalつまり、平均値
   $('.star-0').raty();
 //各項目のスコア
-  $('.star-1').raty({  score: 2 });
-  $('.star-2').raty({  score: 3.4 });
-  $('.star-3').raty({ score: 4.2 });
-  $('.star-4').raty({ score: 4.7 });
-  $('.star-5').raty({  score: 2 });
-  $('.star-6').raty({  score: 2 });
-  $('.star-7').raty({  score: 2 });
-  $('.star-8').raty({ score: 2 });
+  <?php for ($i=1; $i < 9; $i++) { ?>
+  $('.star-<?php echo $i; ?>').raty({ score: <?php echo $scores[$i-1]['score']; ?> });
+  <?php } ?>
 
 </script>
 
