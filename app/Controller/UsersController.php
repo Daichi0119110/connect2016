@@ -64,7 +64,7 @@ class UsersController extends AppController {
 			$user['Answer'][$i]['Question']['user'] = $this->User->getuser($user['Answer'][$i]['Question']['user_id'])['User'];
 		}
 
-		if($user['Picture'] == "") {
+		if(!$user['Picture']) {
 			$user['Picture'][0]['image'] = "default1.jpg";
 			$user['Picture'][1]['image'] = "default2.jpg";
 			$user['Picture'][2]['image'] = "default3.jpg";
