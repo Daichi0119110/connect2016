@@ -1,7 +1,7 @@
 
-<h5>タブを切り替えて、他大学のクリップした記事をみれます！</h5>
+  <h4 class="tab-explanation">タブを切り替えて、他大学のクリップした記事をみれます！</h4>
 <div id='tabs'>
-<ul>
+<ul class="tab-list">
   <li>ゲント大学</li>
   <li>他大学</li>
   <li>他大学2</li>
