@@ -27,6 +27,12 @@ class PagesController extends AppController {
 	public function search(){
 
 	}
+	public function contact() {
+
+	}
+	public function contact_sure() {
+
+	}
 
 	public function lp_sp(){
 		$this->set('title',"TOP | Connect");

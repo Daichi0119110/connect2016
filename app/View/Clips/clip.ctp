@@ -1,5 +1,11 @@
 
-  <h4 class="tab-explanation">タブを切り替えて、他大学のクリップした記事をみれます！</h4>
+<?php 
+//var_dump($user);
+echo $user['name'];
+?>
+
+
+<h4 class="tab-explanation">タブを切り替えて、他大学のクリップした記事をみれます！</h4>
 <div id='tabs'>
 <ul class="tab-list">
   <li>ゲント大学</li>
