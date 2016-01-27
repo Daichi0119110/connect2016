@@ -9,7 +9,7 @@ App::import('Vendor','facebook',array('file' => 'facebook'.DS.'php-sdk-v4'.DS.'s
 class UsersController extends AppController {
 	public $helper = array('HTML', 'form');
 	public $components = array('Session');
-	public $uses = array("User","Category","Question");
+	public $uses = array("User","Category","Question","Tag","Score");
 
 	public function user(){
 		$this->set('title',"User | Connect");
@@ -24,6 +24,8 @@ class UsersController extends AppController {
 		}
 
 		$user = $this->User->getuser($_SESSION['me']['id']);
+
+		$this->set('post',$_POST);
 	}
 
 	public function edit(){
@@ -35,6 +37,12 @@ class UsersController extends AppController {
 		}
 
 		$user = $this->User->getuser($_SESSION['me']['id']);
+		$tags = $this->Tag->find('all');
+
+		for ($i=0; $i < count($tags); $i++) {
+			$scores[$i] = $tags[$i]['Tag'];
+			$scores[$i]['score'] = $this->Score->getscore($user['User']['id'],$tags[$i]['Tag']['id']);
+		}
 
 		for ($i=0; $i < count($user['Review']); $i++) { 
 			$user['Review'][$i]['Category'] = $this->Category->getcategory($user['Review'][$i]['category_id']);
@@ -52,6 +60,8 @@ class UsersController extends AppController {
 		$this->set('reviews',$user['Review']);
 		$this->set('answers',$user['Answer']);		
 		$this->set('users',$user);
+		$this->set('scores',$scores);
+		$this->set('categories',$this->Category->find('all'));
 	}
 
 	public function signup(){

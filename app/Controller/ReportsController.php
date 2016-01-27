@@ -56,4 +56,8 @@ class ReportsController extends AppController {
 		// ファイルを読み込んで出力
 		readfile($file);
 	}
+
+	public function delete(){
+		
+	}
 }
