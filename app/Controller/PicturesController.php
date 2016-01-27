@@ -46,7 +46,7 @@ class PicturesController extends AppController {
 		        );
 
 		        $this->Picture->save($status);
-		        $this->redirect(array('controller'=>'users', 'action' => 'edit', $_SESSION['me']['user_id']));
+		        $this->redirect(array('controller'=>'users', 'action' => 'edit'));
 		    }
 		}
 

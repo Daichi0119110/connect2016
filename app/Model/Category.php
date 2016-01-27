@@ -7,4 +7,11 @@ class Category extends AppModel {
 	public $hasMany = array(
 		'Review' => array('className'=>'Review')
 	);
+
+	public function getcategory($id){
+		$status=array(
+			'conditions'=>array('Category.id'=>$id),
+		);
+		return $this->find('first',$status)['Category'];
+	}
 }

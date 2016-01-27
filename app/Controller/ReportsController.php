@@ -33,7 +33,7 @@ class ReportsController extends AppController {
 					);
 					$this->Report->create();
 					if ($this->Report->save($status)) {
-						$this->redirect(array('controller' => 'users','action' => 'edit', $_SESSION['me']['user_id']));
+						$this->redirect(array('controller' => 'users','action' => 'edit'));
 					}
 				}
 			}
