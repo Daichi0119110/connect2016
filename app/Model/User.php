@@ -21,7 +21,7 @@ class User extends AppModel {
 
 	function getuser($user_id){
 		$status=array(
-			'conditions'=>array('User.id'=>$user_id),
+			'conditions'=>array('User.id'=>$user_id)
 		);
 		return $this->find('first',$status);
 	}

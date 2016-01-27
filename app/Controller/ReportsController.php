@@ -57,7 +57,15 @@ class ReportsController extends AppController {
 		readfile($file);
 	}
 
-	public function delete(){
-		
+	public function delete($id){
+		$this->autoRender = false;
+		$this->autoLayout = false;
+
+		if($this->Report->deletePDF($id)) {
+			$this->Session->setFlash('ファイルは正常に削除されました');
+			$this->redirect(array('controller' => 'users','action' => 'mypage'));
+		}
+		$this->Session->setFlash('ファイルは削除出来ませんでした');
+		$this->redirect(array('controller' => 'users','action' => 'mypage'));
 	}
 }
