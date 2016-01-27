@@ -12,13 +12,26 @@
 
 
 <div class="clearfix scroll-fix" id="about">
-  <div class="page-title">Arai Kohei </div><p class="favorite-btn fa fa-heart"> お気に入り登録</p><div class="page-sub-title">--- ゲント大学へ留学 ---</div><p class="favorite-btn fa fa-floppy-o"> 編集</p></div>
+  <div class="page-title">Arai Kohei </div><p class="favorite-btn fa fa-heart"> お気に入り登録</p><div class="page-sub-title">--- ゲント大学へ留学 ---</div><a class="favorite-btn fa fa-floppy-o" href="<?php echo SITE_URL;?>users/edit"> 編集</a></div>
 
 
     <!-- user picture始 -->
     <div id="userpic">
     <div class="thumnail-box-user-profile">
     <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '240px'));?>
+    </div>
+    <div class="change btn-group" role="group">
+      <a href="#" class="btn btn-default bule-button" style="margin:5px 0 0 5px;" role="button">プロフィール画像を変更</a>
+      <?php
+      // 画像アップロード（大地作成）
+      echo $this->Form->create('Picture', array('action'=>'upload', 'type'=>'file', 'enctype' => 'multipart/form-data'));
+      echo $this->Form->input('image', array('label' => false, 'type' => 'file', 'multiple'));
+      echo $this->Form->hidden('user_id', array('value' => $user['id']));
+      echo $this->Form->hidden('university_id', array('value' => $user['university_id']));
+      echo $this->Form->hidden('folder', array('value' => 'user'));
+      echo $this->Form->hidden('comment', array('value' => NULL));
+      echo $this->Form->end('画像');
+      ?>
     </div>
     </div>
     <!-- user picture終 -->
@@ -27,40 +40,42 @@
 
 <!-- スライドショー始 -->
       <div class="row">
+
             <div class="slideShow">
                   <div class="mainView">
-                  <ul>
-                  <li><a href="#1"><?php echo $this->Html->image('university/ghent.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#2"><?php echo $this->Html->image('sample/photo1.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#3"><?php echo $this->Html->image('university/ghent.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#4"><?php echo $this->Html->image('sample/photo2.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#5"><?php echo $this->Html->image('university/ghent.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#6"><?php echo $this->Html->image('sample/photo3.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#7"><?php echo $this->Html->image('university/ghent.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#8"><?php echo $this->Html->image('sample/photo4.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#9"><?php echo $this->Html->image('university/ghent.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#10"><?php echo $this->Html->image('sample/photo5.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#11"><?php echo $this->Html->image('university/ghent.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#12"><?php echo $this->Html->image('sample/photo6.jpg', array('height' => '450px'));?></a></li>
-                  </ul>
+                    <ul>
+                      <? $i = 0;?>
+                      <?php foreach ($pictures as $picture) { ?>
+                      <? $i++; ?>
+                      <li><a href="#picture_<?php $i ?>"><?php echo $this->Html->image('university/'.$picture['image'], array('height' => '450px'));?></a></li>
+                      <?php } ?>
+                    </ul>
+                    <div id="image">
+                    <div class="upload btn-group" role="group">
+                      <a href="#" class="btn btn-default bule-button" role="button">留学中の写真をアップロード</a>
+                      <?php
+                      // 画像アップロード（大地作成）
+                      echo $this->Form->create('Picture', array('action'=>'upload', 'type'=>'file', 'enctype' => 'multipart/form-data'));
+                      echo $this->Form->input('image', array('label' => false, 'type' => 'file', 'multiple'));
+                      echo $this->Form->hidden('user_id', array('value' => $user['id']));
+                      echo $this->Form->hidden('university_id', array('value' => $user['university_id']));
+                      echo $this->Form->hidden('folder', array('value' => 'university'));
+                      echo $this->Form->text('comment',array('label'=>false,));
+                      echo $this->Form->end('画像');
+                      ?>
+                    </div>
+                    </div>
                   </div><!--/.mainView-->
 
 
                   <div class="thumbNail">
                   <div class="user">
                   <ul>
-                  <li><?php echo $this->Html->image('university/ghent.jpg', array('height' => '50px'));?></li>
-                  <li><?php echo $this->Html->image('sample/photo1.jpg');?></li>
-                  <li><?php echo $this->Html->image('university/ghent.jpg', array('height' => '50px'));?></li>
-                  <li><?php echo $this->Html->image('sample/photo2.jpg');?></li>
-                  <li><?php echo $this->Html->image('university/ghent.jpg', array('height' => '50px'));?></li>
-                  <li><?php echo $this->Html->image('sample/photo3.jpg');?></li>
-                  <li><?php echo $this->Html->image('university/ghent.jpg', array('height' => '50px'));?></li>
-                  <li><?php echo $this->Html->image('sample/photo4.jpg');?></li>
-                  <li><?php echo $this->Html->image('university/ghent.jpg', array('height' => '50px'));?></li>
-                  <li><?php echo $this->Html->image('sample/photo5.jpg');?></li>
-                  <li><?php echo $this->Html->image('university/ghent.jpg', array('height' => '50px'));?></li>
-                  <li><?php echo $this->Html->image('sample/photo6.jpg');?></li>
+                    <? $i = 0;?>
+                    <?php foreach ($pictures as $picture) { ?>
+                    <? $i++; ?>
+                    <li id="picture_<?php $i ?>"><?php echo $this->Html->image('university/'.$picture['image'], array('height' => '50px'));?></li>
+                    <?php } ?>
                   </ul>
                   </div>
                   </div><!--/.thumbNail-->
@@ -119,28 +134,35 @@
 
 
 <!-- user 留学報告書upload始 -->
-    <div id="about-sub-2" class="top-margin-s scroll-fix">
-      <?php echo $this->Form->create('Report', array('action' => 'upload', 'type' => 'file')); ?>
-      <?php echo $this->Form->file('file'); ?>
-      <?php echo $this->Form->hidden('user_id', array('value' => $_SESSION['me']['user_id'])); ?>
-      <?php echo $this->Form->hidden('university_id', array('value' => $_SESSION['me']['university_id'])); ?>
-      <?php echo $this->Form->end('レポート');?>
-    </div>
-<!-- user 留学報告書upload終 -->
+    <div id="about-sub-2" class="top-margin-s centered">
+      <h3><i class="fa fa-download fa-1x"></i>留学報告書</h3>
+
           <table class="table score-table pdf-table">
             <thead>
-              <tr>
-                <th>タイトル</th>
-                <th></th>
-              </tr>
             </thead>
             <tbody>
+              <?php foreach($reports as $report){ ?>
               <tr>
-                <td>laspfaslva.pdf</td>
-                <td><a href="#">ダウンロード</a></td> <!-- ダウンロードを実行 -->
+                <td><a href="<?php echo SITE_URL.'pdf/'.$report['filename']; ?>"><?php echo $report['filename']; ?></a></td>
+                <div class="btn-group" role="group">
+                <td><a href="#" class="btn btn-default bule-button" role="button">削除する</a></td>
+              </div>
               </tr>
+              <?php } ?>
             </tbody>
           </table>
+    <div class="btn-group" role="group">
+
+        <a href="#" class="btn btn-default bule-button" role="button">追加アップロード</a>
+        <?php echo $this->Form->create('Report', array('action' => 'upload', 'type' => 'file')); ?>
+        <?php echo $this->Form->file('file'); ?>
+        <?php echo $this->Form->hidden('user_id', array('value' => $user['id'])); ?>
+        <?php echo $this->Form->hidden('university_id', array('value' => $user['university_id'])); ?>
+        <?php echo $this->Form->end('レポート');?>
+    </div>
+
+    </div>
+<!-- user 留学報告書upload終 -->
   </div>
 
 </div>

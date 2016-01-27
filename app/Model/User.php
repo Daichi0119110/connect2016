@@ -2,13 +2,14 @@
 class User extends AppModel {
 //	public $hasMany='Favorite';
 	public $name='User';
+	public $recursive = 2;
 
 	public $belongsTo = array(
 		'University' => array('className' => 'University')
 	);
 
 	public $hasMany = array(
-		'Review' => array('className' => 'Review'),
+		'Review' => array('className' => 'Review', 'order' => 'Review.category_id'),
 		'Score' => array('className' => 'Score'),
 		'Picture' => array('className' => 'Picture'),
 		'Favorite_uni' => array('className' => 'Favorite_uni'),
@@ -21,7 +22,6 @@ class User extends AppModel {
 	function getuser($user_id){
 		$status=array(
 			'conditions'=>array('User.id'=>$user_id),
-			'recursive'=>0
 		);
 		return $this->find('first',$status);
 	}
