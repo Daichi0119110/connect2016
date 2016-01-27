@@ -8,9 +8,10 @@
 <!-- leftside content -->
 <div class="col-md-9">
 
+<form action="<?php echo SITE_URL.'users/mypage'; ?>" method="post"> <!-- formの開始 -->
 
 <div class="clearfix">
-  <div class="page-title">Arai Kohei </div><div class="page-sub-title">--- ゲント大学へ留学 ---</div><p class="favorite-btn fa fa-floppy-o"> 変更を保存</p>
+  <div class="page-title"><?php echo $user['name']; ?> </div><div class="page-sub-title"><?php if($user['university_id']){ ?>--- <?php echo $university['university']?>へ留学 ---<?php }?></div><button type="submit" class="favorite-btn fa fa-floppy-o"> 変更を保存</button>
 </div>
 
 
@@ -18,21 +19,8 @@
     <!-- user picture始 -->
     <div id="userpic">
     <div class="thumnail-box-user-profile">
-    <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '240px'));?>
+    <?php echo $this->Html->image('user/'.$user['image'], array('height' => '240px'));?>
     </div>
-        <div class="change btn-group" role="group">
-            <a href="#" class="btn btn-default bule-button" style="margin:5px 0 0 5px;" role="button">プロフィール画像を変更</a>
-            <?php
-            // 画像アップロード（大地作成）
-            echo $this->Form->create('Picture', array('action'=>'upload', 'type'=>'file', 'enctype' => 'multipart/form-data'));
-            echo $this->Form->input('image', array('label' => false, 'type' => 'file', 'multiple'));
-            echo $this->Form->hidden('user_id', array('value' => $_SESSION['me']['user_id']));
-            echo $this->Form->hidden('university_id', array('value' => NULL));
-            echo $this->Form->hidden('folder', array('value' => 'user'));
-            echo $this->Form->hidden('comment', array('value' => NULL));
-            echo $this->Form->end('画像');
-            ?>
-        </div>
     </div>
     <!-- user picture終 -->
 
@@ -42,53 +30,24 @@
 
             <div class="slideShow">
                   <div class="mainView">
-                  <ul>
-                  <li><a href="#1"><?php echo $this->Html->image('university/ghent.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#2"><?php echo $this->Html->image('sample/photo1.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#3"><?php echo $this->Html->image('university/ghent.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#4"><?php echo $this->Html->image('sample/photo2.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#5"><?php echo $this->Html->image('university/ghent.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#6"><?php echo $this->Html->image('sample/photo3.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#7"><?php echo $this->Html->image('university/ghent.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#8"><?php echo $this->Html->image('sample/photo4.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#9"><?php echo $this->Html->image('university/ghent.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#10"><?php echo $this->Html->image('sample/photo5.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#11"><?php echo $this->Html->image('university/ghent.jpg', array('height' => '450px'));?></a></li>
-                  <li><a href="#12"><?php echo $this->Html->image('sample/photo6.jpg', array('height' => '450px'));?></a></li>
-                  </ul>
-          <div id="image">
-          <div class="upload btn-group" role="group">
-            <a href="#" class="btn btn-default bule-button" role="button">留学中の写真をアップロード</a>
-            <?php
-            // 画像アップロード（大地作成）
-            echo $this->Form->create('Picture', array('action'=>'upload', 'type'=>'file', 'enctype' => 'multipart/form-data'));
-            echo $this->Form->input('image', array('label' => false, 'type' => 'file', 'multiple'));
-            echo $this->Form->hidden('user_id', array('value' => $_SESSION['me']['user_id']));
-            echo $this->Form->hidden('university_id', array('value' => $_SESSION['me']['university_id']));
-            echo $this->Form->hidden('folder', array('value' => 'university'));
-            echo $this->Form->text('comment',array('label'=>false,));
-            echo $this->Form->end('画像');
-            ?>
-          </div>
-          </div>
+                    <ul>
+                      <? $i = 0;?>
+                      <?php foreach ($pictures as $picture) { ?>
+                      <? $i++; ?>
+                      <li><a href="#picture_<?php $i ?>"><?php echo $this->Html->image('university/'.$picture['image'], array('height' => '450px'));?></a></li>
+                      <?php } ?>
+                    </ul>
                   </div><!--/.mainView-->
 
 
                   <div class="thumbNail">
                   <div class="user">
                   <ul>
-                  <li><?php echo $this->Html->image('university/ghent.jpg', array('height' => '50px'));?></li>
-                  <li><?php echo $this->Html->image('sample/photo1.jpg');?></li>
-                  <li><?php echo $this->Html->image('university/ghent.jpg', array('height' => '50px'));?></li>
-                  <li><?php echo $this->Html->image('sample/photo2.jpg');?></li>
-                  <li><?php echo $this->Html->image('university/ghent.jpg', array('height' => '50px'));?></li>
-                  <li><?php echo $this->Html->image('sample/photo3.jpg');?></li>
-                  <li><?php echo $this->Html->image('university/ghent.jpg', array('height' => '50px'));?></li>
-                  <li><?php echo $this->Html->image('sample/photo4.jpg');?></li>
-                  <li><?php echo $this->Html->image('university/ghent.jpg', array('height' => '50px'));?></li>
-                  <li><?php echo $this->Html->image('sample/photo5.jpg');?></li>
-                  <li><?php echo $this->Html->image('university/ghent.jpg', array('height' => '50px'));?></li>
-                  <li><?php echo $this->Html->image('sample/photo6.jpg');?></li>
+                    <? $i = 0;?>
+                    <?php foreach ($pictures as $picture) { ?>
+                    <? $i++; ?>
+                    <li id="picture_<?php $i ?>"><?php echo $this->Html->image('university/'.$picture['image'], array('height' => '50px'));?></li>
+                    <?php } ?>
                   </ul>
                   </div>
                   </div><!--/.thumbNail-->
@@ -109,7 +68,7 @@
                    <th>名前</th>
                    <td>
                      <div class="form-group">
-                       <input type="text" class="form-control form-edit-s" value="Arai Kohei">
+                       <input type="text" class="form-control form-edit-s" value="<?php echo $user['name']; ?>">
                    </div>
                   </td>
                   </tr>
@@ -119,13 +78,13 @@
                       <div class="form-group">
                       <div class="radio">
                           <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="man" checked>
                             男性
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="woman">
                             女性
                           </label>
                       </div>
@@ -135,18 +94,18 @@
                    <th>留学期間</th>
                    <td>
                       <div class="input-daterange input-group" id="datepicker">
-                          <input type="text" class="input-sm form-control form-edit-xs-left" name="start" />
+                          <input type="text" class="input-sm form-control form-edit-xs-left" name="start" value="<?php echo $user['study_start']; ?>">
                           <span class="input-group-addon">to</span>
-                          <input type="text" class="input-sm form-control form-edit-xs-right" name="end" />
+                          <input type="text" class="input-sm form-control form-edit-xs-right" name="end" value="<?php echo $user['study_end']; ?>">
                       </div>
 
                    </td>
                   </tr>
                   <tr>
-                    <th>大学・学年</th>
+                    <th>学年</th>
                     <td>
                     <div class="form-group">
-                       <input type="text" class="form-control form-edit-s" value="東京工業大学・4年">
+                       <input type="text" class="form-control form-edit-s" value="<?php echo $user['study_grade']; ?>">
                     </div>
                     </td>
                    </tr>
@@ -154,7 +113,7 @@
                    <th>専攻</th>
                    <td>
                      <div class="form-group">
-                       <input type="text" class="form-control form-edit-s" value="経営システム工学">
+                       <input type="text" class="form-control form-edit-s" value="<?php echo $user['study_major']; ?>">
                      </div>
                    </td>
                   </tr>
@@ -172,7 +131,7 @@
     <h4><i class="fa fa-smile-o fa-1x"></i>自己紹介</h4>
       <div class="profile-selfintro-box">
         <div class="form-group">
-            <textarea type="text" class="form-control form-edit-l">こんにちは。ゲント大学に留学してました、新居です。自分自身、留学する時の情報集めで戸惑いました。ぜひ気軽に質問してください！</textarea>
+            <textarea type="text" class="form-control form-edit-l"><?php echo $user['self_intro']; ?></textarea>
         </div>
 
       </div>
@@ -186,30 +145,18 @@
 
           <table class="table score-table pdf-table">
             <thead>
-              <tr>
-                <th>タイトル</th>
-                <th></th>
-              </tr>
             </thead>
             <tbody>
+              <?php foreach($reports as $report){ ?>
               <tr>
-                <td>ghpvnqp.pdf</td>
+                <td><a href="<?php echo SITE_URL.'pdf/'.$report['filename']; ?>"><?php echo $report['filename']; ?></a></td>
                 <div class="btn-group" role="group">
                 <td><a href="#" class="btn btn-default bule-button" role="button">削除する</a></td>
               </div>
               </tr>
+              <?php } ?>
             </tbody>
           </table>
-    <div class="btn-group" role="group">
-
-        <a href="#" class="btn btn-default bule-button" role="button">追加アップロード</a>
-        <?php echo $this->Form->create('Report', array('action' => 'upload', 'type' => 'file')); ?>
-        <?php echo $this->Form->file('file'); ?>
-        <?php echo $this->Form->hidden('user_id', array('value' => $_SESSION['me']['user_id'])); ?>
-        <?php echo $this->Form->hidden('university_id', array('value' => $_SESSION['me']['university_id'])); ?>
-        <?php echo $this->Form->end('レポート');?>
-    </div>
-
     </div>
 <!-- user 留学報告書DL終 -->
 
@@ -221,7 +168,7 @@
 <!-- 項目別スコア -->
         <div id="score" class="top-margin-m ">
 
-          <h2 class="">ゲント大学のスコア</h2>
+          <h2 class=""><?php echo $university['university']; ?>のスコア</h2>
 
           <div class="canvas center-block top-margin-xs">
             <canvas id="canvas"></canvas>
@@ -283,399 +230,71 @@
       <div id="review" class=" row">
       <h2>レビュー</h2>
                 <!--旅行-->
+                <?php foreach ($reviews as $review) { ?>
                 <div id="review-sub-1" class="top-margin-xs">
                 <div class="review-box">
                   <div class="row">
                     <div class="col-md-3">
                           <div class="thumnail-box-s review-picture">
-                              <?php echo $this->Html->image('category/category_travel.jpg', array('height' => '120px'));?>
+                              <?php echo $this->Html->image('category/'.$review['Category']['image'], array('height' => '120px'));?>
                               <div class="thumnail-text-box-s">
-                                <p class="text-on-image thumnail-text-s">旅行</p>
+                                <p class="text-on-image thumnail-text-s"><?php echo $review['Category']['category']; ?></p>
                               </div>
                         </div>
                     </div>
                     <div class="col-md-9 review-question-area">
-                      <h3 class="review-discription">その地域からの旅行の行きやすさ</h3>
+                      <h3 class="review-discription"><?php echo $review['Category']['supplement']; ?></h3>
                       <p class="review-question">Question: <br>
-                      その地域からの国内旅行や近辺の地域への旅行のしやすさについて教えてください。(地理的な影響や交通機関へのアクセスなど）</p>
+                      <?php echo $review['Category']['question']; ?></p>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-9">
                       <div class="arrow_box">
                         <div class="form-group">
-                            <textarea type="text" class="form-control form-edit-l">国内旅行に関しては、学生限定で国内のどこでも片道５ユーロ程度でいける特別電車乗車券があり、週末を利用してよく国内旅行へ出かけている。海外旅行に関しても、ベルギーはヨーロッパの中心にあることから、ヨーロッパであればどこでも比較的にアクセスしやすいと言える。ゲントから空港までもシャトルバスが出ており、簡単に空港にたどり着くことができる。</textarea>
+                            <textarea type="text" class="form-control form-edit-l"><?php echo $review['content']; ?></textarea>
                         </div>
                       </div>
                     </div>
 
                     <div class="col-md-3">
-                      <a href="">
                       <div class="thumnail-box-user-s">
-                        <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '160px'));?> <!-- 写真 -->
+                        <?php echo $this->Html->image('user/'.$user['image'], array('height' => '160px'));?> <!-- 写真 -->
                         <div class="thumnail-text-box-user-s">
-                          <p class="text-on-image thumnail-text-user-s">新居航平</p>
+                          <p class="text-on-image thumnail-text-user-s"><?php echo $user['name'];?></p>
                         </div>
                       </div>
-                      </a>
                     </div>
                   </div>
                 </div>
                 </div>
-                <!--旅行終了-->
-                <!--環境-->
-                <div id="review-sub-2" class="top-margin-xs">
-                <div class="review-box">
-                  <div class="row">
-                    <div class="col-md-3">
-                          <div class="thumnail-box-s review-picture">
-                              <?php echo $this->Html->image('category/category_environment.jpg', array('height' => '120px'));?>
-                              <div class="thumnail-text-box-s">
-                                <p class="text-on-image thumnail-text-s">環境</p>
-                              </div>
-                        </div>
-                    </div>
-                    <div class="col-md-9 review-question-area">
-                      <h3 class="review-discription">その地域からの旅行の行きやすさ</h3>
-                      <p class="review-question">Question: <br>
-                      その地域からの国内旅行や近辺の地域への旅行のしやすさについて教えてください。(地理的な影響や交通機関へのアクセスなど）</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-9">
-                      <div class="arrow_box">
-                        <div class="form-group">
-                            <textarea type="text" class="form-control form-edit-l" placeholder="入力をお願いします"></textarea>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-md-3">
-                      <a href="">
-                      <div class="thumnail-box-user-s">
-                        <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '160px'));?> <!-- 写真 -->
-                        <div class="thumnail-text-box-user-s">
-                          <p class="text-on-image thumnail-text-user-s">新居航平</p>
-                        </div>
-                      </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                </div>
-                <!--環境終了-->
-                <!--物価の塊-->
-                <div id="review-sub-3" class="top-margin-xs">
-                <div class="review-box">
-                  <div class="row">
-                    <div class="col-md-3">
-                          <div class="thumnail-box-s review-picture">
-                              <?php echo $this->Html->image('category/category_money.jpg', array('height' => '120px'));?>
-                              <div class="thumnail-text-box-s">
-                                <p class="text-on-image thumnail-text-s">物価</p>
-                              </div>
-                        </div>
-                    </div>
-                    <div class="col-md-9 review-question-area">
-                      <h3 class="review-discription">その地域からの旅行の行きやすさ</h3>
-                      <p class="review-question">Question: <br>
-                      その地域からの国内旅行や近辺の地域への旅行のしやすさについて教えてください。(地理的な影響や交通機関へのアクセスなど）</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-9">
-                      <div class="arrow_box">
-                        <div class="form-group">
-                            <textarea type="text" class="form-control form-edit-l">入力をお願いします</textarea>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-md-3">
-                      <a href="">
-                      <div class="thumnail-box-user-s">
-                        <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '160px'));?> <!-- 写真 -->
-                        <div class="thumnail-text-box-user-s">
-                          <p class="text-on-image thumnail-text-user-s">新居航平</p>
-                        </div>
-                      </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                </div>
-                <!--物価の塊終了-->
-                  <!--住居の塊-->
-                <div id="review-sub-4" class="top-margin-xs">
-                <div class="review-box">
-                  <div class="row">
-                    <div class="col-md-3">
-                          <div class="thumnail-box-s review-picture">
-                              <?php echo $this->Html->image('category/category_apartment.jpg', array('height' => '120px'));?>
-                              <div class="thumnail-text-box-s">
-                                <p class="text-on-image thumnail-text-s">住居</p>
-                              </div>
-                        </div>
-                    </div>
-                    <div class="col-md-9 review-question-area">
-                      <h3 class="review-discription">その地域からの旅行の行きやすさ</h3>
-                      <p class="review-question">Question: <br>
-                      その地域からの国内旅行や近辺の地域への旅行のしやすさについて教えてください。(地理的な影響や交通機関へのアクセスなど）</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-9">
-                      <div class="arrow_box">
-                        <div class="form-group">
-                            <textarea type="text" class="form-control form-edit-l">入力をお願いします</textarea>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-md-3">
-                      <a href="">
-                      <div class="thumnail-box-user-s">
-                        <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '160px'));?> <!-- 写真 -->
-                        <div class="thumnail-text-box-user-s">
-                          <p class="text-on-image thumnail-text-user-s">新居航平</p>
-                        </div>
-                      </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                </div>
-                <!--住居の塊終了-->
-                <!--食事の塊-->
-                <div id="review-sub-5" class="top-margin-xs">
-                <div class="review-box">
-                  <div class="row">
-                    <div class="col-md-3">
-                          <div class="thumnail-box-s review-picture">
-                              <?php echo $this->Html->image('category/category_food.jpg', array('height' => '120px'));?>
-                              <div class="thumnail-text-box-s">
-                                <p class="text-on-image thumnail-text-s">食事</p>
-                              </div>
-                        </div>
-                    </div>
-                    <div class="col-md-9 review-question-area">
-                      <h3 class="review-discription">その地域からの旅行の行きやすさ</h3>
-                      <p class="review-question">Question: <br>
-                      その地域からの国内旅行や近辺の地域への旅行のしやすさについて教えてください。(地理的な影響や交通機関へのアクセスなど）</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-9">
-                      <div class="arrow_box">
-                        <div class="form-group">
-                            <textarea type="text" class="form-control form-edit-l">入力をお願いします</textarea>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-md-3">
-                      <a href="">
-                      <div class="thumnail-box-user-s">
-                        <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '160px'));?> <!-- 写真 -->
-                        <div class="thumnail-text-box-user-s">
-                          <p class="text-on-image thumnail-text-user-s">新居航平</p>
-                        </div>
-                      </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                </div>
-                <!--食事の塊終了-->
-                  <!--安全の塊-->
-                <div id="review-sub-6" class="top-margin-xs">
-                <div class="review-box">
-                  <div class="row">
-                    <div class="col-md-3">
-                          <div class="thumnail-box-s review-picture">
-                              <?php echo $this->Html->image('category/category_safety.jpg', array('height' => '120px'));?>
-                              <div class="thumnail-text-box-s">
-                                <p class="text-on-image thumnail-text-s">安全</p>
-                              </div>
-                        </div>
-                    </div>
-                    <div class="col-md-9 review-question-area">
-                      <h3 class="review-discription">その地域からの旅行の行きやすさ</h3>
-                      <p class="review-question">Question: <br>
-                      その地域からの国内旅行や近辺の地域への旅行のしやすさについて教えてください。(地理的な影響や交通機関へのアクセスなど）</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-9">
-                      <div class="arrow_box">
-                        <div class="form-group">
-                            <textarea type="text" class="form-control form-edit-l">入力をお願いします</textarea>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-md-3">
-                      <a href="">
-                      <div class="thumnail-box-user-s">
-                        <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '160px'));?> <!-- 写真 -->
-                        <div class="thumnail-text-box-user-s">
-                          <p class="text-on-image thumnail-text-user-s">新居航平</p>
-                        </div>
-                      </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                </div>
-                <!--安全の塊終了-->
-                  <!--授業の塊-->
-                <div id="review-sub-7" class="top-margin-xs">
-                <div class="review-box">
-                  <div class="row">
-                    <div class="col-md-3">
-                          <div class="thumnail-box-s review-picture">
-                              <?php echo $this->Html->image('category/category_study.jpg', array('height' => '120px'));?>
-                              <div class="thumnail-text-box-s">
-                                <p class="text-on-image thumnail-text-s">授業</p>
-                              </div>
-                        </div>
-                    </div>
-                    <div class="col-md-9 review-question-area">
-                      <h3 class="review-discription">その地域からの旅行の行きやすさ</h3>
-                      <p class="review-question">Question: <br>
-                      その地域からの国内旅行や近辺の地域への旅行のしやすさについて教えてください。(地理的な影響や交通機関へのアクセスなど）</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-9">
-                      <div class="arrow_box">
-                        <div class="form-group">
-                            <textarea type="text" class="form-control form-edit-l">入力をお願いします</textarea>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-md-3">
-                      <a href="">
-                      <div class="thumnail-box-user-s">
-                        <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '160px'));?> <!-- 写真 -->
-                        <div class="thumnail-text-box-user-s">
-                          <p class="text-on-image thumnail-text-user-s">新居航平</p>
-                        </div>
-                      </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                </div>
-                <!--授業の塊終了-->
-                  <!--留学生の塊-->
-                <div id="review-sub-8" class="top-margin-xs">
-                <div class="review-box">
-                  <div class="row">
-                    <div class="col-md-3">
-                          <div class="thumnail-box-s review-picture">
-                              <?php echo $this->Html->image('category/category_student.jpg', array('height' => '120px'));?>
-                              <div class="thumnail-text-box-s">
-                                <p class="text-on-image thumnail-text-s">留学生</p>
-                              </div>
-                        </div>
-                    </div>
-                    <div class="col-md-9 review-question-area">
-                      <h3 class="review-discription">その地域からの旅行の行きやすさ</h3>
-                      <p class="review-question">Question: <br>
-                      その地域からの国内旅行や近辺の地域への旅行のしやすさについて教えてください。(地理的な影響や交通機関へのアクセスなど）</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-9">
-                      <div class="arrow_box">
-                        <div class="form-group">
-                            <textarea type="text" class="form-control form-edit-l">入力をお願いします</textarea>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-md-3">
-                      <a href="">
-                      <div class="thumnail-box-user-s">
-                        <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '160px'));?> <!-- 写真 -->
-                        <div class="thumnail-text-box-user-s">
-                          <p class="text-on-image thumnail-text-user-s">新居航平</p>
-                        </div>
-                      </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                </div>
-                <!--留学生の塊終了-->
-                <!--言語の塊-->
-                <div id="review-sub-9" class="top-margin-xs">
-                <div class="review-box">
-                  <div class="row">
-                    <div class="col-md-3">
-                          <div class="thumnail-box-s review-picture">
-                              <?php echo $this->Html->image('category/category_language.jpg', array('height' => '120px'));?>
-                              <div class="thumnail-text-box-s">
-                                <p class="text-on-image thumnail-text-s">言語</p>
-                              </div>
-                        </div>
-                    </div>
-                    <div class="col-md-9 review-question-area">
-                      <h3 class="review-discription">その地域からの旅行の行きやすさ</h3>
-                      <p class="review-question">Question: <br>
-                      その地域からの国内旅行や近辺の地域への旅行のしやすさについて教えてください。(地理的な影響や交通機関へのアクセスなど）</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-9">
-                      <div class="arrow_box">
-                        <div class="form-group">
-                            <textarea type="text" class="form-control form-edit-l">入力をお願いします</textarea>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-md-3">
-                      <a href="">
-                      <div class="thumnail-box-user-s">
-                        <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '160px'));?> <!-- 写真 -->
-                        <div class="thumnail-text-box-user-s">
-                          <p class="text-on-image thumnail-text-user-s">新居航平</p>
-                        </div>
-                      </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                </div>
-                <!--言語の塊終了-->
+                <?php } ?>
     </div>
 <!-- レビュー終 -->
 
 <hr>
 
 <!-- 質問と答え -->
-      <div id="question" class=" row">
+      <div id="question" class="row">
               <h2>Q&A</h2>
                 <!--質問１つの塊-->
-                <div id="question-sub-1" class="question-box ">
+                <?php foreach ($answers as $answer) { ?>
+                <div id="question-sub-1" class="question-box">
                   <div class="row">
                     <h3 class="question-title">Question</h3>
                     <div class="col-md-2">
                      <a href="">
                           <div class="thumnail-box-user-xs">
-                              <?php echo $this->Html->image('developer/daichi.jpg', array('height' => '100px'));?>
+                              <?php echo $this->Html->image('user/'.$answer['Question']['user']['image'], array('height' => '100px'));?>
                               <div class="thumnail-text-box-user-xs">
-                                <p class="text-on-image thumnail-text-user-xs">荻原大地</p>
+                                <p class="text-on-image thumnail-text-user-xs"><?php echo $answer['Question']['user']['name']; ?></p>
                               </div>
                         </div>
                       </a>
                     </div>
                     <div class="col-md-10">
                         <div class="arrow_box_left">
-                          ゲントでのおすすめの観光プランを教えて下さい。
+                          <?php echo $answer['Question']['question']; ?>
                         </div>
                     </div>
                   </div>
@@ -686,7 +305,7 @@
                     <div class="col-md-9">
                       <div class="arrow_box">
                         <div class="form-group">
-                            <textarea type="text" class="form-control form-edit-l">夜は川辺が綺麗でロマンチック。ビールなどを片手に友達と行くのがおすすめ！また、電車で２０分のBrugeはベルギーのベネチアと呼ばれ、日本人女性観光客にかなりおすすめの町である。</textarea>
+                            <textarea type="text" class="form-control form-edit-l"><?php echo $answer['answer']; ?></textarea>
                         </div>
                       </div>
                     </div>
@@ -694,9 +313,9 @@
                     <div class="col-md-3">
                       <a href="">
                       <div class="thumnail-box-user-s">
-                        <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '160px'));?> <!-- 写真 -->
+                        <?php echo $this->Html->image('user/'.$answer['User']['image'], array('height' => '160px'));?> <!-- 写真 -->
                         <div class="thumnail-text-box-user-s">
-                          <p class="text-on-image thumnail-text-user-s">新居航平</p>
+                          <p class="text-on-image thumnail-text-user-s"><?php echo $answer['User']['name']; ?></p>
                         </div>
                       </div>
                       </a>
@@ -704,55 +323,7 @@
 
                   </div> <!-- answer -->
                 </div> <!-- questionbox -->
-                <!--質問１つの塊終了-->
-
-                <!--質問１つの塊-->
-                <div id="question-sub-2" class="question-box ">
-                  <div class="row">
-                    <h3 class="question-title">Question</h3>
-                    <div class="col-md-2">
-                     <a href="">
-                          <div class="thumnail-box-user-xs">
-                              <?php echo $this->Html->image('developer/daichi.jpg', array('height' => '100px'));?>
-                              <div class="thumnail-text-box-user-xs">
-                                <p class="text-on-image thumnail-text-user-xs">荻原大地</p>
-                              </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="col-md-10">
-                        <div class="arrow_box_left">
-                          ゲントでのおすすめの観光プランを教えて下さい。
-                        </div>
-                    </div>
-                  </div>
-
-                  <h3 class="answer-title">Answer</h3>
-                  <div class="row"> <!-- answer -->
-
-                    <div class="col-md-9">
-                      <div class="arrow_box">
-                        <div class="form-group">
-                            <textarea type="text" class="form-control form-edit-l">夜は川辺が綺麗でロマンチック。ビールなどを片手に友達と行くのがおすすめ！また、電車で２０分のBrugeはベルギーのベネチアと呼ばれ、日本人女性観光客にかなりおすすめの町である。</textarea>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-md-3">
-                      <a href="">
-                      <div class="thumnail-box-user-s">
-                        <?php echo $this->Html->image('developer/kohei.jpg', array('height' => '160px'));?> <!-- 写真 -->
-                        <div class="thumnail-text-box-user-s">
-                          <p class="text-on-image thumnail-text-user-s">新居航平</p>
-                        </div>
-                      </div>
-                      </a>
-                    </div>
-
-                  </div> <!-- answer -->
-                </div> <!-- questionbox -->
-                <!--質問１つの塊終了-->
- 
+                <?php } ?>
         </div>
 <!-- 質問と答え -->
 
@@ -760,7 +331,7 @@
 <!-- leftside contents終 -->
 
 
-
+</form> <!-- formの終了 -->
 
 <!-- sidebar -->
       <div class="col-md-3" role="complementary">
