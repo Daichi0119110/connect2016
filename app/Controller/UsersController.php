@@ -9,7 +9,7 @@ App::import('Vendor','facebook',array('file' => 'facebook'.DS.'php-sdk-v4'.DS.'s
 class UsersController extends AppController {
 	public $helper = array('HTML', 'form');
 	public $components = array('Session');
-	public $uses = array("User","Category","Question","Tag","Score");
+	public $uses = array("User","Category","Question","Tag","Score","Review");
 
 	public function user(){
 		$this->set('title',"User | Connect");
@@ -41,7 +41,7 @@ class UsersController extends AppController {
 			// 	if($_POST['review-id-'.$i]) {
 			// 		$review_id = $_POST['review-id-'.$i];
 			// 	}
-			// 	$this->->save($data_user);
+			// 	$this->Review->save($data_user);
 			// }
 		}
 
@@ -64,12 +64,12 @@ class UsersController extends AppController {
 			$user['Answer'][$i]['Question']['user'] = $this->User->getuser($user['Answer'][$i]['Question']['user_id'])['User'];
 		}
 
-		if(!$user['User']) {
-			$user['User'][0]['image'] = "default1.jpg";
-			$user['User'][1]['image'] = "default2.jpg";
-			$user['User'][2]['image'] = "default3.jpg";
-			$user['User'][3]['image'] = "default4.jpg";
-			$user['User'][4]['image'] = "default5.jpg";
+		if($user['Picture'] == "") {
+			$user['Picture'][0]['image'] = "default1.jpg";
+			$user['Picture'][1]['image'] = "default2.jpg";
+			$user['Picture'][2]['image'] = "default3.jpg";
+			$user['Picture'][3]['image'] = "default4.jpg";
+			$user['Picture'][4]['image'] = "default5.jpg";
 		}
 
 		$this->set('user',$user['User']);
@@ -111,12 +111,12 @@ class UsersController extends AppController {
 			$user['Answer'][$i]['Question']['user'] = $this->User->getuser($user['Answer'][$i]['Question']['user_id'])['User'];
 		}
 
-		if(!$user['User']) {
-			$user['User'][0]['image'] = "default1.jpg";
-			$user['User'][1]['image'] = "default2.jpg";
-			$user['User'][2]['image'] = "default3.jpg";
-			$user['User'][3]['image'] = "default4.jpg";
-			$user['User'][4]['image'] = "default5.jpg";
+		if(!$user['Picture']) {
+			$user['Picture'][0]['image'] = "default1.jpg";
+			$user['Picture'][1]['image'] = "default2.jpg";
+			$user['Picture'][2]['image'] = "default3.jpg";
+			$user['Picture'][3]['image'] = "default4.jpg";
+			$user['Picture'][4]['image'] = "default5.jpg";
 		}
 
 		$this->set('user',$user['User']);
