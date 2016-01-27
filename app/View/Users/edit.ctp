@@ -208,7 +208,6 @@
 <!-- レビュー始 -->
       <div id="review" class=" row">
       <h2>レビュー</h2>
-                <!--旅行-->
                 <?php for ($i=0; $i < 9; $i++) { ?>
                 <div id="review-sub-<?php echo $i; ?>" class="top-margin-xs">
                 <div class="review-box">
@@ -231,13 +230,15 @@
                     <div class="col-md-9">
                       <div class="arrow_box">
                         <div class="form-group">
-                            <textarea type="text" name="review-<?php echo $i+1 ?>" class="form-control form-edit-l"><?php for ($j=0; $j < count($reviews); $j++) {
+                            <textarea type="text" name="review-<?php echo $i+1; ?>" class="form-control form-edit-l"><?php for ($j=0; $j < count($reviews); $j++) {
                                   if($reviews[$j]['category_id'] == $categories[$i]['Category']['id']) {
-                                    echo $reviews[$j]['content'];
-                                    continue;
-                                  }
-                                }
-                              ?></textarea>
+                                    echo $reviews[$j]['content'];?>
+                                <?php }?></textarea>
+                                <?php if($reviews[$j]['category_id'] == $categories[$i]['Category']['id']) { ?>
+                                <input type="hidden" name="review-id-<?php echo $i+1; ?>" value="<?php echo $reviews[$j]['id']; ?>">
+                                <?php } ?>
+                                <?php } ?>
+
                         </div>
                       </div>
                     </div>
@@ -291,6 +292,7 @@
                       <div class="arrow_box">
                         <div class="form-group">
                             <textarea type="text" name="answer-<?php echo $answer['id']; ?>" class="form-control form-edit-l"><?php echo $answer['answer']; ?></textarea>
+                            <input type="hidden" name="answer-id-<?php echo $answer['id']; ?>" value="<?php echo $answer['id']; ?>">
                         </div>
                       </div>
                     </div>

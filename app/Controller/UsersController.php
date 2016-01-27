@@ -23,7 +23,52 @@ class UsersController extends AppController {
 			$this->redirect(array('controller'=>'users', 'action'=>'login'));
 		}
 
+		// postならDBへ保存
+		if($this->request->is('post')) {
+			$data_user = array(
+				"id" => $_SESSION['me']['id'],
+				"name" => $_POST['name'],
+				"gender" => $_POST['gender'],
+				"self_intro" => $_POST['self_intro'],
+				"study_start" => $_POST['study_start'],
+				"study_end" => $_POST['study_end'],
+				"study_grade" => $_POST['study_grade'],
+				"study_major" => $_POST['study_major']
+			);
+			$this->User->save($data_user);
+
+			$date_review = array();
+		}
+
 		$user = $this->User->getuser($_SESSION['me']['id']);
+		$tags = $this->Tag->find('all');
+		$total = 0;
+
+		for ($i=0; $i < count($tags); $i++) {
+			$scores[$i] = $tags[$i]['Tag'];
+			$scores[$i]['score'] = $this->Score->getscore($user['User']['id'],$tags[$i]['Tag']['id']);
+			$total = $total + $scores[$i]['score'];
+		}
+
+		for ($i=0; $i < count($user['Review']); $i++) { 
+			$user['Review'][$i]['Category'] = $this->Category->getcategory($user['Review'][$i]['category_id']);
+		}
+
+		for ($i=0; $i < count($user['Answer']); $i++) { 
+			$user['Answer'][$i]['Question'] = $this->Question->getquestion($user['Answer'][$i]['question_id']);
+			$user['Answer'][$i]['Question']['user'] = $this->User->getuser($user['Answer'][$i]['Question']['user_id'])['User'];
+		}
+
+		$this->set('user',$user['User']);
+		$this->set('university',$user['University']);
+		$this->set('pictures',$user['Picture']);
+		$this->set('reports',$user['Report']);
+		$this->set('reviews',$user['Review']);
+		$this->set('answers',$user['Answer']);		
+		$this->set('users',$user);
+		$this->set('scores',$scores);
+		$this->set('categories',$this->Category->find('all'));
+		$this->set('average',$total/count($tags));
 
 		$this->set('post',$_POST);
 	}

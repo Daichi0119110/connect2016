@@ -12,7 +12,6 @@ create table users (
     name varchar(50),
     image varchar(255),
     university_id int,
-    birthday date,
     gender varchar(10), /*女or男*/
     self_intro text,
     study_end date,
