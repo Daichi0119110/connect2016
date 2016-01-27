@@ -200,7 +200,7 @@
             <!-- ピックアップレビュー終了 -->
             <!-- 一般レビュー -->
             <?php foreach ($category['Review'] as $review) { ?>
-            <div class="row review-content-others-1"> <!--左のクラス名の数字にカテゴリーのidをいれる-->
+            <div class="row review-content-others-<?php echo $category['Category']['id'] ;?>"> <!--左のクラス名の数字にカテゴリーのidをいれる-->
               <div class="col-md-9">
                 <div class="arrow_box"><?php echo $review['content']; ?><br>
                   <div class="row">
@@ -224,7 +224,7 @@
             <!-- 一般レビュー終了 -->
 
             <div class="row">
-              <p class="view-more-btn view-more-btn-1">▼▼ 同項目のレビューを見る ▼▼</p><!--ボタンにカテゴリーのidをいれる-->
+              <p class="view-more-btn view-more-btn-<?php echo $category['Category']['id']; ?>">▼▼ 同項目のレビューを見る ▼▼</p><!--ボタンにカテゴリーのidをいれる-->
             </div>
           </div>
           <?php } ?>
@@ -240,7 +240,7 @@
           </div>
 
           <?php for ($j=0; $j < count($university['User'])/3; $j++) { ?>
-          <div class="row centered">
+          <div class="row centered user-box-<?php echo $j;?>">
           <?php for ($i=$j*3; $i < ($j+1)*3; $i++) { ?>
             <div class="col-md-4">
               <a href="<?php echo SITE_URL; ?>users/user/<?php echo $university['User'][$i]['id']; ?>">
@@ -264,7 +264,7 @@
 
         </div><!-- row -->
         <div class="row">
-          <p class="view-more-btn">▼▼ 他の先輩を見る ▼▼</p>
+          <p class="view-more-btn view-more-btn-users">▼▼ 他の先輩を見る ▼▼</p>
         </div>
         <!-- senpai intros -->
 
@@ -350,20 +350,31 @@
 
 
 /*もっと見る系*/
-$(function(){
+// レビュー
+ <?php foreach($categories as $category) { ?>
+  $(function(){
     setTimeout(function(){
-      $('.review-content-others-1').css('cssText','display:none!important;');
-$('.view-more-btn-1').click(function(){
-  $('.review-content-others-1').show('slow');
-  $('.view-more-btn-1').hide();
+      $(".review-content-others-<?php echo $category['Category']['id']; ?>").css('cssText','display:none!important;');
+$(".view-more-btn-<?php echo $category['Category']['id']; ?>").click(function(){
+  $(".review-content-others-<?php echo $category['Category']['id']; ?>").show('slow');
+  $(".view-more-btn-<?php echo $category['Category']['id']; ?>").hide();
 });
-
     },1000);
 });
+ <?php } ?>
 
 
+//ユーザー
+ $(function(){
+    setTimeout(function(){
 
-
+      $(".user-box-0").nextAll().css('cssText','display:none!important;');
+$(".view-more-btn-users").click(function(){
+  $(".user-box-0").nextAll().show('slow');
+  $(".view-more-btn-users").hide();
+});
+    },1000);
+});
 
 
 function chart(){
