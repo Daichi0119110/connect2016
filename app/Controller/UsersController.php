@@ -37,7 +37,12 @@ class UsersController extends AppController {
 			);
 			$this->User->save($data_user);
 
-			$date_review = array();
+			// for ($i=1; $i<count($_POST);$i++) {
+			// 	if($_POST['review-id-'.$i]) {
+			// 		$review_id = $_POST['review-id-'.$i];
+			// 	}
+			// 	$this->->save($data_user);
+			// }
 		}
 
 		$user = $this->User->getuser($_SESSION['me']['id']);
@@ -57,6 +62,14 @@ class UsersController extends AppController {
 		for ($i=0; $i < count($user['Answer']); $i++) { 
 			$user['Answer'][$i]['Question'] = $this->Question->getquestion($user['Answer'][$i]['question_id']);
 			$user['Answer'][$i]['Question']['user'] = $this->User->getuser($user['Answer'][$i]['Question']['user_id'])['User'];
+		}
+
+		if(!$user['User']) {
+			$user['User'][0]['image'] = "default1.jpg";
+			$user['User'][1]['image'] = "default2.jpg";
+			$user['User'][2]['image'] = "default3.jpg";
+			$user['User'][3]['image'] = "default4.jpg";
+			$user['User'][4]['image'] = "default5.jpg";
 		}
 
 		$this->set('user',$user['User']);
@@ -96,6 +109,14 @@ class UsersController extends AppController {
 		for ($i=0; $i < count($user['Answer']); $i++) { 
 			$user['Answer'][$i]['Question'] = $this->Question->getquestion($user['Answer'][$i]['question_id']);
 			$user['Answer'][$i]['Question']['user'] = $this->User->getuser($user['Answer'][$i]['Question']['user_id'])['User'];
+		}
+
+		if(!$user['User']) {
+			$user['User'][0]['image'] = "default1.jpg";
+			$user['User'][1]['image'] = "default2.jpg";
+			$user['User'][2]['image'] = "default3.jpg";
+			$user['User'][3]['image'] = "default4.jpg";
+			$user['User'][4]['image'] = "default5.jpg";
 		}
 
 		$this->set('user',$user['User']);
