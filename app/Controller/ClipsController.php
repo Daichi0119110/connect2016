@@ -2,7 +2,7 @@
 
 class ClipsController extends AppController {
 	public $helper = array('HTML', 'form');
-	public $uses = array("Clip");
+	public $uses = array("Clip","User","Category","Question","Review");
 
 public function clip() {
 
