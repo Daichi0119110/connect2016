@@ -1,5 +1,6 @@
 <?php echo $this->Session->flash(); ?>
 <?php debug($_POST); ?>
+<?php debug($pictures); ?>
 
 <body data-spy="scroll" data-target=".sidebar" data-offset="70" id="top">
 
