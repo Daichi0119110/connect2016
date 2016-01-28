@@ -9,7 +9,7 @@ App::import('Vendor','facebook',array('file' => 'facebook'.DS.'php-sdk-v4'.DS.'s
 class UsersController extends AppController {
 	public $helper = array('HTML', 'form');
 	public $components = array('Session');
-	public $uses = array("User","Category","Question","Tag","Score","Review");
+	public $uses = array("User","Category","Question","Tag","Score","Review","University");
 
 	public function user(){
 		$this->set('title',"User | Connect");
@@ -119,6 +119,7 @@ class UsersController extends AppController {
 			$user['Picture'][4]['image'] = "default5.jpg";
 		}
 
+		$this->set('universities',$this->University->find('all'));
 		$this->set('user',$user['User']);
 		$this->set('university',$user['University']);
 		$this->set('pictures',$user['Picture']);
