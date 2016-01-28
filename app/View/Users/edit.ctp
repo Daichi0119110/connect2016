@@ -61,7 +61,7 @@
 <!-- user basic 始 -->
 <div class="row">
   <div class="col-md-5">
-    <div id="about">
+    <div id="about" class="top-margin-m">
              <table class="table profile-basicinfo">
                  <tbody>
                   <tr>
@@ -91,6 +91,21 @@
                    </td>
                   </tr>
                   <tr>
+                    <th>留学先大学</th>
+                    <td>
+                      <div class="form-group">
+                    <label class="control-label">以下は留学経験者のみ記入してください。</label>
+                    <div class="">
+                      <select class="form-control" name="university">
+                        <?php foreach($universities as $uni){ ?>
+                        <option value="<?php echo $uni['University']['id'];?>"><?php echo $uni['University']['university'];?></option>
+                        <?php }?>
+                      </select>
+                    </div>
+                  </div>
+                    </td>
+                  </tr>
+                  <tr>
                    <th>留学期間</th>
                    <td>
                       <div class="input-daterange input-group" id="datepicker">
@@ -105,7 +120,7 @@
                     <th>学年</th>
                     <td>
                     <div class="form-group">
-                       <input type="text" class="form-control form-edit-s" name="study_grade" value="<?php echo $user['study_grade']; ?>">
+                       <input type="text" class="form-control form-edit-s" name="study_grade" value="<?php echo $user['study_grade']; ?>" placeholder="留学時の学年を入力ください。">
                     </div>
                     </td>
                    </tr>
@@ -113,7 +128,7 @@
                    <th>専攻</th>
                    <td>
                      <div class="form-group">
-                       <input type="text" class="form-control form-edit-s" name="study_major" value="<?php echo $user['study_major']; ?>">
+                       <input type="text" class="form-control form-edit-s" name="study_major" value="<?php echo $user['study_major']; ?>" placeholder="留学先での専攻を入力ください。">
                      </div>
                    </td>
                   </tr>
@@ -127,11 +142,13 @@
 
 <!-- self intro始 -->
   <div class="col-md-7">
-    <div id="about-sub-1">
+    <div id="about-sub-1" class="top-margin-m">
     <h4><i class="fa fa-smile-o fa-1x"></i>自己紹介</h4>
       <div class="profile-selfintro-box">
         <div class="form-group">
-            <textarea type="text" name="self_intro" class="form-control form-edit-l"><?php echo $user['self_intro']; ?></textarea>
+            <textarea type="text" name="self_intro" class="form-control form-edit-l" placeholder="自分の紹介を自由にお書きください。後輩のために個別で相談乗るよ！という方はその旨も書いていただけると、コンタクトを受けやすくなります。
+            
+            "><?php echo $user['self_intro']; ?></textarea>
         </div>
 
       </div>
@@ -183,6 +200,7 @@
                   <th><?php echo $scores[$i]['tag']; ?></th>
                   <td><span class="default-star star-<?php echo $i+1;?>"></span></td>
                 </tr>
+                <input type="hidden" name="score-id-<?php echo $i;?>" id="score-value-<?php echo $i+1;?>" value="<?php echo $scores[$i]['score']; ?>">
                 <?php } ?>
               </tbody>
             </table>
@@ -195,6 +213,7 @@
                   <th><?php echo $scores[$i]['tag']; ?></th>
                   <td><span class="default-star star-<?php echo $i+1;?>"></span></td>
                 </tr>
+                <input type="hidden" name="score-id-<?php echo $i;?>" id="score-value-<?php echo $i+1;?>" value="<?php echo $scores[$i]['score']; ?>">
                 <?php } ?>
             </tbody>
           </table>
@@ -230,7 +249,7 @@
                     <div class="col-md-9">
                       <div class="arrow_box">
                         <div class="form-group">
-                            <textarea type="text" name="review-<?php echo $i+1; ?>" class="form-control form-edit-l"><?php for ($j=0; $j < count($reviews); $j++) {
+                            <textarea type="text" name="review-<?php echo $i+1; ?>" class="form-control form-edit-l" placeholder="解答例：<?php echo $categories[$i]['Category']['example']; ?>"><?php for ($j=0; $j < count($reviews); $j++) {
                                   if($reviews[$j]['category_id'] == $categories[$i]['Category']['id']) {
                                     echo $reviews[$j]['content'];?>
                                 <?php }?></textarea>
@@ -416,8 +435,17 @@ chart();
   <?php for ($i=1; $i < 9; $i++) { ?>
   $('.star-<?php echo $i; ?>').raty({ score: <?php echo $scores[$i-1]['score']; ?> });
   <?php } ?>
+<?php for ($i=1; $i < 9; $i++) { ?>
+$('.star-<?php echo $i; ?>').click(function(){
+var score<?php echo $i; ?> = $('.star-<?php echo $i; ?>').raty('score');
+$('#score-value-<?php echo $i; ?>').val(score<?php echo $i; ?>);
+});
+<?php } ?>
+
 
 </script>
+
+
 
 <!-- slideshow_user -->
 <?php echo $this->Html->script( 'slideshow_user.js', array('inline' => 'false')); ?>
