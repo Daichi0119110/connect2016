@@ -38,6 +38,11 @@ class PagesController extends AppController {
 
 	}
 
+	
+	public function coming_soon() {
+
+	}
+
 	public function favorite() {
 		$this->set('title'," | Connect");
 
