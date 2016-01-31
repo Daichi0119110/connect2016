@@ -6,8 +6,10 @@ class ClipsController extends AppController {
 
 	public function clip() {
 		$this->set('title',"My Clip | Connect");
+		
 		// まだ未完成のためリダイレクトでcomingsoonページに飛ばす
 		$this->redirect(array('controller' => 'pages','action' => 'coming_soon'));
+		exit();
 
 	}
 

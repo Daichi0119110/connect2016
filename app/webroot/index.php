@@ -8,6 +8,7 @@ session_start();
 
 // ドメイン
 define('SITE_URL','http://localhost/connect2016/');
+// define('SITE_URL','http://k0hei.science/connect2016/');
 
 // facebook情報
 define('APP_ID','540947999389389');

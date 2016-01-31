@@ -116,7 +116,7 @@
 
 
   <!-- user 留学報告書upload始 -->
-  <? if ($user['university_id']) { ?>
+  <?php if ($user['university_id']) { ?>
   <div id="about-sub-2" class="top-margin-s centered">
     <h3><i class="fa fa-download fa-1x"></i>留学写真アップロード</h3>
     <div class="uploadbox clearfix">

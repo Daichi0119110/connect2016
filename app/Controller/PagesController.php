@@ -9,6 +9,14 @@ class PagesController extends AppController {
 		$this->set('title',"Top | Connect");
 		$areas = $this->Area->find('all');
 
+		// スマホかPCを判別して振り分け
+		$ua = $_SERVER['HTTP_USER_AGENT'];
+		if (preg_match('/(iPhone|Android.*Mobile|Windows.*Phone)/', $ua)) {
+			// スマホだったら
+			$this->redirect('/pages/lp_sp');
+			exit();
+		} else {
+
 		// universityに写真情報を追加
 		for ($i=0; $i < count($areas); $i++) { 
 			for ($j=0; $j < count($areas[$i]['Country']); $j++) { 
@@ -27,6 +35,9 @@ class PagesController extends AppController {
 	public function search() {
 		$this->set('title',"Search | Connect");
 
+		// まだ未完成のためリダイレクトでcomingsoonページに飛ばす
+		$this->redirect(array('controller' => 'pages','action' => 'coming_soon'));
+		exit();
 	}
 
 	public function contact() {
@@ -45,6 +56,10 @@ class PagesController extends AppController {
 
 	public function favorite() {
 		$this->set('title'," | Connect");
+
+		// まだ未完成のためリダイレクトでcomingsoonページに飛ばす
+		$this->redirect(array('controller' => 'pages','action' => 'coming_soon'));
+		exit();
 
 	}
 

@@ -9,7 +9,7 @@ class UniversitiesController extends AppController {
 		$this->set('title',"University | Connect");
 
 		$university = $this->University->getuniversity($id);
-		$tags = $this->Tag->find('all', array("conditions"=>array("Score.university_id"=>$id)));
+		$tags = $this->Tag->find('all');
 		$categories = $this->Category->find('all');
 
 		// pickupレビューの抽出

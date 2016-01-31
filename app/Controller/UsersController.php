@@ -13,6 +13,10 @@ class UsersController extends AppController {
 
 	public function user(){
 		$this->set('title',"User | Connect");
+
+		// まだ未完成のためリダイレクトでcomingsoonページに飛ばす
+		$this->redirect(array('controller' => 'pages','action' => 'coming_soon'));
+		exit();
 	}
 
 	public function mypage(){
