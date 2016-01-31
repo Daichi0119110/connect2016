@@ -1,3 +1,4 @@
+<? debug($categories); ?>
 <!-- all-->
 <div class="container">
   <div class="row">

@@ -96,7 +96,7 @@
                     <div class="">
                       <select class="form-control" name="university_id">
                         <?php foreach($universities as $uni){ ?>
-                        <option value="<?php echo $uni['University']['id'];?>" <?php if($uni['University']['id'] == $_SESSION['me']['university_id']) { echo "selected"; } ?>><?php echo $uni['University']['university']; ?></option>
+                        <option value="<?php echo $uni['University']['id'];?>" <?php if($uni['University']['id'] == $user['university_id']) { echo "selected"; } ?>><?php echo $uni['University']['university']; ?></option>
                         <?php }?>
                       </select>
                     </div>
@@ -153,6 +153,7 @@
     </div>
 <!-- self intro終 -->
 
+<?php if($user['university_id']) { ?>
 
 <!-- user 留学報告書DL始 -->
     <div id="about-sub-2" class="top-margin-s centered">
@@ -173,11 +174,14 @@
           </table>
     </div>
 <!-- user 留学報告書DL終 -->
+<? } ?>
 
 </div>
 </div><!-- userinfo -->
 
 <hr>
+
+<?php if($user['university_id']) { ?>
 
 <!-- 項目別スコア -->
         <div id="score" class="top-margin-m ">
@@ -327,6 +331,7 @@
                 <?php } ?>
         </div>
 <!-- 質問と答え -->
+<? } ?>
 </div>
 <!-- leftside contents終 -->
 
@@ -351,6 +356,7 @@
             <li>
               <a href="#about">▶about</a>
             </li>
+            <?php if($user['university_id']) { ?>
             <li>
               <a href="#score">▶評価</a>
             </li>
@@ -367,6 +373,7 @@
               <ul class="nav">
               </ul>
             </li>
+            <? } ?>
           </ul>
         </nav>
       </div>

@@ -10,7 +10,7 @@
 
 
         <div class="clearfix scroll-fix" id="about">
-          <div class="page-title"><?php echo $user['name']; ?> </div><div class="page-sub-title"><?php if($user['university_id']) { ?>--- <?php echo $university['university']?>へ留学 ---</div><?php } ?><a class="favorite-btn fa fa-floppy-o" href="<?php echo SITE_URL;?>users/edit"> 編集</a></div>
+          <div class="page-title"><?php echo $user['name']; ?> </div><div class="page-sub-title"><?php if($user['university_id']) { ?>--- <?php echo $university['university']?>へ留学 ---<?php } ?></div><a class="favorite-btn fa fa-floppy-o" href="<?php echo SITE_URL;?>users/edit"> 編集</a></div>
 
 
           <!-- user picture始 -->
@@ -34,16 +34,6 @@
   </div>
   <!-- user picture終 -->
 
-            <?php
-                   // 画像アップロード（大地作成）
-            echo $this->Form->create('Picture', array('action'=>'upload', 'type'=>'file', 'enctype' => 'multipart/form-data'));
-            echo $this->Form->input('image', array('label' => false, 'type' => 'file', 'multiple'));
-            echo $this->Form->hidden('user_id', array('value' => $user['id']));
-            echo $this->Form->hidden('university_id', array('value' => $user['university_id']));
-            echo $this->Form->hidden('folder', array('value' => 'university'));
-            echo $this->Form->text('comment',array('label'=>false,));
-            echo $this->Form->end('画像', array('class'=>"btn btn-default bule-button"));
-            ?>
 
   <!-- スライドショー始 -->
   <div class="row">
@@ -127,7 +117,20 @@
 
   <!-- user 留学報告書upload始 -->
   <div id="about-sub-2" class="top-margin-s centered">
-    <h3><i class="fa fa-download fa-1x"></i>留学報告書</h3>
+    <h3><i class="fa fa-download fa-1x"></i>留学写真アップロード</h3>
+    <?php
+                   // 画像アップロード（大地作成）
+    echo $this->Form->create('Picture', array('action'=>'upload', 'type'=>'file', 'enctype' => 'multipart/form-data'));
+    echo $this->Form->input('image', array('label' => false, 'type' => 'file', 'multiple'));
+    echo $this->Form->hidden('user_id', array('value' => $user['id']));
+    echo $this->Form->hidden('university_id', array('value' => $user['university_id']));
+    echo $this->Form->hidden('folder', array('value' => 'university'));
+            // echo $this->Form->text('comment',array('label'=>false,));
+    echo $this->Form->end('写真送信！', array('class'=>"btn btn-default bule-button image-submit"));
+    ?>
+
+
+    <h3><i class="fa fa-download fa-1x"></i>留学報告書アップロード</h3>
 
     <table class="table score-table pdf-table">
       <thead>
@@ -145,12 +148,13 @@
     </table>
     <div class="btn-group" role="group">
 
+      <!--レポート-->
       <a href="#" class="btn btn-default bule-button" role="button">追加アップロード</a>
       <?php echo $this->Form->create('Report', array('action' => 'upload', 'type' => 'file')); ?>
       <?php echo $this->Form->file('file'); ?>
       <?php echo $this->Form->hidden('user_id', array('value' => $user['id'])); ?>
       <?php echo $this->Form->hidden('university_id', array('value' => $user['university_id'])); ?>
-      <?php echo $this->Form->end('レポート');?>
+      <?php echo $this->Form->end('レポート送信');?>
     </div>
 
   </div>
@@ -161,6 +165,9 @@
 <!-- userinfo -->
 
 <hr>
+
+<?php if ($user['university_id']) { ?>
+
 
 <!-- 項目別スコア -->
 <div id="score" class="top-margin-l scroll-fix">
@@ -316,6 +323,7 @@
 <?php } ?>
 </div>
 <!-- 質問と答え -->
+<? } ?>
 </div>
 <!-- leftside contents終 -->
 
@@ -340,6 +348,7 @@
             <li>
               <a href="#about">▶about</a>
             </li>
+            <?php if($user['university_id']) { ?>
             <li>
               <a href="#score">▶評価</a>
             </li>
@@ -356,6 +365,7 @@
               <ul class="nav">
               </ul>
             </li>
+            <? } ?>
           </ul>
         </nav>
       </div>
@@ -366,14 +376,14 @@
 </div> <!-- all container-->
 
 <script>
-function chart(){
-  var radarChartData = {
-    labels: [<?php for ($i=0; $i < 8; $i++){ 
-      echo '"'.$scores[$i]['tag'].'"';
-      if($i != 7){
-       echo ","; 
-     }}?>],
-     datasets: [
+  function chart(){
+    var radarChartData = {
+      labels: [<?php for ($i=0; $i < 8; $i++){ 
+        echo '"'.$scores[$i]['tag'].'"';
+        if($i != 7){
+         echo ","; 
+       }}?>],
+       datasets: [
       { //このかっこの塊をコピーすれば,二つ以上のデータを一つの中にいれられる。
         label: "ゲント大学の平均スコア",
         fillColor: "rgba(25,51,192,0.2)",//レーダーの中身の色
@@ -419,7 +429,7 @@ function chart(){
   $('.star-<?php echo $i; ?>').raty({ readOnly: true, score: <?php echo $scores[$i-1]['score']; ?> });
   <?php } ?>
 
-  </script>
+</script>
 
-  <!-- slideshow_user -->
-  <?php echo $this->Html->script( 'slideshow_user.js', array('inline' => 'false')); ?>
+<!-- slideshow_user -->
+<?php echo $this->Html->script( 'slideshow_user.js', array('inline' => 'false')); ?>
