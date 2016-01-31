@@ -1424,5 +1424,40 @@ hr#hr-sp {
 
 
 #PictureImage,#ReportFile{
-/*    margin:300px;
-*/}
+ margin:0 auto 0;
+}
+
+.submit input{
+    width:100px;
+    font-size:10px;
+    font-weight:bold;
+    text-decoration:none;
+    display:block;
+    text-align:center;
+    padding:6px 0 3px;
+    color:#fff;
+    background-color:rgba(25,51,192,0.85);
+    border-radius:5px;
+    box-shadow:2px 2px #404040;
+    float: right;
+    margin:0 100px 0 0;
+}
+
+.submit input:hover{
+background-color:rgba(25,51,192,1);
+}
+
+
+
+.upload-explanation{
+    font-size: 12px;
+    color:rgba(64,64,64,1);
+    margin-top:-15px;
+}
+
+.upload-explanation-2{
+    font-size: 12px;
+    color:rgba(64,64,64,1);
+    margin-top:-30px;
+}
+

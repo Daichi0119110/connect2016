@@ -72,8 +72,8 @@
 
   <!-- user basic 始 -->
   <div class="row">
-    <div class="col-md-5">
-      <div id="about-sub-1" class="scroll-fix">
+    <div class="col-md-5 top-margin-m">
+      <div id="about-sub-1" class="scroll-fix ">
        <table class="table profile-basicinfo">
          <tbody>
           <tr>
@@ -118,6 +118,9 @@
   <!-- user 留学報告書upload始 -->
   <div id="about-sub-2" class="top-margin-s centered">
     <h3><i class="fa fa-download fa-1x"></i>留学写真アップロード</h3>
+    <div class="uploadbox clearfix">
+    <p class="upload-explanation">「ファイル選択」からアップロードする写真を選択、「保存」で完了！</p>
+    
     <?php
                    // 画像アップロード（大地作成）
     echo $this->Form->create('Picture', array('action'=>'upload', 'type'=>'file', 'enctype' => 'multipart/form-data'));
@@ -126,10 +129,10 @@
     echo $this->Form->hidden('university_id', array('value' => $user['university_id']));
     echo $this->Form->hidden('folder', array('value' => 'university'));
             // echo $this->Form->text('comment',array('label'=>false,));
-    echo $this->Form->end('写真送信！', array('class'=>"btn btn-default bule-button image-submit"));
+    echo $this->Form->end('保存');
     ?>
-
-
+    </div>
+<hr id="hr-sp">
     <h3><i class="fa fa-download fa-1x"></i>留学報告書アップロード</h3>
 
     <table class="table score-table pdf-table">
@@ -146,15 +149,20 @@
         <?php } ?>
       </tbody>
     </table>
-    <div class="btn-group" role="group">
-
+    
       <!--レポート-->
+      <!--
+      <div class="btn-group" role="group">
       <a href="#" class="btn btn-default bule-button" role="button">追加アップロード</a>
+      </div>-->
+      <div class="uploadbox clearfix">
+      <p class="upload-explanation-2">「ファイル選択」からアップロードするレポートを選択、「保存」で完了！</p>
+    
       <?php echo $this->Form->create('Report', array('action' => 'upload', 'type' => 'file')); ?>
       <?php echo $this->Form->file('file'); ?>
       <?php echo $this->Form->hidden('user_id', array('value' => $user['id'])); ?>
       <?php echo $this->Form->hidden('university_id', array('value' => $user['university_id'])); ?>
-      <?php echo $this->Form->end('レポート送信');?>
+      <?php echo $this->Form->end('保存');?>
     </div>
 
   </div>
