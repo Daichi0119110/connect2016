@@ -1,4 +1,3 @@
-<? debug($categories); ?>
 <!-- all-->
 <div class="container">
   <div class="row">
@@ -177,6 +176,7 @@
               </div>
             </div>
             <!-- ピックアップレビュー -->
+            <?php if(isset($category['Pickup'])) { ?>
             <div class="row">
               <div class="col-md-9">
                 <div class="arrow_box"><?php echo $category['Pickup']['Review']['content']; ?><br>
@@ -196,14 +196,32 @@
                 </a>
               </div>
             </div>
+            <?php } else { ?>
+            <div class="row">
+              <div class="col-md-9">
+                <div class="arrow_box"><br>このレビューはまだ記入されておりません<br><br>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="thumnail-box-user-s">
+                  <?php echo $this->Html->image('user/noimage.png', array('height' => '160px')); ?><!-- 写真 -->
+                  <div class="thumnail-text-box-user-s">
+                    <p class="text-on-image thumnail-text-user-s">No Image</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <?php } ?>
             <!-- ピックアップレビュー終了 -->
             <!-- 一般レビュー -->
-            <?php foreach ($category['Review'] as $review) { ?>
-            <div class="row review-content-others-<?php echo $review['category_id']; ?>"> <!--左のクラス名の数字にカテゴリーのidをいれる-->
+            <?php foreach ($reviews[$category['Category']['id']-1] as $review) { ?>
+            <?php if(isset($category['Pickup'])) { ?>
+            <?php if ($review['Review']['id'] !== $category['Pickup']['Review']['id']) { ?>
+            <div class="row review-content-others-<?php echo $review['Review']['category_id']; ?>"> <!--左のクラス名の数字にカテゴリーのidをいれる-->
               <div class="col-md-9">
-                <div class="arrow_box"><?php echo $review['content']; ?><br>
+                <div class="arrow_box"><?php echo $review['Review']['content']; ?><br>
                   <div class="row">
-                        <p class="favorite-btn float-right fa fa-pencil-square-o" id="review<?php echo $review['id']; ?>" data-review-id="<?php echo $review['id']; ?>">クリップ</p>
+                        <p class="favorite-btn float-right fa fa-pencil-square-o" id="review<?php echo $review['Review']['id']; ?>" data-review-id="<?php echo $review['Review']['id']; ?>">クリップ</p>
                         <!-- span要素にclickイベントが聞いていない -->
                   </div>
                 </div>
@@ -220,11 +238,14 @@
               </div>
             </div>
             <?php } ?>
+            <?php } ?>
+            <?php } ?>
             <!-- 一般レビュー終了 -->
-
+            <?php if(isset($category['Pickup'])) { ?>
             <div class="row">
               <p class="view-more-btn view-more-btn-<?php echo $category['Category']['id']; ?>">▼▼ 同項目のレビューを見る ▼▼</p><!--ボタンにカテゴリーのidをいれる-->
             </div>
+            <?php } ?>
           </div>
           <?php } ?>
 
