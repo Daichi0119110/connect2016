@@ -154,7 +154,7 @@ create table reports (
     modified datetime default null
 );
 
-/*areasのダミーデータ*/
+/*areasの本番データ*/
 insert into areas (id, area) values (1, 'Asia');
 insert into areas (id, area) values (2, 'Europe');
 insert into areas (id, area) values (3, 'North America');
@@ -197,7 +197,37 @@ insert into tags (id, tag, question, good, bad) values (6, '住居環境の良�
 insert into tags (id, tag, question, good, bad) values (7, '食事面での満足度','食事面での満足度に関して','美味しい','不味い');
 insert into tags (id, tag, question, good, bad) values (8, '治安の良さ','その地域の治安に関して','良い','悪い');
 
+/*picturesの本番データ*/
+insert into pictures (id, image, university_id, comment, created, modified) values (1, 'ghent.jpg', 1, 'ゲントの街の写真', '2014/04/27', '2015/06/24');
+insert into pictures (id, image, university_id, comment, created, modified) values (2, 'Seattle.jpg', 2, 'シアトルの街の写真', '2014/07/20', '2015/11/09');
+insert into pictures (id, image, university_id, comment, created, modified) values (3, 'ETH.jpg', 3, 'ETHキャンパスの写真', '2014/10/23', '2015/04/01');
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*ダミーデータは以下から*/
 /*reviewsのダミーデータ*/
 insert into reviews (id, user_id, category_id, university_id, content, created, modified) values (1, 37, 5, 4, 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.', '2014/03/31', '2015/06/12');
 insert into reviews (id, user_id, category_id, university_id, content, created, modified) values (2, 53, 7, 4, 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', '2014/05/03', '2015/06/20');
@@ -696,7 +726,3 @@ insert into answers (id, user_id, answer, question_id, created, modified) values
 insert into answers (id, user_id, answer, question_id, created, modified) values (100, 56, 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', 34, '2014/01/01', '2015/07/16');
 
 
-/*picturesのダミーデータ*/
-insert into pictures (id, image, university_id, user_id, comment, created, modified) values (1, 'ghent.jpg', 1, 63, 'ゲントの街の写真', '2014/04/27', '2015/06/24');
-insert into pictures (id, image, university_id, user_id, comment, created, modified) values (2, 'Seattle.jpg', 2, 19, 'シアトルの街の写真', '2014/07/20', '2015/11/09');
-insert into pictures (id, image, university_id, user_id, comment, created, modified) values (3, 'ETH.jpg', 3, 73, 'ETHキャンパスの写真', '2014/10/23', '2015/04/01');

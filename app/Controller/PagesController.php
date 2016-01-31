@@ -5,8 +5,8 @@ class PagesController extends AppController {
 	public $helper = array('HTML', 'form');
 	public $uses = array('University','Area','Country','Picture');
 	
-	public function lp(){
-		$this->set('title',"TOP | Connect");
+	public function lp() {
+		$this->set('title',"Top | Connect");
 		$areas = $this->Area->find('all');
 
 		// universityに写真情報を追加
@@ -24,19 +24,21 @@ class PagesController extends AppController {
 		// debug($areas);
 	}
 
-	public function search(){
+	public function search() {
+		$this->set('title',"Search | Connect");
 
 	}
+
 	public function contact() {
+		$this->set('tite',"Contact us | Connect");
 
 	}
+
 	public function contact_sure() {
 
 	}
 
-<<<<<<< Updated upstream
-	public function lp_sp(){
-=======
+	
 	public function coming_soon() {
 
 	}
@@ -47,7 +49,6 @@ class PagesController extends AppController {
 	}
 
 	public function lp_sp() {
->>>>>>> Stashed changes
 		$this->set('title',"TOP | Connect");
 		$areas = $this->Area->find('all');
 

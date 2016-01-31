@@ -68,7 +68,7 @@
 						<li class="active"><a href="<?php echo SITE_URL; ?>favorites/favorite">Favorite</a></li>
 						<li><a href="<?php echo SITE_URL; ?>clips/clip">Clip</a></li>
 						<li><a href="<?php echo SITE_URL; ?>users/mypage">My page</a></li>
-						<li><a href="<?php echo SITE_URL; ?>universities/university">My university</a></li>
+						<li><a href="<?php echo SITE_URL; if(isset($_SESSION['me']['university_id'])){ echo "universities/university/". $_SESSION['me']['university_id']; } ?>">My university</a></li>
 						<li><a href="<?php echo SITE_URL; ?>users/logout">Logout</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->

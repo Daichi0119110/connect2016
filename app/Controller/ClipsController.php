@@ -4,14 +4,10 @@ class ClipsController extends AppController {
 	public $helper = array('HTML', 'form');
 	public $uses = array("Clip","User","Category","Question","Review");
 
-<<<<<<< Updated upstream
-public function clip() {
-=======
 	public function clip() {
 		$this->set('title',"My Clip | Connect");
 		// まだ未完成のためリダイレクトでcomingsoonページに飛ばす
 		$this->redirect(array('controller' => 'pages','action' => 'coming_soon'));
->>>>>>> Stashed changes
 
 	}
 
