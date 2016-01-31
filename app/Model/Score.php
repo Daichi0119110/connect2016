@@ -8,7 +8,7 @@ class Score extends AppModel {
 		'User' => array('className' => 'User')
 	);
 
-	public function getscore($user_id, $tag_id){
+	public function getscore($user_id, $tag_id) {
 		$status=array(
 			'conditions'=>array(
 				'Score.user_id'=>$user_id,
@@ -23,4 +23,19 @@ class Score extends AppModel {
 		}
 	}
 	
+	public function update($user_id, $tag_id, $score, $university_id) {
+		$status=array(
+			'conditions'=>array(
+				'Score.user_id'=>$user_id,
+				'Score.tag_id'=>$tag_id+1
+				)
+		);
+		$a = $this->find('first',$status);
+		if($a){
+			$this->save(array("id"=>$a['Score']['id'], "score"=>$score));
+		} else {
+			$this->create();
+			$this->save(array("user_id"=>$user_id, "tag_id"=>$tag_id+1, "score"=>$score, "university_id"=>$university_id));
+		}
+	}
 }

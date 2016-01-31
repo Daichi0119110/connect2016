@@ -17,7 +17,7 @@ class PicturesController extends AppController {
 	        // アップロードされた画像か？
 	        if (!is_uploaded_file($tmp)){
 	            $this->Session->setFlash('アップロードされた画像ではありません');
-	            $this->redirect(array('controller'=>'users', 'action' => 'practice'));
+	            $this->redirect(array('controller'=>'users', 'action' => 'mypage'));
 	        }
 	        // 拡張子が正しいか？
 	        switch(getimagesize($this->request->data['Picture']['image']['tmp_name'])['mime']) {
@@ -32,7 +32,7 @@ class PicturesController extends AppController {
 					break;
 				default:
 					$this->Session->setFlash('GIF、JPEG、PNGの拡張子のファイルがご利用できます');
-					$this->redirect(array('controller'=>'users', 'action' => 'practice'));
+					$this->redirect(array('controller'=>'users', 'action' => 'mypage'));
 			}
 	        // 保存
 	        $filename = md5(microtime()) . $ext;
@@ -46,7 +46,7 @@ class PicturesController extends AppController {
 		        );
 
 		        $this->Picture->save($status);
-		        $this->redirect(array('controller'=>'users', 'action' => 'edit'));
+		        $this->redirect(array('controller'=>'users', 'action' => 'mypage'));
 		    }
 		}
 

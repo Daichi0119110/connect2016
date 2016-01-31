@@ -78,13 +78,13 @@
                       <div class="form-group">
                       <div class="radio">
                           <label>
-                            <input type="radio" name="gender" id="optionsRadios1" value="man" checked>
+                            <input type="radio" name="gender" id="optionsRadios1" value="man" <?php if($user['gender']!="woman") { echo "checked"; }?>>
                             男性
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                            <input type="radio" name="gender" id="optionsRadios2" value="woman">
+                            <input type="radio" name="gender" id="optionsRadios2" value="woman" <?php if($user['gender']=="woman") { echo "checked"; }?>>
                             女性
                           </label>
                       </div>
@@ -94,9 +94,9 @@
                     <th>留学先大学</th>
                     <td>
                       <div class="form-group">
-                    <label class="control-label">以下は留学経験者のみ記入してください。</label>
+                    <label class="control-label">以下は留学経験者のみ選択してください。</label>
                     <div class="">
-                      <select class="form-control" name="university">
+                      <select class="form-control" name="university_id">
                         <?php foreach($universities as $uni){ ?>
                         <option value="<?php echo $uni['University']['id'];?>"><?php echo $uni['University']['university'];?></option>
                         <?php }?>
@@ -120,7 +120,7 @@
                     <th>学年</th>
                     <td>
                     <div class="form-group">
-                       <input type="text" class="form-control form-edit-s" name="study_grade" value="<?php echo $user['study_grade']; ?>" placeholder="留学時の学年を入力ください。">
+                       <input type="text" class="form-control form-edit-s" name="study_grade" value="<?php echo $user['study_grade']; ?>" placeholder="解答例：学部２年">
                     </div>
                     </td>
                    </tr>
@@ -128,7 +128,7 @@
                    <th>専攻</th>
                    <td>
                      <div class="form-group">
-                       <input type="text" class="form-control form-edit-s" name="study_major" value="<?php echo $user['study_major']; ?>" placeholder="留学先での専攻を入力ください。">
+                       <input type="text" class="form-control form-edit-s" name="study_major" value="<?php echo $user['study_major']; ?>" placeholder="解答例：経営工学">
                      </div>
                    </td>
                   </tr>
@@ -250,12 +250,9 @@
                       <div class="arrow_box">
                         <div class="form-group">
                             <textarea type="text" name="review-<?php echo $i+1; ?>" class="form-control form-edit-l" placeholder="解答例：<?php echo $categories[$i]['Category']['example']; ?>"><?php for ($j=0; $j < count($reviews); $j++) {
-                                  if($reviews[$j]['category_id'] == $categories[$i]['Category']['id']) {
-                                    echo $reviews[$j]['content'];?>
-                                <?php }?></textarea>
+                                  if($reviews[$j]['category_id'] == $categories[$i]['Category']['id']) { echo $reviews[$j]['content']; break; } }?></textarea>
                                 <?php if($reviews[$j]['category_id'] == $categories[$i]['Category']['id']) { ?>
                                 <input type="hidden" name="review-id-<?php echo $i+1; ?>" value="<?php echo $reviews[$j]['id']; ?>">
-                                <?php } ?>
                                 <?php } ?>
 
                         </div>
@@ -332,7 +329,6 @@
                 <?php } ?>
         </div>
 <!-- 質問と答え -->
-
 </div>
 <!-- leftside contents終 -->
 
