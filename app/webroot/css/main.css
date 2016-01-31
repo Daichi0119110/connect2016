@@ -1426,3 +1426,7 @@ hr#hr-sp {
 #PictureImage,#ReportFile{
 /*    margin:300px;
 */}
+
+.submit input{
+    float:right;
+}

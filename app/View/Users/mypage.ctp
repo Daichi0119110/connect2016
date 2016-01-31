@@ -147,17 +147,19 @@
         <?php } ?>
       </tbody>
     </table>
-    <div class="btn-group" role="group">
-
+    
       <!--レポート-->
+      <!--
+      <div class="btn-group" role="group">
       <a href="#" class="btn btn-default bule-button" role="button">追加アップロード</a>
+      </div>-->
+      
       <?php echo $this->Form->create('Report', array('action' => 'upload', 'type' => 'file')); ?>
       <?php echo $this->Form->file('file'); ?>
       <?php echo $this->Form->hidden('user_id', array('value' => $user['id'])); ?>
       <?php echo $this->Form->hidden('university_id', array('value' => $user['university_id'])); ?>
       <?php echo $this->Form->end('レポート送信');?>
-    </div>
-
+    
   </div>
   <!-- user 留学報告書upload終 -->
 </div>
