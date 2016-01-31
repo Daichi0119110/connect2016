@@ -43,14 +43,16 @@ class UsersController extends AppController {
 							)
 						);
 					} else {
-						$this->Review->create();
-						$this->Review->set(array(
-							"content"=>$_POST['review-'.(string)$i],
-							"user_id"=>$user['User']['id'],
-							"university_id"=>$user['User']['university_id'],
-							"category_id"=>$i
-							)
-						);
+						if($_POST['review-'.(string)$i]){
+							$this->Review->create();
+							$this->Review->set(array(
+								"content"=>$_POST['review-'.(string)$i],
+								"user_id"=>$user['User']['id'],
+								"university_id"=>$user['User']['university_id'],
+								"category_id"=>$i
+								)
+							);
+						}
 					}
 					$this->Review->save();
 				}
