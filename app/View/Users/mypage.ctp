@@ -35,17 +35,7 @@
   </div>
   <!-- user picture終 -->
 
-            <?php
-                   // 画像アップロード（大地作成）
-            echo $this->Form->create('Picture', array('action'=>'upload', 'type'=>'file', 'enctype' => 'multipart/form-data'));
-            echo $this->Form->input('image', array('label' => false, 'type' => 'file', 'multiple'));
-            echo $this->Form->hidden('user_id', array('value' => $user['id']));
-            echo $this->Form->hidden('university_id', array('value' => $user['university_id']));
-            echo $this->Form->hidden('folder', array('value' => 'university'));
-            echo $this->Form->text('comment',array('label'=>false,));
-            echo $this->Form->end('画像', array('class'=>"btn btn-default bule-button"));
-            ?>
-
+            
   <!-- スライドショー始 -->
   <div class="row">
 
@@ -128,7 +118,20 @@
 
   <!-- user 留学報告書upload始 -->
   <div id="about-sub-2" class="top-margin-s centered">
-    <h3><i class="fa fa-download fa-1x"></i>留学報告書</h3>
+    <h3><i class="fa fa-download fa-1x"></i>留学写真アップロード</h3>
+    <?php
+                   // 画像アップロード（大地作成）
+            echo $this->Form->create('Picture', array('action'=>'upload', 'type'=>'file', 'enctype' => 'multipart/form-data'));
+            echo $this->Form->input('image', array('label' => false, 'type' => 'file', 'multiple'));
+            echo $this->Form->hidden('user_id', array('value' => $user['id']));
+            echo $this->Form->hidden('university_id', array('value' => $user['university_id']));
+            echo $this->Form->hidden('folder', array('value' => 'university'));
+            // echo $this->Form->text('comment',array('label'=>false,));
+            echo $this->Form->end('写真送信！', array('class'=>"btn btn-default bule-button image-submit"));
+            ?>
+
+
+    <h3><i class="fa fa-download fa-1x"></i>留学報告書アップロード</h3>
 
     <table class="table score-table pdf-table">
       <thead>
@@ -146,12 +149,13 @@
     </table>
     <div class="btn-group" role="group">
 
+    <!--レポート-->
       <a href="#" class="btn btn-default bule-button" role="button">追加アップロード</a>
       <?php echo $this->Form->create('Report', array('action' => 'upload', 'type' => 'file')); ?>
       <?php echo $this->Form->file('file'); ?>
       <?php echo $this->Form->hidden('user_id', array('value' => $user['id'])); ?>
       <?php echo $this->Form->hidden('university_id', array('value' => $user['university_id'])); ?>
-      <?php echo $this->Form->end('レポート');?>
+      <?php echo $this->Form->end('レポート送信');?>
     </div>
 
   </div>
