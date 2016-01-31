@@ -18,7 +18,7 @@ class ReportsController extends AppController {
 
 			if ($this->request->data['Report']['file']['type'] != 'application/pdf') {
 				$this->Session->setFlash('アップロードファイルの形式が正しくありません');
-				$this->redirect(array('controller' => 'users','action' => 'practice'));
+				$this->redirect(array('controller' => 'users','action' => 'mypage'));
 			}
 
 			$tmp = $this->request->data['Report']['file']['tmp_name'];
@@ -33,7 +33,7 @@ class ReportsController extends AppController {
 					);
 					$this->Report->create();
 					if ($this->Report->save($status)) {
-						$this->redirect(array('controller' => 'users','action' => 'edit'));
+						$this->redirect(array('controller' => 'users','action' => 'mypage'));
 					}
 				}
 			}
@@ -41,7 +41,7 @@ class ReportsController extends AppController {
 		} else {
 			$this->Session->setFlash('アップロードファイルが登録されていません');
 		}
-		$this->redirect(array('controller' => 'users','action' => 'practice'));
+		$this->redirect(array('controller' => 'users','action' => 'mypage'));
 	}
 
 	public function show(){

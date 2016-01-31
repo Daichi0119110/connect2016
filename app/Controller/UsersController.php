@@ -9,7 +9,7 @@ App::import('Vendor','facebook',array('file' => 'facebook'.DS.'php-sdk-v4'.DS.'s
 class UsersController extends AppController {
 	public $helper = array('HTML', 'form');
 	public $components = array('Session');
-	public $uses = array("User","Category","Question","Tag","Score","Review");
+	public $uses = array("User","Category","Question","Tag","Score","Review","Answer");
 
 	public function user(){
 		$this->set('title',"User | Connect");
@@ -22,6 +22,8 @@ class UsersController extends AppController {
 		if(!$_SESSION['me']){
 			$this->redirect(array('controller'=>'users', 'action'=>'login'));
 		}
+
+		$user = $this->User->getuser($_SESSION['me']['id']);
 
 		// postならDBへ保存
 		if($this->request->is('post')) {
@@ -37,15 +39,36 @@ class UsersController extends AppController {
 			);
 			$this->User->save($data_user);
 
-			// for ($i=1; $i<count($_POST);$i++) {
-			// 	if($_POST['review-id-'.$i]) {
-			// 		$review_id = $_POST['review-id-'.$i];
-			// 	}
-			// 	$this->Review->save($data_user);
-			// }
+			// reveiwの更新
+			for ($i=1; $i<10 ;$i++) {
+				if(isset($_POST['review-id-'.(string)$i])) {
+					$review_id = $_POST['review-id-'.(string)$i];
+					$this->Review->set(array(
+						"id"=>$review_id ,
+						"content"=>$_POST['review-'.(string)$i]
+						)
+					);
+				} else {
+					$this->Review->create();
+					$this->Review->set(array(
+						"content"=>$_POST['review-'.(string)$i],
+						"user_id"=>$user['User']['id'],
+						"university_id"=>$user['User']['university_id'],
+						"category_id"=>$i
+						)
+					);
+				}
+				$this->Review->save();
+			}
+
+			// answerの更新
+			foreach ($user['Answer'] as $answer) {
+				$answer_id = $_POST['answer-id-'.(string)$answer['id']];
+				$this->Answer->save(array("id"=>$answer_id, "answer"=>$_POST['answer-'.(string)$answer['id']]));
+			}
 		}
 
-		$user = $this->User->getuser($_SESSION['me']['id']);
+		$user = $this->User->getuser($_SESSION['me']['id']); // 再度読み込み
 		$tags = $this->Tag->find('all');
 		$total = 0;
 
@@ -64,7 +87,7 @@ class UsersController extends AppController {
 			$user['Answer'][$i]['Question']['user'] = $this->User->getuser($user['Answer'][$i]['Question']['user_id'])['User'];
 		}
 
-		if($user['Picture'] == "") {
+		if(!$user['Picture']) {
 			$user['Picture'][0]['image'] = "default1.jpg";
 			$user['Picture'][1]['image'] = "default2.jpg";
 			$user['Picture'][2]['image'] = "default3.jpg";

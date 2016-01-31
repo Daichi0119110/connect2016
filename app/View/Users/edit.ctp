@@ -78,13 +78,13 @@
                       <div class="form-group">
                       <div class="radio">
                           <label>
-                            <input type="radio" name="gender" id="optionsRadios1" value="man" checked>
+                            <input type="radio" name="gender" id="optionsRadios1" value="man" <?php if($user['gender']!="woman") { echo "checked"; }?>>
                             男性
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                            <input type="radio" name="gender" id="optionsRadios2" value="woman">
+                            <input type="radio" name="gender" id="optionsRadios2" value="woman" <?php if($user['gender']=="woman") { echo "checked"; }?>>
                             女性
                           </label>
                       </div>
@@ -231,12 +231,9 @@
                       <div class="arrow_box">
                         <div class="form-group">
                             <textarea type="text" name="review-<?php echo $i+1; ?>" class="form-control form-edit-l"><?php for ($j=0; $j < count($reviews); $j++) {
-                                  if($reviews[$j]['category_id'] == $categories[$i]['Category']['id']) {
-                                    echo $reviews[$j]['content'];?>
-                                <?php }?></textarea>
+                                  if($reviews[$j]['category_id'] == $categories[$i]['Category']['id']) { echo $reviews[$j]['content']; break; } }?></textarea>
                                 <?php if($reviews[$j]['category_id'] == $categories[$i]['Category']['id']) { ?>
                                 <input type="hidden" name="review-id-<?php echo $i+1; ?>" value="<?php echo $reviews[$j]['id']; ?>">
-                                <?php } ?>
                                 <?php } ?>
 
                         </div>
@@ -313,7 +310,6 @@
                 <?php } ?>
         </div>
 <!-- 質問と答え -->
-
 </div>
 <!-- leftside contents終 -->
 
