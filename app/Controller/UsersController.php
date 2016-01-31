@@ -163,14 +163,6 @@ class UsersController extends AppController {
 		$this->set('categories',$this->Category->find('all'));
 	}
 
-	public function signup(){
-		$this->set('title',"Signup | Connect");
-	}
-
-	public function practice(){
-
-	}
-
 	public function login(){	
 		$this->autoRender = false;
 		$this->autoLayout = false;

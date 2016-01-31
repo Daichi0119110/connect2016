@@ -1,5 +1,3 @@
-<body data-spy="scroll" data-target=".sidebar" data-offset="70" id="top">
-
 <!-- all-->
 <div class="container">
     <div class="row">
@@ -98,7 +96,7 @@
                     <div class="">
                       <select class="form-control" name="university_id">
                         <?php foreach($universities as $uni){ ?>
-                        <option value="<?php echo $uni['University']['id'];?>"><?php echo $uni['University']['university'];?></option>
+                        <option value="<?php echo $uni['University']['id'];?>" <?php if($uni['University']['id'] == $_SESSION['me']['university_id']) { echo "selected"; } ?>><?php echo $uni['University']['university']; ?></option>
                         <?php }?>
                       </select>
                     </div>
@@ -341,7 +339,7 @@
         <nav class="sidebar hidden-print" data-offset-top="999">
           <ul class="nav">
 
-        <a href="https://www.facebook.com/<?php $user['facebook_id']; ?>">
+        <a href="https://www.facebook.com/<?php echo $user['facebook_id']; ?>">
           <div class="thumnail-box-m">
             <?php echo $this->Html->image('user/'.$user['image'], array('height' => '300px'));?>
             <div class="thumnail-text-box-m">

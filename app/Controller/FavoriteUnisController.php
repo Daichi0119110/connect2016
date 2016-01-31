@@ -2,10 +2,7 @@
 
 class FavoriteUnisController extends AppController {
 	public $helper = array('HTML', 'form');
-	
-	public function favorite(){
-		
-	}
+
 
 	public function ready(){	// ページ読み込み時のお気に入り情報の読み込み
 		if ($this->request->is('get')) {

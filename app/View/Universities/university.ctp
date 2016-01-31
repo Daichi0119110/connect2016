@@ -1,4 +1,3 @@
-
 <!-- all-->
 <div class="container">
   <div class="row">
@@ -9,7 +8,7 @@
       <div class="content">
 
         <div class="padding-s clearfix">
-          <div class="page-title"><?php echo $university['University']['university']; ?></div><p class="favorite-btn fa fa-heart" data-university-id="<?php echo $university['University']['id']; ?>"> お気に入り登録</p><div class="page-sub-title"></div>
+          <div class="page-title"><?php echo $university['University']['university']; ?></div><p class="favorite-btn fa fa-heart" data-university-id="<?php echo $university['University']['id']; ?>" id="favo_uni"> お気に入り登録</p><div class="page-sub-title"></div>
         </div>
         <!-- スライドショー始 -->
         <div class="row">
@@ -19,7 +18,7 @@
                 <ul>
                   <?php for ($i=0; $i <1000 ; $i++) { ?>
                   <?php if (!isset($university['Picture'][$i])){ break; } ?>
-                  <li><a href="#<?php echo $i+1; ?>"><?php echo $this->Html->image('sample/'.$university['Picture'][$i]['image']);?></a></li>
+                  <li><a href="#<?php echo $i+1; ?>"><?php echo $this->Html->image('university/'.$university['Picture'][$i]['image']);?></a></li>
                   <?php } ?>
                 </ul>
               </div><!--/.mainView-->
@@ -28,7 +27,7 @@
                   <ul>
                     <?php for ($i=0; $i <1000 ; $i++) { ?>
                     <?php if (!isset($university['Picture'][$i])){ break; } ?>
-                    <li><?php echo $this->Html->image('sample/'.$university['Picture'][$i]['image']);?></li>
+                    <li><?php echo $this->Html->image('university/'.$university['Picture'][$i]['image']);?></li>
                     <?php } ?>
                   </ul>
                 </div>
@@ -182,14 +181,13 @@
                 <div class="arrow_box"><?php echo $category['Pickup']['Review']['content']; ?><br>
                   <div class="row">
                         <p class="favorite-btn float-right fa fa-pencil-square-o" id="review<?php echo $category['Pickup']['Review']['id']; ?>" data-review-id="<?php echo $category['Pickup']['Review']['id']; ?>">クリップ</p>
-                        <!-- span要素にclickイベントが聞いていない -->
                   </div>
                 </div>
               </div>
               <div class="col-md-3">
                 <a href="<?php echo SITE_URL."users/user/".$category['Pickup']['User']['id']; ?>">
                   <div class="thumnail-box-user-s">
-                    <img src="http://graph.facebook.com/<?php echo $category['Pickup']['User']['facebook_id']; ?>/picture" height="160px"><!-- 写真 -->
+                    <?php echo $this->Html->image('user/'.$category['Pickup']['User']['image'], array('height' => '160px'));?><!-- 写真 -->
                     <div class="thumnail-text-box-user-s">
                       <p class="text-on-image thumnail-text-user-s"><?php echo $category['Pickup']['User']['name']; ?></p>
                     </div>
@@ -200,7 +198,7 @@
             <!-- ピックアップレビュー終了 -->
             <!-- 一般レビュー -->
             <?php foreach ($category['Review'] as $review) { ?>
-            <div class="row review-content-others-<?php echo $category['Category']['id'] ;?>"> <!--左のクラス名の数字にカテゴリーのidをいれる-->
+            <div class="row review-content-others-<?php echo $review['category_id']; ?>"> <!--左のクラス名の数字にカテゴリーのidをいれる-->
               <div class="col-md-9">
                 <div class="arrow_box"><?php echo $review['content']; ?><br>
                   <div class="row">
@@ -212,7 +210,7 @@
               <div class="col-md-3">
                 <a href="<?php echo SITE_URL."users/user/".$review['User']['id']; ?>">
                   <div class="thumnail-box-user-s">
-                    <img src="http://graph.facebook.com/<?php echo $review['User']['facebook_id']; ?>/picture" height="160px"><!-- 写真 -->
+                    <?php echo $this->Html->image('user/'.$review['User']['image'], array('height' => '160px'));?><!-- 写真 -->
                     <div class="thumnail-text-box-user-s">
                       <p class="text-on-image thumnail-text-user-s"><?php echo $review['User']['name']; ?></p>
                     </div>
@@ -251,7 +249,7 @@
                       <p class="text-on-image thumnail-text-user"><?php echo $university['User'][$i]['name']; ?></p>
                     </div>
                   </div>
-                  <p class="senpai-nav"><?php echo date("Y/n",strtotime($university['User'][$i]['study_start']))."〜".date("Y/n",strtotime($university['User'][$i]['study_end'])); ?>に留学</p>
+                  <p class="senpai-nav"><?php echo $university['User'][$i]['study_start']."〜".$university['User'][$i]['study_end']; ?></p>
                   <p><?php echo $university['User'][$i]['self_intro']; ?></p>
                   <p class="senpai-nav-f">▼詳細を見る▼</p>
                 </div>
@@ -440,26 +438,28 @@ $('.star-0').raty({ readOnly: true, score:  <?php echo $average; ?>});
 // ボタン関連
 $(function() {
   // ページ読み込み時
+  // 
   $.post('/connect2016/clips/ready/',
-    {'user_id':1<?php /*echo $_SESSION['me']['user_id'];*/ ?>}
+    {'user_id':<?php echo $_SESSION['me']['id']; ?>}
     ,function(res){
       $.each(res, function(){
         $('#review'+this).html('すでにClipされています');
       });
     }, "json");
-
+  
+  // 大学がお気に入りかどうか
   $.post('/connect2016/favoriteunis/ready/',
-    {'user_id':1<?php /*echo $_SESSION['me']['user_id'];*/ ?>, 'university_id':$('p.favorite-btn').data('university-id')}
+    {'user_id':<?php echo $_SESSION['me']['id']; ?>, 'university_id':$('p.favorite-btn').data('university-id')}
     ,function(res){
       if(res == 1){
-        $('p.favorite-btn').html(' お気に入り済み');
+        $('#favo_uni').html(' お気に入り済み');
       } 
     }, "json");
 
   // clipボタン押したら
   $('p.button-text').click(function(e){
     $.post('/connect2016/clips/change/',
-      {'user_id':1<?php /*echo $_SESSION['me']['user_id'];*/ ?>, 'review_id':$(this).data('review-id')}
+      {'user_id':<?php echo $_SESSION['me']['id']; ?>, 'review_id':$(this).data('review-id')}
       ,function(res){
         if(res.flg == 1){
           $("#review"+res.id).html('すでにClipされています');
@@ -469,15 +469,15 @@ $(function() {
       }, "json");
   });
 
-  //お気に入りボタン押したら
-  $('p.favorite-btn').click(function(e){
+  //大学お気に入りボタン押したら
+  $('#favo_uni').click(function(e){
     $.post('/connect2016/favoriteunis/change/',
-      {'user_id':1<?php /*echo $_SESSION['me']['user_id'];*/ ?>, 'university_id':$(this).data('university-id')}
+      {'user_id':<?php echo $_SESSION['me']['id']; ?>, 'university_id':$(this).data('university-id')}
       ,function(res){
         if(res == 1){
-          $('p.favorite-btn').html(' お気に入り済み');
+          $('#favo_uni').html(' お気に入り済み');
         } if(res == 0){
-          $('p.favorite-btn').html(' お気に入り登録');
+          $('#favo_uni').html(' お気に入り登録');
         }
       }, "json");
   });
