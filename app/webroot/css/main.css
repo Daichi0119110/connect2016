@@ -1211,6 +1211,7 @@ hr {
     margin:8px 20px 0;
 }
 .favorite-btn:hover {
+    color:#fff;
     background-color:rgba(25,51,192,1);
     cursor: pointer;
 }
