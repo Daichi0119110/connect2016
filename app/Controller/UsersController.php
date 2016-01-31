@@ -13,6 +13,10 @@ class UsersController extends AppController {
 
 	public function user(){
 		$this->set('title',"User | Connect");
+
+		// まだ未完成のためリダイレクトでcomingsoonページに飛ばす
+		$this->redirect(array('controller' => 'pages','action' => 'coming_soon'));
+		exit();
 	}
 
 	public function mypage(){
@@ -28,6 +32,41 @@ class UsersController extends AppController {
 		// postならDBへ保存
 		if($this->request->is('post')) {
 
+			if (isset($user['User']['university_id'])) {
+				// reveiwの更新
+				for ($i=1; $i<10 ;$i++) {
+					if(isset($_POST['review-id-'.(string)$i])) {
+						$review_id = $_POST['review-id-'.(string)$i];
+						$this->Review->set(array(
+							"id"=>$review_id ,
+							"content"=>$_POST['review-'.(string)$i]
+							)
+						);
+					} else {
+						$this->Review->create();
+						$this->Review->set(array(
+							"content"=>$_POST['review-'.(string)$i],
+							"user_id"=>$user['User']['id'],
+							"university_id"=>$user['User']['university_id'],
+							"category_id"=>$i
+							)
+						);
+					}
+					$this->Review->save();
+				}
+
+				// answerの更新
+				foreach ($user['Answer'] as $answer) {
+					$answer_id = $_POST['answer-id-'.(string)$answer['id']];
+					$this->Answer->save(array("id"=>$answer_id, "answer"=>$_POST['answer-'.(string)$answer['id']]));
+				}
+
+				// scoreの更新
+				for ($i=0; $i<8 ;$i++) {
+					$this->Score->update($_SESSION['me']['id'], $i, $_POST['score-id-'.(string)$i], $_SESSION['me']['university_id']);
+				}
+			}
+
 			// userの更新
 			$data_user = array(
 				"id" => $_SESSION['me']['id'],
@@ -42,39 +81,6 @@ class UsersController extends AppController {
 			);
 			$this->User->save($data_user);
 			$this->User->login($_SESSION['me']['facebook_id']);
-
-			// reveiwの更新
-			for ($i=1; $i<10 ;$i++) {
-				if(isset($_POST['review-id-'.(string)$i])) {
-					$review_id = $_POST['review-id-'.(string)$i];
-					$this->Review->set(array(
-						"id"=>$review_id ,
-						"content"=>$_POST['review-'.(string)$i]
-						)
-					);
-				} else {
-					$this->Review->create();
-					$this->Review->set(array(
-						"content"=>$_POST['review-'.(string)$i],
-						"user_id"=>$user['User']['id'],
-						"university_id"=>$user['User']['university_id'],
-						"category_id"=>$i
-						)
-					);
-				}
-				$this->Review->save();
-			}
-
-			// answerの更新
-			foreach ($user['Answer'] as $answer) {
-				$answer_id = $_POST['answer-id-'.(string)$answer['id']];
-				$this->Answer->save(array("id"=>$answer_id, "answer"=>$_POST['answer-'.(string)$answer['id']]));
-			}
-
-			// scoreの更新
-			for($i=0; $i<8 ;$i++) {
-				$this->Score->update($_SESSION['me']['id'], $i, $_POST['score-id-'.(string)$i], $_SESSION['me']['university_id']);
-			}
 		}
 
 		$user = $this->User->getuser($_SESSION['me']['id']); // 再度読み込み

@@ -9,7 +9,7 @@
 <form action="<?php echo SITE_URL.'users/mypage'; ?>" method="post"> <!-- formの開始 -->
 
 <div class="clearfix">
-  <div class="page-title"><?php echo $user['name']; ?> </div><div class="page-sub-title"><?php if($user['university_id']){ ?>--- <?php echo $university['university']?>へ留学 ---<?php }?></div><button type="submit" class="favorite-btn fa fa-floppy-o"> 変更を保存</button>
+  <div class="page-title"><?php echo $user['name']; ?> </div><div class="page-sub-title"><?php if($user['university_id']){ ?>--- <?php echo $university['university']; ?>へ留学 ---<?php } ?></div><button type="submit" class="favorite-btn fa fa-floppy-o"> 変更を保存</button>
 </div>
 
 
@@ -17,7 +17,7 @@
     <!-- user picture始 -->
     <div id="userpic">
     <div class="thumnail-box-user-profile">
-    <?php echo $this->Html->image('user/'.$user['image'], array('height' => '240px'));?>
+    <?php echo $this->Html->image('user/'.$user['image'], array('height' => '240px')); ?>
     </div>
     </div>
     <!-- user picture終 -->
@@ -29,10 +29,10 @@
             <div class="slideShow">
                   <div class="mainView">
                     <ul>
-                      <? $i = 0;?>
+                      <?php $i = 0; ?>
                       <?php foreach ($pictures as $picture) { ?>
-                      <? $i++; ?>
-                      <li><a href="#picture_<?php $i ?>"><?php echo $this->Html->image('university/'.$picture['image'], array('height' => '450px'));?></a></li>
+                      <?php $i++; ?>
+                      <li><a href="#picture_<?php echo $i; ?>"><?php echo $this->Html->image('university/'.$picture['image'], array('height' => '450px')); ?></a></li>
                       <?php } ?>
                     </ul>
                   </div><!--/.mainView-->
@@ -41,10 +41,10 @@
                   <div class="thumbNail">
                   <div class="user">
                   <ul>
-                    <? $i = 0;?>
+                    <?php $i = 0; ?>
                     <?php foreach ($pictures as $picture) { ?>
-                    <? $i++; ?>
-                    <li id="picture_<?php $i ?>"><?php echo $this->Html->image('university/'.$picture['image'], array('height' => '50px'));?></li>
+                    <?php $i++; ?>
+                    <li id="picture_<?php echo $i; ?>"><?php echo $this->Html->image('university/'.$picture['image'], array('height' => '50px')); ?></li>
                     <?php } ?>
                   </ul>
                   </div>
@@ -76,13 +76,13 @@
                       <div class="form-group">
                       <div class="radio">
                           <label>
-                            <input type="radio" name="gender" id="optionsRadios1" value="man" <?php if($user['gender']!="woman") { echo "checked"; }?>>
+                            <input type="radio" name="gender" id="optionsRadios1" value="man" <?php if($user['gender']!="woman") { echo "checked"; } ?>>
                             男性
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                            <input type="radio" name="gender" id="optionsRadios2" value="woman" <?php if($user['gender']=="woman") { echo "checked"; }?>>
+                            <input type="radio" name="gender" id="optionsRadios2" value="woman" <?php if($user['gender']=="woman") { echo "checked"; } ?>>
                             女性
                           </label>
                       </div>
@@ -96,8 +96,8 @@
                     <div class="">
                       <select class="form-control" name="university_id">
                         <?php foreach($universities as $uni){ ?>
-                        <option value="<?php echo $uni['University']['id'];?>" <?php if($uni['University']['id'] == $user['university_id']) { echo "selected"; } ?>><?php echo $uni['University']['university']; ?></option>
-                        <?php }?>
+                        <option value="<?php echo $uni['University']['id']; ?>" <?php if($uni['University']['id'] == $user['university_id']) { echo "selected"; } ?>><?php echo $uni['University']['university']; ?></option>
+                        <?php } ?>
                       </select>
                     </div>
                   </div>
@@ -174,7 +174,7 @@
           </table>
     </div>
 <!-- user 留学報告書DL終 -->
-<? } ?>
+<?php } ?>
 
 </div>
 </div><!-- userinfo -->
@@ -197,12 +197,12 @@
             <div class="col-md-6">
               <table class="table score-table">
                 <tbody>
-                 <?php for ($i=0; $i < 4; $i++) {  ?>
+                 <?php for ($i=0; $i < 4; $i++) { ?>
                 <tr>
                   <th><?php echo $scores[$i]['tag']; ?></th>
-                  <td><span class="default-star star-<?php echo $i+1;?>"></span></td>
+                  <td><span class="default-star star-<?php echo $i+1; ?>"></span></td>
                 </tr>
-                <input type="hidden" name="score-id-<?php echo $i;?>" id="score-value-<?php echo $i+1;?>" value="<?php echo $scores[$i]['score']; ?>">
+                <input type="hidden" name="score-id-<?php echo $i; ?>" id="score-value-<?php echo $i+1; ?>" value="<?php echo $scores[$i]['score']; ?>">
                 <?php } ?>
               </tbody>
             </table>
@@ -210,12 +210,12 @@
           <div class="col-md-6">
             <table class="table score-table">
               <tbody>
-               <?php for ($i=4; $i < 8; $i++) {  ?>
+               <?php for ($i=4; $i < 8; $i++) { ?>
                 <tr>
                   <th><?php echo $scores[$i]['tag']; ?></th>
-                  <td><span class="default-star star-<?php echo $i+1;?>"></span></td>
+                  <td><span class="default-star star-<?php echo $i+1; ?>"></span></td>
                 </tr>
-                <input type="hidden" name="score-id-<?php echo $i;?>" id="score-value-<?php echo $i+1;?>" value="<?php echo $scores[$i]['score']; ?>">
+                <input type="hidden" name="score-id-<?php echo $i; ?>" id="score-value-<?php echo $i+1; ?>" value="<?php echo $scores[$i]['score']; ?>">
                 <?php } ?>
             </tbody>
           </table>
@@ -235,7 +235,7 @@
                   <div class="row">
                     <div class="col-md-3">
                           <div class="thumnail-box-s review-picture">
-                              <?php echo $this->Html->image('category/'.$categories[$i]['Category']['image'], array('height' => '120px'));?>
+                              <?php echo $this->Html->image('category/'.$categories[$i]['Category']['image'], array('height' => '120px')); ?>
                               <div class="thumnail-text-box-s">
                                 <p class="text-on-image thumnail-text-s"><?php echo $categories[$i]['Category']['category']; ?></p>
                               </div>
@@ -252,7 +252,7 @@
                       <div class="arrow_box">
                         <div class="form-group">
                             <textarea type="text" name="review-<?php echo $i+1; ?>" class="form-control form-edit-l" placeholder="解答例：<?php echo $categories[$i]['Category']['example']; ?>"><?php for ($j=0; $j < count($reviews); $j++) {
-                                  if($reviews[$j]['category_id'] == $categories[$i]['Category']['id']) { echo $reviews[$j]['content']; break; } }?></textarea>
+                                  if($reviews[$j]['category_id'] == $categories[$i]['Category']['id']) { echo $reviews[$j]['content']; break; } } ?></textarea>
                                 <?php if($reviews[$j]['category_id'] == $categories[$i]['Category']['id']) { ?>
                                 <input type="hidden" name="review-id-<?php echo $i+1; ?>" value="<?php echo $reviews[$j]['id']; ?>">
                                 <?php } ?>
@@ -263,9 +263,9 @@
 
                     <div class="col-md-3">
                       <div class="thumnail-box-user-s">
-                        <?php echo $this->Html->image('user/'.$user['image'], array('height' => '160px'));?> <!-- 写真 -->
+                        <?php echo $this->Html->image('user/'.$user['image'], array('height' => '160px')); ?> <!-- 写真 -->
                         <div class="thumnail-text-box-user-s">
-                          <p class="text-on-image thumnail-text-user-s"><?php echo $user['name'];?></p>
+                          <p class="text-on-image thumnail-text-user-s"><?php echo $user['name']; ?></p>
                         </div>
                       </div>
                     </div>
@@ -289,7 +289,7 @@
                     <div class="col-md-2">
                      <a href="">
                           <div class="thumnail-box-user-xs">
-                              <?php echo $this->Html->image('user/'.$answer['Question']['user']['image'], array('height' => '100px'));?>
+                              <?php echo $this->Html->image('user/'.$answer['Question']['user']['image'], array('height' => '100px')); ?>
                               <div class="thumnail-text-box-user-xs">
                                 <p class="text-on-image thumnail-text-user-xs"><?php echo $answer['Question']['user']['name']; ?></p>
                               </div>
@@ -318,7 +318,7 @@
                     <div class="col-md-3">
                       <a href="">
                       <div class="thumnail-box-user-s">
-                        <?php echo $this->Html->image('user/'.$answer['User']['image'], array('height' => '160px'));?> <!-- 写真 -->
+                        <?php echo $this->Html->image('user/'.$answer['User']['image'], array('height' => '160px')); ?> <!-- 写真 -->
                         <div class="thumnail-text-box-user-s">
                           <p class="text-on-image thumnail-text-user-s"><?php echo $answer['User']['name']; ?></p>
                         </div>
@@ -331,7 +331,7 @@
                 <?php } ?>
         </div>
 <!-- 質問と答え -->
-<? } ?>
+<?php } ?>
 </div>
 <!-- leftside contents終 -->
 
@@ -346,7 +346,7 @@
 
         <a href="https://www.facebook.com/<?php echo $user['facebook_id']; ?>">
           <div class="thumnail-box-m">
-            <?php echo $this->Html->image('user/'.$user['image'], array('height' => '300px'));?>
+            <?php echo $this->Html->image('user/'.$user['image'], array('height' => '300px')); ?>
             <div class="thumnail-text-box-m">
                 <p class="text-on-image thumnail-text-m"><?php echo $user['name']; ?>さんのFacebook</p>
             </div>
@@ -373,7 +373,7 @@
               <ul class="nav">
               </ul>
             </li>
-            <? } ?>
+            <?php } ?>
           </ul>
         </nav>
       </div>
@@ -390,10 +390,10 @@ function chart(){
       echo '"'.$scores[$i]['tag'].'"';
       if($i != 7){
        echo ","; 
-     }}?>],
+     } } ?>],
     datasets: [
       { //このかっこの塊をコピーすれば,二つ以上のデータを一つの中にいれられる。
-        label: "<?php echo $university['university']?>の平均スコア",
+        label: "<?php echo $university['university']; ?>の平均スコア",
         fillColor: "rgba(25,51,192,0.2)",//レーダーの中身の色
         strokeColor: "rgba(25,51,192,0.8)",//レーダーのborderの色
         pointColor: "rgba(25,51,192,1)",//レーダーの頂点の色
@@ -404,7 +404,7 @@ function chart(){
           echo '"'.$scores[$i]['score'].'"';
           if($i != 7){
            echo ","; 
-         }}?>]
+         } } ?>]
       },
     ]
   };

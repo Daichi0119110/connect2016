@@ -3,6 +3,7 @@ drop database connect;
 create database connect;
 
 grant all on connect.* to dbuser@localhost identified by 'connect2016';
+/*grant all on connect.* to LAA0628410@mysql024.phy.lolipop.lan by 'connect2016'*/
 use connect;
 
 /*usersのテーブル作成*/
@@ -200,7 +201,7 @@ insert into tags (id, tag, question, good, bad) values (8, '治安の良さ','�
 /*picturesの本番データ*/
 insert into pictures (id, image, university_id, comment, created, modified) values (1, 'ghent.jpg', 1, 'ゲントの街の写真', '2014/04/27', '2015/06/24');
 insert into pictures (id, image, university_id, comment, created, modified) values (2, 'Seattle.jpg', 2, 'シアトルの街の写真', '2014/07/20', '2015/11/09');
-insert into pictures (id, image, university_id, comment, created, modified) values (3, 'ETH.jpg', 3, 'ETHキャンパスの写真', '2014/10/23', '2015/04/01');
+insert into pictures (id, image, university_id, comment, created, modified) values (3, 'eth.jpg', 3, 'ETHキャンパスの写真', '2014/10/23', '2015/04/01');
 
 
 
