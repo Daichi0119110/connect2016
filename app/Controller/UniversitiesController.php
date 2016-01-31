@@ -9,7 +9,7 @@ class UniversitiesController extends AppController {
 		$this->set('title',"University | Connect");
 
 		$university = $this->University->getuniversity($id);
-		$tags = $this->Tag->find('all');
+		$tags = $this->Tag->find('all', array("conditions"=>array("Score.university_id"=>$id)));
 		$categories = $this->Category->find('all');
 
 		// pickupレビューの抽出
@@ -55,7 +55,7 @@ class UniversitiesController extends AppController {
 		$this->set('average',round($average/$k,1));
 
 		// レビュー者数の取得
-		$this->set('review_num', $this->Score->find('count',array('fields' => 'DISTINCT Score.user_id')));
+		$this->set('review_num', $this->Score->find('count',array("conditions"=>array("Score.university_id"=>$id), 'fields' => 'DISTINCT Score.user_id')));
 
 		$this->set('university',$university);
 		$this->set('scores',$tags);

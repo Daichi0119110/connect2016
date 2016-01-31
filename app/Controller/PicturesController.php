@@ -42,7 +42,7 @@ class PicturesController extends AppController {
 	                'image' => $filename,
 	                'user_id' => $this->request->data['Picture']['user_id'],
 	                'university_id' => $this->request->data['Picture']['university_id'],
-	                'comment' => $this->request->data['Picture']['comment']
+	                // 'comment' => $this->request->data['Picture']['comment']
 		        );
 
 		        $this->Picture->save($status);

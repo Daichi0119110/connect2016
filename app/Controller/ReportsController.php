@@ -48,7 +48,7 @@ class ReportsController extends AppController {
 		$this->autoRender = false;
 		$this->autoLayout = false;
 
-		$file = "http://localhost/connect2016/app/webroot/files/".$this->params['filename'];
+		$file = SITE_URL."app/webroot/files/".$this->params['filename'];
 
 		// PDFを出力する
 		header("Content-Type: application/pdf");

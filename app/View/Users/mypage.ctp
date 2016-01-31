@@ -10,13 +10,13 @@
 
 
         <div class="clearfix scroll-fix" id="about">
-          <div class="page-title"><?php echo $user['name']; ?> </div><div class="page-sub-title"><?php if($user['university_id']) { ?>--- <?php echo $university['university']?>へ留学 ---<?php } ?></div><a class="favorite-btn fa fa-floppy-o" href="<?php echo SITE_URL;?>users/edit"> 編集</a></div>
+          <div class="page-title"><?php echo $user['name']; ?> </div><div class="page-sub-title"><?php if($user['university_id']) { ?>--- <?php echo $university['university']; ?>へ留学 ---<?php } ?></div><a class="favorite-btn fa fa-floppy-o" href="<?php echo SITE_URL; ?>users/edit"> 編集</a></div>
 
 
           <!-- user picture始 -->
           <div id="userpic">
             <div class="thumnail-box-user-profile">
-              <?php echo $this->Html->image('user/'.$user['image'], array('height' => '240px'));?>
+              <?php echo $this->Html->image('user/'.$user['image'], array('height' => '240px')); ?>
             </div>
  <!--    <div class="change btn-group" role="group">
       <a href="#" class="btn btn-default bule-button" style="margin:5px 0 0 5px;" role="button">プロフィール画像を変更</a>
@@ -41,10 +41,10 @@
     <div class="slideShow">
       <div class="mainView">
         <ul>
-          <? $i = 0;?>
+          <?php $i = 0; ?>
           <?php foreach ($pictures as $picture) { ?>
-          <? $i++; ?>
-          <li><a href="#picture_<?php $i ?>"><?php echo $this->Html->image('university/'.$picture['image'], array('height' => '450px'));?></a></li>
+          <?php $i++; ?>
+          <li><a href="#picture_<?php echo $i; ?>"><?php echo $this->Html->image('university/'.$picture['image'], array('height' => '450px')); ?></a></li>
           <?php } ?>
         </ul>
         <div id="image">
@@ -55,10 +55,10 @@
       <div class="thumbNail">
         <div class="user">
           <ul>
-            <? $i = 0;?>
+            <? $i = 0; ?>
             <?php foreach ($pictures as $picture) { ?>
             <? $i++; ?>
-            <li id="picture_<?php $i ?>"><?php echo $this->Html->image('university/'.$picture['image'], array('height' => '50px'));?></li>
+            <li id="picture_<?php $i; ?>"><?php echo $this->Html->image('university/'.$picture['image'], array('height' => '50px')); ?></li>
             <?php } ?>
           </ul>
         </div>
@@ -116,6 +116,7 @@
 
 
   <!-- user 留学報告書upload始 -->
+  <? if ($user['university_id']) { ?>
   <div id="about-sub-2" class="top-margin-s centered">
     <h3><i class="fa fa-download fa-1x"></i>留学写真アップロード</h3>
     <div class="uploadbox clearfix">
@@ -126,7 +127,9 @@
     echo $this->Form->create('Picture', array('action'=>'upload', 'type'=>'file', 'enctype' => 'multipart/form-data'));
     echo $this->Form->input('image', array('label' => false, 'type' => 'file', 'multiple'));
     echo $this->Form->hidden('user_id', array('value' => $user['id']));
-    echo $this->Form->hidden('university_id', array('value' => $user['university_id']));
+    if ($user['university_id']) {
+      echo $this->Form->hidden('university_id', array('value' => $user['university_id']));
+    }
     echo $this->Form->hidden('folder', array('value' => 'university'));
             // echo $this->Form->text('comment',array('label'=>false,));
     echo $this->Form->end('保存');
@@ -143,7 +146,7 @@
         <tr>
           <td><a href="<?php echo SITE_URL.'pdf/'.$report['filename']; ?>"><?php echo $report['filename']; ?></a></td>
           <div class="btn-group" role="group">
-            <td><a href="<?php echo SITE_URL.'reports/delete/'.$report['id']?>" class="btn btn-default bule-button" role="button">削除する</a></td>
+            <td><a href="<?php echo SITE_URL.'reports/delete/'.$report['id']; ?>" class="btn btn-default bule-button" role="button">削除する</a></td>
           </div>
         </tr>
         <?php } ?>
@@ -162,10 +165,11 @@
       <?php echo $this->Form->file('file'); ?>
       <?php echo $this->Form->hidden('user_id', array('value' => $user['id'])); ?>
       <?php echo $this->Form->hidden('university_id', array('value' => $user['university_id'])); ?>
-      <?php echo $this->Form->end('保存');?>
+      <?php echo $this->Form->end('保存'); ?>
     </div>
 
   </div>
+  <?php } ?>
   <!-- user 留学報告書upload終 -->
 </div>
 
@@ -180,7 +184,7 @@
 <!-- 項目別スコア -->
 <div id="score" class="top-margin-l scroll-fix">
 
-  <h2 class=""><?php echo $university['university']?>のスコア</h2>
+  <h2 class=""><?php echo $university['university']; ?>のスコア</h2>
 
   <div class="canvas center-block top-margin-xs">
     <canvas id="canvas"></canvas>
@@ -194,7 +198,7 @@
          <?php for ($i=0; $i < 4; $i++) {  ?>
          <tr>
           <th><?php echo $scores[$i]['tag']; ?></th>
-          <td><?php echo $scores[$i]['score']; ?><span class="default-star star-<?php echo $i+1;?>"></span></td>
+          <td><?php echo $scores[$i]['score']; ?><span class="default-star star-<?php echo $i+1; ?>"></span></td>
         </tr>
         <?php } ?>
       </tbody>
@@ -206,7 +210,7 @@
        <?php for ($i=4; $i < 8; $i++) {  ?>
        <tr>
         <th><?php echo $scores[$i]['tag']; ?></th>
-        <td><?php echo $scores[$i]['score']; ?><span class="default-star star-<?php echo $i+1;?>"></span></td>
+        <td><?php echo $scores[$i]['score']; ?><span class="default-star star-<?php echo $i+1; ?>"></span></td>
       </tr>
       <?php } ?>
     </tbody>
@@ -228,7 +232,7 @@
       <div class="row">
         <div class="col-md-3">
           <div class="thumnail-box-s review-picture">
-            <?php echo $this->Html->image('category/'.$categories[$i]['Category']['image'], array('height' => '120px'));?>
+            <?php echo $this->Html->image('category/'.$categories[$i]['Category']['image'], array('height' => '120px')); ?>
             <div class="thumnail-text-box-s">
               <p class="text-on-image thumnail-text-s"><?php echo $categories[$i]['Category']['category']; ?></p>
             </div>
@@ -263,9 +267,9 @@
         <div class="col-md-3">
           <a href="">
             <div class="thumnail-box-user-s">
-              <?php echo $this->Html->image('user/'.$user['image'], array('height' => '160px'));?> <!-- 写真 -->
+              <?php echo $this->Html->image('user/'.$user['image'], array('height' => '160px')); ?> <!-- 写真 -->
               <div class="thumnail-text-box-user-s">
-                <p class="text-on-image thumnail-text-user-s"><?php echo $user['name'];?></p>
+                <p class="text-on-image thumnail-text-user-s"><?php echo $user['name']; ?></p>
               </div>
             </div>
           </a>
@@ -292,7 +296,7 @@
       <div class="col-md-2">
        <a href="">
         <div class="thumnail-box-user-xs">
-          <?php echo $this->Html->image('user/'.$answer['Question']['user']['image'], array('height' => '100px'));?>
+          <?php echo $this->Html->image('user/'.$answer['Question']['user']['image'], array('height' => '100px')); ?>
           <div class="thumnail-text-box-user-xs">
             <p class="text-on-image thumnail-text-user-xs"><?php echo $answer['Question']['user']['name']; ?></p>
           </div>
@@ -318,7 +322,7 @@
     <div class="col-md-3">
       <a href="">
         <div class="thumnail-box-user-s">
-          <?php echo $this->Html->image('user/'.$answer['User']['image'], array('height' => '160px'));?> <!-- 写真 -->
+          <?php echo $this->Html->image('user/'.$answer['User']['image'], array('height' => '160px')); ?> <!-- 写真 -->
           <div class="thumnail-text-box-user-s">
             <p class="text-on-image thumnail-text-user-s"><?php echo $answer['User']['name']; ?></p>
           </div>
@@ -331,7 +335,7 @@
 <?php } ?>
 </div>
 <!-- 質問と答え -->
-<? } ?>
+<?php } ?>
 </div>
 <!-- leftside contents終 -->
 
@@ -346,7 +350,7 @@
 
         <a href="https://www.facebook.com/<?php echo $user['facebook_id']; ?>">
           <div class="thumnail-box-m">
-            <?php echo $this->Html->image('user/'.$user['image'], array('height' => '300px'));?>
+            <?php echo $this->Html->image('user/'.$user['image'], array('height' => '300px')); ?>
             <div class="thumnail-text-box-m">
                 <p class="text-on-image thumnail-text-m"><?php echo $user['name']; ?>さんのFacebook</p>
             </div>
@@ -373,7 +377,7 @@
               <ul class="nav">
               </ul>
             </li>
-            <? } ?>
+            <?php } ?>
           </ul>
         </nav>
       </div>
@@ -390,7 +394,7 @@
         echo '"'.$scores[$i]['tag'].'"';
         if($i != 7){
          echo ","; 
-       }}?>],
+       } } ?>],
        datasets: [
       { //このかっこの塊をコピーすれば,二つ以上のデータを一つの中にいれられる。
         label: "ゲント大学の平均スコア",
@@ -404,7 +408,7 @@
           echo '"'.$scores[$i]['score'].'"';
           if($i != 7){
            echo ","; 
-         }}?>]
+         } } ?>]
        },
        ]
      };
@@ -431,7 +435,7 @@
     $.fn.raty.defaults.path = "../img/star-score";
 
   //totalつまり、平均値
-  $('.star-0').raty({ readOnly: true, score: <?php echo $average; ?>});
+  $('.star-0').raty({ readOnly: true, score: <?php echo $average; ?> });
 //各項目のスコア
 <?php for ($i=1; $i < 9; $i++) { ?>
   $('.star-<?php echo $i; ?>').raty({ readOnly: true, score: <?php echo $scores[$i-1]['score']; ?> });
