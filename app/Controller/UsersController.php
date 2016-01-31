@@ -9,7 +9,7 @@ App::import('Vendor','facebook',array('file' => 'facebook'.DS.'php-sdk-v4'.DS.'s
 class UsersController extends AppController {
 	public $helper = array('HTML', 'form');
 	public $components = array('Session');
-	public $uses = array("User","Category","Question","Tag","Score","Review","Answer");
+	public $uses = array("User","Category","Question","Tag","Score","Review","Answer","University");
 
 	public function user(){
 		$this->set('title',"User | Connect");
@@ -27,8 +27,11 @@ class UsersController extends AppController {
 
 		// postならDBへ保存
 		if($this->request->is('post')) {
+
+			// userの更新
 			$data_user = array(
 				"id" => $_SESSION['me']['id'],
+				"university_id" => $_POST['university_id'],
 				"name" => $_POST['name'],
 				"gender" => $_POST['gender'],
 				"self_intro" => $_POST['self_intro'],
@@ -38,6 +41,7 @@ class UsersController extends AppController {
 				"study_major" => $_POST['study_major']
 			);
 			$this->User->save($data_user);
+			$this->User->login($_SESSION['me']['facebook_id']);
 
 			// reveiwの更新
 			for ($i=1; $i<10 ;$i++) {
@@ -65,6 +69,11 @@ class UsersController extends AppController {
 			foreach ($user['Answer'] as $answer) {
 				$answer_id = $_POST['answer-id-'.(string)$answer['id']];
 				$this->Answer->save(array("id"=>$answer_id, "answer"=>$_POST['answer-'.(string)$answer['id']]));
+			}
+
+			// scoreの更新
+			for($i=0; $i<8 ;$i++) {
+				$this->Score->update($_SESSION['me']['id'], $i, $_POST['score-id-'.(string)$i], $_SESSION['me']['university_id']);
 			}
 		}
 
@@ -104,7 +113,7 @@ class UsersController extends AppController {
 		$this->set('users',$user);
 		$this->set('scores',$scores);
 		$this->set('categories',$this->Category->find('all'));
-		$this->set('average',$total/count($tags));
+		$this->set('average',round($total/count($tags),1));
 
 		$this->set('post',$_POST);
 	}
@@ -142,6 +151,7 @@ class UsersController extends AppController {
 			$user['Picture'][4]['image'] = "default5.jpg";
 		}
 
+		$this->set('universities',$this->University->find('all'));
 		$this->set('user',$user['User']);
 		$this->set('university',$user['University']);
 		$this->set('pictures',$user['Picture']);

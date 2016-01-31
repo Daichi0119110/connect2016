@@ -1,5 +1,4 @@
 <?php echo $this->Session->flash(); ?>
-<?php debug($_POST); ?>
 <body data-spy="scroll" data-target=".sidebar" data-offset="70" id="top">
 
   <!-- all-->
@@ -421,7 +420,7 @@ function chart(){
   $('.star-0').raty({ readOnly: true, score: <?php echo $average; ?>});
 //各項目のスコア
 <?php for ($i=1; $i < 9; $i++) { ?>
-  $('.star-<?php echo $i; ?>').raty({ score: <?php echo $scores[$i-1]['score']; ?> });
+  $('.star-<?php echo $i; ?>').raty({ readOnly: true, score: <?php echo $scores[$i-1]['score']; ?> });
   <?php } ?>
 
   </script>

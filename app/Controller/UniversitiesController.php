@@ -23,6 +23,7 @@ class UniversitiesController extends AppController {
 			$categories[$i] += array('Pickup' => $this->Review->getreview($review_id[0]));
 			$categories[$i]['Pickup']['Review']['clip'] = $this->Clip->getclipnumber($categories[$i]['Pickup']['Review']['id']);
 		}
+		
 
 		// スコアの計算
 		$average = 0;
