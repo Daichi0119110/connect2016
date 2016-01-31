@@ -776,3 +776,7 @@ insert into answers (id, user_id, answer, question_id, created, modified) values
 insert into answers (id, user_id, answer, question_id, created, modified) values (100, 56, 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', 34, '2014/01/01', '2015/07/16');
 
 
+/*picturesのダミーデータ*/
+insert into pictures (id, image, university_id, user_id, comment, created, modified) values (1, 'ghent.jpg', 1, 63, 'ゲントの街の写真', '2014/04/27', '2015/06/24');
+insert into pictures (id, image, university_id, user_id, comment, created, modified) values (2, 'Seattle.jpg', 2, 19, 'シアトルの街の写真', '2014/07/20', '2015/11/09');
+insert into pictures (id, image, university_id, user_id, comment, created, modified) values (3, 'ETH.jpg', 3, 73, 'ETHキャンパスの写真', '2014/10/23', '2015/04/01');
