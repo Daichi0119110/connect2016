@@ -1,5 +1,4 @@
 <?php echo $this->Session->flash(); ?>
-<body data-spy="scroll" data-target=".sidebar" data-offset="70" id="top">
 
   <!-- all-->
   <div class="container">
@@ -11,7 +10,7 @@
 
 
         <div class="clearfix scroll-fix" id="about">
-          <div class="page-title"><?php echo $user['name']; ?> </div><div class="page-sub-title"><?php if($user['university_id']) { ?>--- <?php echo $university['university']?>へ留学 ---</div><?php } ?><a class="favorite-btn fa fa-floppy-o" href="<?php echo SITE_URL;?>users/edit"> 編集</a></div>
+          <div class="page-title"><?php echo $user['name']; ?> </div><div class="page-sub-title"><?php if($user['university_id']) { ?>--- <?php echo $university['university']?>へ留学 ---<?php } ?></div><a class="favorite-btn fa fa-floppy-o" href="<?php echo SITE_URL;?>users/edit"> 編集</a></div>
 
 
           <!-- user picture始 -->
@@ -175,10 +174,13 @@
 
 <hr>
 
+<?php if ($user['university_id']) { ?>
+
+
 <!-- 項目別スコア -->
 <div id="score" class="top-margin-l scroll-fix">
 
-  <h2 class="">ゲント大学のスコア</h2>
+  <h2 class=""><?php echo $university['university']?>のスコア</h2>
 
   <div class="canvas center-block top-margin-xs">
     <canvas id="canvas"></canvas>
@@ -216,8 +218,6 @@
 
 <hr>
 
-<?php if($user['university_id']) { ?>
-
 <!-- レビュー始 -->
 <div id="review" class="row scroll-fix">
   <h2>レビュー</h2>
@@ -244,14 +244,18 @@
           <div class="col-md-9">
             <?php $flg = 0; ?>
             <div class="arrow_box"><?php for ($j=0; $j < count($reviews); $j++) {
-              if($reviews[$j]['category_id'] == $categories[$i]['Category']['id']) {
-                echo $reviews[$j]['content'];
-                $flg = 1;
+                if($reviews[$j]['category_id'] == $categories[$i]['Category']['id']) {
+                  if ($reviews[$j]['content'] <> "") {
+                    echo $reviews[$j]['content'];
+                  } else {
+                    echo '<br>レビューは記入されておりません<br><br>';
+                  }
+                  $flg = 1;
+                }
               }
-            }
-            if($flg == 0){
-              echo '<br>レビューは記入されておりません<br>';
-            }
+              if($flg == 0){
+                echo '<br>レビューは記入されておりません<br><br>';
+              }
             ?>
           </div>
         </div>
@@ -327,55 +331,52 @@
 <?php } ?>
 </div>
 <!-- 質問と答え -->
-<?php } ?>
+<? } ?>
 </div>
-  </div>
 <!-- leftside contents終 -->
 
 
 
 
 <!-- sidebar -->
-<div class="col-md-3" role="complementary">
+      <div class="col-md-3" role="complementary">
 
-  <nav class="sidebar hidden-print" data-offset-top="999">
-    <ul class="nav">
+        <nav class="sidebar hidden-print" data-offset-top="999">
+          <ul class="nav">
 
-      <a href="https://www.facebook.com/<?php echo $user['facebook_id']; ?>">
-        <div class="thumnail-box-m">
-          <?php echo $this->Html->image('user/'.$user['image'], array('height' => '300px'));?>
-          <div class="thumnail-text-box-m">
-            <p class="text-on-image thumnail-text-m"><?php echo $user['name']; ?>さんのFacebook</p>
+        <a href="https://www.facebook.com/<?php echo $user['facebook_id']; ?>">
+          <div class="thumnail-box-m">
+            <?php echo $this->Html->image('user/'.$user['image'], array('height' => '300px'));?>
+            <div class="thumnail-text-box-m">
+                <p class="text-on-image thumnail-text-m"><?php echo $user['name']; ?>さんのFacebook</p>
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
 
-      <li>
-        <a href="#about">▶about</a>
-        <ul class="nav">
-        </ul>
-      </li>
-      <li>
-        <a href="#score">▶評価</a>
-      </li>
-      <?php if ($user['university_id']) { ?>
-      <li>
-        <a href="#review">▶レビュー</a>
-        <ul class="nav">
-          <?php for ($i=0; $i < 9; $i++) { ?>
-          <li><a href="#review-sub-<?php echo $i; ?>"><?php echo $categories[$i]['Category']['category']; ?></a></li>
-          <?php } ?>
-        </ul>
-      </li>
-      <li>
-        <a href="#question">▶Q&A</a>
-        <ul class="nav">
-        </ul>
-      </li>
-      <?php } ?>
-    </ul>
-  </nav>
-</div>
+            <li>
+              <a href="#about">▶about</a>
+            </li>
+            <?php if($user['university_id']) { ?>
+            <li>
+              <a href="#score">▶評価</a>
+            </li>
+             <li>
+              <a href="#review">▶レビュー</a>
+              <ul class="nav">
+                <?php for ($i=0; $i < 9; $i++) { ?>
+              <li><a href="#review-sub-<?php echo $i; ?>"><?php echo $categories[$i]['Category']['category']; ?></a></li>
+              <?php } ?>
+              </ul>
+            </li>
+             <li>
+              <a href="#question">▶Q&A</a>
+              <ul class="nav">
+              </ul>
+            </li>
+            <? } ?>
+          </ul>
+        </nav>
+      </div>
 <!-- sidebar end -->
 
 
