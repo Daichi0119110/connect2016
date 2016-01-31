@@ -11,7 +11,11 @@
 
 
         <div class="clearfix scroll-fix" id="about">
+<<<<<<< Updated upstream
           <div class="page-title"><?php echo $user['name']; ?> </div><div class="page-sub-title"><?php if($user['university_id']) { ?>--- <?php echo $university['university']?>へ留学 ---</div><?php } ?><a class="favorite-btn fa fa-floppy-o" href="<?php echo SITE_URL;?>users/edit"> 編集</a></div>
+=======
+          <div class="page-title"><?php echo $user['name']; ?> </div><div class="page-sub-title"><?php if($user['university_id']) { ?>--- <?php echo $university['university']?>へ留学 ---<?php } ?></div><a class="favorite-btn fa fa-floppy-o" href="<?php echo SITE_URL;?>users/edit">編集</a></div>
+>>>>>>> Stashed changes
 
 
           <!-- user picture始 -->

@@ -34,7 +34,20 @@ class PagesController extends AppController {
 
 	}
 
+<<<<<<< Updated upstream
 	public function lp_sp(){
+=======
+	public function coming_soon() {
+
+	}
+
+	public function favorite() {
+		$this->set('title'," | Connect");
+
+	}
+
+	public function lp_sp() {
+>>>>>>> Stashed changes
 		$this->set('title',"TOP | Connect");
 		$areas = $this->Area->find('all');
 
