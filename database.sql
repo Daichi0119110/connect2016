@@ -41,6 +41,7 @@ create table universities (
     id int not null auto_increment primary key,
     university varchar(255),
     country_id int,
+    image varchar(255),
     created datetime default null,
     modified datetime default null
 );
@@ -171,9 +172,9 @@ insert into countries (id, country, area_id) values (3, 'スイス', 2);
 
 
 /*universitiesの本番データ*/
-insert into universities (id, university, country_id, created, modified) values (1, 'ゲント大学', 2, '2014/08/07', '2015/07/28');
-insert into universities (id, university, country_id, created, modified) values (2, 'シアトル大学', 1, '2014/07/25', '2015/06/07');
-insert into universities (id, university, country_id, created, modified) values (3, 'スイス王立工科大学チューリッヒ校', 3, '2013/12/04', '2015/05/29');
+insert into universities (id, university, country_id, image, created, modified) values (1, 'ゲント大学', 2, 'ghent.jpg', '2014/08/07', '2015/07/28');
+insert into universities (id, university, country_id, image, created, modified) values (2, 'シアトル大学', 1, 'Seattle.jpg', '2014/07/25', '2015/06/07');
+insert into universities (id, university, country_id, image, created, modified) values (3, 'スイス王立工科大学チューリッヒ校', 3, 'eth.jpg', '2013/12/04', '2015/05/29');
 
 
 /*categoriesの本番データ*/
