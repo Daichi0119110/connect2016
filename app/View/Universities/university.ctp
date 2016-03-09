@@ -181,7 +181,7 @@
               <div class="col-md-9">
                 <div class="arrow_box"><?php echo $category['Pickup']['Review']['content']; ?><br>
                   <div class="row">
-                        <p class="favorite-btn float-right fa fa-pencil-square-o" id="review<?php echo $category['Pickup']['Review']['id']; ?>" data-review-id="<?php echo $category['Pickup']['Review']['id']; ?>">クリップ</p>
+                        <p class="favorite-btn clip float-right fa fa-pencil-square-o" id="review<?php echo $category['Pickup']['Review']['id']; ?>" data-review-id="<?php echo $category['Pickup']['Review']['id']; ?>">クリップ</p>
                   </div>
                 </div>
               </div>
@@ -221,7 +221,7 @@
               <div class="col-md-9">
                 <div class="arrow_box"><?php echo $review['Review']['content']; ?><br>
                   <div class="row">
-                        <p class="favorite-btn float-right fa fa-pencil-square-o" id="review<?php echo $review['Review']['id']; ?>" data-review-id="<?php echo $review['Review']['id']; ?>">クリップ</p>
+                        <p class="favorite-btn clip float-right fa fa-pencil-square-o" id="review<?php echo $review['Review']['id']; ?>" data-review-id="<?php echo $review['Review']['id']; ?>">クリップ</p>
                         <!-- span要素にclickイベントが聞いていない -->
                   </div>
                 </div>
@@ -457,7 +457,7 @@ $(function() {
       {'user_id':<?php echo $_SESSION['me']['id']; ?>}
       ,function(res){
         $.each(res, function(){
-          $('#review'+this).html('すでにClipされています');
+          $('#review'+this).html('クリップ済');
         });
       }, "json");
   
@@ -475,16 +475,16 @@ $(function() {
   <?php } ?>
 
   // clipボタン押したら
-  $('p.button-text').click(function(e){
+  $('p.clip').click(function(e){
     <?php if($_SESSION['me']) { ?>
       // ログインしていたら
       $.post('/connect2016/clips/change/',
         {'user_id':<?php echo $_SESSION['me']['id']; ?>, 'review_id':$(this).data('review-id')}
         ,function(res){
           if(res.flg == 1){
-            $("#review"+res.id).html('すでにClipされています');
+            $("#review"+res.id).html('クリップ済');
           } if(res.flg == 0){
-            $("#review"+res.id).html('Clip');
+            $("#review"+res.id).html('クリップ');
           }
         }, "json");
     <?php } else { ?>
