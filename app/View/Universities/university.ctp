@@ -431,15 +431,6 @@ function chart(){
          scaleStartValue : 0,
        };
 
-
-
-
-
-
-
-
-
-
        window.onload = function(){
         window.myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData,options, {
           responsive: true
@@ -460,14 +451,15 @@ $('.star-0').raty({ readOnly: true, score:  <?php echo $average; ?>});
 // ボタン関連
 $(function() {
   // ページ読み込み時
-  // 
-  $.post('/connect2016/clips/ready/',
-    {'user_id':<?php echo $_SESSION['me']['id']; ?>}
-    ,function(res){
-      $.each(res, function(){
-        $('#review'+this).html('すでにClipされています');
-      });
-    }, "json");
+  <?php if($_SESSION['me']) { ?>
+    // ログインしていたら
+    $.post('/connect2016/clips/ready/',
+      {'user_id':<?php echo $_SESSION['me']['id']; ?>}
+      ,function(res){
+        $.each(res, function(){
+          $('#review'+this).html('すでにClipされています');
+        });
+      }, "json");
   
   // 大学がお気に入りかどうか
   $.post('/connect2016/favoriteunis/ready/',
@@ -477,31 +469,49 @@ $(function() {
         $('#favo_uni').html(' お気に入り済み');
       } 
     }, "json");
+  <?php } else { ?>
+    // ログインしていなかったら何もしない
+
+  <?php } ?>
 
   // clipボタン押したら
   $('p.button-text').click(function(e){
-    $.post('/connect2016/clips/change/',
-      {'user_id':<?php echo $_SESSION['me']['id']; ?>, 'review_id':$(this).data('review-id')}
-      ,function(res){
-        if(res.flg == 1){
-          $("#review"+res.id).html('すでにClipされています');
-        } if(res.flg == 0){
-          $("#review"+res.id).html('Clip');
-        }
-      }, "json");
+    <?php if($_SESSION['me']) { ?>
+      // ログインしていたら
+      $.post('/connect2016/clips/change/',
+        {'user_id':<?php echo $_SESSION['me']['id']; ?>, 'review_id':$(this).data('review-id')}
+        ,function(res){
+          if(res.flg == 1){
+            $("#review"+res.id).html('すでにClipされています');
+          } if(res.flg == 0){
+            $("#review"+res.id).html('Clip');
+          }
+        }, "json");
+    <?php } else { ?>
+    // ログインしていなかったら
+    // ログインページへの遷移を確認するモーダル表示
+    <?php } ?>
   });
 
   //大学お気に入りボタン押したら
   $('#favo_uni').click(function(e){
-    $.post('/connect2016/favoriteunis/change/',
-      {'user_id':<?php echo $_SESSION['me']['id']; ?>, 'university_id':$(this).data('university-id')}
-      ,function(res){
-        if(res == 1){
-          $('#favo_uni').html(' お気に入り済み');
-        } if(res == 0){
-          $('#favo_uni').html(' お気に入り登録');
-        }
-      }, "json");
+    <?php if($_SESSION['me']) { ?>
+      // ログインしていたら
+      $.post('/connect2016/favoriteunis/change/',
+        {'user_id':<?php echo $_SESSION['me']['id']; ?>, 'university_id':$(this).data('university-id')}
+        ,function(res){
+          if(res == 1){
+            $('#favo_uni').html(' お気に入り済み');
+          } if(res == 0){
+            $('#favo_uni').html(' お気に入り登録');
+          }
+        }, "json");
+    <?php } else { ?>
+    // ログインしていなかったら
+    // ログインページへの遷移を確認するモーダル表示
+
+    <?php } ?>
+    
   });
 
 });

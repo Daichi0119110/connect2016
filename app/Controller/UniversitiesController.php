@@ -65,8 +65,9 @@ class UniversitiesController extends AppController {
 		}
 		if($k == 0){
 			$this->set('average',3.0);
-		}
+		} else {
 		$this->set('average',round($average/$k,1));
+		}
 
 		// レビュー者数の取得
 		$this->set('review_num', $this->Score->find('count',array("conditions"=>array("Score.university_id"=>$id), 'fields' => 'DISTINCT Score.user_id')));
