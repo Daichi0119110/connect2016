@@ -95,6 +95,48 @@
 	</div>
 
 
-	
+<div class="modal fade login-modal message-modal" id="LoginModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">会員機能の案内</h4>
+            </div>
+            <div class="modal-body">
+              <p>いつもConnectを利用頂きありがとうございます。Connectでは以下の機能は会員限定の機能とさせていただいております。
+              <ul>
+                <li>大学などのお気に入り登録</li>
+                <li>気になった記事のClip機能</li>
+                <li>自分の留学先大学の情報の記入</li>
+              </ul>
+              <br>
+             	会員登録は無料ですぐにできます！<br><br>
+             	<div class="row centered">
+              <div class="col-md-offset-1 col-md-5">
+                <a class="btn btn-primary bule-button modal-button" href="<?php echo SITE_URL; ?>users/login">無料会員登録</a>
+              </div>
+              <div class="col-md-5">
+                <a class="btn btn-primary bule-button modal-button" href="<?php echo SITE_URL; ?>users/login">ログイン</a>
+              </div>
+             	</div>
+            </p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary close" data-dismiss="modal">閉じる</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<script>
+$('p.clip, #favo_uni').click(function(){
+  <?php if($_SESSION['me']) { ?>
+  <?php } else { ?>
+//クリップやfavoriteボタンをクリックしたら
+  $('#LoginModal').modal();
+  <?php } ?>
+  });
+</script>
+
 </body>
 </html>
