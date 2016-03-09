@@ -411,6 +411,7 @@
       </div>
 
 <script>
+
   $(document).ready(function(){
     // ここに実際の処理を記述します。
     $('#myModal').modal();
