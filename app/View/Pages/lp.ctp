@@ -79,7 +79,7 @@
 </div><!-- container -->
 </div>
 
-
+<hr>
 <!-- 掲載大学一覧↓ -->
 <div class="container wb" id="bg1">
   <div class="row centered">
@@ -88,7 +88,7 @@
     <div class="container wb" id="search">
       <div class="row centered">
         <div class="col-md-8 col-md-offset-2">
-          <h2>掲載大学一覧</h2>
+          <h1>掲載大学一覧</h1>
         </div>
       </div>
     </div>
@@ -124,7 +124,7 @@
         <?php foreach($country['University'] as $university) { ?>
         <?php if($i%3 == 0){ echo '<div class="row centered clearfix">'; } ?>
         <?php $i = $i + 1; ?>
-        <div class="col-md-4">
+        <div class="col-md-4 top-margin-xs">
           <a href="<?php echo SITE_URL."universities/university/".$university['id'];?>">
             <div class="thumnail-box">
               <?php echo $this->Html->image('university/'.$university['image'], array('height' => '240px'));?> <!-- 写真 -->
@@ -140,6 +140,7 @@
         <?php } ?>
       <br>
       <br>
+
     </div><!-- container -->
 
 
@@ -165,7 +166,7 @@
 </div><!-- 掲載大学一覧↑ -->
 
 
-
+<hr class="lp-hr">
 
 
 <!-- 運営メンバー -->
@@ -296,6 +297,8 @@
   </div><!-- row -->
 </div><!-- container -->
 </div><!-- DG -->
+
+
 
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>

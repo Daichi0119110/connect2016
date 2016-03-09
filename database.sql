@@ -169,12 +169,17 @@ insert into areas (id, area) values (6, 'Africa');
 insert into countries (id, country, area_id) values (1, 'アメリカ', 3);
 insert into countries (id, country, area_id) values (2, 'ベルギー', 2);
 insert into countries (id, country, area_id) values (3, 'スイス', 2);
+insert into countries (id, country, area_id) values (4, 'イギリス', 2);
+insert into countries (id, country, area_id) values (5, 'スウェーデン', 2);
 
 
 /*universitiesの本番データ*/
 insert into universities (id, university, country_id, image, created, modified) values (1, 'ゲント大学', 2, 'ghent.jpg', '2014/08/07', '2015/07/28');
 insert into universities (id, university, country_id, image, created, modified) values (2, 'シアトル大学', 1, 'Seattle.jpg', '2014/07/25', '2015/06/07');
 insert into universities (id, university, country_id, image, created, modified) values (3, 'スイス王立工科大学チューリッヒ校', 3, 'eth.jpg', '2013/12/04', '2015/05/29');
+insert into universities (id, university, country_id, image, created, modified) values (4, 'ワシントン大学', 1, 'washington.jpg', '2013/12/04', '2015/05/29');
+insert into universities (id, university, country_id, image, created, modified) values (5, 'ルンド大学', 5, 'lund.jpg', '2013/12/04', '2015/05/29');
+insert into universities (id, university, country_id, image, created, modified) values (6, 'ウエストミンスター大学', 4, 'westminster.jpg', '2013/12/04', '2015/05/29');
 
 
 /*categoriesの本番データ*/
