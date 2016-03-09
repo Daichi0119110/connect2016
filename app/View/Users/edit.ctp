@@ -253,8 +253,10 @@
                         <div class="form-group">
                             <textarea type="text" name="review-<?php echo $i+1; ?>" class="form-control form-edit-l" placeholder="解答例：<?php echo $categories[$i]['Category']['example']; ?>"><?php for ($j=0; $j < count($reviews); $j++) {
                                   if($reviews[$j]['category_id'] == $categories[$i]['Category']['id']) { echo $reviews[$j]['content']; break; } } ?></textarea>
+                                <?php for ($j=0; $j < count($reviews); $j++) { ?>
                                 <?php if($reviews[$j]['category_id'] == $categories[$i]['Category']['id']) { ?>
                                 <input type="hidden" name="review-id-<?php echo $i+1; ?>" value="<?php echo $reviews[$j]['id']; ?>">
+                                <?php break; } ?>
                                 <?php } ?>
 
                         </div>
@@ -411,11 +413,12 @@
       </div>
 
 <script>
-
+  <?php if($_GET['flg']){ ?>
   $(document).ready(function(){
     // ここに実際の処理を記述します。
     $('#myModal').modal();
   });
+  <?php } ?>
 </script>
 
 

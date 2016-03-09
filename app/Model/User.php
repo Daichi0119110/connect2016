@@ -49,7 +49,7 @@ class User extends AppModel {
 			$data = file_get_contents('http://graph.facebook.com/'.$facebook_id.'/picture?type=large');
 			file_put_contents(WWW_ROOT.'img'.DS."user".DS.$_SESSION['me']['image'], $data);
 
-			header('Location: '.SITE_URL."users/edit"); // editページに飛ぶ
+			header('Location: '.SITE_URL."users/edit?flg=1"); // editページに飛ぶ
 			exit;
 		}
 		return;
