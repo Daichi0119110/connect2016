@@ -383,29 +383,6 @@
     </div> <!-- all row-->
 </div> <!-- all container-->
 
-<div class="modal fade" id="myModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">My Modal</h4>
-            </div>
-            <div class="modal-body">
-              こんにちは！
-            </div>
-            <div class="modal-footer">
-              <button class="btn btn-primary">OK!</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-<script>
-  $(document).ready(function(){
-    // ここに実際の処理を記述します。
-    $('#myModal').modal();
-  });
-</script>
 
 <script>
 function chart(){
