@@ -1,4 +1,4 @@
-<?php debug($areas); ?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <body>
 
