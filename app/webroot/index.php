@@ -16,8 +16,8 @@ define('SITE_URL','http://localhost/connect2016/');
 define('APP_VERSION','v2.5');
 
 // facebook情報（テスト用）
-define('APP_ID','555487634602092');
-define('APP_SECRET','ff4488de863e0205561b2670dd1f0309');
+define('APP_ID','567678433392193');
+define('APP_SECRET','fc76a6cdfc80fb8ebfb27451e989f555');
 
 
 
