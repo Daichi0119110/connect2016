@@ -79,7 +79,7 @@
 </div><!-- container -->
 </div>
 
-
+<hr>
 <!-- 掲載大学一覧↓ -->
 <div class="container wb" id="bg1">
   <div class="row centered">
@@ -88,7 +88,7 @@
     <div class="container wb" id="search">
       <div class="row centered">
         <div class="col-md-8 col-md-offset-2">
-          <h2>掲載大学一覧</h2>
+          <h1>掲載大学一覧</h1>
         </div>
       </div>
     </div>
@@ -124,7 +124,7 @@
         <?php foreach($country['University'] as $university) { ?>
         <?php if($i%3 == 0){ echo '<div class="row centered clearfix">'; } ?>
         <?php $i = $i + 1; ?>
-        <div class="col-md-4">
+        <div class="col-md-4 top-margin-xs">
           <a href="<?php echo SITE_URL."universities/university/".$university['id'];?>">
             <div class="thumnail-box">
               <?php echo $this->Html->image('university/'.$university['image'], array('height' => '240px'));?> <!-- 写真 -->
@@ -140,6 +140,7 @@
         <?php } ?>
       <br>
       <br>
+
     </div><!-- container -->
 
 
@@ -165,7 +166,7 @@
 </div><!-- 掲載大学一覧↑ -->
 
 
-
+<hr class="lp-hr">
 
 
 <!-- 運営メンバー -->
@@ -297,37 +298,6 @@
 </div><!-- container -->
 </div><!-- DG -->
 
-<div class="modal fade" id="myModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">海外留学経験者の方へ</h4>
-            </div>
-            <div class="modal-body">
-              <p>Connectへの会員登録ありがとうございます。海外留学経験者の方は是非、その貴重な体験を未来の後輩たちに書き残してあげてください。
-              <ul>
-                <li>留学先大学のスコア評価</li>
-                <li>留学先大学のレビュー記入</li>
-                <li>留学時の写真のアップロード</li>
-              </ul>
-              など、あなたの経験が未来の後輩への大切な情報へと変わります。<br>
-              「マイページ」→ 「編集」をクリックして情報の更新をお願いします。
-            </p>
-            </div>
-            <div class="modal-footer">
-              <button class="btn btn-primary">OK!</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-<script>
-  $(document).ready(function(){
-    // ここに実際の処理を記述します。
-    $('#myModal').modal();
-  });
-</script>
 
 
     <!-- Placed at the end of the document so the pages load faster -->
