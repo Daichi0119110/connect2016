@@ -10,6 +10,7 @@
         <div class="padding-s clearfix">
           <div class="page-title"><?php echo $university['University']['university']; ?></div><p class="favorite-btn fa fa-heart" data-university-id="<?php echo $university['University']['id']; ?>" id="favo_uni"> お気に入り登録</p><div class="page-sub-title"></div>
         </div>
+        
         <!-- スライドショー始 -->
         <div class="row">
           <div class="col-md-9">
