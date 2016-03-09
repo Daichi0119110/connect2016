@@ -298,6 +298,39 @@
 </div><!-- container -->
 </div><!-- DG -->
 
+<div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">海外留学経験者の方へ</h4>
+            </div>
+            <div class="modal-body">
+              <p>Connectへの会員登録ありがとうございます。海外留学経験者の方は是非、その貴重な体験を未来の後輩たちに書き残してあげてください。
+              <ul>
+                <li>留学先大学のスコア評価</li>
+                <li>留学先大学のレビュー記入</li>
+                <li>留学時の写真のアップロード</li>
+              </ul>
+              など、あなたの経験が未来の後輩への大切な情報へと変わります。<br>
+              「マイページ」→ 「編集」をクリックして情報の更新をお願いします。
+            </p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary">OK!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<script>
+  $(document).ready(function(){
+    // ここに実際の処理を記述します。
+    $('#myModal').modal();
+  });
+</script>
+
+
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
