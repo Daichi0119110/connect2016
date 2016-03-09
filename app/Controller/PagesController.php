@@ -3,7 +3,7 @@
 App::uses('AppController', 'Controller');
 class PagesController extends AppController {
 	public $helper = array('HTML', 'form');
-	public $uses = array('University','Area','Country','Picture');
+	public $uses = array('University','Area','Country','Picture','FavoriteUni');
 	
 	public function lp() {
 		$this->set('title',"Top | Connect");
@@ -45,11 +45,12 @@ class PagesController extends AppController {
 	}
 
 	public function favorite() {
-		$this->set('title'," | Connect");
+		$this->set('title',"Favorite | Connect");
 
-		// まだ未完成のためリダイレクトでcomingsoonページに飛ばす
-		$this->redirect(array('controller' => 'pages','action' => 'coming_soon'));
-		exit();
+		$status=array(
+			'conditions'=>array('FavoriteUni.user_id' => $_SESSION['me']['id'])
+		);
+		$this->set('favounis', $this->FavoriteUni->find('all',$status));
 
 	}
 

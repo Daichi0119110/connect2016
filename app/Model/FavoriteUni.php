@@ -2,6 +2,8 @@
 class FavoriteUni extends AppModel {
 	public $name='FavoriteUni';
 	
+	public $recursive = 2;
+	
 	public $belongsTo = array(
 		'University' => array('className'=>'University')
 	);
